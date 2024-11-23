@@ -91,7 +91,7 @@ public class OrdersModel : BasePageModel
     {
 
         if (_workContext.Admin == null)
-            return;
+            return RedirectToPage("home");
         using var _context = new LockerDbContext();
         var lockers = await _context.Cabines.ToListAsync();
         var orderModel = await _context.Orders.Include(x => x.OrderItems).Where(x => x.Status == (int)OrderStatus.Continue).ToListAsync();

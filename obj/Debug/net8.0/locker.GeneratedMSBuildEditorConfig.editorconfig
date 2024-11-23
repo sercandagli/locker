@@ -18,10 +18,6 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /Users/macbookpro/Desktop/locker
 build_property._RazorSourceGeneratorDebug = 
 
-[/Users/macbookpro/Desktop/locker/Pages/Addartner.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRkYXJ0bmVyLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [/Users/macbookpro/Desktop/locker/Pages/AddBoxAmount.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRkQm94QW1vdW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -36,6 +32,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/Users/macbookpro/Desktop/locker/Pages/AddCredit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRkQ3JlZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbookpro/Desktop/locker/Pages/AddPartner.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRkUGFydG5lci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/macbookpro/Desktop/locker/Pages/AddressToAddress.cshtml]

@@ -24,6 +24,7 @@ public class EditCabineModel : BasePageModel
         using var _context = new LockerDbContext();
         Cabine = await _context.Cabines.FirstOrDefaultAsync(x => x.Id == id);
         Regions = await _context.Regions.ToListAsync();
+        return Page();
     }
     
     

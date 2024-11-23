@@ -51,3 +51,4 @@
 /Users/macbookpro/Desktop/locker/bin/Debug/net8.0/Microsoft.IdentityModel.Tokens.dll
 /Users/macbookpro/Desktop/locker/bin/Debug/net8.0/System.IdentityModel.Tokens.Jwt.dll
 /Users/macbookpro/Desktop/locker/bin/Debug/net8.0/CsvHelper.dll
+/Users/macbookpro/Desktop/locker/obj/Debug/net8.0/locker.sourcelink.json

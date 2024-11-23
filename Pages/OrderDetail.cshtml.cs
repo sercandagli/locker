@@ -55,7 +55,7 @@ public class OrderDetailModel : BasePageModel
     public async Task<IActionResult> OnPostSendOtp(SendOtpModel model)
     {
         if (_workContext.Admin == null)
-            return;
+            return new JsonResult(new {});
         using var _context = new LockerDbContext();
         var order = await _context.Orders.Include(x => x.OrderItems).FirstOrDefaultAsync(x => x.Id == model.OrderId);
         if (order == null)
