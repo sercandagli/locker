@@ -1,0 +1,184 @@
+@page
+@using Locker
+@using Locker.Pages
+@model OrdersModel
+@Html.AntiForgeryToken();
+
+<div class="container-xxl flex-grow-1 container-p-y" xmlns="http://www.w3.org/1999/html">
+    <div class="row">
+        <div class="col-xl">
+            <div class="card mb-4" data-aos="zoom-out">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0">Siparişler (@Model.Orders.Count)</h5>
+                    <a href="orders?isTransfer=true">
+                        <button class="btn btn-primary">Transfer</button>
+                    </a>
+                    <a href="orders?orderType=3">
+                        <button class="btn btn-primary">VIP</button>
+                    </a>
+                    <a href="orders?orderType=2">
+                        <button class="btn btn-primary">Partner</button>
+                    </a>
+                    <a href="orders?orderType=1">
+                        <button class="btn btn-primary">Normal</button>
+                    </a>
+                    <a href="orders">
+                        <button class="btn btn-dark">Filtreleri Kaldır</button>
+                    </a>
+
+                    <small class="text-muted float-end">
+                        <button class="btn btn-secondary transfer-orders">Transfer Et</button>
+                        <button class="btn btn-secondary export">CSV'ye Aktar</button>
+
+                    </small>
+
+                </div>
+                <div class="card-body">
+                    @using (Html.BeginForm(FormMethod.Get))
+                    {
+                        <div class="row">
+                            <div class="col-xl">
+                                <label class="form-label">Kurye</label>
+                                <select class="form-control" name="courierId">
+                                    <option value="0">Tümü</option>
+                                    @foreach (var courier in Model.Couriers)
+                                    {
+                                        <option value="@courier.Id">@courier.Name</option>
+                                    }
+                                </select>
+                            </div>
+                            <div class="col-xl">
+                                <label class="form-label">Gönderim Tipi</label>
+                                <select class="form-control" name="deliveryType">
+                                    <option value="0">Tümü</option>
+                                    <option value="1">Kargomattan Kargomata</option>
+                                    <option value="2">Kargomattan Adrese</option>
+                                    <option value="3">Adresten Kargomata</option>
+                                    <option value="4">Adresten Adrese</option>
+                                </select>
+
+
+                            </div>
+                            <br></br>
+                            <button type="submit" class="btn btn-dark">Ara</button>
+
+                        </div>
+                    }
+                    <br></br>
+                    <div class="table-responsive text-nowrap">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>
+                                    <input class="form-check-input" type="checkbox" value="" id="select-all">
+                                </th>
+                                <th>Takip No/Sipariş No</th>
+                                <th>Gönderen</th>
+                                <th>Metod</th>
+                                <th>Durum</th>
+                                <th>Adet</th>
+                                <th>Ücret</th>
+                                <th>Transfer Durumu</th>
+                                <th>Kurye</th>
+
+                                <th>Son İşlem Tarihi</th>
+                                <th>İşlemler</th>
+                            </tr>
+                            </thead>
+                            <tbody class="table-border-bottom-0">
+                            @foreach (var order in Model.Orders)
+                            {
+                                var item = order.OrderItems.FirstOrDefault();
+                                <tr>
+                                    <td>
+                                        <input class="form-check-input order-select" type="checkbox" value="@order.Id">
+                                    </td>
+                                    <td>@order.Id</td>
+                                    <td> @order.SenderName</td>
+
+                                    <td>@order.DeliveryType.GetDeliveryType()</td>
+                                    <td>@Html.Raw(item.Status.GetAdminOrderStatus(order.DeliveryType))</td>
+                                    <td>@order.OrderItems.Count()</td>
+                                    <td>@order.TotalAmount.ToString("#.00") TL</td>
+                                    <td>
+                                        @if (order.IsTransferred)
+                                        {
+                                            @:Transfer Edildi
+                                        }
+                                    </td>
+                                    <td>@order.Courier.Name</td>
+
+                                    <td>@order.ModifiedOn</td>
+                                    <td>
+                                        <a href="orderDetail?id=@order.Id">
+                                            <button class="btn btn-success">Detay</button>
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    $("#select-all").on("click",function (){
+        var selects = $(".order-select");
+        var param = false;
+        if ($(this).prop("checked")){
+            param = true;
+        }
+            for (var i = 0; i < selects.length;i++){
+                $(selects[i]).prop("checked",param);
+            }
+    });
+    $(".transfer-orders").on("click", function(){
+        var datas = $(".order-select:checked");
+        var idArray = [];
+        
+        for (var i =0; i < datas.length; i++){
+            idArray.push($(datas[i]).val());
+        }
+
+        $.ajax({
+            type: "POST",
+            url: "/Orders?Handler=Transfer",
+            headers: { "RequestVerificationToken": $('input[name="__RequestVerificationToken"]').val() },
+            data:{"orderIds":idArray,"courierId":2},
+            success: function (result) {
+                let url = window.location.href;
+                if (url.indexOf('?') > -1){
+                    url += '&param=1'
+                } else {
+                    url += '?param=1'
+                }
+                window.location.href = url;
+            },
+            failure: function (response) {
+
+            }
+        });    
+            
+    });
+
+    $(".export").on("click", function(){
+        window.location = "/Orders?Handler=ExportCsv";
+    });
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</script>

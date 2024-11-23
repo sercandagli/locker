@@ -1,0 +1,203 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = locker
+build_property.RootNamespace = locker
+build_property.ProjectDir = /Users/macbookpro/Desktop/locker/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /Users/macbookpro/Desktop/locker
+build_property._RazorSourceGeneratorDebug = 
+
+[/Users/macbookpro/Desktop/locker/Pages/Addartner.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRkYXJ0bmVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbookpro/Desktop/locker/Pages/AddBoxAmount.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRkQm94QW1vdW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbookpro/Desktop/locker/Pages/AddCabine.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRkQ2FiaW5lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbookpro/Desktop/locker/Pages/AddCourier.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRkQ291cmllci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbookpro/Desktop/locker/Pages/AddCredit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRkQ3JlZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbookpro/Desktop/locker/Pages/AddressToAddress.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRkcmVzc1RvQWRkcmVzcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbookpro/Desktop/locker/Pages/AddressToLocker.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRkcmVzc1RvTG9ja2VyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbookpro/Desktop/locker/Pages/Barcode.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQmFyY29kZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbookpro/Desktop/locker/Pages/BoxAmountList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQm94QW1vdW50TGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbookpro/Desktop/locker/Pages/BoxList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQm94TGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbookpro/Desktop/locker/Pages/CabineList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ2FiaW5lTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbookpro/Desktop/locker/Pages/CourierLogin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ291cmllckxvZ2luLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbookpro/Desktop/locker/Pages/CourierOrderDetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ291cmllck9yZGVyRGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbookpro/Desktop/locker/Pages/CourierOrders.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ291cmllck9yZGVycy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbookpro/Desktop/locker/Pages/Couriers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ291cmllcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbookpro/Desktop/locker/Pages/CreateRegion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ3JlYXRlUmVnaW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbookpro/Desktop/locker/Pages/EditBox.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRWRpdEJveC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbookpro/Desktop/locker/Pages/EditBoxAmount.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRWRpdEJveEFtb3VudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbookpro/Desktop/locker/Pages/EditCabine.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRWRpdENhYmluZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbookpro/Desktop/locker/Pages/EditCourier.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRWRpdENvdXJpZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbookpro/Desktop/locker/Pages/EditSubRegion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRWRpdFN1YlJlZ2lvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbookpro/Desktop/locker/Pages/EditUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRWRpdFVzZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbookpro/Desktop/locker/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbookpro/Desktop/locker/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbookpro/Desktop/locker/Pages/LockerToAddress.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTG9ja2VyVG9BZGRyZXNzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbookpro/Desktop/locker/Pages/LockerToLocker.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTG9ja2VyVG9Mb2NrZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbookpro/Desktop/locker/Pages/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbookpro/Desktop/locker/Pages/ManagementLogin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTWFuYWdlbWVudExvZ2luLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbookpro/Desktop/locker/Pages/OrderCompleted.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvT3JkZXJDb21wbGV0ZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbookpro/Desktop/locker/Pages/OrderDetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvT3JkZXJEZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbookpro/Desktop/locker/Pages/Orders.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvT3JkZXJzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbookpro/Desktop/locker/Pages/PartnerOrderList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUGFydG5lck9yZGVyTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbookpro/Desktop/locker/Pages/Payment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUGF5bWVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbookpro/Desktop/locker/Pages/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUHJpdmFjeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbookpro/Desktop/locker/Pages/RegionDetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUmVnaW9uRGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbookpro/Desktop/locker/Pages/RegionList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUmVnaW9uTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbookpro/Desktop/locker/Pages/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUmVnaXN0ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbookpro/Desktop/locker/Pages/SetTransferPoint.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2V0VHJhbnNmZXJQb2ludC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbookpro/Desktop/locker/Pages/Shared/_MainLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19NYWluTGF5b3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbookpro/Desktop/locker/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbookpro/Desktop/locker/Pages/UserList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVXNlckxpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbookpro/Desktop/locker/Pages/UserOrderDetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVXNlck9yZGVyRGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbookpro/Desktop/locker/Pages/UserOrders.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVXNlck9yZGVycy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbookpro/Desktop/locker/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbookpro/Desktop/locker/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbookpro/Desktop/locker/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-mc51c73suo

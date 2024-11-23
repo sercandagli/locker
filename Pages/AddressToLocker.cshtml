@@ -1,0 +1,455 @@
+@page 
+@using Locker.Enums
+@using Locker.Pages
+@model AddressToLockerModel
+@{ Layout = "_MainLayout"; }
+
+<main class="main">
+
+    <section id="about-3" class="about-3 section">
+        <div class="container">
+            <div class="row gy-4 justify-content-between align-items-center">
+
+                @using (Html.BeginForm())
+                {
+                    <div class="row gy-5">
+                        <input type="hidden" name="selectedSourceRegionId" value="0"></input>
+                        @foreach (var box in Model.Model.Boxes)
+                        {
+                            <div class="col-xl-2 col-md-3">
+                                <div class="post-item position-relative h-100 box-div" data="@box.Id" data-aos="fade-up" data-aos-delay="100">
+                                    <div class="post-content d-flex flex-column">
+                                        <div class="post-img position-relative overflow-hidden">
+                                            <h3 class="post-title text-center">@box.Name</h3>
+                                            <img src="@box.IconLink" class="img-fluid" alt="">
+                                        </div>
+
+                                        <h5 class="post-title text-center">@box.Amount TL</h5>
+                                        @if (HttpContext.Session.GetInt32("IsLoggedIn") == 1 && HttpContext.Session.GetInt32("Role") == (int)UserType.Partner)
+                                        {
+                                            <select class="form-control boxCount" data="@box.Id">
+                                                <option value="0">0</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                            </select>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                    <div class="row">
+                        <div class="row gy-5">
+                            @{
+                                var name = "";
+                                var email = "";
+                                var phone = "";
+                            }
+                            @if (HttpContext.Session.GetInt32("IsLoggedIn") != 1 || HttpContext.Session.GetInt32("Role") != (int)UserType.Partner)
+                            {
+                                var setValue = HttpContext.Session.GetInt32("Role") == (int)UserType.Commercial;
+                                @if (setValue)
+                                {
+                                    name = Model.User.Name;
+                                    email = Model.User.Email;
+                                    phone = Model.User.Phone;
+                                }
+
+                                <div class="col-lg-6 order-lg-2 position-relative" data-aos="zoom-out">
+                                    <div class="img-fluid" id="locker1-map"></div>
+                                    <alert class="alert alert-success locker1-map-info">#</alert>
+                                </div>
+                            }
+                            <div class="col-lg-6 order-lg-2 position-relative" data-aos="zoom-out">
+                                <div class="img-fluid" id="locker2-map"></div>
+                                <alert class="alert alert-success locker2-map-info">#</alert>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <input type="hidden" name="items"></input>
+                        <div class="row gy-5">
+                            @if (HttpContext.Session.GetInt32("IsLoggedIn") != 1 || HttpContext.Session.GetInt32("Role") != (int)UserType.Partner)
+                            {
+                                <div class="col-lg-6 order-lg-2 position-relative" id="sender-div"data-aos="zoom-out">
+
+                                    <div class="mb-3">
+                                        <label class="form-label" for="basic-default-fullname">Gönderici Adı (*) </label>
+                                        <label id="senderNameWarning" class="warning-label"></label>
+                                        <input type="text" class="form-control" name="senderName" value="@name" id="basic-default-fullname" required/>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label" for="basic-default-fullname">Gönderici Telefon (*) </label>
+                                        <label id="senderPhoneWarning" class="warning-label"></label>
+                                        <div class="input-group">
+                                            <button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                Ülke Kodu
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li class="senderCountryCodeDD" data="90">
+                                                    <a class="dropdown-item" href="javascript:void(0);">Kıbrıs +90</a>
+                                                </li>
+                                            </ul>
+
+                                            <input type="text" class="form-control" name="senderPhone" value="@phone" id="basic-default-fullname" required/>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label" for="basic-default-email">Gönderici Email (*) </label>
+                                        <label id="senderEmailWarning" class="warning-label"></label>
+
+                                        <div class="input-group input-group-merge">
+                                            <input
+                                                value="@email"
+                                                type="text"
+                                                id="basic-default-email"
+                                                class="form-control"
+                                                name="senderEmail"
+                                                aria-describedby="basic-default-email2"
+                                                required/>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label" for="basic-default-fullname">Adres Detayı</label>
+                                        <input type="text" class="form-control" name="senderAddress" id="basic-default-fullname" required/>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label" for="basic-default-fullname">Sipariş Notu</label>
+                                        <input type="text" class="form-control" name="note" id="basic-default-fullname" required/>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label" for="basic-default-fullname">Gönderici VAT</label>
+                                        <input type="text" class="form-control" name="senderVat" id="basic-default-fullname" required/>
+                                    </div>
+                                    <div class="mb-3">
+
+                                        <label class="form-label" for="basic-default-email">Privacy Policy (GDPR)</label>
+
+                                        <input class="form-check-input" name="pp" type="checkbox" value="" id="defaultCheck3" checked>
+                                        <label id="gdprWarning" class="warning-label"></label>
+
+                                    </div>
+                                    <div class="mb-3">
+
+                                        <label class="form-label" for="basic-default-email">Individual Agreement with the User</label>
+
+                                        <input class="form-check-input" name="ia" type="checkbox" value="" id="defaultCheck3" checked>
+                                        <label id="iaWarning" class="warning-label"></label>
+
+                                    </div>
+
+                                </div>
+                            }
+
+                            <div class="col-lg-6 order-lg-2 position-relative" id="receiver-div" data-aos="zoom-out">
+
+                                <div class="mb-3">
+                                    <label class="form-label" for="basic-default-fullname">Alıcı Adı (*) </label>
+                                    <label id="receiverNameWarning" class="warning-label"></label>
+
+                                    <input type="text" class="form-control" name="receiverName" id="basic-default-fullname" required/>
+
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" for="basic-default-fullname">Alıcı Telefon (*) </label>
+                                    <label id="receiverPhoneWarning" class="warning-label"></label>
+                                    <div class="input-group">
+                                        <button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Ülke Kodu
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li class="receiverCountryCodeDD" data="90">
+                                                <a class="dropdown-item" href="javascript:void(0);">Kıbrıs +90</a>
+                                            </li>
+                                        </ul>
+
+
+                                        <input type="text" class="form-control" name="receiverPhone" id="basic-default-fullname" required/>
+
+                                    </div>
+
+
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <input type="hidden" class="box-input" name="boxId" value="" required>
+                    <input type="hidden" class="selected-locker-1" name="senderAddressLat" value="" required>
+                    <input type="hidden" class="selected-locker-1" name="senderAddressLong" value="" required>
+
+                    <input type="hidden" class="selected-locker-2" name="targetLockerName" value="" required>
+                }
+                <button type="submit" class="btn btn-form-submit btn-success">Ödeme Adımına Geç</button>
+
+            </div>
+        </div>
+    </section>
+</main>
+@if (HttpContext.Session.GetInt32("IsLoggedIn") == 1 && HttpContext.Session.GetInt32("Role") == (int)UserType.Partner)
+{
+    <script>
+        function setItems(){
+        var jsonString = "[";
+        for (var i = 0; i < $(".boxCount").length; i++){
+            var item = $(".boxCount").eq(i);
+            var id = $(item).attr("data");
+            var val = $(item).val();
+            jsonString += "{\"Id\":" + id + ",\"Count\":" + val + "},";
+        }
+            jsonString = jsonString.slice(0,-1);
+            jsonString += "]";
+        $("input[name='items']").val(jsonString);
+        }   
+         
+    </script>
+}
+
+<script>
+    function loadRegions(coordinates,id){
+        var p = new L.polygon(coordinates,{regionId:id});
+
+        p.on("click",function (e){
+            regionClicked = this.options.regionId;
+            console.log(regionClicked);
+            console.log(this.options);
+
+        });
+        lockermap1.addLayer(p);
+
+
+    }
+</script>
+@if (HttpContext.Session.GetInt32("IsLoggedIn") != 1 || HttpContext.Session.GetInt32("Role") != (int)UserType.Partner)
+{
+    <script>
+   
+      var lockermap1 = L.map('locker1-map').setView([35.095192, 33.203430], 11);
+      var allMarkers = new Array();
+      lockermap1.on('click', function(e) {
+            var lat = e.latlng.lat;
+            var lng = e.latlng.lng;
+            $(".locker1-map-info").text("Latitude:" + lat + " Longitued:" + lng);
+            $("input[name='senderAddressLat']").val(lat);
+            $("input[name='senderAddressLong']").val(lng);
+            for(var i=0; i< allMarkers.length; i++){
+                lockermap1.removeLayer(allMarkers[i]);
+            }
+            var newMarker = new L.marker(e.latlng);
+            allMarkers.push(newMarker);
+            newMarker.addTo(lockermap1);
+            if (regionClicked != 0){
+                $("input[name='selectedSourceRegionId']").val(regionClicked);
+            }else{
+                $("input[name='selectedSourceRegionId']").val(0);
+            }
+          regionClicked = 0;
+
+});
+      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19
+      }).addTo(lockermap1);
+
+      @if (Model.SubRegions != null)
+      {
+          foreach (var subRegion in Model.SubRegions)
+          {
+              @:loadRegions([@subRegion.Coordinates],@subRegion.RegionId);
+          }
+      }
+      
+</script>
+}
+<script>
+    var regionClicked = 0;
+    function selectBox(){
+        $(".box-div").on("click", function() {
+            $(".box-div").removeClass("box-div-active");
+            $(this).addClass("box-div-active");
+            $(".box-input").val($(this).attr("data"));
+        });
+
+    }
+var lockermap2 = L.map('locker2-map').setView([35.095192, 33.203430], 11);
+      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: ''
+      }).addTo(lockermap2);
+      var points = [];
+
+    @if (HttpContext.Session.GetInt32("IsLoggedIn") != 1 || HttpContext.Session.GetInt32("Role") != 3)
+    {
+        @:selectBox();
+    }
+$(".btn-form-submit").on("click",function(e){
+  e.preventDefault();
+    @if (HttpContext.Session.GetInt32("IsLoggedIn") != 1 && HttpContext.Session.GetInt32("Role") != (int)UserType.Partner)
+    {
+        @:var box = $(".box-input").val();
+        @:if (box == "" || box < 1)
+        @:{
+        @:alert("Lütfen kutu seçimi yapın");
+        @:return;
+        @:}
+    }
+    var locker2 = $(".selected-locker-2").val();
+    if(locker2 == "" || locker2 < 1)
+    {
+        alert("Lütfen teslim noktası seçimi yapın");
+        return;
+    }
+ 
+    
+     
+
+      $("[class*=warning]").text("");
+    @if (HttpContext.Session.GetInt32("IsLoggedIn") != 1 || HttpContext.Session.GetInt32("Role") != 3)
+    {
+        @:senderControl();
+    }
+
+    @if (HttpContext.Session.GetInt32("IsLoggedIn") == 1 && HttpContext.Session.GetInt32("Role") == (int)UserType.Partner)
+    {
+        @:setItems();
+    }
+     
+
+        var receiverName = $("input[name='receiverName']").val();
+      if(receiverName.trim() == ""){
+        $("#receiverNameWarning").text(" Lütfen bu alanı doldurun");
+        return;
+      }
+
+         var receiverPhone = $("input[name='receiverPhone']").val();
+      if(receiverPhone.trim() == ""){
+        $("#receiverPhoneWarning").text(" Lütfen bu alanı doldurun");
+        return;
+      }else if(receiverPhone.length < 11 || isOnlyDigit(receiverPhone) == false){
+        $("#receiverPhoneWarning").text(" Lütfen telefon numarasını doğru formatta girin");
+        return;
+      }
+
+
+      if($("input[name='pp']").prop('checked')==false){
+        $("#gdprWarning").text(" Lütfen sözleşmeyi kabul edin");
+        return;
+      }
+     
+
+      if($("input[name='ia']").prop('checked')==false){
+        $("#iaWarning").text(" Lütfen sözleşmeyi kabul edin");
+        return;
+      }
+
+    @if (HttpContext.Session.GetInt32("IsLoggedIn") != 1 || HttpContext.Session.GetInt32("Role") != 3)
+    {
+
+        @:if($("input[name='selectedSourceRegionId']").val() == 0)
+        @:{
+
+            @:alert("Seçtiğiniz bölgeye hizmet veremiyoruz");
+            @:return;
+
+        @:}
+    }
+
+
+
+
+      $("form").submit();
+});
+
+
+$(".receiverCountryCodeDD").on("click",function(){
+  $("input[name='receiverPhone']").val($(this).attr("data"));
+});
+
+
+$(".senderCountryCodeDD").on("click",function(){
+  $("input[name='senderPhone']").val($(this).attr("data"));
+});
+
+
+
+function senderControl(){
+    var selectedLat = $("input[name='senderAddressLat']").val();
+    if(selectedLat == "")
+    {
+        alert("Lütfen adres seçimi yapın");
+        return;
+    }
+
+    var senderName = $("input[name='senderName']").val();
+    if(senderName.trim() == ""){
+        $("#senderNameWarning").text(" Lütfen bu alanı doldurun");
+        return;
+    }
+
+    var senderPhone = $("input[name='senderPhone']").val();
+    if(senderPhone.trim() == ""){
+        $("#senderPhoneWarning").text(" Lütfen bu alanı doldurun");
+        return;
+    }else if(senderPhone.length < 11 || isOnlyDigit(senderPhone) == false){
+        $("#senderPhoneWarning").text(" Lütfen telefon numarasını doğru formatta girin");
+        return;
+    }
+
+    var senderEmail = $("input[name='senderEmail']").val();
+    if(senderEmail.trim() == ""){
+        $("#senderEmailWarning").text(" Lütfen bu alanı doldurun");
+        return;
+    }else if(isEmail(senderEmail)==false){
+        $("#senderEmailWarning").text(" Lütfen geçerli bir mail adresi girin");
+        return;
+    }
+}
+
+function isOnlyDigit(number){
+  var regex = /^\d+$/;
+  return regex.test(number);
+}
+
+function isEmail(email) {
+    var regex =   /^([a-zA-Z0-9_.+-])+\@@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+  return regex.test(email);
+}
+      
+      function locker2labelOnClick() {
+      
+        var lat = this._latlng.lat;
+        var lng = this._latlng.lng;
+        for (var i = 0; i < points.length; i++) {
+          var actual = points[i];
+          if (actual.lat == lat && actual.lng == lng) {
+            $(".locker2-map-info").text(actual.name + "-" + actual.address);
+            $(".selected-locker-2").val(actual.id);
+          }
+        }
+      }
+  
+      @if (Model.Model.Cabines != null)
+      {
+          foreach (var cabine in Model.Model.Cabines)
+          {
+              @:points.push({
+              @:lat: '@cabine.Lat',
+              @:lng: '@cabine.Long',
+              @:name: '@cabine.Name',
+              @:id : '@cabine.Id',
+              @:address: '@cabine.Description',
+              @:description: '@cabine.Description'
+              @:});
+              @:L.marker([@cabine.Lat, @cabine.Long]).on('click', locker2labelOnClick).addTo(lockermap2);
+          }
+      }
+    
+    
+    
+
+
+</script>

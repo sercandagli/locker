@@ -1,0 +1,120 @@
+@page 
+@using Locker.Enums
+@using Locker.Pages
+@model EditUserModel
+
+@Html.AntiForgeryToken()
+<style>
+    #locker1-map {
+        height: 300px;
+    }
+
+    #locker2-map {
+        height: 300px;
+    }
+
+    .warning-label {
+        color: red;
+    }
+
+    .box-div-active {
+        background: rgb(241, 242, 242);
+        color: white;
+        border: 2px solid rgb(240, 135, 135);
+        border-radius: 25px;
+    }
+</style>
+<div class="container-xxl flex-grow-1 container-p-y">
+    <div class="row">
+        <div class="col-xl">
+            <div class="card mb-4" data-aos="zoom-out">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0">Kullanıcı Düzenle</h5>
+                    
+                </div>
+                <div class="card-body">
+
+                    @using (Html.BeginForm(FormMethod.Post))
+                    {
+                        <div class="row">
+                            @if (Model.User.Type == (int)UserType.Partner)
+                            {
+                                <div class="row">
+                                    <div class="row gy-5">
+
+                                        <div class="col-lg-6 order-lg-2 position-relative" data-aos="zoom-out">
+                                            <div class="img-fluid" id="locker1-map"></div>
+                                            <alert class="alert alert-success locker1-map-info">#</alert>
+                                        </div>
+                                    </div>
+                                </div> 
+                            }
+                          
+                            <div class="row gy-5">
+                                <div class="col-lg-6 order-lg-2 position-relative" id="sender-div" data-aos="zoom-out">
+                                    <input type="hidden" name="addressLat"/>
+                                    <input type="hidden" name="addressLong"/>
+                                    <div class="mb-3">
+                                        <label class="form-label" for="basic-default-fullname">Ad Soyad / Ünvan</label>
+                                        <label id="deliveryType" class="warning-label"></label>
+                                        <input class="form-control" name="name" value="@Model.User.Name"></input>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label" for="basic-default-fullname">Telefon</label>
+                                        <label id="deliveryType" class="warning-label"></label>
+                                        <input class="form-control" name="phone" value="@Model.User.Phone"></input>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label" for="basic-default-fullname">Email</label>
+                                        <label id="deliveryType" class="warning-label"></label>
+                                        <input class="form-control" name="email" value="@Model.User.Email"></input>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label" for="basic-default-fullname">Adres</label>
+                                        <label id="deliveryType" class="warning-label"></label>
+                                        <input class="form-control" name="address" value="@Model.User.Address"></input>
+                                    </div>
+                                  
+
+                                    <button class="form-control" type="submit">Kaydet</button>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@if (Model.User.Type == (int)UserType.Partner)
+{
+    <script>
+  
+   
+      var lockermap1 = L.map('locker1-map').setView([35.095192, 33.203430], 11);
+      var existMarker = new L.marker([@Model.User.AddressLat, @Model.User.AddressLong])
+    existMarker.addTo(lockermap1);
+      var allMarkers = new Array();
+      allMarkers.push(existMarker);
+      lockermap1.on('click', function(e) {
+        var lat = e.latlng.lat;
+        var lng = e.latlng.lng;
+        $(".locker1-map-info").text("Latitude:" + lat + " Longitued:" + lng);
+        $("input[name='addressLat']").val(lat);
+        $("input[name='addressLong']").val(lng);
+        for (var i = 0; i < allMarkers.length; i++) {
+          lockermap1.removeLayer(allMarkers[i]);
+        }
+        var newMarker = new L.marker(e.latlng);
+        allMarkers.push(newMarker);
+        newMarker.addTo(lockermap1);
+      });
+      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19
+      }).addTo(lockermap1);
+     
+     </script>
+}

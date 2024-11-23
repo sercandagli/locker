@@ -1,0 +1,114 @@
+@page 
+@model EditCabineModel
+<style>
+      #locker1-map {
+        height: 300px;
+      }
+    </style>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<div class="container-xxl flex-grow-1 container-p-y">
+    <div class="row">
+        <div class="col-xl">
+            <div class="card mb-4" data-aos="zoom-out">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0">Kabin Düzenleme</h5>
+                </div>
+                <div class="img-fluid" id="locker1-map"></div>
+
+                <div class="card-body">
+                    @using (Html.BeginForm(FormMethod.Post))
+                    {
+                        <div class="mb-3">
+                            <label class="form-label" for="basic-default-fullname">Kabin Adı</label>
+                            <input type="text" class="form-control" name="Name" value="@Model.Cabine.Name"></input>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="basic-default-fullname">Bölge</label>
+                            <select class="form-control" name="regionId">
+                                @foreach (var region in Model.Regions)
+                                {
+                                    if (region.Id == Model.Cabine.RegionId)
+                                    {
+                                        <option value="@region.Id" selected="true">@region.Name</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="@region.Id">@region.Name</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="basic-default-fullname">Durum</label>
+
+                            <select class="form-control" name="IsActive">
+                                @if (Model.Cabine.IsActive)
+                                {
+                                    <option value="0">Pasif</option>
+                                    <option value="1" selected="true">Aktif</option>
+                                }
+                                else
+                                {
+                                    <option value="0" selected="true">Pasif</option>
+                                    <option value="1">Aktif</option>
+                                }
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="basic-default-fullname">Açıklama</label>
+                            <input type="text" class="form-control" name="Description" value="@Model.Cabine.Description"></input>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="basic-default-fullname">Identifier *(BestWond Id Karşılığı)</label>
+                            <input type="text" class="form-control" name="Identifier" value="@Model.Cabine.Identifier"></input>
+                        </div>
+                        <input type="hidden" name="lat"/>
+                        <input type="hidden" name="long"/>
+
+                        <div class="mb-3">
+                            <button type="submit" class="form-control btn btn-primary btn-submit">Kaydet</button>
+
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+
+   var lat = "35.095192";
+   var long = "33.203430";
+      var lockermap1 = L.map('locker1-map').setView([lat, long], 11);
+      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 15,
+       
+      }).addTo(lockermap1);
+  
+   
+      var allMarkers = [];
+   
+   var newMarker  =L.marker([@Model.Cabine.Lat, @Model.Cabine.Long]);
+    newMarker.addTo(lockermap1);
+allMarkers.push(newMarker);
+   lockermap1.on('click', function(e) {
+
+      
+        var lat = e.latlng.lat;
+        var lng = e.latlng.lng;
+        for (var i = 0; i < allMarkers.length; i++) {
+          lockermap1.removeLayer(allMarkers[i]);
+        }
+        $("input[name='lat']").val(lat);
+        $("input[name='long']").val(lng);
+        var newMarker = new L.marker(e.latlng);
+        allMarkers.push(newMarker);
+        newMarker.addTo(lockermap1);
+      });
+      
+      
+  
+      
+    </script>

@@ -1,0 +1,38 @@
+@page
+@model ManagementLoginModel
+@Html.AntiForgeryToken()
+
+
+<div class="container-xxl flex-grow-1 container-p-y">
+    <div class="row">
+        <div class="col-xl">
+            <div class="card mb-4" data-aos="zoom-out">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0">Yönetim Girişi</h5>
+
+                </div>
+                <div class="card-body">
+                    @using (Html.BeginForm())
+                    {
+                        <div class="row">
+                            <div class="row gy-5">
+                                <div class="col-lg-6 order-lg-2 position-relative" id="sender-div" data-aos="zoom-out">
+
+                                    <div class="mb-3">
+                                        <label class="form-label" for="basic-default-fullname">Telefon</label>
+                                        <input class="form-control" name="phone"/>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label" for="basic-default-fullname">Şifre</label>
+                                        <input class="form-control" name="password"/>
+                                    </div>
+                                    <button class="form-control" type="submit">Giriş</button>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

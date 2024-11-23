@@ -1,0 +1,59 @@
+@page 
+@using Locker
+@model UserOrdersModel
+@{ Layout = "_MainLayout"; }
+
+<div class="container-xxl flex-grow-1 container-p-y">
+    <div class="row">
+        <div class="col-xl">
+            <div class="card mb-4" data-aos="zoom-out">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0">Siparişlerim</h5>
+
+                </div>
+                <div class="card-body">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                          
+                            <th>Takip No/Sipariş No</th>
+                            <th>Alıcı</th>
+                            <th>Metod</th>
+                            <th>Durum</th>
+                            <th>Adet</th>
+                            <th>Ücret</th>
+
+                            <th>Son İşlem Tarihi</th>
+                            <th>İşlemler</th>
+                        </tr>
+                        </thead>
+                        <tbody class="table-border-bottom-0">
+                        @foreach (var order in Model.Orders)
+                        {
+                            var item = order.OrderItems.FirstOrDefault();
+
+                            <tr>
+                                <td>@order.Id</td>
+                                <td> @order.ReceiverName</td>
+                                <td>@order.DeliveryType.GetDeliveryType()</td>
+                                <td>@Html.Raw(item.Status.GetUserOrderStatus(order.DeliveryType))</td>
+                                <td>@order.OrderItems.Count()</td>
+                                <td>@order.TotalAmount.ToString("#.00") TL</td>
+                           
+
+                                <td>@order.ModifiedOn</td>
+                                <td>
+                                    <a href="userOrderDetail?orderId=@order.Id">
+                                        <button class="btn btn-success">Detay</button>
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

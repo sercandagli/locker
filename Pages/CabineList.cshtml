@@ -1,0 +1,70 @@
+@page
+@model CabineListModel
+
+
+<div class="container-xxl flex-grow-2 container-p-y">
+    <div class="alert alert-success courierAlert alert-dismissible" role="alert" style="display:none">
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <div class="card">
+        <h5 class="card-header">Kabinler</h5>
+
+
+        <div class="table-responsive text-nowrap">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>#Id</th>
+                    <th>#Kabin Adı</th>
+                    <th>Bölge Adı</th>
+                    <th>#Son Düzenleme Tarihi</th>
+                    <th>
+                        <a href="AddCabine">
+                            <button class="btn btn-secondary">Yeni Kabin Ekle</button>
+                        </a>
+                    </th>
+                </tr>
+                </thead>
+                <tbody class="table-border-bottom-0">
+                @foreach (var cabine in Model.Cabines)
+                {
+                    <tr>
+                        <td>@cabine.Id</td>
+                        <td>@cabine.Name</td>
+                        <td>@cabine.Region.Name</td>
+                        <td>@cabine.ModifiedOn</td>
+
+                        <td>
+                            <a href="editCabine?id=@cabine.Id">
+                                <button class="btn btn-secondary">Düzenle</button>
+                            </a>
+                        </td>
+                        @if (cabine.IsActive)
+                        {
+                            <td>
+                                <a href="cabineList?handler=setCabineStatus&id=@cabine.Id">
+                                    <button class="btn btn-danger">Pasif Yap</button>
+                                </a>
+                            </td>
+                        }
+                        else
+                        {
+                            <td>
+                                <a href="cabineList?handler=setCabineStatus&id=@cabine.Id">
+                                    <button class="btn btn-success">Aktif Yap</button>
+                                </a>
+                            </td>
+                        }
+
+                    </tr>
+                }
+
+
+                </tbody>
+            </table>
+            <div class="col">
+            </div>
+
+        </div>
+    </div>
+</div>

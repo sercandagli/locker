@@ -1,0 +1,63 @@
+@page
+@using Locker
+@using Locker.Enums
+@model UserOrderDetailModel
+@{ Layout = "_MainLayout"; }
+@Html.AntiForgeryToken()
+
+<div class="container-xxl flex-grow-1 container-p-y">
+    <div class="row">
+        <div class="col-xl">
+            <div class="card mb-4" data-aos="zoom-out">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0">Sipariş Detay</h5>
+
+                </div>
+                <div class="card-body">
+
+                    <div class="table-responsive text-nowrap">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>Metod</th>
+                                <th>Ebat</th>
+                                <th>Adet</th>
+                                <th>Ücret</th>
+                                <th>Takip No/Sipariş No</th>
+                                <th>Durum</th>
+                                <th>İşlemler</th>
+                            </tr>
+                            </thead>
+                            <tbody class="table-border-bottom-0">
+                            @foreach (var orderItem in Model.Order.OrderItems)
+                            {
+                                <tr>
+                                    <td>@Model.Order.DeliveryType.GetDeliveryType()</td>
+                                    <td>@orderItem.BoxSize</td>
+                                    <td>1</td>
+
+                                    <td>@orderItem.Amount.ToString("#.00") TL</td>
+                                    <td>@string.Format("{0}_{1}", Model.Order.Id, orderItem.Id)</td>
+                                    <td>@Html.Raw(@orderItem.Status.GetUserOrderStatus(Model.Order.DeliveryType))</td>
+
+                                    @if (@orderItem.Status == (int)OrderItemStatus.OrderCreated)
+                                    {
+                                        <td>
+                                            <a href="userOrderDetail?Handler=cancel&orderItemId=@orderItem.Id">
+                                                <button class="btn btn-danger  cancel-button" data="@orderItem.Id">İptal Et</button>
+                                            </a>
+                                        </td>
+                                    }
+
+                                </tr>
+                            }
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

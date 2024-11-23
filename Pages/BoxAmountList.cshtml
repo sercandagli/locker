@@ -1,0 +1,60 @@
+@page
+@using Locker
+@using Locker.Pages
+@model BoxAmountListModel
+
+
+
+<div class="container-xxl flex-grow-2 container-p-y">
+  <div class="alert alert-success courierAlert alert-dismissible" role="alert" style="display:none">
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  <div class="card">
+    <h5 class="card-header">Kutu Ücretleri</h5>
+
+
+    <div class="table-responsive text-nowrap">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>#Boyut</th>
+            <th>#Gönderim Tipi</th>
+            <th>#Müşteri Tipi</th>
+            <th>#Ücret</th>
+            <th>#Promosyonlu Ücret</th>
+            <th>#Promosyon Açıklaması</th>
+            <th>#Son Düzenleme Tarihi</th>
+            <th><a href="AddBoxAmount?boxId=@Model.BoxId"><button class="btn btn-secondary">Ücret Ekle</button></a></th>
+          </tr>
+        </thead>
+        <tbody class="table-border-bottom-0"> 
+            @foreach(var boxAmount in Model.BoxAmounts){ 
+             
+
+
+                <tr>
+                                <td>@boxAmount.Box.Size</td>
+                                <td>@boxAmount.DeliveryType.GetDeliveryType()</td>
+                                  <td>@boxAmount.UserType.GetUserType()</td>
+                                  <td>@boxAmount.Amount</td>
+                                
+                                  <td>@boxAmount.PromotionAmount</td>
+                                  <td>@boxAmount.PromotionDescription</td>
+                        <td>@boxAmount.ModifiedOn</td>
+
+            <td><a href="EditBoxAmount?id=@boxAmount.Id"><button class="btn btn-success">Düzenle</button></a></td>
+                                  
+       
+            </tr>
+    
+            }
+        
+           
+          </tbody>
+      </table>
+        <div class="col">
+      </div>
+   
+    </div>
+  </div>
+</div>

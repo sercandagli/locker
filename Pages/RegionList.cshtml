@@ -1,0 +1,51 @@
+@page
+@model RegionListModel
+
+
+<div class="container-xxl flex-grow-2 container-p-y">
+    <div class="alert alert-success courierAlert alert-dismissible" role="alert" style="display:none">
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <div class="card">
+        <h5 class="card-header">Bölgeler</h5>
+
+
+        <div class="table-responsive text-nowrap">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>#Id</th>
+                    <th>#Bölge Adı</th>
+
+                    <th>#Son Düzenleme Tarihi</th>
+                    <th>
+                        <a href="CreateRegion">
+                            <button class="btn btn-secondary">Yeni Bölge Ekle</button>
+                        </a>
+                    </th>
+                </tr>
+                </thead>
+                <tbody class="table-border-bottom-0">
+                @foreach (var region in Model.Regions)
+                {
+                    <tr>
+                        <td>@region.Id</td>
+                        <td>@region.Name</td>
+
+                        <td>
+                            <a href="RegionDetail?id=@region.Id">
+                                <button class="btn btn-success">Detay</button>
+                            </a>
+                        </td>
+                    </tr>
+                }
+
+
+                </tbody>
+            </table>
+            <div class="col">
+            </div>
+
+        </div>
+    </div>
+</div>

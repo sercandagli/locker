@@ -1,0 +1,138 @@
+@page
+@using Locker
+@using Locker.Pages
+@using Locker.Enums
+@model OrderDetailModel
+@Html.AntiForgeryToken()
+
+<div class="container-xxl flex-grow-1 container-p-y">
+    <div class="alert alert-success adminAlert alert-dismissible" role="alert" style="display:none">
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <div class="row">
+        <div class="col-xl">
+            <div class="card mb-4" data-aos="zoom-out">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0">Sipariş Detay</h5>
+                    <small class="text-muted float-end">
+                        <button class="btn btn-secondary">Transfer Et</button>
+                    </small>
+                    <small class="text-muted float-end">
+                        <button class="btn btn-secondary sendOtpModalButton">Tekrar OTP Gönder</button>
+                    </small>
+                </div>
+                <div class="card-body">
+
+
+                    <div class="table-responsive text-nowrap">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>Metod</th>
+                                <th>Ebat</th>
+                                <th>Adet</th>
+                                <th>Ücret</th>
+                                <th>Takip No/Sipariş No</th>
+                                <th>Durum</th>
+                                <th>Gönderime Hazır</th>
+                            </tr>
+                            </thead>
+                            <tbody class="table-border-bottom-0">
+                            @foreach (var orderItem in Model.OrderDetail.OrderItems)
+                            {
+                                <tr>
+                                    <td>@Model.OrderDetail.DeliveryType.GetDeliveryType()</td>
+                                    <td>@orderItem.BoxSize</td>
+                                    <td>1</td>
+
+                                    <td>@orderItem.Amount.ToString("#.00") TL</td>
+                                    <td>@string.Format("{0}_{1}", Model.OrderDetail.Id, orderItem.Id)</td>
+                                    <td>@Html.Raw(@orderItem.Status.GetOrderItemStatus(Model.OrderDetail.DeliveryType))</td>
+                                    
+                                    @if (@orderItem.Status != (int)OrderItemStatus.Cancelled)
+                                    {
+                                        <td>
+                                            <button class="btn btn-danger  cancel-button" data="@orderItem.Id">İptal Et</button>
+                                        </td>
+                                    }
+                                </tr>
+                            }
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="sendOtpModal" tabindex="-1" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deliveryModalTitle">Tüm Paketler İçin Yeniden OTP Kodu Gönderilecektir</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col mb-3">
+                        <label for="nameBasic" class="form-label">Göndericiye Gönder</label>
+                        <input class="form-check-input" name="sendSender" type="checkbox" value="" id="defaultCheck3">
+                    </div>
+                    <div class="col mb-3">
+                        <label for="nameBasic" class="form-label">Alıcıya Gönder</label>
+                        <input class="form-check-input" name="sendReceiver" type="checkbox" value="" id="defaultCheck3">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col mb-3">
+                        <label for="nameBasic" class="form-label">Gönderici Telefon</label>
+                        <input type="text" name="senderPhone" value="@Model.OrderDetail.SenderPhone" class="form-control">
+                    </div>
+                    <div class="col mb-3">
+                        <label for="nameBasic" class="form-label">Alıcı Telefon</label>
+                        <input type="text" name="receiverPhone" value="@Model.OrderDetail.ReceiverPhone" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal"> İptal </button>
+                <button type="button" class="btn btn-primary sendOTPAgain" data="@Model.OrderDetail.Id">Gönder</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(".sendOtpModalButton").on('click',function(){
+        $("#sendOtpModal").modal("show");
+
+    });
+</script>
+<script>
+  $(".sendOTPAgain").on("click", function(){
+    var id = $(this).attr("data");
+    
+      $.ajax({
+        type: "POST",          
+        url: "/OrderDetail?Handler=SendOtp",
+        headers: { "RequestVerificationToken": $('input[name="__RequestVerificationToken"]').val() },
+        data:{"orderId":id,"phone":$("input[name='phone']").val(), "samePhone":$("input[name='samePhone']").val()},
+        success: function (result) {
+            $("#sendOtpModal").modal("hide");
+
+            $(".adminAlert").show();
+            if(result.isSuccess){
+                $(".adminAlert").removeClass("alert-danger").addClass("alert-success").text("İşlem Başarılı")
+            }else{
+                $(".adminAlert").removeClass("alert-success").addClass("alert-danger").text(result.message);
+        
+            }
+        },
+        failure: function (response) {
+            
+        }
+    });
+  });
+</script>

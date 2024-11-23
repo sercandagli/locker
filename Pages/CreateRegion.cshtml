@@ -1,0 +1,90 @@
+@page 
+@model CreateRegionModel
+<style>
+      #locker1-map {
+        height: 300px;
+      }
+
+  
+    </style>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<div class="container-xxl flex-grow-1 container-p-y">
+    <div class="row">
+        <div class="col-xl">
+            <div class="card mb-4" data-aos="zoom-out">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0">Bölge Oluştur</h5>
+                </div>
+                <div class="img-fluid" id="locker1-map"></div>
+
+                <div class="card-body">
+                    @using (Html.BeginForm(FormMethod.Post))
+                    {
+                        <div class="mb-3">
+                            <label class="form-label" for="basic-default-fullname">Ana Bölge Seç</label>
+
+                            <select class="form-control" name="regionId">
+                                @foreach (var region in Model.Regions)
+                                {
+                                    <option value="@region.Id">@region.Name</option>
+                                }
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="basic-default-fullname">Bölge Adı</label>
+                            <input type="text" class="form-control" name="Name"></input>
+                        </div>
+                        <input type="hidden" name="coordinates"/>
+                        <div class="mb-3">
+                            <button type="submit" class="form-control btn btn-primary btn-submit">Kaydet</button>
+
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+
+   var lat = "35.095192";
+   var long = "33.203430";
+      var lockermap1 = L.map('locker1-map').setView([lat, long], 11);
+      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 15,
+       
+      }).addTo(lockermap1);
+  
+      var pointArray = [];
+      var polygon = [];
+      lockermap1.on('click', function(e) {
+
+      
+        var lat = e.latlng.lat;
+        var lng = e.latlng.lng;
+        for (var i = 0; i < polygon.length; i++) {
+          lockermap1.removeLayer(polygon[i]);
+        }
+          
+       pointArray.push([lat, lng]);
+
+        var jsonString = "";
+        for (var i = 0; i < pointArray.length; i++){
+          var item = pointArray[i];
+          var lat = item[0];
+          var long = item[1];
+          jsonString += "[" +lat + ","  + long + "] ,";
+        }
+      
+        $("input[name='coordinates']").val(jsonString);
+       var p = new L.polygon(pointArray);
+       polygon.push(p);
+       this.addLayer(p);
+      });
+      
+      
+  
+      
+    </script>

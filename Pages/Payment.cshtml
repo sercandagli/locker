@@ -1,0 +1,89 @@
+@page
+@using Locker.Enums
+@model PaymentModel
+
+@{ Layout = "_MainLayout"; }
+<main class="main">
+    <section id="about-3" class="about-3 section">
+        <div class="container">
+            <div class="row gy-4 justify-content-between align-items-center">
+                <h3>Sipariş Özeti</h3>
+                <div class="col-lg-6 order-lg-2 position-relative aos-init aos-animate">
+                  
+                        <div class="mb-3">
+                            <label class="form-label">Kredi Kartı</label>
+                            <input type="text" class="form-control" name="cardNumber"></input>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Ay</label>
+                            <select class="form-control" name="month">
+                                <option value="1">01</option>
+                                <option value="2">02</option>
+                                <option value="3">03</option>
+                                <option value="4">04</option>
+                                <option value="5">05</option>
+                                <option value="6">06</option>
+                                <option value="7">07</option>
+                                <option value="8">08</option>
+                                <option value="9">09</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                            </select>
+                            <label class="form-label">Yıl</label>
+                            <select class="form-control" name="month">
+                                <option value="2024">2024</option>
+                                <option value="2025">2025</option>
+                                <option value="2026">2026</option>
+                                <option value="2027">2027</option>
+                                <option value="2028">2028</option>
+                                <option value="2029">2029</option>
+                                <option value="2030">2030</option>
+                                <option value="2031">2031</option>
+                                <option value="2032">2032</option>
+                                <option value="2033">2033</option>
+                                <option value="2034">2034</option>
+                                <option value="2035">2035</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">CVV</label>
+                            <input class="form-control" type="text" name="cvv"></input>
+                        </div>
+                        <div class="mb-3">
+
+                            <a href="orderCompleted"><button class="btn btn-dark" >Ödemeyi Tamamla</button></a>
+                        </div>
+                    
+                </div>
+                <div class="col-lg-6 order-lg-2 position-relative aos-init aos-animate">
+                    <div class="mb-3">
+                        <label class="form-label">Alıcı Adı:@Model.Order.ReceiverName</label>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Alıcı Telefon:@Model.Order.ReceiverPhone</label>
+                    </div>
+
+                    <ul>
+                        @foreach (var item in Model.Order.OrderItems.GroupBy(x => x.BoxSize))
+                        {
+                            <li>@item.Count() Adet @item.Key @item.Sum(x => x.Amount).ToString("#.00") TL</li>
+                        }
+                        <li>Toplam @Model.Order.TotalAmount.ToString("#.00") TL</li>
+                    </ul>
+                    @if (HttpContext.Session.GetInt32("IsLoggedIn") == 1 && HttpContext.Session.GetInt32("Role") == (int)UserType.Partner && (@Model.User.Credit + @Model.User.PromotionCredit) >= @Model.Order.TotalAmount)
+                    {
+                        <label class="form-label">Mevcut Kredi: @(Model.User.Credit + Model.User.PromotionCredit) (Promosyon krediler dahildir)</label>
+                        @using (Html.BeginForm())
+                        {
+                            <input type="hidden" value="true" name="payWithCredit"></input>
+                            <button type="submit"  class="btn btn-dark">Kredi ile Ödeme Yap</button>
+
+                        }  
+                    }
+                   
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

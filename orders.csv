@@ -1,0 +1,12 @@
+﻿OrderId,Address,Latitude,Longitude,GroupRegion,StopColor,CustomerNameOrCode,TimeAtStop,Phone,Notes
+
+0,,35.09563872503424,33.16651931048703,6,8,,3,,
+
+4,adres detay,35.29332025139686,33.42654065348894,1,12,Gönderici Adı,3,905073001543,sipariş notu
+
+5,merit otel,,,3,12,Merit Otel,5,905073001546,
+
+6,merit otel,,,6,12,Merit Otel,5,905073001546,
+
+7,merit otel,,,4,12,Merit Otel,5,905073001546,
+

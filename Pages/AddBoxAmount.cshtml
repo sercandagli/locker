@@ -1,0 +1,72 @@
+@page 
+@using Locker.Pages
+@model AddBoxAmountModel
+
+@Html.AntiForgeryToken()
+
+
+<div class="container-xxl flex-grow-1 container-p-y">
+    <div class="row">
+        <div class="col-xl">
+            <div class="card mb-4" data-aos="zoom-out">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0">@Model.Box.Size için Ücret Ekle</h5>
+
+                </div>
+                <div class="card-body">
+
+
+                    @using (Html.BeginForm())
+                    {
+                        <div class="row">
+                            <div class="row gy-5">
+                                <div class="col-lg-6 order-lg-2 position-relative" id="sender-div" data-aos="zoom-out">
+
+                                    <div class="mb-3">
+                                        <label class="form-label" for="basic-default-fullname">Gönderim Tipi</label>
+                                        <label id="deliveryType" class="warning-label"></label>
+                                        <select class="form-control" name="deliveryType">
+                                            <option value="1">Kargomattan Kargomata</option>
+                                            <option value="2">Kargomattan Adrese</option>
+                                            <option value="3">Adresten Kargomata</option>
+                                            <option value="4">Adresten Adrese</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label" for="basic-default-email">Kullanıcı Tipi</label>
+                                        <label id="userType" class="warning-label"></label>
+                                        <select class="form-control" name="userType">
+                                            <option value="1">Normal</option>
+                                            <option value="2">Partner</option>
+                                            <option value="3">VIP Partner</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label" for="basic-default-email">Ücret</label>
+                                        <label id="userType" class="warning-label"></label>
+                                        <input class="form-control" name="amount"></input>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label" for="basic-default-email">Promosyonlu Ücret</label>
+                                        <label id="userType" class="warning-label"></label>
+                                        <input class="form-control" name="promotionAmount"></input>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label" for="basic-default-email">Promosyon Detayı</label>
+                                        <label id="userType" class="warning-label"></label>
+                                        <input class="form-control" name="promotionDescription"></input>
+                                    </div>
+
+                                    <button class="form-control" type="submit">Kaydet</button>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

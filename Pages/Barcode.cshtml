@@ -1,0 +1,96 @@
+@page
+@model BarcodeModel
+
+@{ Layout = ""; }
+<link rel="stylesheet" href="~/assets/vendor/css/core.css" class="template-customizer-core-css"/>
+<link rel="stylesheet" href="~/assets/vendor/css/theme-default.css" class="template-customizer-theme-css"/>
+<link rel="stylesheet" href="~/assets/css/demo.css"/>
+<table class="form-table">
+    <tr >
+      
+        @if (!string.IsNullOrEmpty(Model.SLPickCode))
+        {
+            <td>
+                <div class="mb-3">
+                    <small class="form-label">Teslim Et</small>
+                    <br/>
+                    <img class="qrimg" src="https://api.qrserver.com/v1/create-qr-code/?data=@Model.SLPickCode&size=100x100" alt="" title=""/>
+                    <br/>
+                    <small class="cabinespan">@Model.SourceCabineName</small>
+                </div>
+            </td>
+        }
+        @if (!string.IsNullOrEmpty(Model.SLSaveCode))
+        {
+            <td>
+                <div class="mb-3">
+                    <small class="form-label">Teslim Al</small>
+                    <br/>
+                    <img class="qrimg" src="https://api.qrserver.com/v1/create-qr-code/?data=@Model.SLSaveCode&size=100x100" alt="" title=""/>
+                    <br/>
+
+                    <small class="cabinespan">@Model.SourceCabineName</small>
+                </div>
+            </td>
+        }
+            
+        @if (!string.IsNullOrEmpty(Model.TLSaveCode))
+        {  <td>
+                <div class="mb-3">
+                    <small class="form-label">Teslim Et</small>
+                    <br/>
+                    <img class="qrimg" src="https://api.qrserver.com/v1/create-qr-code/?data=@Model.TLSaveCode&size=100x100" alt="" title=""/>
+                    <br/>
+
+                    <small class="cabinespan">@Model.TargetCabineName</small>
+                </div>
+            </td>
+        }
+
+        @if (!string.IsNullOrEmpty(Model.TLPickCode))
+        {
+            <td>
+                <div class="mb-3">
+                    <small class="form-label">Teslim Al</small>
+                    <br/>
+                    <img class="qrimg" src="https://api.qrserver.com/v1/create-qr-code/?data=@Model.TLPickCode&size=100x100" alt="" title=""/>
+                    <br/>
+
+                    <small class="cabinespan">@Model.TargetCabineName</small>
+                </div>
+            </td>
+        }
+    </tr>
+</table>
+<table>
+    <tr>
+        <td>
+            @if (!Model.IsTransfer)
+            {
+            <h3>Transfer Siparişi -> @Model.TranferCourierName</h3>
+            }
+
+        </td>
+    </tr>
+</table>
+
+
+
+
+
+
+<style>
+    .mb-3{
+        border:1px solid;
+        }
+        .qr{
+            padding: 5px;
+            border: 1px solid;
+            width: 120px;
+            height: 120px;
+        }
+        .qrimg{
+            text-align: center;
+        }
+        
+    </style>

@@ -1,0 +1,71 @@
+@page
+@using Locker
+@using Locker.Pages
+@model CouriersModel
+@Html.AntiForgeryToken()
+
+<div class="container-xxl flex-grow-1 container-p-y">
+    <div class="row">
+        <div class="col-xl">
+            <div class="card mb-4" data-aos="zoom-out">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0">Kuryeler (@Model.Couriers.Count)</h5>
+                    <small class="text-muted float-end">
+                        <a href="addCourier"> <button class="btn btn-secondary new-courier">Yeni Kurye</button></a>
+                    </small>
+
+                </div>
+                <div class="card-body">
+
+
+                    <div class="table-responsive text-nowrap">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                
+                                <th>Ad Soyad</th>
+                                <th>Email</th>
+                                <th>Telefon</th>
+                                <th>Bölge</th>
+                                <th>İşlemler</th>
+                            </tr>
+                            </thead>
+                            <tbody class="table-border-bottom-0">
+                            @foreach (var courier in Model.Couriers)
+                            {
+                                <tr>
+                                    
+                            
+                                    <td> @courier.Name</td>
+
+                                    <td>@courier.Email</td>
+                                    <td>@courier.Phone</td>
+                                    <td>@courier.Region.Name</td>
+                                    <td>@if(courier.IsAvailable){
+                                            @:Aktif
+                                        }else{
+                                            @:Pasif
+                                        }</td>
+                                    <td>
+                                        @if (courier.IsAvailable)
+                                        {
+                                            <a href="couriers?handler=SetAvailable&courierId=@courier.Id"><button class="btn btn-primary">Pasif Yap</button></a>
+                                        }
+                                        else
+                                        {
+                                            <a href="couriers?handler=SetAvailable&courierId=@courier.Id"><button class="btn btn-primary">Aktif Yap</button></a>
+
+                                        }
+                                        <a href="editCourier?id=@courier.Id"><btn class="btn btn-success">Düzenle</btn> </a>
+                                    </td>
+                                </tr>
+                            }
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
