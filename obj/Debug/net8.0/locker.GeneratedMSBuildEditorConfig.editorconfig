@@ -18,6 +18,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /Users/macbookpro/Desktop/locker
 build_property._RazorSourceGeneratorDebug = 
 
+[/Users/macbookpro/Desktop/locker/Pages/AddBox.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRkQm94LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/macbookpro/Desktop/locker/Pages/AddBoxAmount.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRkQm94QW1vdW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
