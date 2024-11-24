@@ -21,7 +21,7 @@ public class AddBoxAmountModel : BasePageModel
 
     public async Task<IActionResult> OnGet(int boxId)
     {
-        if (_workContext.Courier == null)
+        if (_workContext.Admin == null)
             return RedirectToPage("managementLogin");
 
         using var _context = new LockerDbContext();
@@ -31,7 +31,7 @@ public class AddBoxAmountModel : BasePageModel
 
     public async Task<IActionResult> OnPost(BoxAmount boxAmount)
     {
-        if (_workContext.Courier == null)
+        if (_workContext.Admin == null)
             return RedirectToPage("managementLogin");
         using var _context = new LockerDbContext();
 

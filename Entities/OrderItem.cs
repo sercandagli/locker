@@ -6,7 +6,7 @@ public class OrderItem
     public int OrderId { get; set; }
     public string BoxSize { get; set; }
     public decimal Amount { get; set; }
-    
+    public string? ReceiverOtpCode{get;set;}
     public bool IsPrinted { get; set; }
     public int? SourceLockerId { get; set; }
     public string? SLPickCode { get; set; }

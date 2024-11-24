@@ -32,7 +32,7 @@ public class RegisterModel : BasePageModel
             Password = model.Password.HashPassword(),
             Credit = 0,
             CreatedOn = DateTime.Now,
-            Type = (int)UserType.Partner,
+            Type = (int)UserType.Commercial,
             ModifiedOn = DateTime.Now,
             PromotionCredit = 0,
             

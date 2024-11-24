@@ -136,14 +136,7 @@
                                         <input type="text" class="form-control" name="receiverPhone" id="basic-default-fullname" required/>
                                     </div>
                                 </div>
-                                <div class="mb-3">
-                                    <label class="form-label" for="basic-default-email">Alıcı Email (*)</label>
-                                    <label id="receiverEmailWarning" class="warning-label"></label>
-                                    <div class="input-group input-group-merge">
-                                        <input type="text" id="basic-default-email" class="form-control" name="receiverEmail" aria-describedby="basic-default-email2" required/>
-                                    </div>
-                                    <div class="mb-3"></div>
-                                </div>
+                        
                                 <div class="mb-3">
                                     <label class="form-label" for="basic-default-fullname">Adres Detayı</label>
                                     <input type="text" class="form-control" name="receiverAddress" id="basic-default-fullname" required/>
@@ -226,13 +219,16 @@
           }
           regionClicked = 0;
       });
-      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19
+
+      
+      L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',{
+        maxZoom: 20,
+        subdomains:['mt0','mt1','mt2','mt3']
       }).addTo(lockermap1);
       var lockermap2 = L.map('locker2-map').setView([35.095192, 33.203430], 11);
-      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-        attribution: ''
+      L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',{
+        maxZoom: 20,
+        subdomains:['mt0','mt1','mt2','mt3']
       }).addTo(lockermap2);
       var points = [];
       
@@ -250,7 +246,7 @@
     }
       $(".btn-form-submit").on("click", function(e) {
         e.preventDefault();
-          @if (HttpContext.Session.GetInt32("IsLoggedIn") != 1 && HttpContext.Session.GetInt32("Role") != (int)UserType.Partner)
+          @if (HttpContext.Session.GetInt32("IsLoggedIn") != 1 || HttpContext.Session.GetInt32("Role") != (int)UserType.Partner)
           {
               @:var box = $(".box-input").val();
               @:if (box == "" || box < 1)
@@ -300,10 +296,7 @@
           $("#receiverPhoneWarning").text(" Lütfen telefon numarasını doğru formatta girin");
           return;
         }
-        var receiverEmail = $("input[name='receiverEmail']").val();
-        if (receiverEmail.trim() != "" && isEmail(receiverEmail) == false) {
-          $("#receiverEmailWarning").text(" Lütfen geçerli bir mail adresi girin");
-        } 
+       
 
         if ($("input[name='pp']").prop('checked') == false) {
           $("#gdprWarning").text(" Lütfen sözleşmeyi kabul edin");

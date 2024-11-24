@@ -20,7 +20,7 @@ public class AddCreditModel : BasePageModel
 
     public async Task<IActionResult> OnGet(int userId)
     {
-        if (_workContext.Courier == null)
+        if (_workContext.Admin == null)
             return RedirectToPage("managementLogin");
         using var _context = new LockerDbContext();
 
@@ -33,7 +33,7 @@ public class AddCreditModel : BasePageModel
     
     public async Task<IActionResult> OnPost(User user)
     {
-        if (_workContext.Courier == null)
+        if (_workContext.Admin == null)
             return RedirectToPage("managementLogin");
         using var _context = new LockerDbContext();
 

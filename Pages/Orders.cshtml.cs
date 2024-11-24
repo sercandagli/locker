@@ -33,8 +33,8 @@ public class OrdersModel : BasePageModel
         using var _context = new LockerDbContext();
 
         var ordersQuery =  _context.Orders.Include(x => x.OrderItems)
-            .Include(x => x.Courier)
             .Where(x => x.Status == (int)OrderStatus.Continue).AsQueryable();
+
         if (isTransfer.HasValue)
         {
             ordersQuery = ordersQuery.Where(x => x.IsTransferred == true);
@@ -68,7 +68,7 @@ public class OrdersModel : BasePageModel
         if (_workContext.Admin == null)
             return;
         await using var _context = new LockerDbContext();
-        var orders = await _context.Orders.Where(x => model.OrderIds.Contains(x.Id) && !x.IsTransferred).ToListAsync();
+        var orders = await _context.Orders.Where(x => model.OrderIds.Contains(x.Id) && !x.IsTransferred && x.Status == (int)OrderStatus.Continue).ToListAsync();
 
         foreach (var order in orders)
         {
@@ -104,7 +104,7 @@ public class OrdersModel : BasePageModel
 
         var sourceLockerBasedGroupQuery = orderModel.Where(x =>
                 x.DeliveryType is (int)DeliveryType.LockerToAddress or (int)DeliveryType.LockerToLocker
-                && x.OrderItems.Any(x => x.Status == (int)OrderItemStatus.AtSourceCabine)).SelectMany(x => x.OrderItems)
+                && x.OrderItems.Any(x => x.Status == (int)OrderItemStatus.AtSourceCabine) && !x.IsTransferred).SelectMany(x => x.OrderItems)
             .ToList();
 
 
@@ -127,7 +127,7 @@ public class OrdersModel : BasePageModel
         
         var targetLockerBasedGroupQuery = orderModel.Where(x =>
                 x.DeliveryType is (int)DeliveryType.AddressToLocker or (int)DeliveryType.LockerToLocker
-                && x.OrderItems.Any(x => x.Status == (int)OrderItemStatus.AtCourier)).SelectMany(x => x.OrderItems)
+                && x.OrderItems.Any(x => x.Status == (int)OrderItemStatus.AtCourier) && !x.IsTransferred).SelectMany(x => x.OrderItems)
             .ToList();
 
         var targetLockerBasedGroups = targetLockerBasedGroupQuery.GroupBy(x => x.TargetLockerId);
@@ -152,7 +152,7 @@ public class OrdersModel : BasePageModel
 
         var fromAddressBasedGroupsQuery = orderModel.Where(x =>
                 x.DeliveryType is (int)DeliveryType.AddressToLocker or (int)DeliveryType.AddressToAddress
-                && x.OrderItems.Any(x => x.Status == (int)OrderItemStatus.OrderCreated)).SelectMany(x => x.OrderItems)
+                && x.OrderItems.Any(x => x.Status == (int)OrderItemStatus.OrderCreated) && !x.IsTransferred).SelectMany(x => x.OrderItems)
             .ToList();
 
 
@@ -180,7 +180,7 @@ public class OrdersModel : BasePageModel
         
         var toAddressBasedGroupsQuery = orderModel.Where(x =>
                 x.DeliveryType is (int)DeliveryType.LockerToAddress or (int)DeliveryType.AddressToAddress
-                && x.OrderItems.Any(x => x.Status == (int)OrderItemStatus.AtCourier)).SelectMany(x => x.OrderItems)
+                && x.OrderItems.Any(x => x.Status == (int)OrderItemStatus.AtCourier)&& !x.IsTransferred).SelectMany(x => x.OrderItems)
             .ToList();
 
 
@@ -202,6 +202,21 @@ public class OrdersModel : BasePageModel
                 OrderId = order.Id
             });
         }
+
+         var transferOrderQuery = orderModel.Where(x => x.IsTransferred && !x.IsTransferCompleted).SelectMany(x => x.OrderItems)
+            .ToList();
+
+
+            var transferPoint = await _context.TransferPoints.FirstOrDefaultAsync();
+            orderCsvModel.Add(new OrderCsvModel()
+            {
+                Latitude = transferPoint.Lat,
+                Longitude = transferPoint.Long,
+                TimeAtStop = 3,
+                GroupRegion = transferOrderQuery.Count(),
+                StopColor = 20
+           
+            });
         
         
         

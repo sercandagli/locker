@@ -29,6 +29,9 @@ public class AuthenticationMiddleware : IMiddleware
             }else if (context.Session.GetInt32("CourierId") is not null && context.Session.GetInt32("CourierId") != 0)
             {
                 this._context.Courier = await _context.Couriers.FirstOrDefaultAsync( x=> x.Id == context.Session.GetInt32("CourierId"));
+            }else if (context.Session.GetInt32("AdminId") is not null && context.Session.GetInt32("AdminId") != 0)
+            {
+                this._context.Admin = await _context.Admins.FirstOrDefaultAsync( x=> x.Id == context.Session.GetInt32("AdminId"));
             }
             
 

@@ -49,6 +49,8 @@ public class UserOrderDetailModel : BasePageModel
         var orderItems = await _context.OrderItems.Where(x => x.OrderId == orderItem.Order.Id).ToListAsync();
         if (orderItems.Where(x => x.Id != orderItemId).All(x => x.Status == (int)OrderItemStatus.Cancelled))
             orderItem.Order.Status = (int)OrderStatus.Cancelled;
+        else if(orderItems.Where(x => x.Id != orderItemId).All(x => x.Status == (int)OrderItemStatus.Delivered))
+            orderItem.Order.Status = (int)OrderStatus.Completed;
 
         await _context.SaveChangesAsync();
 

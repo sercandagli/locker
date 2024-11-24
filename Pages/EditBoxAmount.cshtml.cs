@@ -37,7 +37,7 @@ public class EditBoxAmountModel : BasePageModel
         BoxAmount.PromotionAmount = boxAmount.PromotionAmount;
         BoxAmount.PromotionDescription = boxAmount.PromotionDescription;
         BoxAmount.ModifiedOn = DateTime.Now;
-        BoxAmount.IsPromotionActive = boxAmount.PromotionAmount != decimal.Zero;
+        BoxAmount.IsPromotionActive = boxAmount.PromotionAmount != null && boxAmount.PromotionAmount != decimal.Zero;
         await _context.SaveChangesAsync();
 
         return RedirectToPage("BoxAmountList", new { boxId = BoxAmount.BoxId });

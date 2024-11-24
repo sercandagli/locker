@@ -22,7 +22,7 @@ public class OrderDetailModel : BasePageModel
 
     public Order OrderDetail{get;set;}
     public async Task<IActionResult> OnGet(int id){
-        if (_workContext.Courier == null)
+        if (_workContext.Admin == null)
             return RedirectToPage("managementLogin");
         using var _context = new LockerDbContext();
         OrderDetail = await _context.Orders.Include(x => x.OrderItems).FirstOrDefaultAsync(x => x.Id == id);
@@ -31,20 +31,26 @@ public class OrderDetailModel : BasePageModel
 
 
 
-    public async Task OnPostCancelOrderItem(int orderItemId)
+    public async Task OnPostCancelOrderItem(AdminOrderItemCancelModel model)
     {
         if (_workContext.Admin == null)
             return;
         using var _context = new LockerDbContext();
 
-        var orderItem = await _context.OrderItems.FirstOrDefaultAsync(x => x.Id == orderItemId);
+        var orderItem = await _context.OrderItems.FirstOrDefaultAsync(x => x.Id == model.OrderItemId);
 
         var orderItemAmount = orderItem.Amount;
 
         var order = await _context.Orders.FirstOrDefaultAsync(x => x.Id == orderItem.OrderId);
-
+        var allOrderItems = await _context.OrderItems.Where(x => x.OrderId == order.Id).ToListAsync();
         order.TotalAmount -= orderItemAmount;
 
+        if(allOrderItems.Where(x => x.Id != orderItem.Id).All(x => x.Status == (int)OrderItemStatus.Cancelled)){
+            order.Status = (int)OrderStatus.Cancelled;
+        }else if(allOrderItems.Where(x => x.Id != orderItem.Id).All(x => x.Status == (int)OrderItemStatus.Delivered))
+        {
+            order.Status = (int)OrderStatus.Completed;
+        }
         orderItem.Status = (int)OrderItemStatus.Cancelled;
         orderItem.Amount = decimal.Zero;
 
@@ -99,6 +105,8 @@ public class OrderDetailModel : BasePageModel
 
 
     }
+
+    
 
 
     private void SendOtp(string phone,string code)

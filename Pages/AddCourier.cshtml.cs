@@ -19,7 +19,7 @@ public class AddCourierModel : BasePageModel
 
     public async Task<IActionResult> OnGet()
     {
-        if (_workContext.Courier == null)
+        if (_workContext.Admin == null)
             return RedirectToPage("managementLogin");
         using var _context = new LockerDbContext();
 
@@ -29,7 +29,7 @@ public class AddCourierModel : BasePageModel
 
     public async Task<IActionResult> OnPost(Courier courier)
     {
-        if (_workContext.Courier == null)
+        if (_workContext.Admin == null)
             return RedirectToPage("managementLogin");
         using var _context = new LockerDbContext();
         courier.Password = courier.Password.HashPassword();

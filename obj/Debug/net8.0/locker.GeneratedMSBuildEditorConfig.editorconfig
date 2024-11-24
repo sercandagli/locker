@@ -126,6 +126,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/macbookpro/Desktop/locker/Pages/Logout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTG9nb3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/macbookpro/Desktop/locker/Pages/ManagementLogin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTWFuYWdlbWVudExvZ2luLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

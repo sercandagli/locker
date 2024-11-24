@@ -70,6 +70,12 @@
                                             <button type="button" class="btn btn-primary courierDeliveryButton" data-oid="@orderItem.Id" data-otype="@Model.Order.DeliveryType"> Teslim Et </button>
                                         </td>
                                     }
+                                     @if ((orderItem.Order.DeliveryType ==(int)DeliveryType.AddressToAddress || orderItem.Order.DeliveryType == (int)DeliveryType.AddressToLocker) && orderItem.Status == (int)OrderItemStatus.OrderCreated)
+                                    {
+                                        <td>
+                                            <button type="button" class="btn btn-primary courierTakeButton" data-oid="@orderItem.Id" data-otype="@Model.Order.DeliveryType"> Teslim Al </button>
+                                        </td>
+                                    }
 
                                 </tr>
                             }
@@ -119,8 +125,63 @@
             </div>
         </div>
     </div>
+       <div class="modal fade" id="takeModalWithOtp" tabindex="-1" style="display: none;" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deliveryModalTitle">Lütfen 4 haneli teslimat kodunu giriniz</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col mb-3">
+                            <label for="nameBasic" class="form-label">4 Haneli Kod</label>
+                            <input type="text" id="takeOtpCode" class="form-control" placeholder="OTP">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal"> İptal </button>
+                    <button type="button" class="btn btn-primary courierTakeDeliveryButton">Kaydet</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <script>
+
+      $(".courierTakeButton").on('click',function(){
+        var orderId = $(this).attr("data-oid");
+        var orderType = $(this).attr("data-otype");
+        $(".oid-hidden").text(orderId);
+       
+            $("#takeModalWithOtp").modal("show");
+       
+    });
+
+    $(".courierTakeDeliveryButton").on('click', function(){
+        $.ajax({
+            type: "POST",
+            url: "/CourierOrderDetail?Handler=TakeDelivery",
+            headers: { "RequestVerificationToken": $('input[name="__RequestVerificationToken"]').val() },
+            data:{"OrderItemId":$(".oid-hidden").text(), "OtpCode":$("#takeOtpCode").val()},
+            success: function (result) {
+                $(".courierAlert").show();
+                if(result.isSuccess){
+                    $(".courierAlert").removeClass("alert-danger").addClass("alert-success").text("İşlem Başarılı")
+                    $("#takeModalWithOtp").modal("hide");
+                }else{
+                    $(".courierAlert").removeClass("alert-success").addClass("alert-danger").text(result.message);
+                    $("#takeModalWithOtp").modal("hide");
+                }
+            },
+            failure: function (response) {
+                $(".courierAlert").show();
+
+                console.log(response);
+            }
+        });
+    });
 
     $(".courierDeliveryButton").on('click',function(){
         var orderId = $(this).attr("data-oid");

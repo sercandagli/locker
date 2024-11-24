@@ -61,7 +61,7 @@ public class CourierOrdersModel : BasePageModel
         Orders = await ordersQuery.ToListAsync();
         var excepts = Orders.Where(x =>
             (x.DeliveryType == (int)DeliveryType.LockerToLocker || x.DeliveryType == (int)DeliveryType.LockerToAddress) &&
-            x.OrderItems.FirstOrDefault(x => x.Status != (int)OrderItemStatus.Cancelled).Status == (int)OrderItemStatus.OrderCreated).ToList();
+            x.OrderItems.FirstOrDefault(x => x.Status != (int)OrderItemStatus.Cancelled)?.Status == (int)OrderItemStatus.OrderCreated).ToList();
 
 
         var newOrderList = new List<Order>();

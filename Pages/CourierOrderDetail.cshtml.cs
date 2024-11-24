@@ -29,6 +29,41 @@ public class CourierOrderDetailModel : BasePageModel
         return Page();
     }
 
+      public async Task<IActionResult> OnPostTakeDelivery(SetDeliveryModel model)
+    {
+        if (_workContext.Courier == null)
+            return RedirectToPage("courierLogin");
+        
+        using var _context = new LockerDbContext();
+        var orderItem = await _context.OrderItems.FirstOrDefaultAsync(x => x.Id == model.OrderItemId);
+        if (orderItem == null)
+            return
+                new JsonResult(new
+                {
+                    Message = "Teslim Alınacak Sipariş Bulunamadı",
+                    IsSuccess = false,
+                });
+
+        if (!string.IsNullOrEmpty(orderItem.OtpCode) && orderItem.OtpCode != model.OTPCode)
+            return new JsonResult(new
+
+            {
+                Message = "OTP Kodu Yanlış",
+                IsSuccess = false,
+            });
+
+        orderItem.Status = (int)OrderItemStatus.AtCourier;
+        orderItem.ModifiedOn = DateTime.Now;
+        await _context.SaveChangesAsync();
+
+    
+
+        return new JsonResult(new
+        {
+            IsSuccess = true
+        });
+    }
+
 
     public async Task<IActionResult> OnPostSetDelivery(SetDeliveryModel model)
     {
@@ -46,8 +81,9 @@ public class CourierOrderDetailModel : BasePageModel
                 });
 
         var allOrderItems = await _context.OrderItems.Where(x => x.OrderId == orderItem.OrderId).ToListAsync();
-
-        if (!string.IsNullOrEmpty(orderItem.OtpCode) && orderItem.OtpCode != model.OTPCode)
+        var order = await _context.Orders.FirstOrDefaultAsync(x => x.Id == orderItem.OrderId);
+     
+        if (!string.IsNullOrEmpty(orderItem.ReceiverOtpCode) && orderItem.ReceiverOtpCode != model.OTPCode)
             return new JsonResult(new
 
             {
@@ -66,7 +102,6 @@ public class CourierOrderDetailModel : BasePageModel
             });
 
 
-        var order = await _context.Orders.FirstOrDefaultAsync(x => x.Id == orderItem.OrderId);
         order.Status = (int)OrderStatus.Completed;
         order.ModifiedOn = DateTime.Now;
 

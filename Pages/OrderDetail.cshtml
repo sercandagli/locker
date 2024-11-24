@@ -14,9 +14,7 @@
             <div class="card mb-4" data-aos="zoom-out">
                 <div class="card-header d-flex justify-content-between align-items-center">
                     <h5 class="mb-0">Sipariş Detay</h5>
-                    <small class="text-muted float-end">
-                        <button class="btn btn-secondary">Transfer Et</button>
-                    </small>
+        
                     <small class="text-muted float-end">
                         <button class="btn btn-secondary sendOtpModalButton">Tekrar OTP Gönder</button>
                     </small>
@@ -47,7 +45,7 @@
 
                                     <td>@orderItem.Amount.ToString("#.00") TL</td>
                                     <td>@string.Format("{0}_{1}", Model.OrderDetail.Id, orderItem.Id)</td>
-                                    <td>@Html.Raw(@orderItem.Status.GetOrderItemStatus(Model.OrderDetail.DeliveryType))</td>
+                                    <td>@Html.Raw(@orderItem.Status.GetAdminOrderStatus(Model.OrderDetail.DeliveryType))</td>
                                     
                                     @if (@orderItem.Status != (int)OrderItemStatus.Cancelled)
                                     {
@@ -129,6 +127,24 @@
                 $(".adminAlert").removeClass("alert-success").addClass("alert-danger").text(result.message);
         
             }
+        },
+        failure: function (response) {
+            
+        }
+    });
+  });
+
+    $(".cancel-button").on("click", function(){
+    var id = $(this).attr("data");
+    
+      $.ajax({
+        type: "POST",          
+        url: "/OrderDetail?Handler=CancelOrderItem",
+        headers: { "RequestVerificationToken": $('input[name="__RequestVerificationToken"]').val() },
+        data:{"orderItemId":id},
+        success: function (result) {
+            location.reload();
+       
         },
         failure: function (response) {
             

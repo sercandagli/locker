@@ -14,10 +14,10 @@
                         <button class="btn btn-primary">Transfer</button>
                     </a>
                     <a href="orders?orderType=3">
-                        <button class="btn btn-primary">VIP</button>
+                        <button class="btn btn-primary">Partneer</button>
                     </a>
                     <a href="orders?orderType=2">
-                        <button class="btn btn-primary">Partner</button>
+                        <button class="btn btn-primary">Kurumsal</button>
                     </a>
                     <a href="orders?orderType=1">
                         <button class="btn btn-primary">Normal</button>
@@ -106,7 +106,13 @@
                                             @:Transfer Edildi
                                         }
                                     </td>
-                                    <td>@order.Courier.Name</td>
+                                    @if(order.CourierId != 0){
+                                     <td>@Model.Couriers.FirstOrDefault(x => x.Id == order.CourierId).Name </td>
+
+                                    }else{
+                                        <td>&nbsp;</td>
+
+                                    }
 
                                     <td>@order.ModifiedOn</td>
                                     <td>
@@ -151,7 +157,7 @@
             type: "POST",
             url: "/Orders?Handler=Transfer",
             headers: { "RequestVerificationToken": $('input[name="__RequestVerificationToken"]').val() },
-            data:{"orderIds":idArray,"courierId":2},
+            data:{"orderIds":idArray},
             success: function (result) {
                 let url = window.location.href;
                 if (url.indexOf('?') > -1){
