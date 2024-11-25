@@ -9,6 +9,186 @@
       "PackagePath": "staticwebassets/assets/css/demo.css"
     },
     {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/app.js",
+      "PackagePath": "staticwebassets/assets/design/app.js"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/fonts/.gitkeep",
+      "PackagePath": "staticwebassets/assets/design/fonts/.gitkeep"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/fonts/JumboSaleTrial.woff",
+      "PackagePath": "staticwebassets/assets/design/fonts/JumboSaleTrial.woff"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/fonts/JumboSaleTrial.woff2",
+      "PackagePath": "staticwebassets/assets/design/fonts/JumboSaleTrial.woff2"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/fonts/Montserrat-Bold.woff",
+      "PackagePath": "staticwebassets/assets/design/fonts/Montserrat-Bold.woff"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/fonts/Montserrat-Bold.woff2",
+      "PackagePath": "staticwebassets/assets/design/fonts/Montserrat-Bold.woff2"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/fonts/Montserrat-Medium.woff",
+      "PackagePath": "staticwebassets/assets/design/fonts/Montserrat-Medium.woff"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/fonts/Montserrat-Medium.woff2",
+      "PackagePath": "staticwebassets/assets/design/fonts/Montserrat-Medium.woff2"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/fonts/Montserrat-Regular.woff",
+      "PackagePath": "staticwebassets/assets/design/fonts/Montserrat-Regular.woff"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/fonts/Montserrat-Regular.woff2",
+      "PackagePath": "staticwebassets/assets/design/fonts/Montserrat-Regular.woff2"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/fonts/Now-Bold.woff",
+      "PackagePath": "staticwebassets/assets/design/fonts/Now-Bold.woff"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/fonts/Now-Bold.woff2",
+      "PackagePath": "staticwebassets/assets/design/fonts/Now-Bold.woff2"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/fonts/Now-Medium.woff",
+      "PackagePath": "staticwebassets/assets/design/fonts/Now-Medium.woff"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/fonts/Now-Medium.woff2",
+      "PackagePath": "staticwebassets/assets/design/fonts/Now-Medium.woff2"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/fonts/Now-Regular.woff",
+      "PackagePath": "staticwebassets/assets/design/fonts/Now-Regular.woff"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/fonts/Now-Regular.woff2",
+      "PackagePath": "staticwebassets/assets/design/fonts/Now-Regular.woff2"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/fonts/NowAlt-Bold.woff",
+      "PackagePath": "staticwebassets/assets/design/fonts/NowAlt-Bold.woff"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/fonts/NowAlt-Bold.woff2",
+      "PackagePath": "staticwebassets/assets/design/fonts/NowAlt-Bold.woff2"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/fonts/NowAlt-Medium.woff",
+      "PackagePath": "staticwebassets/assets/design/fonts/NowAlt-Medium.woff"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/fonts/NowAlt-Medium.woff2",
+      "PackagePath": "staticwebassets/assets/design/fonts/NowAlt-Medium.woff2"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/fonts/NowAlt-Regular.woff",
+      "PackagePath": "staticwebassets/assets/design/fonts/NowAlt-Regular.woff"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/fonts/NowAlt-Regular.woff2",
+      "PackagePath": "staticwebassets/assets/design/fonts/NowAlt-Regular.woff2"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/favicon32x32.png",
+      "PackagePath": "staticwebassets/assets/design/images/favicon32x32.png"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/logo.svg",
+      "PackagePath": "staticwebassets/assets/design/images/logo.svg"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/.gitkeep",
+      "PackagePath": "staticwebassets/assets/design/images/svg/.gitkeep"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/facebook.svg",
+      "PackagePath": "staticwebassets/assets/design/images/svg/facebook.svg"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/instagram.svg",
+      "PackagePath": "staticwebassets/assets/design/images/svg/instagram.svg"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/nav-decoration-blue.svg",
+      "PackagePath": "staticwebassets/assets/design/images/svg/nav-decoration-blue.svg"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/nav-decoration-blue2.svg",
+      "PackagePath": "staticwebassets/assets/design/images/svg/nav-decoration-blue2.svg"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/nav-decoration-red.svg",
+      "PackagePath": "staticwebassets/assets/design/images/svg/nav-decoration-red.svg"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/nav-decoration-red2.svg",
+      "PackagePath": "staticwebassets/assets/design/images/svg/nav-decoration-red2.svg"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/nav-decoration-red3.svg",
+      "PackagePath": "staticwebassets/assets/design/images/svg/nav-decoration-red3.svg"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/nav-decoration-yellow.svg",
+      "PackagePath": "staticwebassets/assets/design/images/svg/nav-decoration-yellow.svg"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/nav-decoration-yellow2.svg",
+      "PackagePath": "staticwebassets/assets/design/images/svg/nav-decoration-yellow2.svg"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/nav-decoration.svg",
+      "PackagePath": "staticwebassets/assets/design/images/svg/nav-decoration.svg"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/socials-decoration.svg",
+      "PackagePath": "staticwebassets/assets/design/images/svg/socials-decoration.svg"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/whatsapp-2.svg",
+      "PackagePath": "staticwebassets/assets/design/images/svg/whatsapp-2.svg"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/whatsapp.svg",
+      "PackagePath": "staticwebassets/assets/design/images/svg/whatsapp.svg"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/temp/.gitkeep",
+      "PackagePath": "staticwebassets/assets/design/images/temp/.gitkeep"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/temp/banner-img1.png",
+      "PackagePath": "staticwebassets/assets/design/images/temp/banner-img1.png"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/temp/banner-img2.png",
+      "PackagePath": "staticwebassets/assets/design/images/temp/banner-img2.png"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/temp/banner-img3.png",
+      "PackagePath": "staticwebassets/assets/design/images/temp/banner-img3.png"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/temp/banner-img4.png",
+      "PackagePath": "staticwebassets/assets/design/images/temp/banner-img4.png"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/style.css",
+      "PackagePath": "staticwebassets/assets/design/style.css"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/vendor/jquery-3.7.1.min.js",
+      "PackagePath": "staticwebassets/assets/design/vendor/jquery-3.7.1.min.js"
+    },
+    {
       "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/img/avatars/1.png",
       "PackagePath": "staticwebassets/assets/img/avatars/1.png"
     },

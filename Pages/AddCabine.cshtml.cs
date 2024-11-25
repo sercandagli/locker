@@ -18,7 +18,7 @@ public class AddCabineModel : BasePageModel
     public List<Region> Regions { get; set; }
     public async Task<IActionResult> OnGet()
     {
-        if (_workContext.Courier == null)
+        if (_workContext.Admin == null)
             return RedirectToPage("managementLogin");
         using var _context = new LockerDbContext();
         Regions = await _context.Regions.ToListAsync();
@@ -27,7 +27,7 @@ public class AddCabineModel : BasePageModel
 
     public async Task<IActionResult> OnPost(Cabine cabine)
     {
-        if (_workContext.Courier == null)
+        if (_workContext.Admin == null)
             return RedirectToPage("managementLogin");
         using var _context = new LockerDbContext();
         cabine.ModifiedOn = DateTime.Now;
