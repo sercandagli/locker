@@ -62,11 +62,11 @@ public class OrdersModel : BasePageModel
          return Page();
     }
 
-    public async Task OnPostTransfer(TransferOrderModel model)
+    public async Task<IActionResult> OnPostTransfer(TransferOrderModel model)
     {
 
         if (_workContext.Admin == null)
-            return;
+            return RedirectToPage("managementLogin");
         await using var _context = new LockerDbContext();
         var orders = await _context.Orders.Where(x => model.OrderIds.Contains(x.Id) && !x.IsTransferred && x.Status == (int)OrderStatus.Continue).ToListAsync();
 
@@ -85,6 +85,7 @@ public class OrdersModel : BasePageModel
             .OrderByDescending(x => x.ModifiedOn)
             .ToListAsync();
 
+        return RedirectToPage("orders");
     }
     
     public async Task<IActionResult> OnGetExportCsv()

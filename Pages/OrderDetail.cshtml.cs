@@ -29,7 +29,38 @@ public class OrderDetailModel : BasePageModel
         return Page();
     }
 
+    public async Task<IActionResult> OnPostChangeStatus(ChangeStatusModel model)
+    {
+        if (_workContext.Admin == null)
+            return RedirectToPage("managementLogin");
+        using var _context = new LockerDbContext();
+        var orderItem = await _context.OrderItems.FirstOrDefaultAsync(x => x.Id == model.OrderItemId);
+        if (orderItem == null)
+        {
+            return new JsonResult(new
+            {
+                Message = "Sipariş bulunamadı"
+            });
+        }
+        var order = await _context.Orders.Include(x => x.OrderItems).FirstOrDefaultAsync(x => x.Id == orderItem.OrderId);
+        
+        orderItem.Status = model.Status;
+        if (model.Status == (int)OrderItemStatus.Delivered)
+        {
+            if (order.OrderItems.Where(x => x.Id != model.OrderItemId)
+                .All(x => x.Status == (int)OrderItemStatus.Delivered))
+            {
+                order.Status = (int)OrderStatus.Completed;
+            }
+        }
+        orderItem.ModifiedOn = DateTime.Now;
+        await _context.SaveChangesAsync();
 
+        return new JsonResult(new
+        {
+            isSuccess = true
+        });
+    }
 
     public async Task OnPostCancelOrderItem(AdminOrderItemCancelModel model)
     {

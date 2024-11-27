@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "k31xcTH08silaO+cqcQv9zcT89HHfSbg7nOhQKu0KMk=",
+  "Hash": "R33LBOxX6IhEbQBN8a91MY3U+loX3Oepo4uZnaSb+hM=",
   "Source": "locker",
   "BasePath": "_content/locker",
   "Mode": "Default",
@@ -511,6 +511,25 @@
       "OriginalItemSpec": "wwwroot/assets/design/images/favicon32x32.png"
     },
     {
+      "Identity": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/logo-alt.svg",
+      "SourceId": "locker",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/macbookpro/Desktop/locker/wwwroot/",
+      "BasePath": "_content/locker",
+      "RelativePath": "assets/design/images/logo-alt.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/assets/design/images/logo-alt.svg"
+    },
+    {
       "Identity": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/logo.svg",
       "SourceId": "locker",
       "SourceType": "Discovered",
@@ -585,6 +604,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/assets/design/images/svg/instagram.svg"
+    },
+    {
+      "Identity": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/logo-decoration.svg",
+      "SourceId": "locker",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/macbookpro/Desktop/locker/wwwroot/",
+      "BasePath": "_content/locker",
+      "RelativePath": "assets/design/images/svg/logo-decoration.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/assets/design/images/svg/logo-decoration.svg"
     },
     {
       "Identity": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/nav-decoration-blue.svg",

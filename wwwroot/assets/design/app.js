@@ -52,9 +52,18 @@ const observer = new IntersectionObserver(observerCallback, {
   rootMargin: "-30%"
 });
 $(window).on("load", () => {
-  $(".js-animate").each((index, element) => {
-    observer.observe(element);
-  });
+  setTimeout(() => {
+    $(".js-animate").each((index, element) => {
+      observer.observe(element);
+    });
+  }, 500);
+});
+$(window).on("load", () => {
+  const $loadingWrapper = $(".js-loading-wrapper");
+  $loadingWrapper.addClass("page-loaded");
+  setTimeout(() => {
+    $loadingWrapper.addClass("hidden");
+  }, 300);
 });
 const $header = $(".js-header");
 const handleNavTriggerClick = (event) => {

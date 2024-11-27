@@ -101,6 +101,10 @@
       "PackagePath": "staticwebassets/assets/design/images/favicon32x32.png"
     },
     {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/logo-alt.svg",
+      "PackagePath": "staticwebassets/assets/design/images/logo-alt.svg"
+    },
+    {
       "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/logo.svg",
       "PackagePath": "staticwebassets/assets/design/images/logo.svg"
     },
@@ -115,6 +119,10 @@
     {
       "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/instagram.svg",
       "PackagePath": "staticwebassets/assets/design/images/svg/instagram.svg"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/logo-decoration.svg",
+      "PackagePath": "staticwebassets/assets/design/images/svg/logo-decoration.svg"
     },
     {
       "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/nav-decoration-blue.svg",

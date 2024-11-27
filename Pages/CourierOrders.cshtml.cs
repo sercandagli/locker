@@ -2,6 +2,7 @@ using Locker;
 using Locker.Data;
 using Locker.Entities;
 using Locker.Enums;
+using Locker.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -23,7 +24,7 @@ public class CourierOrdersModel : BasePageModel
     public List<Cabine> Cabines{get;set;}
     public List<Order> Orders { get; set; }
 
-    public async Task<IActionResult> OnGet(int deliveryAddressType,int regionId, int cabineId, int orderId)
+    public async Task<IActionResult> OnGet(int deliveryAddressType,int regionId, int cabineId, int orderId,int isTransfer)
     {
         if (_workContext.Courier == null)
             return RedirectToPage("courierLogin");
@@ -57,6 +58,12 @@ public class CourierOrdersModel : BasePageModel
                 x.OrderItems.FirstOrDefault().SourceLockerId == cabineId ||
                 x.OrderItems.FirstOrDefault().TargetLockerId == cabineId);
         }
+
+        if (isTransfer != 0)
+        {
+            ordersQuery = ordersQuery.Where(x =>
+               x.IsTransferred && !x.IsTransferCompleted);
+        }
         
         Orders = await ordersQuery.ToListAsync();
         var excepts = Orders.Where(x =>
@@ -79,6 +86,25 @@ public class CourierOrdersModel : BasePageModel
         SaveCount = newOrderList.Count - TakeCount;
         Orders = newOrderList;
         return Page();
+    }
+
+    public async Task<IActionResult> OnPostCompleteTransfers(TransferOrderModel model)
+    {
+        if (_workContext.Courier == null)
+            return RedirectToPage("courierLogin");
+
+        using var _context = new LockerDbContext();
+        var ordersQuery = _context.Orders.Where(x => model.OrderIds.Contains(x.Id) && x.IsTransferred);
+        await ordersQuery.ForEachAsync(x =>
+        {
+            x.IsTransferCompleted = true;
+            x.ModifiedOn = DateTime.Now;
+        });
+        await _context.SaveChangesAsync();
+        return new JsonResult(new
+        {
+            IsSuccess = true
+        });
     }
 
 }

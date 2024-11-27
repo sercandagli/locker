@@ -14,7 +14,7 @@
             <div class="card mb-4" data-aos="zoom-out">
                 <div class="card-header d-flex justify-content-between align-items-center">
                     <h5 class="mb-0">Sipariş Detay</h5>
-        
+
                     <small class="text-muted float-end">
                         <button class="btn btn-secondary sendOtpModalButton">Tekrar OTP Gönder</button>
                     </small>
@@ -46,11 +46,15 @@
                                     <td>@orderItem.Amount.ToString("#.00") TL</td>
                                     <td>@string.Format("{0}_{1}", Model.OrderDetail.Id, orderItem.Id)</td>
                                     <td>@Html.Raw(@orderItem.Status.GetAdminOrderStatus(Model.OrderDetail.DeliveryType))</td>
-                                    
+
                                     @if (@orderItem.Status != (int)OrderItemStatus.Cancelled)
                                     {
                                         <td>
                                             <button class="btn btn-danger  cancel-button" data="@orderItem.Id">İptal Et</button>
+                                        </td>
+                                        <td>
+                                        
+                                            <button class="btn btn-success changeStatusButton" data="@orderItem.Id">Durum Güncelle</button>
                                         </td>
                                     }
                                 </tr>
@@ -102,11 +106,77 @@
     </div>
 </div>
 
+<div class="modal fade" id="changeStatus" tabindex="-1" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deliveryModalTitle">Sipariş Durumunu Güncelle</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col mb-3">
+                        <label for="nameBasic" class="form-label">Durum</label>
+                        <select class="form-control" name="status">
+                            <option value="1">Sipariş Oluşturuldu</option>
+                            <option value="2">Otomata Bırakıldı</option>
+                            <option value="3">Kurye Teslim Aldı</option>
+                            <option value="4">Hedef Otomata Bırakıldı</option>
+                            <option value="5">Teslim Edildi</option>
+
+                        </select>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal"> İptal </button>
+                <button type="button" class="btn btn-primary saveOrderStatus">Gönder</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <script>
+    $(".changeStatusButton").on('click',function(){
+        $("#changeStatus").modal("show");
+        $(".saveOrderStatus").attr("data", $(this).attr("data"));
+
+    });
+
+    $(".saveOrderStatus").on("click", function(){
+        var id = $(this).attr("data");
+        var status = $("select[name='status']").val();
+        $.ajax({
+            type: "POST",
+            url: "/OrderDetail?Handler=ChangeStatus",
+            headers: { "RequestVerificationToken": $('input[name="__RequestVerificationToken"]').val() },
+            data:{"orderItemId":id,"status":status},
+            success: function (result) {
+                $("#changeStatus").modal("hide");
+
+                $(".adminAlert").show();
+                if(result.isSuccess){
+                    $(".adminAlert").removeClass("alert-danger").addClass("alert-success").text("İşlem Başarılı");
+                    location.reload();
+                }else{
+                    $(".adminAlert").removeClass("alert-success").addClass("alert-danger").text(result.message);
+
+                }
+            },
+            failure: function (response) {
+
+            }
+        });
+    });
+
     $(".sendOtpModalButton").on('click',function(){
         $("#sendOtpModal").modal("show");
 
     });
+
 </script>
 <script>
   $(".sendOTPAgain").on("click", function(){
@@ -116,7 +186,7 @@
         type: "POST",          
         url: "/OrderDetail?Handler=SendOtp",
         headers: { "RequestVerificationToken": $('input[name="__RequestVerificationToken"]').val() },
-        data:{"orderId":id,"phone":$("input[name='phone']").val(), "samePhone":$("input[name='samePhone']").val()},
+        data:{"orderId":id, "samePhone":$("input[name='samePhone']").val()},
         success: function (result) {
             $("#sendOtpModal").modal("hide");
 

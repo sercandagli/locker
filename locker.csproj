@@ -14,4 +14,28 @@
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.2.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="wwwroot\assets\design\images\favicon32x32.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\design\images\logo.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\design\images\svg\.gitkeep" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\design\images\svg\facebook.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\design\images\svg\instagram.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\design\images\svg\nav-decoration-blue.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\design\images\svg\nav-decoration-blue2.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\design\images\svg\nav-decoration-red.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\design\images\svg\nav-decoration-red2.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\design\images\svg\nav-decoration-red3.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\design\images\svg\nav-decoration-yellow.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\design\images\svg\nav-decoration-yellow2.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\design\images\svg\nav-decoration.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\design\images\svg\socials-decoration.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\design\images\svg\whatsapp-2.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\design\images\svg\whatsapp.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\design\images\temp\.gitkeep" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\design\images\temp\banner-img1.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\design\images\temp\banner-img2.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\design\images\temp\banner-img3.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\design\images\temp\banner-img4.png" />
+  </ItemGroup>
+
 </Project>

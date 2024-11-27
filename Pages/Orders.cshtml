@@ -72,7 +72,7 @@
                                 <th>
                                     <input class="form-check-input" type="checkbox" value="" id="select-all">
                                 </th>
-                                <th>Takip No/Sipariş No</th>
+                                <th>Takip/Sipariş No</th>
                                 <th>Gönderen</th>
                                 <th>Metod</th>
                                 <th>Durum</th>
@@ -81,7 +81,6 @@
                                 <th>Transfer Durumu</th>
                                 <th>Kurye</th>
 
-                                <th>Son İşlem Tarihi</th>
                                 <th>İşlemler</th>
                             </tr>
                             </thead>
@@ -96,7 +95,7 @@
                                     <td>@order.Id</td>
                                     <td> @order.SenderName</td>
 
-                                    <td>@order.DeliveryType.GetDeliveryType()</td>
+                                    <td>@order.DeliveryType.GetDeliveryType(true)</td>
                                     <td>@Html.Raw(item.Status.GetAdminOrderStatus(order.DeliveryType))</td>
                                     <td>@order.OrderItems.Count()</td>
                                     <td>@order.TotalAmount.ToString("#.00") TL</td>
@@ -113,13 +112,12 @@
                                         <td>&nbsp;</td>
 
                                     }
-
-                                    <td>@order.ModifiedOn</td>
-                                    <td>
+<td>
                                         <a href="orderDetail?id=@order.Id">
                                             <button class="btn btn-success">Detay</button>
                                         </a>
                                     </td>
+                                   
                                 </tr>
                             }
 
@@ -133,8 +131,9 @@
     </div>
 </div>
 
-
 <script>
+    
+
     $("#select-all").on("click",function (){
         var selects = $(".order-select");
         var param = false;
@@ -187,4 +186,5 @@
     
     
     
+
 </script>
