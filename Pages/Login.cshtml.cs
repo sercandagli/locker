@@ -25,7 +25,7 @@ public class LoginModel(WorkContext workContext) : BasePageModel
         await using var _context = new LockerDbContext();
         var user =
             await _context.Users.FirstOrDefaultAsync(x =>
-                x.Email == model.Email);
+                x.Phone == model.Phone && x.Password == model.Password.HashPassword());
 
         if (user == null) return null;
 

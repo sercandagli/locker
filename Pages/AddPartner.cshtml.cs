@@ -31,10 +31,17 @@ public class AddVIPPartnerModel : BasePageModel
         
         if (_workContext.Admin == null)
             return RedirectToPage("managementLogin");
-        using var _context = new LockerDbContext();
-        user.CreatedOn = DateTime.Now;
+             user.CreatedOn = DateTime.Now;
         user.ModifiedOn = DateTime.Now;
         user.Type = (int)UserType.Partner;
+        using var _context = new LockerDbContext();
+        if(!ModelState.IsValid){
+                this.Message = "Lütfen tüm alanları doldurun";
+            var noy = ModelState.Where(x => x.Value.ValidationState == Microsoft.AspNetCore.Mvc.ModelBinding.ModelValidationState.Invalid).ToList();
+            return Page();
+
+            }
+       
         user.Password = user.Password.HashPassword();
         _context.Users.Add(user);
 

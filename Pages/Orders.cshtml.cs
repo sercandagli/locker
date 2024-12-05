@@ -26,7 +26,7 @@ public class OrdersModel : BasePageModel
     public List<Order> Orders{get;set;}
     public List<Courier> Couriers { get; set; }
 
-    public async Task<IActionResult> OnGet(bool? isTransfer,int? orderType,int? deliveryType, int? courierId){
+    public async Task<IActionResult> OnGet(bool? hasReport,bool? isTransfer,int? orderType,int? deliveryType, int? courierId,int? orderId){
 
         if (_workContext.Admin == null)
             return RedirectToPage("managementLogin");
@@ -34,6 +34,19 @@ public class OrdersModel : BasePageModel
 
         var ordersQuery =  _context.Orders.Include(x => x.OrderItems)
             .Where(x => x.Status == (int)OrderStatus.Continue).AsQueryable();
+
+
+            if(orderId.HasValue && orderId > 0){
+              Orders =await _context.Orders.Include(x => x.OrderItems)
+                    .Where(x => x.Id == orderId.Value).ToListAsync();
+                Couriers = await _context.Couriers.ToListAsync();
+
+                return Page();
+            }
+
+        if(hasReport.HasValue){
+           ordersQuery = ordersQuery.Where(x => x.ProblemId > 0);
+        }
 
         if (isTransfer.HasValue)
         {
@@ -60,6 +73,28 @@ public class OrdersModel : BasePageModel
          Couriers = await _context.Couriers.ToListAsync();
 
          return Page();
+    }
+
+    public async Task<IActionResult> OnPostResolveReport(CreateReportModel model){
+        if (_workContext.Admin == null)
+            return RedirectToPage("managementLogin");
+         using var _context = new LockerDbContext();
+
+        var order = await _context.Orders.FirstOrDefaultAsync(x => x.Id == model.OrderId);
+        if(order == null){
+            return new JsonResult(new {
+                message = "Sipariş Bulunamadı"
+            });
+        }
+
+            order.ProblemId  = 0;
+            order.ProblemDescription = string.Empty;
+            order.ModifiedOn = DateTime.Now;
+            await _context.SaveChangesAsync();
+            return new JsonResult(new {
+                isSuccess = true
+            });
+        
     }
 
     public async Task<IActionResult> OnPostTransfer(TransferOrderModel model)

@@ -28,4 +28,22 @@ public class EditCourierModel : BasePageModel
 
         return Page();
     }
+
+    public async Task<IActionResult> OnPost(Courier model){
+          if (_workContext.Admin == null)
+            return RedirectToPage("managementLogin");
+        using var _context = new LockerDbContext();
+
+        Courier = await _context.Couriers.FirstOrDefaultAsync(x => x.Id == model.Id);
+        Regions = await _context.Regions.ToListAsync();
+
+        Courier.Name = model.Name;
+        Courier.Email = model.Email;
+        Courier.RegionId = model.RegionId;
+        if(string.IsNullOrEmpty(model.Password))
+        Courier.Password = model.Password.HashPassword();
+        await _context.SaveChangesAsync();
+
+        return RedirectToPage("couriers");
+    }
 }

@@ -82,9 +82,9 @@
    var lat = "35.095192";
    var long = "33.203430";
       var lockermap1 = L.map('locker1-map').setView([lat, long], 11);
-      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 15,
-       
+    L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',{
+        maxZoom: 20,
+        subdomains:['mt0','mt1','mt2','mt3']
       }).addTo(lockermap1);
   
    

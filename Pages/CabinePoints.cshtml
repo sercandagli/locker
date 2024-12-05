@@ -1,0 +1,106 @@
+@page
+@model CabinePointsModel
+@{ Layout = "_MainLayout"; }
+<section class="section">
+			<div class="shell">
+				<div class="section__head">
+					<figure class="js-animate section__image section__image--adjust">
+						<img src="assets/design/images/temp/banner-img5.png" alt="banner" width="650" height="351">
+
+						<p>Daha fazla lokasyonda yakında hizmet vereceğiz.</p>
+					</figure><!-- /.section__image -->
+				</div><!-- /.section__head -->
+			</div><!-- /.shell -->
+		</section><!-- /.section -->
+
+		<section class="section-simple">
+			<div class="shell">
+				<div class="js-accordion accordion section__accordion">
+					<div class="accordion__section is-open">
+						<div class="accordion__head">
+							<h3 class="accordion__title">Cargo Point Lokasyonları</h3><!-- /.accordion__title -->
+						</div><!-- /.accordion__head -->
+
+						<div class="accordion__body">
+							<div class="accordion__content">
+								<div class="map accordion__map">
+									<figure class="map__image">
+										<div class="img-fluid" id="locker1-map" style="height: 100%;"></div>
+									</figure><!-- /.map__image -->
+								</div><!-- /.map -->
+							</div><!-- /.accordion__content -->
+						</div><!-- /.accordion__body -->
+					</div><!-- /.accordion__section -->
+				</div><!-- /.accordion -->
+
+				<div class="section__content section__content--adjust">
+					<div class="meta-map">
+						<div class="meta__bar">
+							<strong class="cabine-name"></strong>
+						</div><!-- /.meta__bar -->
+
+						<div class="meta__bar meta__bar--red">
+							<strong class="cabine-description"></strong>
+						</div><!-- /.meta__bar -->
+
+						<div class="meta__content">
+							<div class="meta__image-placeholder">
+								<strong>*Photo uploaded</strong>
+							</div><!-- /.meta__image-placeholder -->
+						</div><!-- /.meta__content -->
+
+						<div class="meta__actions">
+							<a href="#" class="btn">
+								<img src="assets/design/images/svg/location.svg" alt="location-ico" width="49" height="49">
+
+								Yol Tarifi
+							</a><!-- /.btn -->
+						</div><!-- /.meta__actions -->
+					</div><!-- /.meta-map -->
+				</div><!-- /.section__content -->
+
+				<div class="section__foot">
+					<p>Yakınınızda Cargo Pont yok mu?</p>
+
+					<a href="#">İletşme geçerek hangi bölgede talepte bulunduğunuzu bze iletin.</a>
+				</div><!-- /.section__foot -->
+			</div><!-- /.shell -->
+		</section><!-- /.section-simple -->
+
+<script>
+	var points = [];
+
+	var lockermap1 = L.map('locker1-map').setView([35.095192, 33.203430], 11);
+	L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',{
+		maxZoom: 20,
+		subdomains:['mt0','mt1','mt2','mt3']
+
+	}).addTo(lockermap1);
+	function locker1labelOnClick() {
+		var lat = this._latlng.lat;
+		var lng = this._latlng.lng;
+		for (var i = 0; i < points.length; i++) {
+			var actual = points[i];
+			if (actual.lat == lat && actual.lng == lng) {
+				$(".cabine-name").text(actual.name);
+				$(".cabine-description").text(actual.address);
+			}
+		}
+	}
+	@if (Model.Cabines != null)
+	{
+		foreach (var cabine in Model.Cabines)
+		{
+			@:points.push({
+			@:lat: '@cabine.Lat',
+			@:lng: '@cabine.Long',
+			@:name: '@cabine.Name',
+			@:address: '@cabine.Description',
+			@:id : '@cabine.Id',
+			@:description: '@cabine.Description'
+			@:});
+			@:L.marker([@cabine.Lat, @cabine.Long]).on('click', locker1labelOnClick).addTo(lockermap1);
+		}
+	}
+
+</script>

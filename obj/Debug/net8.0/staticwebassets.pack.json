@@ -113,6 +113,38 @@
       "PackagePath": "staticwebassets/assets/design/images/svg/.gitkeep"
     },
     {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/arrow-dark.svg",
+      "PackagePath": "staticwebassets/assets/design/images/svg/arrow-dark.svg"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/arrow.svg",
+      "PackagePath": "staticwebassets/assets/design/images/svg/arrow.svg"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/btn-decoration.svg",
+      "PackagePath": "staticwebassets/assets/design/images/svg/btn-decoration.svg"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/card.svg",
+      "PackagePath": "staticwebassets/assets/design/images/svg/card.svg"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/check-white.svg",
+      "PackagePath": "staticwebassets/assets/design/images/svg/check-white.svg"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/check.svg",
+      "PackagePath": "staticwebassets/assets/design/images/svg/check.svg"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/checkbox-decoration.svg",
+      "PackagePath": "staticwebassets/assets/design/images/svg/checkbox-decoration.svg"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/discount.svg",
+      "PackagePath": "staticwebassets/assets/design/images/svg/discount.svg"
+    },
+    {
       "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/facebook.svg",
       "PackagePath": "staticwebassets/assets/design/images/svg/facebook.svg"
     },
@@ -121,8 +153,28 @@
       "PackagePath": "staticwebassets/assets/design/images/svg/instagram.svg"
     },
     {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/location.svg",
+      "PackagePath": "staticwebassets/assets/design/images/svg/location.svg"
+    },
+    {
       "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/logo-decoration.svg",
       "PackagePath": "staticwebassets/assets/design/images/svg/logo-decoration.svg"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/mail.svg",
+      "PackagePath": "staticwebassets/assets/design/images/svg/mail.svg"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/member.svg",
+      "PackagePath": "staticwebassets/assets/design/images/svg/member.svg"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/message.svg",
+      "PackagePath": "staticwebassets/assets/design/images/svg/message.svg"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/nav-decoration-alt.svg",
+      "PackagePath": "staticwebassets/assets/design/images/svg/nav-decoration-alt.svg"
     },
     {
       "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/nav-decoration-blue.svg",
@@ -153,8 +205,28 @@
       "PackagePath": "staticwebassets/assets/design/images/svg/nav-decoration-yellow2.svg"
     },
     {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/nav-decoration-yellow3.svg",
+      "PackagePath": "staticwebassets/assets/design/images/svg/nav-decoration-yellow3.svg"
+    },
+    {
       "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/nav-decoration.svg",
       "PackagePath": "staticwebassets/assets/design/images/svg/nav-decoration.svg"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/phone.svg",
+      "PackagePath": "staticwebassets/assets/design/images/svg/phone.svg"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/scroll-down.svg",
+      "PackagePath": "staticwebassets/assets/design/images/svg/scroll-down.svg"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/section-cargo-img1.svg",
+      "PackagePath": "staticwebassets/assets/design/images/svg/section-cargo-img1.svg"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/section-cargo-img2.svg",
+      "PackagePath": "staticwebassets/assets/design/images/svg/section-cargo-img2.svg"
     },
     {
       "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/socials-decoration.svg",
@@ -187,6 +259,34 @@
     {
       "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/temp/banner-img4.png",
       "PackagePath": "staticwebassets/assets/design/images/temp/banner-img4.png"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/temp/banner-img5.png",
+      "PackagePath": "staticwebassets/assets/design/images/temp/banner-img5.png"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/temp/checkbox-img1.png",
+      "PackagePath": "staticwebassets/assets/design/images/temp/checkbox-img1.png"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/temp/checkbox-img2.png",
+      "PackagePath": "staticwebassets/assets/design/images/temp/checkbox-img2.png"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/temp/checkbox-img3.png",
+      "PackagePath": "staticwebassets/assets/design/images/temp/checkbox-img3.png"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/temp/checkbox-img4.png",
+      "PackagePath": "staticwebassets/assets/design/images/temp/checkbox-img4.png"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/temp/checkbox-img5.png",
+      "PackagePath": "staticwebassets/assets/design/images/temp/checkbox-img5.png"
+    },
+    {
+      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/temp/map-img1.jpg",
+      "PackagePath": "staticwebassets/assets/design/images/temp/map-img1.jpg"
     },
     {
       "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/style.css",

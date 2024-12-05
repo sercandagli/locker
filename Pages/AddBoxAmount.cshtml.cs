@@ -34,6 +34,13 @@ public class AddBoxAmountModel : BasePageModel
         if (_workContext.Admin == null)
             return RedirectToPage("managementLogin");
         using var _context = new LockerDbContext();
+        if(!ModelState.IsValid){
+                this.Message = "Lütfen tüm alanları doldurun";
+        Box = await _context.Boxes.FirstOrDefaultAsync(x => x.Id == boxAmount.BoxId);
+
+            return Page();
+
+            }
 
         try
         {

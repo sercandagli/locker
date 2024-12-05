@@ -33,7 +33,7 @@ public class CourierOrdersModel : BasePageModel
         Cabines = await _context.Cabines.ToListAsync();
         Regions = await _context.Regions.ToListAsync();
         var ordersQuery =  _context.Orders.Include(x => x.OrderItems)
-            .Where(x => x.Status == (int)OrderStatus.Continue).AsQueryable();
+            .Where(x => x.Status == (int)OrderStatus.Continue && x.ProblemId < 1).AsQueryable();
         if (orderId != 0)
         {
             Orders = await ordersQuery.Where(x => x.Id == orderId).ToListAsync();
@@ -86,6 +86,28 @@ public class CourierOrdersModel : BasePageModel
         SaveCount = newOrderList.Count - TakeCount;
         Orders = newOrderList;
         return Page();
+    }
+
+    public async Task<IActionResult> OnPostReport(CreateReportModel model){
+        if (_workContext.Courier == null)
+            return RedirectToPage("courierLogin");
+        using var _context = new LockerDbContext();
+
+        var order = await _context.Orders.FirstOrDefaultAsync(x => x.Id == model.OrderId);
+        if(order == null)
+        {
+            return new JsonResult(new {
+                Message = "Sipariş Bulunamadı"
+            });
+        }
+        order.ProblemId = model.ProblemId;
+        order.ProblemDescription = model.ProblemDescription;
+        order.ModifiedOn = DateTime.Now;
+        await _context.SaveChangesAsync();
+        return new JsonResult(new {
+            isSuccess = true
+        });
+
     }
 
     public async Task<IActionResult> OnPostCompleteTransfers(TransferOrderModel model)

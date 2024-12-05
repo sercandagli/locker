@@ -11,6 +11,8 @@ public class User
     
     public string? AddressLong { get; set; }
     public decimal Credit { get; set; }
+
+    public bool ForgotPasswordProcess{get;set;}
     
     public bool IsActive { get; set; }
     
@@ -22,5 +24,5 @@ public class User
     public DateTime? ModifiedOn { get; set; }
 
     // İlişkilendirilmiş siparişler
-    public virtual ICollection<Order> Orders { get; set; }
+    public virtual ICollection<Order>? Orders { get; set; }
 }

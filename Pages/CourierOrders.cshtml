@@ -150,6 +150,9 @@
                                         <button type="button" class="btn btn-outline-primary">Detay</button>
                                     </a>
                                 }
+                                @if(order.ProblemId < 1){
+                                   <button type="button" class="btn btn-outline-primary reportModalButton" data="@order.Id">Hata Bildir</button>
+                                }
 
                             </div>
                             @if (order.IsTransferred && order.IsTransferCompleted)
@@ -179,6 +182,38 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal"> İptal </button>
                 <button type="button" class="btn btn-primary setDeliveryButton">Kaydet</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="reportModal" tabindex="-1" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deliveryModalTitle">Hata Bildir</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col mb-3">
+                        <label for="nameBasic" class="form-label">Hata Sebebi</label>
+                        <select class="form-control" name="problemId">
+                            <option value="1">Müşteriye Ulaşılamadı</option>
+                            <option value="2">Paket Boyutları Hatalı</option>
+                            <option value="3">Barkod Eksik</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col mb-3">
+                        <label for="nameBasic" class="form-label">Hata Açıklaması</label>
+                        <input type="text"  class="form-control" name="problemDescription">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal"> İptal </button>
+                <button type="button" class="btn btn-primary reportButton" data="">Kaydet</button>
             </div>
         </div>
     </div>
@@ -243,6 +278,34 @@
             }
         });
 
+    });
+
+    $(".reportModalButton").on("click",function(){
+        $(".reportButton").attr("data",$(this).attr("data"));
+        $("#reportModal").modal("show");
+
+    });
+
+    $(".reportButton").on("click",function(){
+        var orderId = $(this).attr("data");
+        var problemId = $("select[name='problemId']").val();
+        var problemDescription = $("input[name='problemDescription']").val();
+
+         $.ajax({
+            type: "POST",
+            url: "/CourierOrders?Handler=Report",
+            headers: { "RequestVerificationToken": $('input[name="__RequestVerificationToken"]').val() },
+            data:{"problemId":problemId,"problemDescription":problemDescription,"orderId":orderId},
+            success: function (result) {
+                if(result.isSuccess == true)
+                    location.reload();
+                else
+                    alert(result.Message);
+            },
+            failure: function (response) {
+
+            }
+        });
     });
     
 </script>

@@ -29,7 +29,15 @@ public class AddCabineModel : BasePageModel
     {
         if (_workContext.Admin == null)
             return RedirectToPage("managementLogin");
-        using var _context = new LockerDbContext();
+            using var _context = new LockerDbContext();
+
+            if(!ModelState.IsValid){
+                this.Message = "Lütfen tüm alanları doldurun";
+                Regions = await _context.Regions.ToListAsync();
+
+            return Page();
+
+            }
         cabine.ModifiedOn = DateTime.Now;
         cabine.IsActive = true;
         _context.Cabines.Add(cabine);

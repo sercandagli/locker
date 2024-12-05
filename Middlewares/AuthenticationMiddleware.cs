@@ -26,6 +26,9 @@ public class AuthenticationMiddleware : IMiddleware
             {
                 this._context.User =
                     await _context.Users.FirstOrDefaultAsync(x => x.Id == context.Session.GetInt32("UserId"));
+                    if(this._context.User != null && this._context.User.ForgotPasswordProcess){
+                        context.Response.Redirect("/weatherforecast/User", false);
+                    }
             }else if (context.Session.GetInt32("CourierId") is not null && context.Session.GetInt32("CourierId") != 0)
             {
                 this._context.Courier = await _context.Couriers.FirstOrDefaultAsync( x=> x.Id == context.Session.GetInt32("CourierId"));

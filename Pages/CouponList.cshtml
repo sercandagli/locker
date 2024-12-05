@@ -1,0 +1,55 @@
+@page
+@using Locker.Pages
+@model CouponListModel
+
+
+
+<div class="container-xxl flex-grow-1 container-p-y">
+  <div class="alert alert-success courierAlert alert-dismissible" role="alert" style="display:none">
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  <div class="card">
+    <h5 class="card-header">Kuponlar</h5>
+
+
+    <div class="table-responsive text-nowrap">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>#Id</th>
+            <th>#İndirim Tutarı</th>
+            <th>#Kod</th>
+            <th>#İşlemler</th>
+             <th>
+                        <a href="addCoupon">
+                            <button class="btn btn-secondary">Yeni Kupon</button>
+                        </a>
+                    </th>
+          </tr>
+        </thead>
+        <tbody class="table-border-bottom-0"> 
+            @foreach(var coupon in Model.Coupons){ 
+             
+
+
+                <tr>
+                                <td>@coupon.Id</td>
+                                <td>@coupon.Amount TL</td>
+                                  <td>@coupon.Code</td>
+            <td><a href="CouponList?Handler=DeleteCoupon&id=@coupon.Id"><button class="btn btn-danger">Sil</button></a></td>
+                                  
+       
+            </tr>
+    
+            }
+           
+          
+           
+          </tbody>
+      </table>
+        <div class="col">
+      </div>
+   
+    </div>
+  </div>
+</div>

@@ -22,6 +22,9 @@
                     <a href="orders?orderType=1">
                         <button class="btn btn-primary">Normal</button>
                     </a>
+                    <a href="orders?hasReport=true">
+                        <button class="btn btn-primary">Hatalı</button>
+                    </a>
                     <a href="orders">
                         <button class="btn btn-dark">Filtreleri Kaldır</button>
                     </a>
@@ -37,6 +40,10 @@
                     @using (Html.BeginForm(FormMethod.Get))
                     {
                         <div class="row">
+                              <div class="col-xl">
+                                <label class="form-label">Sipariş Numarası</label>
+                                <input class="form-control" name="orderId">
+                            </div>
                             <div class="col-xl">
                                 <label class="form-label">Kurye</label>
                                 <select class="form-control" name="courierId">
@@ -60,6 +67,7 @@
 
                             </div>
                             <br></br>
+                            <br>
                             <button type="submit" class="btn btn-dark">Ara</button>
 
                         </div>
@@ -116,6 +124,10 @@
                                         <a href="orderDetail?id=@order.Id">
                                             <button class="btn btn-success">Detay</button>
                                         </a>
+                                        @if(order.ProblemId > 0){
+                                          <button class="btn btn-primary showReportModal" orderId="@order.Id" problemId="@order.ProblemId" problemDescription="@order.ProblemDescription">Hatayı GÖrüntüle</button>
+                                        }
+                                        
                                     </td>
                                    
                                 </tr>
@@ -131,8 +143,67 @@
     </div>
 </div>
 
+<div class="modal fade" id="reportModal" tabindex="-1" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deliveryModalTitle">Hata Bildir</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col mb-3">
+                        <label for="nameBasic" class="form-label">Hata Sebebi</label>
+                        <select class="form-control" name="problemId" disabled="true">
+                            <option value="1">Müşteriye Ulaşılamadı</option>
+                            <option value="2">Paket Boyutları Hatalı</option>
+                            <option value="3">Barkod Eksik</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col mb-3">
+                        <label for="nameBasic" class="form-label">Hata Açıklaması</label>
+                        <input type="text"  class="form-control" name="problemDescription" disabled="true">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal"> İptal </button>
+                <button type="button" class="btn btn-primary resolveReport" data="">Çözüldü Olarak İşaretle</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script>
     
+ $(".showReportModal").on("click",function(){
+        $(".resolveReport").attr("data",$(this).attr("orderId"));
+        $("#reportModal").modal("show");
+        $("select[name='problemId']").val($(this).attr("problemId"));
+        $("input[name='problemDescription']").val($(this).attr("problemDescription"));
+
+    });
+
+    $(".resolveReport").on("click",function(){
+        var orderId = $(this).attr("data");
+         $.ajax({
+            type: "POST",
+            url: "/Orders?Handler=ResolveReport",
+            headers: { "RequestVerificationToken": $('input[name="__RequestVerificationToken"]').val() },
+            data:{"orderId":orderId},
+            success: function (result) {
+                if(result.isSuccess == true)
+                    location.reload();
+                else
+                    alert(result.Message);
+            },
+            failure: function (response) {
+
+            }
+        });
+    });
 
     $("#select-all").on("click",function (){
         var selects = $(".order-select");

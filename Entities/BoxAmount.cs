@@ -19,7 +19,7 @@ public class BoxAmount
     public DateTime? ModifiedOn{get;set;}
 
     // İlişkilendirilmiş kutu
-    public virtual Box Box { get; set; }
+    public virtual Box? Box { get; set; }
 }
 
 

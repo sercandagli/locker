@@ -40,6 +40,59 @@
   }
 })();
 const style = "";
+$(".js-form form").on("submit", function(event) {
+  let isValid = true;
+  const $form = $(this).closest("form");
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  $form.find("[data-validate]").each(function(index, el) {
+    const $this = $(el);
+    const type = $this[0].type;
+    if (type === "checkbox") {
+      const $parent = $this.closest(".checkbox-alt");
+      if ($this[0].checked) {
+        $parent.removeClass("is-error");
+        return;
+      }
+      $parent.addClass("is-error");
+    }
+    if (type === "text") {
+      const $parent = $this.closest(".form__controls");
+      console.log($this[0].value);
+      if ($this[0].value === "") {
+        $parent.addClass("is-error");
+        return;
+      }
+      $parent.removeClass("is-error");
+    }
+    if (type === "email") {
+      const $parent = $this.closest(".form__controls");
+      const emailValue = $this[0].value.trim();
+      if (!emailRegex.test(emailValue)) {
+        $parent.addClass("is-error");
+        return;
+      }
+      $parent.removeClass("is-error");
+    }
+  });
+  isValid = $form.find(".is-error").length === 0 ? true : false;
+  if (!isValid) {
+    event.preventDefault();
+  }
+});
+$(".js-phone-field").on("input", function(e) {
+  const value = e.target.value;
+  if (value.length < 4) {
+    e.target.value = `+90 `;
+  }
+  if (value.includes("+90")) {
+    return;
+  }
+  e.target.value = `+90 ${value}`;
+});
+$(".js-accordion .accordion__head").on("click", function(e) {
+  $(this).closest(".accordion__section").toggleClass("is-open").siblings().removeClass("is-open");
+  e.preventDefault();
+});
 const observerCallback = (entries) => {
   entries.forEach((entry) => {
     const isVisible = entry.isIntersecting;
@@ -50,6 +103,12 @@ const observerCallback = (entries) => {
 };
 const observer = new IntersectionObserver(observerCallback, {
   rootMargin: "-30%"
+});
+$(".js-skip").on("click", function(event) {
+  event.preventDefault();
+  const targetData = $(this).data("target");
+  const $target = $(`[data-target-element=${targetData}]`);
+  $("html, body").animate({ scrollTop: $target.offset().top }, 0);
 });
 $(window).on("load", () => {
   setTimeout(() => {
@@ -64,6 +123,23 @@ $(window).on("load", () => {
   setTimeout(() => {
     $loadingWrapper.addClass("hidden");
   }, 300);
+});
+$(".js-quantity").on("click", ".btn-increase", function(event) {
+  event.preventDefault();
+  const $countSpan = $(this).closest(".js-quantity").find(".checkbox__count");
+  let count = parseInt($countSpan.text());
+  count += 1;
+  $countSpan.text(count);
+});
+$(".js-quantity").on("click", ".btn-decrease", function(event) {
+  event.preventDefault();
+  const $countSpan = $(this).closest(".js-quantity").find(".checkbox__count");
+  let count = parseInt($countSpan.text());
+  if (count === 0) {
+    return;
+  }
+  count -= 1;
+  $countSpan.text(count);
 });
 const $header = $(".js-header");
 const handleNavTriggerClick = (event) => {

@@ -8,6 +8,7 @@ public class Order
     public int OrderType { get; set; }
     public decimal TotalAmount { get; set; }
     
+    public decimal Discount{get;set;}
     public int PayType { get; set; }
     
     public int SourceRegionId { get; set; }
@@ -44,6 +45,10 @@ public class Order
     public string? Note { get; set; }
     public DateTime? CreatedOn { get; set; }
     public DateTime? ModifiedOn { get; set; }
+
+    public int ProblemId{get;set;}
+
+    public string? ProblemDescription{get;set;}
 
     // İlişkilendirilmiş kullanıcı ve sipariş öğeleri
     public virtual User User { get; set; }

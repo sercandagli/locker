@@ -1,8 +1,123 @@
 @page
 @using Locker.Enums
 @model PaymentModel
-
+@Html.AntiForgeryToken()
 @{ Layout = "_MainLayout"; }
+<section class="section-simple section-simple--adjust">
+    <div class="shell">
+    <div class="section__content">
+        <div class="section__cols">
+            <div class="section__col">
+                <div class="js-form form section__form">
+                    @using (Html.BeginForm(FormMethod.Post))
+                    {
+                        <div class="form__head">
+                            <h4 class="level-2">Ödeme</h4><!-- /.level-2 -->
+
+                        </div>
+                        <!-- /.form__head -->
+
+                        <div class="form__body">
+                            <div class="form__row">
+                                <label for="card" class="form__label">Kredi Kartı <span>*</span></label><!-- /.form__label -->
+
+                                    <input data-validate="true" type="text" class="form-control" id="name-2" name="card" placeholder="">
+
+                            </div><!-- /.form__row -->
+
+                            <div class="form__row">
+                                <label for="phone-2" class="form__label">Son Kullanma Tarihi<span>*</span></label><!-- /.form__label -->
+
+                                    <select class="form-select" name="month">
+                                        <option value="1">01</option>
+                                        <option value="2">02</option>
+                                        <option value="3">03</option>
+                                        <option value="4">04</option>
+                                        <option value="5">05</option>
+                                        <option value="6">06</option>
+                                        <option value="7">07</option>
+                                        <option value="8">08</option>
+                                        <option value="9">09</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                    </select>
+                                    <select class="form-select" name="month">
+                                        <option value="2024">2024</option>
+                                        <option value="2025">2025</option>
+                                        <option value="2026">2026</option>
+                                        <option value="2027">2027</option>
+                                        <option value="2028">2028</option>
+                                        <option value="2029">2029</option>
+                                        <option value="2030">2030</option>
+                                        <option value="2031">2031</option>
+                                        <option value="2032">2032</option>
+                                        <option value="2033">2033</option>
+                                        <option value="2034">2034</option>
+                                        <option value="2035">2035</option>
+                                    </select>
+
+                        
+                            </div><!-- /.form__row -->
+                            <div class="form__row">
+                                <label for="cvv" class="form__label">CVV<span>*</span></label><!-- /.form__label -->
+
+                                <div class="form__controls">
+                                    <input data-validate="true" type="text" class="form-control" id="name-2" name="cvv" placeholder="">
+
+                                </div><!-- /.form__controls -->
+                            </div><!-- /.form__row -->
+                   
+                   
+
+
+
+                        </div>
+                        <!-- /.form__body -->
+
+                        <div class="form__actions">
+                            <button type="submit" class="btn btn-success">
+                                Ödeme Yap
+                            </button>
+                        </div>
+                        <!-- /.form__actions -->
+                    }
+                </div><!-- /.form section__form -->
+            </div>
+            <div class="section__col">
+                <div class="js-form form section__form">
+                    <div class="form__head">
+                        <h4 class="level-2">Sipariş Özeti</h4><!-- /.level-2 -->
+                        <div class="form__body">
+                            <div class="mb-3">
+                                <label class="form-label">Alıcı Adı:@Model.Order.ReceiverName</label>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Alıcı Telefon:@Model.Order.ReceiverPhone</label>
+                            </div>
+
+                            <ul>
+                                @foreach (var item in Model.Order.OrderItems.GroupBy(x => x.BoxSize))
+                                {
+                                    <li>@item.Count() Adet @item.Key @item.Sum(x => x.Amount).ToString("#.00") TL</li>
+                                }
+                                <li class="discountRow">İndirim @Model.Order.Discount.ToString("#.00") TL</li>
+
+
+                                <li class="totalAmountRow">Toplam @Model.Order.TotalAmount.ToString("#.00") TL</li>
+                            </ul>
+                        </div>
+                    </div>
+                
+                </div>
+            </div><!-- /.section__col -->
+        </div>
+    </div>
+    </div>
+</section>
+
+
+
 <main class="main">
     <section id="about-3" class="about-3 section">
         <div class="container">
@@ -10,67 +125,10 @@
                 <h3>Sipariş Özeti</h3>
                 <div class="col-lg-6 order-lg-2 position-relative aos-init aos-animate">
                   
-                        <div class="mb-3">
-                            <label class="form-label">Kredi Kartı</label>
-                            <input type="text" class="form-control" name="cardNumber"></input>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Ay</label>
-                            <select class="form-control" name="month">
-                                <option value="1">01</option>
-                                <option value="2">02</option>
-                                <option value="3">03</option>
-                                <option value="4">04</option>
-                                <option value="5">05</option>
-                                <option value="6">06</option>
-                                <option value="7">07</option>
-                                <option value="8">08</option>
-                                <option value="9">09</option>
-                                <option value="10">10</option>
-                                <option value="11">11</option>
-                                <option value="12">12</option>
-                            </select>
-                            <label class="form-label">Yıl</label>
-                            <select class="form-control" name="month">
-                                <option value="2024">2024</option>
-                                <option value="2025">2025</option>
-                                <option value="2026">2026</option>
-                                <option value="2027">2027</option>
-                                <option value="2028">2028</option>
-                                <option value="2029">2029</option>
-                                <option value="2030">2030</option>
-                                <option value="2031">2031</option>
-                                <option value="2032">2032</option>
-                                <option value="2033">2033</option>
-                                <option value="2034">2034</option>
-                                <option value="2035">2035</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">CVV</label>
-                            <input class="form-control" type="text" name="cvv"></input>
-                        </div>
-                        <div class="mb-3">
-
-                            <a href="orderCompleted"><button class="btn btn-dark" >Ödemeyi Tamamla</button></a>
-                        </div>
-                    
-                </div>
-                <div class="col-lg-6 order-lg-2 position-relative aos-init aos-animate">
-                    <div class="mb-3">
-                        <label class="form-label">Alıcı Adı:@Model.Order.ReceiverName</label>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Alıcı Telefon:@Model.Order.ReceiverPhone</label>
-                    </div>
-
-                    <ul>
-                        @foreach (var item in Model.Order.OrderItems.GroupBy(x => x.BoxSize))
-                        {
-                            <li>@item.Count() Adet @item.Key @item.Sum(x => x.Amount).ToString("#.00") TL</li>
-                        }
-                        <li>Toplam @Model.Order.TotalAmount.ToString("#.00") TL</li>
-                    </ul>
+                        <input class="form-control" name="discountCode"> 
+                        <button  class="btn btn-success applyDiscount">Kodu Uygula</button>
+                        <button class="btn btn-danger revertDiscount" style="display: none;">Geri Al</button>
+                    <input type="hidden" value="" name="couponId">
                     @if (HttpContext.Session.GetInt32("IsLoggedIn") == 1 && HttpContext.Session.GetInt32("Role") == (int)UserType.Partner && (@Model.User.Credit + @Model.User.PromotionCredit) >= @Model.Order.TotalAmount)
                     {
                         <label class="form-label">Mevcut Kredi: @(Model.User.Credit + Model.User.PromotionCredit) (Promosyon krediler dahildir)</label>
@@ -87,3 +145,55 @@
         </div>
     </section>
 </main>
+
+<script>
+    $(".applyDiscount").on("click",function(){
+        var code = $("input[name='discountCode']").val();
+            $.ajax({
+            type: "POST",
+            url: "/Payment?Handler=ApplyCoupon",
+            headers: { "RequestVerificationToken": $('input[name="__RequestVerificationToken"]').val() },
+            data:{"code":code},
+            success: function (result) {
+                if(result.isSuccess == true){
+                    $(".totalAmountRow").text("Toplam: " + result.newOrderAmount + " TL");
+                    $(".discountRow").text("İndirim: " + result.discount + " TL");
+                    $("input[name='couponId']").val(result.couponId);
+                    $(".applyDiscount").hide();
+                    $(".revertDiscount").show();
+                    $("input[name='discountCode']").prop("disabled", true);
+                }
+            },
+            failure: function (response) {
+
+            }
+        });
+
+    });
+
+    $(".revertDiscount").on("click",function(){
+        var couponId = $("input[name='couponId']").val();
+        if(couponId == "0")
+            return;
+
+             $.ajax({
+            type: "POST",
+            url: "/Payment?Handler=RevertCoupon",
+            headers: { "RequestVerificationToken": $('input[name="__RequestVerificationToken"]').val() },
+            data:{"couponId":couponId},
+            success: function (result) {
+                if(result.isSuccess == true){
+                    $(".totalAmountRow").text("Toplam " + result.newOrderAmount + " TL");
+                    $(".discountRow").text("İndirim " + result.discount + " TL");
+                    $("input[name='couponId']").val(result.couponId);
+                    $(".revertDiscount").hide();
+                    $(".applyDiscount").show();
+                    $("input[name='discountCode']").prop("disabled", false);
+                }
+            },
+            failure: function (response) {
+
+            }
+        });
+    });
+</script>

@@ -1,4 +1,5 @@
 @page
+@model OrderCompletedModel
 @{ Layout = "_MainLayout"; }
 
 <main class="main">
@@ -8,7 +9,29 @@
         
             <h2 style="text-align: center">Siparişiniz Alındı</h2>
         
-        
+            <table class="table table-striped">
+                <th>Siparişiniz Numarası</th>
+                <th>Boyut</th>
+                 <th>Bırakma Kodu</th>
+                 <th>Alım Kodu</th>
+                @foreach(var item in Model.Order.OrderItems){
+                    <tr>
+                        <td>
+                            @item.Id
+                        </td>
+                        <td>
+                            @item.BoxSize
+                        </td>
+                        <td>
+                             @item.TLSaveCode @item.SLSaveCde
+                        </td>
+                        <td>
+                            @item.SLPickCode   @item.TLPickCode
+                        </td>
+                        
+                    </tr>
+                }
+            </table>
         </div>
     </div>
 </section>

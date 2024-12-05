@@ -4,193 +4,359 @@
 @model AddressToLockerModel
 @{ Layout = "_MainLayout"; }
 
-<main class="main">
+<style>
+    #locker1-map{
+    { height: 100% }
+    }
+    #locker2-map{
+    { height: 100% }
+    }
+</style>
 
-    <section id="about-3" class="about-3 section">
-        <div class="container">
-            <div class="row gy-4 justify-content-between align-items-center">
+<section class="section-cargo">
+    <div class="shell">
+        <ul class="list-steps section__list-steps">
+            <li class="is-active">
+                <span>1. LOKASYONLAR ve BİLGİLER</span>
+            </li>
 
-                @using (Html.BeginForm())
+            <li>
+                <span>2. ÖDEME</span>
+            </li>
+
+            <li>
+                <span>3. REZERVASYON BİLGİLERİ</span>
+            </li>
+        </ul><!-- /.list-steps -->
+
+        <div class="section__intro">
+            <figure class="js-animate section__image-left">
+                <img src="/assets/design/images/svg/section-cargo-img1.svg" alt="box" width="260" height="310">
+            </figure><!-- /.section__image-left -->
+
+            <figure class="section__image-right">
+                <img src="/assets/design/images/svg/section-cargo-img2.svg" alt="table" width="400" height="250">
+            </figure><!-- /.section__image-right -->
+        </div><!-- /.section__intro -->
+
+        <div class="section__content">
+            <h1>Boyut Seçiniz</h1>
+
+            <div class="checkboxes section__checkboxes">
+                @foreach (var box in Model.Model.Boxes)
                 {
-                    <div class="row gy-5">
-                        <input type="hidden" name="selectedSourceRegionId" value="0"></input>
-                        @foreach (var box in Model.Model.Boxes)
+                <div class="checkbox have-discount" data="@box.Id">
+                    <div class="checkbox__head">
+                        <input type="checkbox" name="checkbox-1" id="checkbox-1">
+
+                        <label for="checkbox-1"></label>
+                        @if (box.IsPromotionActive)
                         {
-                            <div class="col-xl-2 col-md-3">
-                                <div class="post-item position-relative h-100 box-div" data="@box.Id" data-aos="fade-up" data-aos-delay="100">
-                                    <div class="post-content d-flex flex-column">
-                                        <div class="post-img position-relative overflow-hidden">
-                                            <h3 class="post-title text-center">@box.Name</h3>
-                                            <img src="@box.IconLink" class="img-fluid" alt="">
-                                        </div>
-
-                                        <h5 class="post-title text-center">@box.Amount TL</h5>
-                                        @if (HttpContext.Session.GetInt32("IsLoggedIn") == 1 && HttpContext.Session.GetInt32("Role") == (int)UserType.Partner)
-                                        {
-                                            <select class="form-control boxCount" data="@box.Id">
-                                                <option value="0">0</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                            </select>
-                                        }
-                                    </div>
-                                </div>
-                            </div>
+                        <img src="assets/design/images/svg/discount.svg" width="29" height="65" alt="discount" class="checkbox__discount">
                         }
-                    </div>
-                    <div class="row">
-                        <div class="row gy-5">
-                            @{
-                                var name = "";
-                                var email = "";
-                                var phone = "";
-                            }
-                            @if (HttpContext.Session.GetInt32("IsLoggedIn") != 1 || HttpContext.Session.GetInt32("Role") != (int)UserType.Partner)
+                        <figure class="checkbox__image">
+                            <img src="@box.IconLink" alt="book" width="100" height="128">
+                        </figure><!-- /.checkbox__image -->
+                    </div><!-- /.checkbox__head -->
+
+                    <div class="checkbox__body">
+                        <div class="checkbox__price">
+                            @if (box.IsPromotionActive)
                             {
-                                var setValue = HttpContext.Session.GetInt32("Role") == (int)UserType.Commercial;
-                                @if (setValue)
+                            <span class="checkbox__price-old">@box.Amount₺</span>
+                            <!-- /.checkbox__price-old -->
+                            <span>@box.PromotionAmount₺</span>
+                            }
+                            else
+                            {
+                            <span>@box.Amount₺</span>
+                            }
+
+                        </div><!-- /.checkbox__price -->
+
+                        <div class="js-quantity checkbox__quantity">
+                            <div class="checkbox__quantity-entry">
+                                @if (HttpContext.Session.GetInt32("IsLoggedIn") == 1 && HttpContext.Session.GetInt32("Role") == (int)UserType.Partner)
                                 {
-                                    name = Model.User.Name;
-                                    email = Model.User.Email;
-                                    phone = Model.User.Phone;
+                                <a href="#" class="btn-decrease">-</a>
+                                <!-- /.btn-decrease -->
+
+                                <span>@box.Name</span>
+
+                                <a href="#" class="btn-increase">+</a>
+                                <!-- /.btn-increase -->
                                 }
+                                else
+                                {
+                                <span>@box.Name</span>
 
-                                <div class="col-lg-6 order-lg-2 position-relative" data-aos="zoom-out">
-                                    <div class="img-fluid" id="locker1-map"></div>
-                                    <alert class="alert alert-success locker1-map-info">#</alert>
-                                </div>
+                                }
+                            </div><!-- /.checkbox__quantity-entry -->
+                            @if (HttpContext.Session.GetInt32("IsLoggedIn") == 1 && HttpContext.Session.GetInt32("Role") == (int)UserType.Partner)
+                            {
+                            <span class="checkbox__count" data="@box.Id">0</span>
+                            <!-- /.checkbox__count -->
                             }
-                            <div class="col-lg-6 order-lg-2 position-relative" data-aos="zoom-out">
-                                <div class="img-fluid" id="locker2-map"></div>
-                                <alert class="alert alert-success locker2-map-info">#</alert>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
+                        </div><!-- /.checkbox__quantity -->
+                    </div><!-- /.checkbox__body -->
+                </div>
+                <!-- /.checkbox -->
+                }
+            </div><!-- /.checkboxes -->
 
-                        <input type="hidden" name="items"></input>
-                        <div class="row gy-5">
+            <div class="section__entry">
+                <p>* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+
+                <p>** Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+            </div><!-- /.section__entry -->
+        </div><!-- /.section__content -->
+    </div><!-- /.shell -->
+</section><!-- /.section-cargo -->
+<section class="section-simple section-simple--adjust">
+    <div class="shell">
+        <div class="js-accordion accordion accordion--adjust section__accordion">
+            <div class="accordion__section is-open">
+                <div class="accordion__head">
+                    <h3 class="accordion__title">LOKASYONLARI SEÇMEK İÇİN TIKLAYINIZ</h3><!-- /.accordion__title -->
+                </div><!-- /.accordion__head -->
+
+                <div class="accordion__body">
+                    <div class="accordion__content">
+                        <div class="accordion__inner">
+                            <div class="accordion__col">
+                                <div class="map">
+                                    <h4 class="level-2">Gönderici Otomatını Seçin</h4><!-- /.level-2 -->
+
+                                    <figure class="map__image">
+                                        <div class="img-fluid" id="locker1-map" style="height: 100%;"></div>
+                                    </figure><!-- /.map__image -->
+
+                                    <div class="map__meta locker1-map-info"><strong na>LEF-01 7/24 açık</strong> Xyz Shop - Abc Street Qwe Cty ...</div><!-- /.map__meta -->
+                                </div><!-- /.map -->
+                            </div><!-- /.accordion__col -->
+
+                            <img src="assets/design/images/svg/arrow-dark.svg" alt="arrow" width="60" height="30">
+
+                            <div class="accordion__col">
+                                <div class="map">
+                                    <h4 class="level-2">Alıcı Otomatını Seçin</h4><!-- /.level-2 -->
+
+                                    <figure class="map__image">
+                                        <div class="img-fluid" id="locker2-map" style="height: 100%;"></div>
+                                    </figure><!-- /.map__image -->
+
+                                    <div class="map__meta map__meta--red locker2-map-info"><strong>LEF-01 7/24 açık</strong> Xyz Shop - Abc Street Qwe Cty ...</div><!-- /.map__meta -->
+                                </div><!-- /.map -->
+                            </div><!-- /.accordion__col -->
+                        </div><!-- /.accordion__inner -->
+                    </div><!-- /.accordion__content -->
+                </div><!-- /.accordion__body -->
+            </div><!-- /.accordion__section -->
+        </div><!-- /.accordion -->
+        <div class="section__content">
+            <div class="section__cols">
+                @using(Html.BeginForm(FormMethod.Post)){
+                <div class="section__col">
+                    <div class="js-form form section__form">
+                        <div class="form__head">
+                            <h4 class="level-2">Gönderici Bilgileri</h4><!-- /.level-2 -->
+
+                            <p>*alanların doldurulması zorunludur</p>
+
+                        </div><!-- /.form__head -->
+
+                        <div class="form__body">
+
+                            @{
+                            var name = "";
+                            var email = "";
+                            var phone = "";
+                            }
                             @if (HttpContext.Session.GetInt32("IsLoggedIn") != 1 || HttpContext.Session.GetInt32("Role") != (int)UserType.Partner)
                             {
-                                <div class="col-lg-6 order-lg-2 position-relative" id="sender-div"data-aos="zoom-out">
-
-                                    <div class="mb-3">
-                                        <label class="form-label" for="basic-default-fullname">Gönderici Adı (*) </label>
-                                        <label id="senderNameWarning" class="warning-label"></label>
-                                        <input type="text" class="form-control" name="senderName" value="@name" id="basic-default-fullname" required/>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label class="form-label" for="basic-default-fullname">Gönderici Telefon (*) </label>
-                                        <label id="senderPhoneWarning" class="warning-label"></label>
-                                        <div class="input-group">
-                                            <button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                Ülke Kodu
-                                            </button>
-                                            <ul class="dropdown-menu">
-                                                <li class="senderCountryCodeDD" data="90">
-                                                    <a class="dropdown-item" href="javascript:void(0);">Kıbrıs +90</a>
-                                                </li>
-                                            </ul>
-
-                                            <input type="text" class="form-control" name="senderPhone" value="@phone" id="basic-default-fullname" required/>
-                                        </div>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label class="form-label" for="basic-default-email">Gönderici Email (*) </label>
-                                        <label id="senderEmailWarning" class="warning-label"></label>
-
-                                        <div class="input-group input-group-merge">
-                                            <input
-                                                value="@email"
-                                                type="text"
-                                                id="basic-default-email"
-                                                class="form-control"
-                                                name="senderEmail"
-                                                aria-describedby="basic-default-email2"
-                                                required/>
-                                        </div>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label class="form-label" for="basic-default-fullname">Adres Detayı</label>
-                                        <input type="text" class="form-control" name="senderAddress" id="basic-default-fullname" required/>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label class="form-label" for="basic-default-fullname">Sipariş Notu</label>
-                                        <input type="text" class="form-control" name="note" id="basic-default-fullname" required/>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label class="form-label" for="basic-default-fullname">Gönderici VAT</label>
-                                        <input type="text" class="form-control" name="senderVat" id="basic-default-fullname" required/>
-                                    </div>
-                                    <div class="mb-3">
-
-                                        <label class="form-label" for="basic-default-email">Privacy Policy (GDPR)</label>
-
-                                        <input class="form-check-input" name="pp" type="checkbox" value="" id="defaultCheck3" checked>
-                                        <label id="gdprWarning" class="warning-label"></label>
-
-                                    </div>
-                                    <div class="mb-3">
-
-                                        <label class="form-label" for="basic-default-email">Individual Agreement with the User</label>
-
-                                        <input class="form-check-input" name="ia" type="checkbox" value="" id="defaultCheck3" checked>
-                                        <label id="iaWarning" class="warning-label"></label>
-
-                                    </div>
-
-                                </div>
+                            var setValue = HttpContext.Session.GetInt32("Role") == (int)UserType.Commercial;
+                            @if (setValue)
+                            {
+                            name = Model.User.Name;
+                            email = Model.User.Email;
+                            phone = Model.User.Phone;
                             }
 
-                            <div class="col-lg-6 order-lg-2 position-relative" id="receiver-div" data-aos="zoom-out">
+                            <div class="form__row">
+                                <label for="name" class="form__label">İsim Soyisim <span>*</span></label><!-- /.form__label -->
 
-                                <div class="mb-3">
-                                    <label class="form-label" for="basic-default-fullname">Alıcı Adı (*) </label>
-                                    <label id="receiverNameWarning" class="warning-label"></label>
+                                <div class="form__controls">
+                                    <input data-validate="true" type="text" class="field" id="name" name="senderName" placeholder="Ad Soyad veya Şirket">
 
-                                    <input type="text" class="form-control" name="receiverName" id="basic-default-fullname" required/>
-
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label" for="basic-default-fullname">Alıcı Telefon (*) </label>
-                                    <label id="receiverPhoneWarning" class="warning-label"></label>
-                                    <div class="input-group">
-                                        <button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            Ülke Kodu
-                                        </button>
-                                        <ul class="dropdown-menu">
-                                            <li class="receiverCountryCodeDD" data="90">
-                                                <a class="dropdown-item" href="javascript:void(0);">Kıbrıs +90</a>
-                                            </li>
-                                        </ul>
-
-
-                                        <input type="text" class="form-control" name="receiverPhone" id="basic-default-fullname" required/>
-
-                                    </div>
-
-
-                                </div>
-
-
+                                    <img src="assets/design/images/svg/member.svg" alt="member" width="40" height="40">
+                                </div><!-- /.form__controls -->
                             </div>
+                            <!-- /.form__row -->
+
+                            <div class="form__row">
+                                <label for="phone" class="form__label">Cep Telefonu <span>*</span></label><!-- /.form__label -->
+
+                                <div class="form__controls">
+                                    <input data-validate="true" type="text" class="js-phone-field field field--number" id="phone" name="senderPhone" placeholder="Telefon numarasını giriniz">
+
+                                    <img src="assets/design/images/svg/phone.svg" alt="member" width="40" height="40">
+                                </div><!-- /.form__controls -->
+                            </div>
+                            <!-- /.form__row -->
+
+                            <div class="form__row">
+                                <label for="mail" class="form__label">E-posta <span>*</span></label><!-- /.form__label -->
+
+                                <div class="form__controls">
+                                    <input data-validate="true" type="email" class="field" id="mail" name="email" placeholder="E-posta adresini giriniz">
+
+                                    <img src="assets/design/images/svg/mail.svg" alt="member" width="40" height="40">
+                                </div><!-- /.form__controls -->
+                            </div>
+                            <!-- /.form__row -->
+
+                            <div class="form__row">
+                                <label for="message" class="form__label">Not </label><!-- /.form__label -->
+
+                                <div class="form__controls">
+                                    <input type="text" class="field" id="message" name="note" placeholder="Gönderi notu varsa yazınız">
+
+                                    <img src="assets/design/images/svg/message.svg" alt="member" width="40" height="40">
+                                </div><!-- /.form__controls -->
+                            </div>
+                            <!-- /.form__row -->
+                            }
+
+                            <div class="form__row">
+                                <strong>Zaman Aralığı Seçin</strong>
+
+                                <div class="radios">
+                                    <div class="radio">
+                                        <input type="radio" name="radio" id="radio-1" checked>
+
+                                        <label for="radio-1">
+                                            Fark <br> etmez
+                                        </label>
+                                    </div><!-- /.radio -->
+
+                                    <div class="radio">
+                                        <input type="radio" name="radio" id="radio-2">
+
+                                        <label for="radio-2">
+                                            <span>08:00</span>
+
+                                            <span>-</span>
+
+                                            <span>12:00</span>
+                                        </label>
+                                    </div><!-- /.radio -->
+
+                                    <div class="radio">
+                                        <input type="radio" name="radio" id="radio-3">
+
+                                        <label for="radio-3">
+                                            <span>13:00</span>
+
+                                            <span>-</span>
+
+                                            <span>18:00</span>
+                                        </label>
+                                    </div><!-- /.radio -->
+                                </div><!-- /.radios -->
+                            </div><!-- /.form__row -->
+                        </div><!-- /.form__body -->
+                    </div><!-- /.form section__form -->
+                </div><!-- /.section__col -->
+
+                <div class="section__col-alt">
+                    <img src="assets/design/images/svg/arrow-dark.svg" alt="arrow" width="60" height="30">
+                </div><!-- /.section__col-alt -->
+
+                <div class="section__col">
+                    <div class="js-form form section__form">
+                        <div class="form__head">
+                            <h4 class="level-2">Alıcı Biligleri</h4><!-- /.level-2 -->
+
+                            <p>*alanların doldurulması zorunludur</p>
+                        </div><!-- /.form__head -->
+
+                        <div class="form__body">
+                            <div class="form__row">
+                                <label for="name-2" class="form__label">İsim Soyisim <span>*</span></label><!-- /.form__label -->
+
+                                <div class="form__controls">
+                                    <input data-validate="true" type="text" class="field" id="name-2" name="receiverName" placeholder="Ad Soyad veya Şirket">
+
+                                    <img src="assets/design/images/svg/member.svg" alt="member" width="40" height="40">
+                                </div><!-- /.form__controls -->
+                            </div><!-- /.form__row -->
+
+                            <div class="form__row">
+                                <label for="phone-2" class="form__label">Cep Telefonu <span>*</span></label><!-- /.form__label -->
+
+                                <div class="form__controls">
+                                    <input data-validate="true" type="text" class="js-phone-field field" id="phone-2" name="receiverPhone" placeholder="Telefon numarasını giriniz">
+
+                                    <img src="assets/design/images/svg/phone.svg" alt="member" width="40" height="40">
+                                </div><!-- /.form__controls -->
+                            </div><!-- /.form__row -->
+
+                            <div class="form__row">
+                                <ul class="list-checkboxes">
+                                    <li>
+                                        <div class="checkbox-alt">
+                                            <input data-validate="true" type="checkbox" name="checkbox-alt" id="checkbox-alt-1" checked>
+
+                                            <label for="checkbox-alt-1">
+                                                <a href="#">Gizlilik Politikası</a>
+                                            </label>
+                                        </div><!-- /.checkbox-alt -->
+                                    </li>
+
+                                    <li>
+                                        <div class="checkbox-alt">
+                                            <input data-validate="true" type="checkbox" name="checkbox-alt" id="checkbox-alt-2" checked>
+
+                                            <label for="checkbox-alt-2">
+                                                <a href="#">Kullanıcı ile Breysel Sözleşme</a>
+                                            </label>
+                                        </div><!-- /.checkbox-alt -->
+                                    </li>
+
+                                    <li>
+                                        <div class="checkbox-alt checkbox-alt--yellow-background">
+                                            <input data-validate="true" type="checkbox" name="checkbox-alt" id="checkbox-alt-3">
+
+                                            <label for="checkbox-alt-3">
+                                                <a href="#">LOKASYONLARI ONAYLA</a>
+                                            </label>
+                                        </div><!-- /.checkbox-alt -->
+                                    </li>
+                                </ul><!-- /.list-checkboxes -->
+                            </div><!-- /.form__row -->
+                            <!-- hidden fields -->
+                            <input type="hidden" class="box-input" name="boxId" value="" required>
+                            <input type="hidden" class="selected-locker-1" name="sourceLockerName" value="" required>
+                            <input type="hidden" class="selected-locker-2" name="targetLockerName" value="" required>
+                            <input type="hidden" name="items"/>
+
+                        </div><!-- /.form__body -->
+
+                        <div class="form__actions">
+                            <button type="submit" class="form__btn">
+                                <img src="assets/design/images/svg/card.svg" alt="card" width="280" height="155">
+                            </button>
                         </div>
-                    </div>
-                    <input type="hidden" class="box-input" name="boxId" value="" required>
-                    <input type="hidden" class="selected-locker-1" name="senderAddressLat" value="" required>
-                    <input type="hidden" class="selected-locker-1" name="senderAddressLong" value="" required>
-
-                    <input type="hidden" class="selected-locker-2" name="targetLockerName" value="" required>
+                    </div><!-- /.form section__form -->
+                </div><!-- /.section__col -->
                 }
-                <button type="submit" class="btn btn-form-submit btn-success">Ödeme Adımına Geç</button>
+            </div><!-- /.section__cols -->
+        </div><!-- /.section__content -->
+    </div>
 
-            </div>
-        </div>
-    </section>
-</main>
+</section>
+
+
 @if (HttpContext.Session.GetInt32("IsLoggedIn") == 1 && HttpContext.Session.GetInt32("Role") == (int)UserType.Partner)
 {
     <script>
@@ -246,6 +412,8 @@
             if (regionClicked != 0){
                 $("input[name='selectedSourceRegionId']").val(regionClicked);
             }else{
+             alert("Seçtiğiniz bölgeye hizmet veremiyoruz");
+
                 $("input[name='selectedSourceRegionId']").val(0);
             }
           regionClicked = 0;
@@ -269,9 +437,7 @@
 <script>
     var regionClicked = 0;
     function selectBox(){
-        $(".box-div").on("click", function() {
-            $(".box-div").removeClass("box-div-active");
-            $(this).addClass("box-div-active");
+        $(".checkbox").on("click", function() {
             $(".box-input").val($(this).attr("data"));
         });
 
@@ -287,7 +453,7 @@ var lockermap2 = L.map('locker2-map').setView([35.095192, 33.203430], 11);
     {
         @:selectBox();
     }
-$(".btn-form-submit").on("click",function(e){
+$(".form__btn").on("click",function(e){
   e.preventDefault();
     @if (HttpContext.Session.GetInt32("IsLoggedIn") != 1 || HttpContext.Session.GetInt32("Role") != (int)UserType.Partner)
     {
@@ -330,7 +496,7 @@ $(".btn-form-submit").on("click",function(e){
       if(receiverPhone.trim() == ""){
         $("#receiverPhoneWarning").text(" Lütfen bu alanı doldurun");
         return;
-      }else if(receiverPhone.length < 11 || isOnlyDigit(receiverPhone) == false){
+      }else if(receiverPhone.length < 11 ){
         $("#receiverPhoneWarning").text(" Lütfen telefon numarasını doğru formatta girin");
         return;
       }
