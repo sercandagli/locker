@@ -1,10 +1,47 @@
-﻿@page
-@model IndexModel
-@{
-    ViewData["Title"] = "Home page";
-}
+@page 
+@using Locker.Enums
+@using Locker.Pages
+@model IndexPageModel
+@{ Layout = "_MainLayout"; }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<section class="section">
+			<div class="shell">
+				<div class="section__head">
+					<figure class="js-animate section__image">
+						<img src="assets/design/images/temp/banner-img1.png" alt="banner" width="770" height="410">
+
+						<p>Daha fazla lokasyonda yakında hizmet vereceğiz.</p>
+					</figure><!-- /.section__image -->
+
+					<a href="#" data-target="target-1" class="js-skip section__scroll-btn">
+						<img src="assets/design/images/svg/scroll-down.svg" alt="arrow">
+					</a>
+				</div><!-- /.section__head -->
+
+				<div data-target-element="target-1" class="section__body">
+					<div class="section__row">
+						<figure class="js-animate section__image section__image--adjust">
+							<img src="assets/design/images/temp/banner-img2.png" alt="banner" width="620" height="270">
+
+							<p>Daha fazla lokasyonda yakında hizmet vereceğiz.</p>
+						</figure><!-- /.section__image -->
+					</div><!-- /.section__row -->
+
+					<div class="section__row section__row--align-right">
+						<figure class="js-animate section__image section__image--adjust">
+							<img src="assets/design/images/temp/banner-img3.png" alt="banner" width="630" height="274">
+
+							<p>Daha fazla lokasyonda yakında hizmet vereceğiz.</p>
+						</figure><!-- /.section__image -->
+					</div><!-- /.section__row -->
+
+					<div class="section__row">
+						<figure class="js-animate section__image section__image--adjust">
+							<img src="assets/design/images/temp/banner-img4.png" alt="banner" width="540" height="270">
+
+							<p>Daha fazla lokasyonda yakında hizmet vereceğiz.</p>
+						</figure><!-- /.section__image -->
+					</div><!-- /.section__row -->
+				</div><!-- /.section__body -->
+			</div><!-- /.shell -->
+		</section><!-- /.section -->

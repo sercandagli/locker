@@ -1,19 +1,15 @@
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace locker.Pages;
+using locker.Pages;
 
-public class IndexModel : BasePageModel
+namespace Locker.Pages;
+
+public class IndexPageModel : BasePageModel
 {
-    private readonly ILogger<IndexModel> _logger;
 
-    public IndexModel(ILogger<IndexModel> logger)
+
+    public async Task OnGet()
     {
-        _logger = logger;
+      
     }
 
-    public void OnGet()
-    {
-
-    }
 }
