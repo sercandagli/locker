@@ -12,7 +12,7 @@ public class Cabine
     
     public bool IsActive { get; set; }
     
-    public DateTime ModifiedOn { get; set; }
+    public DateTime? ModifiedOn { get; set; }
     
-    public virtual Region Region { get; set; }
+    public virtual Region? Region { get; set; }
 }

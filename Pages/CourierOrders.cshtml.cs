@@ -33,7 +33,7 @@ public class CourierOrdersModel : BasePageModel
         Cabines = await _context.Cabines.ToListAsync();
         Regions = await _context.Regions.ToListAsync();
         var ordersQuery =  _context.Orders.Include(x => x.OrderItems)
-            .Where(x => x.Status == (int)OrderStatus.Continue && x.ProblemId < 1).AsQueryable();
+            .Where(x =>x.IsPaid && x.Status == (int)OrderStatus.Continue && x.ProblemId < 1).AsQueryable();
         if (orderId != 0)
         {
             Orders = await ordersQuery.Where(x => x.Id == orderId).ToListAsync();

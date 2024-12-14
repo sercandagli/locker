@@ -33,12 +33,12 @@
                                 {
                                     @if (region.Id == Model.SubRegion.RegionId)
                                     {
-                                        <option value="@region" selected="true">@region.Name</option>
+                                        <option value="@region.Id" selected="selected">@region.Name</option>
 
                                     }
                                     else
                                     {
-                                        <option value="@region">@region.Name</option>
+                                        <option value="@region.Id">@region.Name</option>
 
                                     }
                                 }
@@ -49,23 +49,8 @@
                             <label class="form-label" for="basic-default-fullname">Bölge Adı</label>
                             <input type="text" class="form-control" name="Name" value="@Model.SubRegion.Name"></input>
                         </div>
-                        <div class="mb-3">
-                            <label class="form-label" for="basic-default-fullname">Durum</label>
-
-                            <select class="form-control" name="IsActive">
-                                @if (Model.SubRegion.IsActive)
-                                {
-                                    <option value="0">Pasif</option>
-                                    <option value="1" selected="true">Aktif</option>
-                                }
-                                else
-                                {
-                                    <option value="0" selected="true">Pasif</option>
-                                    <option value="1">Aktif</option>
-                                }
-                            </select>
-                        </div>
-                        <input type="hidden" name="coordinates"/>
+                      
+                        <input type="hidden" name="coordinates" value="@Model.SubRegion.Coordinates"/>
                         <div class="mb-3">
                             <button type="submit" class="form-control btn btn-primary btn-submit">Kaydet</button>
 
@@ -81,10 +66,11 @@
    var lat = "35.095192";
    var long = "33.203430";
       var lockermap1 = L.map('locker1-map').setView([lat, long], 11);
-      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 15,
-       
-      }).addTo(lockermap1);
+   L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',{
+       maxZoom: 30,
+       subdomains:['mt0','mt1','mt2','mt3']
+   }).addTo(lockermap1);
+   
    var polygon = [];
 
    var existArray = [@Model.SubRegion.Coordinates];

@@ -12,5 +12,5 @@ public class Courier
     
     public bool IsAvailable { get; set; }
     
-    public virtual Region Region { get; set; }
+    public virtual Region? Region { get; set; }
 }

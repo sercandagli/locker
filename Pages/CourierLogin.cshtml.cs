@@ -25,7 +25,7 @@ public class CourierLoginModel : BasePageModel
     {
         using var _context = new LockerDbContext();
         var courier = await _context.Couriers.FirstOrDefaultAsync(x =>
-            x.Phone == courierModel.Phone && x.Password == courierModel.Password.HashPassword());
+            x.Phone == courierModel.Phone.FormatPhone() && x.Password == courierModel.Password.HashPassword());
 
         if (courier != null)
         {

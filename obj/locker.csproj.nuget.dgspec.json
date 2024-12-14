@@ -47,6 +47,10 @@
               "target": "Package",
               "version": "[2.11.0, )"
             },
+            "Haukcode.WkHtmlToPdfDotNet": {
+              "target": "Package",
+              "version": "[1.5.95, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[8.0.0, )"

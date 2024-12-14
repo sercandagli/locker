@@ -7,6 +7,8 @@ using locker.Pages;
 using Locker.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
+using WkHtmlToPdfDotNet.Contracts;
+using WkHtmlToPdfDotNet;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,12 +24,13 @@ services.AddScoped<IOrderService,OrderService>();
 services.AddScoped<INotificationService,NotificationService>();
 services.AddScoped<IAuthService, AuthService>();
 
+    services.AddSingleton(typeof(IConverter), new SynchronizedConverter(new PdfTools()));
 
 services.AddScoped<IBestWondService,BestWondService>();
 services.AddScoped<ISmsService,SmsService>();
 services.AddScoped<WorkContext>();
 services.AddScoped<BasePageModel>();
-
+services.AddSingleton(typeof(IConverter), new SynchronizedConverter(new PdfTools()));
 services.AddSession();
 services.AddHttpClient("Cabinet", cfg => {
     var url = builder.Configuration.GetSection("BestWondServiceSettings:BaseUrl").Value;

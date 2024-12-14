@@ -107,8 +107,9 @@
         allMarkers.push(newMarker);
         newMarker.addTo(lockermap1);
       });
-      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19
+      L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',{
+          maxZoom: 30,
+          subdomains:['mt0','mt1','mt2','mt3']
       }).addTo(lockermap1);
      
      </script>

@@ -130,13 +130,11 @@ public class PaymentModel : BasePageModel
         var orderId = HttpContext.Session.GetInt32("orderId");
         if (orderId is null or 0)
             return RedirectToPage("lockerToLocker");
-        if (_workContext.User == null)
-            return RedirectToPage("lockerToLocker");
 
         using var _context = new LockerDbContext();
 
         var order = await _context.Orders.FirstOrDefaultAsync(x => x.Id == orderId);
-        var user = _workContext.User;
+        var user = _workContext.User ?? await _context.Users.FirstOrDefaultAsync(x => x.Id == order.UserId);
         var total = order.TotalAmount;
         if (model.PayWithCredit)
         {
@@ -161,14 +159,15 @@ public class PaymentModel : BasePageModel
 
             user.ModifiedOn = DateTime.Now;
 
-            await _context.SaveChangesAsync();
-            return RedirectToPage("orderCompleted");
         }
         else
         {
-
-
-            return RedirectToPage("orderCompleted");
+            order.PayType = (int)PayType.CreditCard;
         }
+          order.IsPaid = true;
+          order.PaidDate = DateTime.Now;
+
+          await _context.SaveChangesAsync();
+          return RedirectToPage("orderCompleted");
     }
 }

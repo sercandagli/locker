@@ -27,7 +27,7 @@ public class RegisterModel : BasePageModel
         var user = new User()
         {
             Name = model.Name,
-            Phone = model.Phone,
+            Phone = model.Phone.FormatPhone(),
             Email = model.Email,
             Password = model.Password.HashPassword(),
             Credit = 0,

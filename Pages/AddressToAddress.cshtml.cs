@@ -20,6 +20,10 @@ public class AddressToAddressModel(IOrderService orderService, WorkContext workC
     {
         if (_workContext.User == null)
             return RedirectToPage("lockerToLocker");
+        
+        if(_workContext.User.Type != (int)UserType.Partner)
+            return RedirectToPage("notFound");
+        
         var userType = _workContext.User?.Type ?? 1;
         Model = await _orderService.PrepareOrderPage((int)DeliveryType.AddressToAddress, userType);
         using var _context = new LockerDbContext();

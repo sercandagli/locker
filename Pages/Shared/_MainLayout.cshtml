@@ -98,7 +98,7 @@
 						<img src="assets/design/images/svg/nav-decoration-alt.svg" alt="decoration" class="nav__decoration">
 		
 						<ul>
-							@if (Context.Session.GetInt32("IsLoggedIn") != 1)
+							@if (Context.Session.GetInt32("IsLoggedIn") != 1  || string.IsNullOrEmpty(Context.Session.GetString("Name")))
 							{
 								<li>
 									<a href="register">kurumsal hesap</a>
@@ -161,7 +161,7 @@
 								</li>
 		
 								<li>
-									<a href="cargoPoints">Cargo Point Lokasyonları</a>
+									<a href="cabinePoints">Cargo Point Lokasyonları</a>
 								</li>
 		
 								<li>

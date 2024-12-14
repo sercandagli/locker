@@ -22,6 +22,11 @@ public class AddCabineModel : BasePageModel
             return RedirectToPage("managementLogin");
         using var _context = new LockerDbContext();
         Regions = await _context.Regions.ToListAsync();
+        if (Regions.Count == 0)
+        {
+            this.Message = "Lütfen önce ana bölge ekleyin";
+            
+        }
         return Page();
     }
 
@@ -30,7 +35,7 @@ public class AddCabineModel : BasePageModel
         if (_workContext.Admin == null)
             return RedirectToPage("managementLogin");
             using var _context = new LockerDbContext();
-
+            cabine.IsActive = true;
             if(!ModelState.IsValid){
                 this.Message = "Lütfen tüm alanları doldurun";
                 Regions = await _context.Regions.ToListAsync();

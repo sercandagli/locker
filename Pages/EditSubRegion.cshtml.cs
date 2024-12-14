@@ -36,7 +36,7 @@ public class EditRegionModel : BasePageModel
         using var _context = new LockerDbContext();
         var region = await _context.SubRegions.FirstOrDefaultAsync(x => x.Id == model.Id);
         region.Name = model.Name;
-        region.IsActive = model.IsActive;
+        region.RegionId = model.RegionId;
         region.Coordinates = model.Coordinates;
         region.ModifiedOn = DateTime.Now;
         await _context.SaveChangesAsync();

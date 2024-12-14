@@ -40,8 +40,8 @@ public class EditCourierModel : BasePageModel
         Courier.Name = model.Name;
         Courier.Email = model.Email;
         Courier.RegionId = model.RegionId;
-        if(string.IsNullOrEmpty(model.Password))
-        Courier.Password = model.Password.HashPassword();
+        if(!string.IsNullOrEmpty(model.Password))
+            Courier.Password = model.Password.HashPassword();
         await _context.SaveChangesAsync();
 
         return RedirectToPage("couriers");

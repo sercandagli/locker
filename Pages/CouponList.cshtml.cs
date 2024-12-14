@@ -21,7 +21,7 @@ public class CouponListModel : BasePageModel{
           if (_workContext.Admin == null)
             return RedirectToPage("managementLogin");
 using var _context = new LockerDbContext();
-        Coupons = await _context.Coupons.Where(x => !x.IsUsed).ToListAsync();           
+        Coupons = await _context.Coupons.ToListAsync();           
 
             return Page();
 

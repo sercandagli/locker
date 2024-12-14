@@ -52,3 +52,10 @@
 /Users/macbookpro/Desktop/locker/bin/Debug/net8.0/System.IdentityModel.Tokens.Jwt.dll
 /Users/macbookpro/Desktop/locker/bin/Debug/net8.0/CsvHelper.dll
 /Users/macbookpro/Desktop/locker/obj/Debug/net8.0/locker.sourcelink.json
+/Users/macbookpro/Desktop/locker/bin/Debug/net8.0/runtimes/win-x64/native/wkhtmltox.dll
+/Users/macbookpro/Desktop/locker/bin/Debug/net8.0/runtimes/win-x86/native/wkhtmltox.dll
+/Users/macbookpro/Desktop/locker/bin/Debug/net8.0/WkHtmlToPdfDotNet.dll
+/Users/macbookpro/Desktop/locker/bin/Debug/net8.0/runtimes/linux-arm64/native/libwkhtmltox.so
+/Users/macbookpro/Desktop/locker/bin/Debug/net8.0/runtimes/linux-x64/native/libwkhtmltox.so
+/Users/macbookpro/Desktop/locker/bin/Debug/net8.0/runtimes/linux-x86/native/libwkhtmltox.so
+/Users/macbookpro/Desktop/locker/bin/Debug/net8.0/runtimes/osx-x64/native/libwkhtmltox.dylib

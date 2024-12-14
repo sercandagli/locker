@@ -108,7 +108,10 @@
                                     <td>@order.OrderItems.Count()</td>
                                     <td>@order.TotalAmount.ToString("#.00") TL</td>
                                     <td>
-                                        @if (order.IsTransferred)
+                                        @if (order.IsTransferCompleted)
+                                        {
+                                            @:Transfer Tamamlandı
+                                        }else if (order.IsTransferred)
                                         {
                                             @:Transfer Edildi
                                         }

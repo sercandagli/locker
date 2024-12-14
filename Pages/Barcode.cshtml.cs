@@ -1,72 +1,114 @@
 
 using Locker.Data;
+using Locker.Entities;
 using Locker.Enums;
+using Locker.Models;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using WkHtmlToPdfDotNet;
 
 namespace locker.Pages;
 
 public class BarcodeModel : BasePageModel
 {
-    public string SLSaveCode { get; set; }
-    public string SLPickCode { get; set; }
-    
-    public string TLSaveCode { get; set; }
-    public string TLPickCode { get; set; }
-    
-    public string SourceCabineName { get; set; }
-    
-    public string TargetCabineName { get; set; }
-    
-    public bool IsTransfer { get; set; }
-    
-    public string TranferCourierName { get; set; }
+    public List<BarcodeViewModel> BarcodeItems{get;set;}
     
     
-    public async Task OnGet(int orderItemId)
+    public async Task OnGet(List<int> oids)
     {
+        BarcodeItems = new List<BarcodeViewModel>();
         using var _context = new LockerDbContext();
 
-        var orderItem = await _context.OrderItems.FirstOrDefaultAsync(x => x.Id == orderItemId);
-        var order = await _context.Orders.FirstOrDefaultAsync(x => x.Id == orderItem.OrderId);
-        SLSaveCode = orderItem.SLSaveCde ?? string.Empty;
-        SLPickCode = orderItem.SLPickCode ?? string.Empty;
-        TLSaveCode = orderItem.TLSaveCode ?? string.Empty;
-        TLPickCode = orderItem.TLPickCode ?? string.Empty;
+        foreach(var orderId in oids){
+        var order = await _context.Orders.Include(x => x.OrderItems).FirstOrDefaultAsync(x => x.Id == orderId);
+        foreach(var orderItem in order.OrderItems.Where(x => x.Status != (int)OrderItemStatus.Cancelled && x.Status != (int)OrderItemStatus.Delivered)){
+
+        
+        var barcodeItem = new BarcodeViewModel{
+            SLSaveCode = orderItem.SLSaveCde ?? string.Empty,
+            SLPickCode = orderItem.SLPickCode ?? string.Empty,
+            TLSaveCode = orderItem.TLSaveCode ?? string.Empty,
+            TLPickCode = orderItem.TLPickCode ?? string.Empty,
+            SenderName = order.SenderName,
+            ReceiverName = order.ReceiverName,
+            SenderPhone = order.SenderPhone,
+            ReceiverPhone = order.ReceiverPhone,
+            SenderAddress = order.SenderAddress,
+            ReceiverAddress = order.ReceiverAddress,
+            BoxSize = orderItem.BoxSize,
+            OrderId = orderItem.Id 
+        };
+        
 
 
         if (order.DeliveryType == (int)DeliveryType.LockerToLocker)
         {
-            SLSaveCode = string.Empty;
-            TLPickCode = string.Empty;
+            barcodeItem.SLSaveCode = string.Empty;
+            barcodeItem.TLPickCode = string.Empty;
         }else if (order.DeliveryType == (int)DeliveryType.AddressToLocker)
         {
-            SLSaveCode = string.Empty;
-            SLPickCode = string.Empty;
-            TLPickCode = string.Empty;
+            barcodeItem.SLSaveCode = string.Empty;
+            barcodeItem.SLPickCode = string.Empty;
+            barcodeItem.TLPickCode = string.Empty;
         }else if (order.DeliveryType == (int)DeliveryType.LockerToAddress)
         {
-            SLSaveCode = string.Empty;
-            TLSaveCode = string.Empty;
-            TLPickCode = string.Empty;
+            barcodeItem.SLSaveCode = string.Empty;
+            barcodeItem.TLSaveCode = string.Empty;
+            barcodeItem.TLPickCode = string.Empty;
         }
         
         
         var cabines = await _context.Cabines.ToListAsync();
         if (orderItem.SourceLockerId != null && orderItem.SourceLockerId != 0)
-            SourceCabineName = cabines.FirstOrDefault(x => x.Id == orderItem.SourceLockerId).Name;
+            barcodeItem.SourceCabineName = cabines.FirstOrDefault(x => x.Id == orderItem.SourceLockerId).Name;
         if(orderItem.TargetLockerId != null && orderItem.TargetLockerId != 0)
-            TargetCabineName = cabines.FirstOrDefault(x => x.Id == orderItem.TargetLockerId).Name;
+            barcodeItem.TargetCabineName = cabines.FirstOrDefault(x => x.Id == orderItem.TargetLockerId).Name;
 
-        IsTransfer = order.IsTransferred && !order.IsTransferCompleted;
+        barcodeItem.IsTransfer = order.IsTransferred && !order.IsTransferCompleted;
 
-        TranferCourierName = _context.Couriers.FirstOrDefault(x => x.Id == order.CourierId).Name;
+        barcodeItem.TranferCourierName = _context.Couriers.FirstOrDefault(x => x.Id == order.CourierId)?.Name;
 
         if (!orderItem.IsPrinted)
         {
             orderItem.IsPrinted = true;
-            await _context.SaveChangesAsync();
+           
+        }
+
+        barcodeItem.CreatedOn = orderItem.CreatedOn.ToString();
+                BarcodeItems.Add(barcodeItem);
 
         }
 
+         await _context.SaveChangesAsync();
+        }
+
+    }
+
+    public async Task<IActionResult> OnPost(PrintModel model){
+        var converter = new BasicConverter(new PdfTools());
+        model.Html = model.Html.Replace("\n","").Replace("\"","'");
+        var doc = new HtmlToPdfDocument()
+        {
+            GlobalSettings = {
+                Margins = new MarginSettings{
+                         Bottom = 0,
+                         Top = 0,
+                         Left = 0,
+                         Right = 0
+                },
+                ColorMode = ColorMode.Color,
+                Orientation = Orientation.Landscape,
+                PaperSize = new PechkinPaperSize("130mm","70mm")
+            },
+            Objects = {
+                new ObjectSettings() {
+                    HtmlContent = model.Html,
+                    WebSettings = { DefaultEncoding = "utf-8" }
+                }
+            }
+        };
+
+        var pdf = converter.Convert(doc);
+        return File(pdf,"application/pdf","siparisler.pdf");
     }
 }

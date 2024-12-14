@@ -25,6 +25,11 @@ public class CreateRegionModel : BasePageModel
         using var _context = new LockerDbContext();
 
         Regions = await _context.Regions.ToListAsync();
+        if (Regions.Count == 0)
+        {
+            this.Message = "Lütfen önce ana bölge ekleyin";
+            
+        }
         return Page();
     }
 

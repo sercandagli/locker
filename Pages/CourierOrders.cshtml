@@ -23,6 +23,7 @@
 
             </a>
             <button class="btn btn-dark complete-transfers">Transferleri Tamamla</button>
+            <button class="btn btn-dark print">Yazdır</button>
 
         </div>
         <div class="col-xxl filter">
@@ -252,6 +253,35 @@
             $(selects[i]).prop("checked",param);
         }
     });
+
+    $(".print").on("click",function(){
+          var datas = $(".order-select:checked");
+          
+        var idArray = [];
+        var queryString = "";
+
+        for (var i =0; i < datas.length; i++){
+            queryString += "oids=" + $(datas[i]).val() + "&";
+        }
+        if (queryString == "")
+            return;
+        window.location ="/barcode?" + queryString;
+        /*
+        $.ajax({
+            type: "POST",
+            url: "/CourierOrders?Handler=CompleteTransfers",
+            headers: { "RequestVerificationToken": $('input[name="__RequestVerificationToken"]').val() },
+            data:{"orderIds":idArray},
+            success: function (result) {
+                location.reload();
+            },
+            failure: function (response) {
+
+            }
+        });*/
+    });
+
+
     $(".cabine-select").on("change", function (){
         var cabine = $(this).val();
         window.location = "courierOrders?cabineId=" + cabine;

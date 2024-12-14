@@ -1,4 +1,5 @@
 @page 
+@using Locker.Entities
 @model EditCabineModel
 <style>
       #locker1-map {
@@ -26,7 +27,7 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label" for="basic-default-fullname">Bölge</label>
-                            <select class="form-control" name="regionId">
+                            <select class="form-control" name="regionId" value="@Model.Cabine.RegionId">
                                 @foreach (var region in Model.Regions)
                                 {
                                     if (region.Id == Model.Cabine.RegionId)
@@ -41,22 +42,6 @@
                             </select>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label" for="basic-default-fullname">Durum</label>
-
-                            <select class="form-control" name="IsActive">
-                                @if (Model.Cabine.IsActive)
-                                {
-                                    <option value="0">Pasif</option>
-                                    <option value="1" selected="true">Aktif</option>
-                                }
-                                else
-                                {
-                                    <option value="0" selected="true">Pasif</option>
-                                    <option value="1">Aktif</option>
-                                }
-                            </select>
-                        </div>
-                        <div class="mb-3">
                             <label class="form-label" for="basic-default-fullname">Açıklama</label>
                             <input type="text" class="form-control" name="Description" value="@Model.Cabine.Description"></input>
                         </div>
@@ -64,8 +49,8 @@
                             <label class="form-label" for="basic-default-fullname">Identifier *(BestWond Id Karşılığı)</label>
                             <input type="text" class="form-control" name="Identifier" value="@Model.Cabine.Identifier"></input>
                         </div>
-                        <input type="hidden" name="lat"/>
-                        <input type="hidden" name="long"/>
+                        <input type="hidden" name="lat" value="@Model.Cabine.Lat"/>
+                        <input type="hidden" name="long" value="@Model.Cabine.Long"/>
 
                         <div class="mb-3">
                             <button type="submit" class="form-control btn btn-primary btn-submit">Kaydet</button>
@@ -82,10 +67,10 @@
    var lat = "35.095192";
    var long = "33.203430";
       var lockermap1 = L.map('locker1-map').setView([lat, long], 11);
-    L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',{
-        maxZoom: 20,
-        subdomains:['mt0','mt1','mt2','mt3']
-      }).addTo(lockermap1);
+   L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',{
+       maxZoom: 30,
+       subdomains:['mt0','mt1','mt2','mt3']
+   }).addTo(lockermap1);
   
    
       var allMarkers = [];

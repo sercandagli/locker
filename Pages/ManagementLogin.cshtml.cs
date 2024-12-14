@@ -21,7 +21,7 @@ public class ManagementLoginModel : BasePageModel
     {
         using var _context = new LockerDbContext();
         var admin = await _context.Admins.FirstOrDefaultAsync(x =>
-            x.Phone == courierModel.Phone && x.Password == courierModel.Password.HashPassword());
+            x.Phone == courierModel.Phone.FormatPhone() && x.Password == courierModel.Password.HashPassword());
 
         if (admin != null)
         {

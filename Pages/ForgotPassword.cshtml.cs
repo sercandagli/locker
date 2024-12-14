@@ -25,7 +25,7 @@ public class ForgotPasswordModel(WorkContext workContext) : BasePageModel
         await using var _context = new LockerDbContext();
         var user =
             await _context.Users.FirstOrDefaultAsync(x =>
-                x.Phone == model.Phone);
+                x.Phone == model.Phone.FormatPhone());
 
         if (user == null){
             this.Message = "Bu telefona ait kullanıcı bulunamadı";

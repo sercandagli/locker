@@ -39,15 +39,16 @@ public class OrderService : IOrderService
             var newUser = new User()
             {
                 Name = model.SenderName,
-                Phone = model.SenderPhone,
+                Phone = model.SenderPhone.FormatPhone(),
                 Email = model.SenderEmail,
                 Type = (int)UserType.Normal,
                 Credit = 0,
+                IsActive = true,
                 AddressLat = model.SenderAddressLat,
                 AddressLong = model.SenderAddressLong,
                 Address = model.SenderAddress,
                 CreatedOn = DateTime.Now,
-                Password = "1a9ffHm93La.)opx78al_XHmLa".HashPassword()
+                Password = DateTime.Now.ToString().HashPassword()
             };
             await _context.Users.AddAsync(newUser);
             await _context.SaveChangesAsync();
@@ -155,7 +156,7 @@ public class OrderService : IOrderService
             OrderType = (int)model.OrderType,
             TotalAmount = orderItems.Sum(x => x.Amount),
             SenderName = user.Name,
-            SenderPhone = user.Phone,
+            SenderPhone = user.Phone.FormatPhone(),
             SenderEmail = user.Email,
             SenderAddress = user.Address,
             SenderAddressLat = user.AddressLat,
@@ -166,7 +167,7 @@ public class OrderService : IOrderService
             CourierId = courierId ?? 0,
             Status = (int)OrderStatus.Continue,
             ReceiverName = model.ReceiverName,
-            ReceiverPhone = model.ReceiverPhone,
+            ReceiverPhone = model.ReceiverPhone.FormatPhone(),
             ReceiverEmail = model.ReceiverEmail,
             ReceiverAddress = model.ReceiverAddress,
             ReceiverAddressLat = model.ReceiverAddressLat,
@@ -241,12 +242,11 @@ public class OrderService : IOrderService
 
         await _notificationService.SendOrderCreatedNotification(model.SenderPhone);
     }
-
     public async Task<OrderViewModel> PrepareOrderPage(int deliveryType, int userType)
     {
         using var _context = new LockerDbContext();
 
-        var cabines = await _context.Cabines.ToListAsync();
+        var cabines = await _context.Cabines.Where(x => x.IsActive).ToListAsync();
 
         var model = new OrderViewModel
         {

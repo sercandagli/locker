@@ -19,7 +19,7 @@ public class UserOrdersModel : BasePageModel
     public async Task OnGet()
     {
         using var _context = new LockerDbContext();
-        Orders = await _context.Orders.Where(x => x.UserId == _workContext.User.Id).Include(x => x.OrderItems)
+        Orders = await _context.Orders.Where(x => x.IsPaid && x.UserId == _workContext.User.Id).Include(x => x.OrderItems)
             .ToListAsync();
     }
 }

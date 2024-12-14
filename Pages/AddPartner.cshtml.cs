@@ -19,11 +19,12 @@ public class AddVIPPartnerModel : BasePageModel
         _workContext = workContext;
     }
 
-    public void OnGet()
+    public async Task<IActionResult> OnGet()
     {
 
         if (_workContext.Admin == null)
-            return;
+            return RedirectToPage("managementLogin");
+        return Page();
     }
 
 
@@ -34,6 +35,8 @@ public class AddVIPPartnerModel : BasePageModel
              user.CreatedOn = DateTime.Now;
         user.ModifiedOn = DateTime.Now;
         user.Type = (int)UserType.Partner;
+        user.IsActive = true;
+        
         using var _context = new LockerDbContext();
         if(!ModelState.IsValid){
                 this.Message = "Lütfen tüm alanları doldurun";
@@ -43,6 +46,7 @@ public class AddVIPPartnerModel : BasePageModel
             }
        
         user.Password = user.Password.HashPassword();
+        user.Phone = user.Phone.FormatPhone();
         _context.Users.Add(user);
 
         await _context.SaveChangesAsync();

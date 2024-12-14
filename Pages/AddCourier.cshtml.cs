@@ -31,6 +31,7 @@ public class AddCourierModel : BasePageModel
     {
         if (_workContext.Admin == null)
             return RedirectToPage("managementLogin");
+        courier.IsAvailable = true;
 
         using var _context = new LockerDbContext();
          if(!ModelState.IsValid){
@@ -41,7 +42,6 @@ public class AddCourierModel : BasePageModel
 
             }
         courier.Password = courier.Password.HashPassword();
-        courier.IsAvailable = true;
         await _context.Couriers.AddAsync(courier);
         await _context.SaveChangesAsync();
         IsSuccess = true;

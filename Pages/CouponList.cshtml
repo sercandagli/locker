@@ -19,6 +19,7 @@
             <th>#Id</th>
             <th>#İndirim Tutarı</th>
             <th>#Kod</th>
+            <th>Durum</th>
             <th>#İşlemler</th>
              <th>
                         <a href="addCoupon">
@@ -28,14 +29,24 @@
           </tr>
         </thead>
         <tbody class="table-border-bottom-0"> 
-            @foreach(var coupon in Model.Coupons){ 
+            @foreach(var coupon in Model.Coupons.OrderBy(x => x.IsUsed)){ 
              
 
 
                 <tr>
                                 <td>@coupon.Id</td>
                                 <td>@coupon.Amount TL</td>
-                                  <td>@coupon.Code</td>
+                                <td>@coupon.Code</td>
+                                @if (coupon.IsUsed)
+                                {
+                                  <td>Kullanıldı</td>
+                                }
+                                else
+                                {
+                                  <td>Aktif</td>
+
+                                }
+                                <td></td>
             <td><a href="CouponList?Handler=DeleteCoupon&id=@coupon.Id"><button class="btn btn-danger">Sil</button></a></td>
                                   
        

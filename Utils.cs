@@ -137,6 +137,30 @@ public static class Utils
         }
     }
 
+    public static string FormatPhone(this string phone){
+ 
+        var countries_list = new List<string>
+        {
+            "90",
+            "0",
+            "+90",
+            "+9",
+            "+"
+           
+           
+        };
+
+
+        foreach(var country in countries_list)
+        {
+            if(phone.StartsWith(country))
+                phone = phone.Replace(country, "");
+
+        }
+
+        return phone;
+    }
+
     public static string HashPassword(this string password)
     {
         var md5 = new MD5CryptoServiceProvider();

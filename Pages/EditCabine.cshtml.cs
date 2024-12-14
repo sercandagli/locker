@@ -36,7 +36,6 @@ public class EditCabineModel : BasePageModel
         Cabine = await _context.Cabines.FirstOrDefaultAsync(x => x.Id == model.Id);
         Cabine.Name = model.Name;
         Cabine.Lat = model.Lat;
-        Cabine.IsActive = model.IsActive;
         Cabine.Long = model.Long;
         Cabine.Identifier = model.Identifier;
         Cabine.ModifiedOn = DateTime.Now;
