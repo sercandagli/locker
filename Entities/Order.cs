@@ -11,6 +11,10 @@ public class Order
     public decimal Discount{get;set;}
     public int PayType { get; set; }
     
+    public string? ReceiverOtpCode { get; set; }
+    
+    public string? SenderOtpCode { get; set; }
+    
     public int SourceRegionId { get; set; }
     
     public int TargetRegionId { get; set; }

@@ -14,175 +14,241 @@
         <div class="card-header d-flex justify-content-between align-items-center">
             <h5 class="card-header">Siparişlerim (@Model.Orders.Count) Teslim Al (@Model.TakeCount) - Teslim Et(@Model.SaveCount)</h5>
 
-            <a href="courierOrders">
-                <button class="btn btn-dark">Filtreleri Temizle</button>
-
-            </a>
-            <a href="courierOrders?isTransfer=1">
-                <button class="btn btn-dark">Transfer Siparişler</button>
-
-            </a>
-            <button class="btn btn-dark complete-transfers">Transferleri Tamamla</button>
-            <button class="btn btn-dark print">Yazdır</button>
 
         </div>
         <div class="col-xxl filter">
             <div class="card mb-4">
                 <div class="card-body">
+                    <table>
+                        <tr>
+                            <td>
+                                <a href="courierOrders">
+                                    <button class="btn btn-dark">Filtreleri Temizle</button>
+
+                                </a>
+                            </td>
+                            <td>
+                                <a href="courierOrders?isTransfer=1">
+                                    <button class="btn btn-dark">Transfer Siparişler</button>
+
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button class="btn btn-dark complete-transfers">Transferleri Tamamla</button>
+
+                            </td>
+                            <td>
+                                <button class="btn btn-dark print">Yazdır</button>
+
+                            </td>
+                        </tr>
+                    </table>
+
+
                     <div class="demo-inline-spacing">
                         <div class="btn-group" role="group">
-                            &nbsp;
-                            <div class="mb-3">
+                           
+                            <tr class="mb-6">
+                            @using (Html.BeginForm(FormMethod.Get))
+                            {
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <div class="mb-3">
 
-                                <select class="form-control cabine-select" name="cabineId">
-                                    <option value="0">Kargomat</option>
-                                    @foreach (var i in Model.Cabines)
-                                    {
-                                        <option class="dropdown-item" href="javascript:void(0);" value="@i.Id">@i.Name</option>
-                                    }
-                                </select>
-                                &nbsp;
-                            </div>
-                            &nbsp;
-                            <div class="mb-3">
-                                @using (Html.BeginForm(FormMethod.Get))
-                                {
-                                    <div class="btn-group" role="group">
-                                        <div class="mb-3">
-                                            <select class="form-control " name="deliveryAddressType">
-                                                <option value="1">Adresten Al</option>
-                                                <option value="2">Adrese Teslim</option>
-
-                                            </select>
-                                            &nbsp;
-                                        </div>
-                                        &nbsp;
-                                        <div class="mb-3">
-                                            <select class="form-control " name="regionId">
-                                                @foreach (var i in Model.Regions)
-                                                {
+                                                <select class="form-control cabine-select" name="cabineId">
+                                                    <option value="0">Kargomat</option>
+                                                    @foreach (var i in Model.Cabines)
+                                                    {
                                                     <option class="dropdown-item" href="javascript:void(0);" value="@i.Id">@i.Name</option>
-                                                }
-                                            </select>
-                                            &nbsp;
-                                        </div>
-                                        &nbsp;
-                                        <div class="mb-3">
-                                            <input type="text" class="form-control" id="basic-default-name" name="orderId" placeholder="Takip Numarası">
+                                                    }
+                                                </select>
+                                                &nbsp;
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="mb-6">
+                                                <select class="form-control " name="deliveryAddressType">
+                                                    <option value="1">Adresten Al</option>
+                                                    <option value="2">Adrese Teslim</option>
 
-                                        </div>
-                                        &nbsp;
+                                                </select>
+                                                &nbsp;
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    &nbsp;
+                                    <tr>
+                                        <td>
+                                            <div class="mb-6">
+                                                <select class="form-control " name="regionId">
+                                                    @foreach (var i in Model.Regions)
+                                                    {
+                                                        <option class="dropdown-item" href="javascript:void(0);" value="@i.Id">@i.Name</option>
+                                                    }
+                                                </select>
+                                                &nbsp;
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="mb-6">
+                                                <input type="text" class="form-control" id="basic-default-name" name="orderId" placeholder="Takip Numarası">
 
-                                        <div class="mb-3">
-                                            <button type="submit" class="btn btn-outline-secondary"> Ara </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    &nbsp;
+                                    <tr>
+                                        <td>
+                                            <div class="mb-6">
+                                                <button type="submit" class="btn btn-outline-secondary"> Ara </button>
 
-                                        </div>
-                                    </div>
-                                }
-                            </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            }
                         </div>
-
-
                     </div>
 
+
                 </div>
+
             </div>
         </div>
 
+    <div class="table-responsive text-nowrap">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>
+                    <input class="form-check-input" type="checkbox" value="" id="select-all">
+                </th>
+                <th>G. Tipi</th>
 
-        <div class="table-responsive text-nowrap">
-            <table class="table table-striped">
-                <thead>
+                <th>Teslimat</th>
+                <th>Tip</th>
+
+                <th>#</th>
+            </tr>
+            </thead>
+            <tbody class="table-border-bottom-0">
+            @foreach (var order in Model.Orders)
+            {
+                Cabine cabine = null;
+                var item = order.OrderItems.FirstOrDefault();
                 <tr>
-                    <th>
-                        <input class="form-check-input" type="checkbox" value="" id="select-all">
-                    </th>
-                    <th>Sipariş Numarası</th>
-                    <th>Gönderim Tipi</th>
-                    <th>Teslim Alınacak</th>
-                    <th>Teslim Edilecek</th>
+                    <td>
+                        <input class="form-check-input order-select" type="checkbox" value="@order.Id">
+                        #@order.Id
+                    </td>
+                    <td>
+                        @if (order.Status != (int)OrderStatus.Completed)
+                        {
+                            if (item.Status.GetCourierOrderStatus(order.DeliveryType) == "Teslim Al")
+                            {
+                                <button type="button" class="btn btn-outline-primary courierTakeButton">@Html.Raw(item.Status.GetCourierOrderStatus(order.DeliveryType))</button>
+                            }
+                            else if (item.Status.GetCourierOrderStatus(order.DeliveryType) == "Teslim Et")
+                            {
+                                <button type="button" class="btn btn-outline-primary courierDeliveryButton">@Html.Raw(item.Status.GetCourierOrderStatus(order.DeliveryType))</button>
+                            }
+                        }
+                    </td>
 
-                    <th>Durum</th>
-                    <th>Oluşma Tarihi</th>
-                    <th>#</th>
+                    <td>
+                        @if (order.DeliveryType == (int)DeliveryType.LockerToAddress || order.DeliveryType == (int)DeliveryType.LockerToLocker)
+                        {
+                            <strong>@Model.Cabines.FirstOrDefault(x => x.Id == order.OrderItems.FirstOrDefault().SourceLockerId).Name</strong>
+                        }
+                        else if (order.DeliveryType == (int)DeliveryType.AddressToAddress || order.DeliveryType == (int)DeliveryType.AddressToLocker)
+                        {
+                            <strong>@Model.Regions.FirstOrDefault(x => x.Id == order.SourceRegionId)?.Name</strong>
+                        }
+
+                        ->
+                        @if (order.DeliveryType == (int)DeliveryType.LockerToAddress || order.DeliveryType == (int)DeliveryType.AddressToAddress)
+                        {
+                            <strong>@Model.Regions.FirstOrDefault(x => x.Id == order.TargetRegionId)?.Name</strong>
+                        }
+                        else if (order.DeliveryType == (int)DeliveryType.AddressToLocker || order.DeliveryType == (int)DeliveryType.LockerToLocker)
+                        {
+                            <strong>@Model.Cabines.FirstOrDefault(x => x.Id == order.OrderItems.FirstOrDefault().TargetLockerId)?.Name</strong>
+                        }
+                    </td>
+                    <td>@order.DeliveryType.GetDeliveryType(true)</td>
+
+                    <td>
+                        <div class="demo-inline-spacing">
+
+                            @if (order.ProblemId < 1)
+                            {
+                                <button type="button" class="btn btn-outline-primary reportModalButton" data="@order.Id">Hata Bildir</button>
+                            }
+
+                        </div>
+                        @if (order.IsTransferred && order.IsTransferCompleted)
+                        {
+                            <span class="badge bg-label-dark">Transfer Tamamlandı</span>
+                        }
+                        else if (order.IsTransferred)
+                        {
+                            <span class="badge bg-label-danger">Transfer</span>
+                        }
+                    </td>
                 </tr>
-                </thead>
-                <tbody class="table-border-bottom-0">
-                @foreach (var order in Model.Orders)
-                {
-                    Cabine cabine = null;
-                    var item = order.OrderItems.FirstOrDefault();
-                    <tr>
-                        <td>
-                            <input class="form-check-input order-select" type="checkbox" value="@order.Id">
-                        </td>
-                        <td>#@order.Id</td>
-                        <td>@order.DeliveryType.GetDeliveryType()</td>
-
-                        <td>
-                            @if (order.DeliveryType == (int)DeliveryType.LockerToAddress || order.DeliveryType == (int)DeliveryType.LockerToLocker)
-                            {
-                                <strong>@Model.Cabines.FirstOrDefault(x => x.Id == order.OrderItems.FirstOrDefault().SourceLockerId).Name</strong>
-                            }
-                            else if (order.DeliveryType == (int)DeliveryType.AddressToAddress || order.DeliveryType == (int)DeliveryType.AddressToLocker)
-                            {
-                                <strong>@Model.Regions.FirstOrDefault(x => x.Id == order.SourceRegionId)?.Name</strong>
-                            }
-
-                        </td>
-                        <td>
-                            @if (order.DeliveryType == (int)DeliveryType.LockerToAddress || order.DeliveryType == (int)DeliveryType.AddressToAddress)
-                            {
-                                <strong>@Model.Regions.FirstOrDefault(x => x.Id == order.TargetRegionId)?.Name</strong>
-                            }
-                            else if (order.DeliveryType == (int)DeliveryType.AddressToLocker || order.DeliveryType == (int)DeliveryType.LockerToLocker)
-                            {
-                                <strong>@Model.Cabines.FirstOrDefault(x => x.Id == order.OrderItems.FirstOrDefault().TargetLockerId)?.Name</strong>
-                            }
-                        </td>
-
-                        <td>@Html.Raw(item.Status.GetCourierOrderStatus(order.DeliveryType))</td>
-                        <td>@order.CreatedOn</td>
-                        <td>
-                            <div class="demo-inline-spacing">
-                                @if (order.Status != (int)OrderStatus.Completed)
-                                {
-                                    <a href="courierOrderDetail?id=@order.Id">
-                                        <button type="button" class="btn btn-outline-primary">Detay</button>
-                                    </a>
-                                }
-                                @if(order.ProblemId < 1){
-                                   <button type="button" class="btn btn-outline-primary reportModalButton" data="@order.Id">Hata Bildir</button>
-                                }
-
-                            </div>
-                            @if (order.IsTransferred && order.IsTransferCompleted)
-                            {
-                                <span class="badge bg-label-dark">Transfer Tamamlandı</span>
-                            }
-                            else if (order.IsTransferred)
-                            {
-                                <span class="badge bg-label-danger">Transfer</span>
-                            }
-                        </td>
-                    </tr>
-                }
-                </tbody>
-            </table>
-        </div>
+            }
+            </tbody>
+        </table>
     </div>
 </div>
-<div class="modal fade" id="deliveryModal" tabindex="-1" style="display: none;" aria-hidden="true">
+</div>
+<div class="modal fade" id="deliveryModalWithOtp" tabindex="-1" style="display: none;" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <label class="oid-hidden fade"></label>
-                <h5 class="modal-title" id="deliveryModalTitle">Siparişi teslim etmek istediğinize eminmisiniz?</h5>
+                <h5 class="modal-title" id="deliveryModalTitle">Lütfen 4 haneli teslimat kodunu giriniz</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col mb-3">
+                        <label for="nameBasic" class="form-label">4 Haneli Kod</label>
+                        <input type="text" id="otpCode" class="form-control" placeholder="OTP">
+                    </div>
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal"> İptal </button>
-                <button type="button" class="btn btn-primary setDeliveryButton">Kaydet</button>
+                <button type="button" class="btn btn-primary courierSetDeliveryButton">Kaydet</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="takeModalWithOtp" tabindex="-1" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deliveryModalTitle">Lütfen 4 haneli teslimat kodunu giriniz</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col mb-3">
+                        <label for="nameBasic" class="form-label">4 Haneli Kod</label>
+                        <input type="text" id="takeOtpCode" class="form-control" placeholder="OTP">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal"> İptal </button>
+                <button type="button" class="btn btn-primary courierTakeDeliveryButton">Kaydet</button>
             </div>
         </div>
     </div>
@@ -208,7 +274,7 @@
                 <div class="row">
                     <div class="col mb-3">
                         <label for="nameBasic" class="form-label">Hata Açıklaması</label>
-                        <input type="text"  class="form-control" name="problemDescription">
+                        <input type="text" class="form-control" name="problemDescription">
                     </div>
                 </div>
             </div>
@@ -243,6 +309,80 @@
 </div>
 
 <script>
+
+
+
+
+    $(".courierTakeButton").on('click',function(){
+        var orderId = $(this).attr("data-oid");
+        var orderType = $(this).attr("data-otype");
+        $(".oid-hidden").text(orderId);
+
+        $("#takeModalWithOtp").modal("show");
+
+    });
+
+    $(".courierTakeDeliveryButton").on('click', function(){
+        $.ajax({
+            type: "POST",
+            url: "/CourierOrderDetail?Handler=TakeDelivery",
+            headers: { "RequestVerificationToken": $('input[name="__RequestVerificationToken"]').val() },
+            data:{"OrderItemId":$(".oid-hidden").text(), "OtpCode":$("#takeOtpCode").val()},
+            success: function (result) {
+                $(".courierAlert").show();
+                if(result.isSuccess){
+                    $(".courierAlert").removeClass("alert-danger").addClass("alert-success").text("İşlem Başarılı")
+                    $("#takeModalWithOtp").modal("hide");
+                }else{
+                    $(".courierAlert").removeClass("alert-success").addClass("alert-danger").text(result.message);
+                    $("#takeModalWithOtp").modal("hide");
+                }
+            },
+            failure: function (response) {
+                $(".courierAlert").show();
+
+                console.log(response);
+            }
+        });
+    });
+
+    $(".courierDeliveryButton").on('click',function(){
+        var orderId = $(this).attr("data-oid");
+        var orderType = $(this).attr("data-otype");
+        $(".oid-hidden").text(orderId);
+        if(orderType == "2" || orderType=="4"){
+            $("#deliveryModalWithOtp").modal("show");
+        }else{
+            $("#deliveryModal").modal("show");
+        }
+    });
+    $(".courierSetDeliveryButton").on('click', function(){
+        $.ajax({
+            type: "POST",
+            url: "/CourierOrderDetail?Handler=SetDelivery",
+            headers: { "RequestVerificationToken": $('input[name="__RequestVerificationToken"]').val() },
+            data:{"OrderItemId":$(".oid-hidden").text(), "OtpCode":$("#otpCode").val()},
+            success: function (result) {
+                $(".courierAlert").show();
+                if(result.isSuccess){
+                    $(".courierAlert").removeClass("alert-danger").addClass("alert-success").text("İşlem Başarılı")
+                    $("#deliveryModalWithOtp").modal("hide");
+                    $("#deliveryModal").modal("hide");
+                }else{
+                    $(".courierAlert").removeClass("alert-success").addClass("alert-danger").text(result.message);
+                    $("#deliveryModalWithOtp").modal("hide");
+                    $("#deliveryModal").modal("hide");
+                }
+            },
+            failure: function (response) {
+                $(".courierAlert").show();
+
+                console.log(response);
+            }
+        });
+    });
+    
+    
     $("#select-all").on("click",function (){
         var selects = $(".order-select");
         var param = false;
@@ -265,7 +405,7 @@
         }
         if (queryString == "")
             return;
-        window.location ="/barcode?" + queryString;
+        window.open("/barcode?" + queryString,'_blank');
         /*
         $.ajax({
             type: "POST",
@@ -338,4 +478,5 @@
         });
     });
     
+
 </script>

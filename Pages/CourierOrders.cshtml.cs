@@ -80,7 +80,7 @@ public class CourierOrdersModel : BasePageModel
         TakeCount = newOrderList.Count;
         var nList = Orders.Where(x =>
             x.OrderItems.FirstOrDefault(x => x.Status != (int)OrderItemStatus.Cancelled)?.Status ==
-            (int)OrderItemStatus.AtCourier).OrderByDescending(x => x.CreatedOn);
+            (int)OrderItemStatus.AtCourier).OrderBy(x => x.CreatedOn);
 
         newOrderList.AddRange(nList);
         SaveCount = newOrderList.Count - TakeCount;

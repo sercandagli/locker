@@ -5,7 +5,7 @@
 @{ Layout = ""; }
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <body>
-<form method="post" target="_blank">
+<form method="post">
     <input name="html" value="" hidden>
 </form>
 <div class="wrapper">
@@ -102,7 +102,10 @@
   $(document).ready(function(){
 
     $("input[name='html']").val($(".wrapper").html());
+    
     $("form").submit();
+
+    
 /*
    $.ajax({
             type: "POST",

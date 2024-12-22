@@ -108,10 +108,9 @@ public class OrderDetailModel : BasePageModel
                 }
             }else if (order.DeliveryType is (int)DeliveryType.AddressToAddress or (int)DeliveryType.AddressToLocker)
             {
-                foreach (var orderItem in order.OrderItems)
-                {
-                    SendOtp(order.SenderPhone,orderItem.OtpCode);
-                }
+                
+                    SendOtp(order.SenderPhone,order.SenderOtpCode);
+                
             } 
         }
         
@@ -119,10 +118,9 @@ public class OrderDetailModel : BasePageModel
         {
             if (order.DeliveryType is (int)DeliveryType.LockerToAddress or (int)DeliveryType.AddressToAddress)
             {
-                foreach (var orderItem in order.OrderItems)
-                {
-                    SendOtp(order.ReceiverPhone,orderItem.OtpCode);
-                }
+                
+                  SendOtp(order.ReceiverPhone,order.SenderOtpCode);
+                
             }else if (order.DeliveryType is (int)DeliveryType.AddressToLocker or (int)DeliveryType.LockerToLocker)
             {
                 foreach (var orderItem in order.OrderItems)

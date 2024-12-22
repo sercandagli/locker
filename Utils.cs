@@ -13,13 +13,13 @@ public static class Utils
         switch ((DeliveryType)DeliveryType)
         {
             case Enums.DeliveryType.AddressToAddress:
-                return withShort ? "Adres->Adres" : "Adresten Adrese";
+                return withShort ? "Ad.->Ad." : "Adresten Adrese";
             case Enums.DeliveryType.AddressToLocker:
-                return withShort ? "Adres->Kargomat" : "Adresten Kargomata";
+                return withShort ? "Ad.->Kar." : "Adresten Kargomata";
             case Enums.DeliveryType.LockerToLocker:
-                return withShort ? "Kargomat->Kargomat" : "Kargomattan Kargomata";
+                return withShort ? "Kar.->Kar." : "Kargomattan Kargomata";
             case Enums.DeliveryType.LockerToAddress:
-                return withShort ? "Kargomat->Adres" : "Kargomattan Adrese";
+                return withShort ? "Kar.->Ad." : "Kargomattan Adrese";
             default:
                 return "Tanımsız";
         }

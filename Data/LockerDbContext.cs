@@ -35,6 +35,6 @@ public class LockerDbContext : DbContext
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         // Veritabanı bağlantı dizesi burada belirtilmelidir
-        optionsBuilder.UseMySql("server=127.0.0.1;uid=cargodbuser;pwd=4505096Cargo!!;database=cargo", new MySqlServerVersion(new Version(8, 0, 21))); // MySQL versiyonuna göre ayarlayın
+        optionsBuilder.UseMySql("server=127.0.0.1;uid=root;pwd=4505096;database=cargo", new MySqlServerVersion(new Version(8, 0, 21))); // MySQL versiyonuna göre ayarlayın
     }
 }

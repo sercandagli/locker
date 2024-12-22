@@ -35,8 +35,8 @@ public class CourierOrderDetailModel : BasePageModel
             return RedirectToPage("courierLogin");
         
         using var _context = new LockerDbContext();
-        var orderItem = await _context.OrderItems.FirstOrDefaultAsync(x => x.Id == model.OrderItemId);
-        if (orderItem == null)
+        var order = await _context.Orders.FirstOrDefaultAsync(x => x.Id == model.OrderId);
+        if (order == null)
             return
                 new JsonResult(new
                 {
@@ -44,16 +44,21 @@ public class CourierOrderDetailModel : BasePageModel
                     IsSuccess = false,
                 });
 
-        if (!string.IsNullOrEmpty(orderItem.OtpCode) && orderItem.OtpCode != model.OTPCode)
+        if (!string.IsNullOrEmpty(order.SenderOtpCode) && order.SenderOtpCode != model.OTPCode)
             return new JsonResult(new
 
             {
                 Message = "OTP Kodu Yanlış",
                 IsSuccess = false,
             });
+        var orderItems = await _context.OrderItems.Where(x => x.OrderId == model.OrderId).ToListAsync();
 
-        orderItem.Status = (int)OrderItemStatus.AtCourier;
-        orderItem.ModifiedOn = DateTime.Now;
+        foreach (var orderItem in orderItems)
+        {
+            orderItem.Status = (int)OrderItemStatus.AtCourier;
+            orderItem.ModifiedOn = DateTime.Now;
+        }
+      
         await _context.SaveChangesAsync();
 
     
@@ -71,8 +76,8 @@ public class CourierOrderDetailModel : BasePageModel
             return RedirectToPage("courierLogin");
         
         using var _context = new LockerDbContext();
-        var orderItem = await _context.OrderItems.FirstOrDefaultAsync(x => x.Id == model.OrderItemId);
-        if (orderItem == null)
+        var order = await _context.Orders.FirstOrDefaultAsync(x => x.Id == model.OrderId);
+        if (order == null)
             return
                 new JsonResult(new
                 {
@@ -80,19 +85,21 @@ public class CourierOrderDetailModel : BasePageModel
                     IsSuccess = false,
                 });
 
-        var allOrderItems = await _context.OrderItems.Where(x => x.OrderId == orderItem.OrderId).ToListAsync();
-        var order = await _context.Orders.FirstOrDefaultAsync(x => x.Id == orderItem.OrderId);
+        var allOrderItems = await _context.OrderItems.Where(x => x.OrderId == model.OrderId).ToListAsync();
      
-        if (!string.IsNullOrEmpty(orderItem.ReceiverOtpCode) && orderItem.ReceiverOtpCode != model.OTPCode)
+        if (!string.IsNullOrEmpty(order.ReceiverOtpCode) && order.ReceiverOtpCode != model.OTPCode)
             return new JsonResult(new
 
             {
                 Message = "OTP Kodu Yanlış",
                 IsSuccess = false,
             });
-
-        orderItem.Status = (int)OrderItemStatus.Delivered;
-        orderItem.ModifiedOn = DateTime.Now;
+        foreach (var orderItem in allOrderItems)
+        {
+            orderItem.Status = (int)OrderItemStatus.Delivered;
+            orderItem.ModifiedOn = DateTime.Now; 
+        }
+   
         await _context.SaveChangesAsync();
 
         if (allOrderItems.Any(x => x.Status != (int)OrderItemStatus.Delivered))

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("locker")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+700a22a34e32685db2d0b6d3c5833373dc127afa")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c7b0555e03688ef34b1f3097d82a1be0e7a41056")]
 [assembly: System.Reflection.AssemblyProductAttribute("locker")]
 [assembly: System.Reflection.AssemblyTitleAttribute("locker")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

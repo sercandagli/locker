@@ -219,21 +219,21 @@ public class OrderService : IOrderService
             {
                 var otpResult = await _notificationService.SendOtp(model.ReceiverPhone);
                 if (!string.IsNullOrEmpty(otpResult))
-                    item.ReceiverOtpCode = otpResult;
+                    order.ReceiverOtpCode = otpResult;
             }
             if(model.DeliveryType is DeliveryType.AddressToAddress){
                  var otpResult = await _notificationService.SendOtp(model.ReceiverPhone);
                 if (!string.IsNullOrEmpty(otpResult))
-                    item.ReceiverOtpCode = otpResult;
+                    order.ReceiverOtpCode = otpResult;
                otpResult = await _notificationService.SendOtp(model.SenderPhone);
                if (!string.IsNullOrEmpty(otpResult))
-                    item.OtpCode = otpResult;
+                   order.SenderOtpCode = otpResult;
             }
 
             if(model.DeliveryType is DeliveryType.AddressToLocker){
                 var otpResult = await _notificationService.SendOtp(model.SenderPhone);
                 if (!string.IsNullOrEmpty(otpResult))
-                    item.OtpCode = otpResult;
+                    order.SenderOtpCode = otpResult;
             }
 
         }
