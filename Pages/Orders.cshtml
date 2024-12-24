@@ -32,6 +32,8 @@
                     <small class="text-muted float-end">
                         <button class="btn btn-secondary transfer-orders">Transfer Et</button>
                         <button class="btn btn-secondary export">CSV'ye Aktar</button>
+                        <button class="btn btn-secondary exportForAdmin">Excel</button>
+
 
                     </small>
 
@@ -40,7 +42,7 @@
                     @using (Html.BeginForm(FormMethod.Get))
                     {
                         <div class="row">
-                              <div class="col-xl">
+                            <div class="col-xl">
                                 <label class="form-label">Sipariş Numarası</label>
                                 <input class="form-control" name="orderId">
                             </div>
@@ -76,65 +78,72 @@
                     <div class="table-responsive text-nowrap">
                         <table class="table table-striped">
                             <thead>
-                            <tr>
-                                <th>
-                                    <input class="form-check-input" type="checkbox" value="" id="select-all">
-                                </th>
-                                <th>Takip/Sipariş No</th>
-                                <th>Gönderen</th>
-                                <th>Metod</th>
-                                <th>Durum</th>
-                                <th>Adet</th>
-                                <th>Ücret</th>
-                                <th>Transfer Durumu</th>
-                                <th>Kurye</th>
+                                <tr>
+                                    <th>
+                                        <input class="form-check-input" type="checkbox" value="" id="select-all">
+                                    </th>
+                                    <th>Takip/Sipariş No</th>
+                                    <th>Gönderen</th>
+                                    <th>Metod</th>
+                                    <th>Durum</th>
+                                    <th>Adet</th>
+                                    <th>Ücret</th>
+                                    <th>Transfer Durumu</th>
+                                    <th>Kurye</th>
 
-                                <th>İşlemler</th>
-                            </tr>
+                                    <th>İşlemler</th>
+                                </tr>
                             </thead>
                             <tbody class="table-border-bottom-0">
-                            @foreach (var order in Model.Orders)
-                            {
-                                var item = order.OrderItems.FirstOrDefault();
-                                <tr>
-                                    <td>
-                                        <input class="form-check-input order-select" type="checkbox" value="@order.Id">
-                                    </td>
-                                    <td>@order.Id</td>
-                                    <td> @order.SenderName</td>
+                                @foreach (var order in Model.Orders)
+                                {
+                                    var item = order.OrderItems.FirstOrDefault();
+                                    <tr>
+                                        <td>
+                                            <input class="form-check-input order-select" type="checkbox" value="@order.Id">
+                                        </td>
+                                        <td>@order.Id</td>
+                                        <td> @order.SenderName</td>
 
-                                    <td>@order.DeliveryType.GetDeliveryType(true)</td>
-                                    <td>@Html.Raw(item.Status.GetAdminOrderStatus(order.DeliveryType))</td>
-                                    <td>@order.OrderItems.Count()</td>
-                                    <td>@order.TotalAmount.ToString("#.00") TL</td>
-                                    <td>
-                                        @if (order.IsTransferCompleted)
+                                        <td>@order.DeliveryType.GetDeliveryType(true)</td>
+                                        <td>@Html.Raw(item.Status.GetAdminOrderStatus(order.DeliveryType))</td>
+                                        <td>@order.OrderItems.Count()</td>
+                                        <td>@order.TotalAmount.ToString("#.00") TL</td>
+                                        <td>
+                                            @if (order.IsTransferCompleted)
+                                            {
+                                                @:Transfer Tamamlandı
+                                            }
+                                            else if (order.IsTransferred)
+                                            {
+                                                @:Transfer İsteği Oluşturuldu
+                                            }
+                                        </td>
+                                        @if (order.CourierId != 0)
                                         {
-                                            @:Transfer Tamamlandı
-                                        }else if (order.IsTransferred)
+                                            <td>@Model.Couriers.FirstOrDefault(x => x.Id == order.CourierId).Name </td>
+
+                                        }
+                                        else
                                         {
-                                            @:Transfer İsteği Oluşturuldu
-                                        }
-                                    </td>
-                                    @if(order.CourierId != 0){
-                                     <td>@Model.Couriers.FirstOrDefault(x => x.Id == order.CourierId).Name </td>
+                                            <td>&nbsp;</td>
 
-                                    }else{
-                                        <td>&nbsp;</td>
-
-                                    }
-<td>
-                                        <a href="orderDetail?id=@order.Id">
-                                            <button class="btn btn-success">Detay</button>
-                                        </a>
-                                        @if(order.ProblemId > 0){
-                                          <button class="btn btn-primary showReportModal" orderId="@order.Id" problemId="@order.ProblemId" problemDescription="@order.ProblemDescription">Hatayı GÖrüntüle</button>
                                         }
-                                        
-                                    </td>
-                                   
-                                </tr>
-                            }
+                                        <td>
+                                            <a href="orderDetail?id=@order.Id">
+                                                <button class="btn btn-success">Detay</button>
+                                            </a>
+                                            @if (order.ProblemId > 0)
+                                            {
+                                                <button class="btn btn-primary showReportModal" orderId="@order.Id"
+                                                    problemId="@order.ProblemId"
+                                                    problemDescription="@order.ProblemDescription">Hatayı GÖrüntüle</button>
+                                            }
+
+                                        </td>
+
+                                    </tr>
+                                }
 
                             </tbody>
                         </table>
@@ -167,7 +176,7 @@
                 <div class="row">
                     <div class="col mb-3">
                         <label for="nameBasic" class="form-label">Hata Açıklaması</label>
-                        <input type="text"  class="form-control" name="problemDescription" disabled="true">
+                        <input type="text" class="form-control" name="problemDescription" disabled="true">
                     </div>
                 </div>
             </div>
@@ -180,24 +189,24 @@
 </div>
 
 <script>
-    
- $(".showReportModal").on("click",function(){
-        $(".resolveReport").attr("data",$(this).attr("orderId"));
+
+    $(".showReportModal").on("click", function () {
+        $(".resolveReport").attr("data", $(this).attr("orderId"));
         $("#reportModal").modal("show");
         $("select[name='problemId']").val($(this).attr("problemId"));
         $("input[name='problemDescription']").val($(this).attr("problemDescription"));
 
     });
 
-    $(".resolveReport").on("click",function(){
+    $(".resolveReport").on("click", function () {
         var orderId = $(this).attr("data");
-         $.ajax({
+        $.ajax({
             type: "POST",
             url: "/Orders?Handler=ResolveReport",
             headers: { "RequestVerificationToken": $('input[name="__RequestVerificationToken"]').val() },
-            data:{"orderId":orderId},
+            data: { "orderId": orderId },
             success: function (result) {
-                if(result.isSuccess == true)
+                if (result.isSuccess == true)
                     location.reload();
                 else
                     alert(result.Message);
@@ -208,21 +217,21 @@
         });
     });
 
-    $("#select-all").on("click",function (){
+    $("#select-all").on("click", function () {
         var selects = $(".order-select");
         var param = false;
-        if ($(this).prop("checked")){
+        if ($(this).prop("checked")) {
             param = true;
         }
-            for (var i = 0; i < selects.length;i++){
-                $(selects[i]).prop("checked",param);
-            }
+        for (var i = 0; i < selects.length; i++) {
+            $(selects[i]).prop("checked", param);
+        }
     });
-    $(".transfer-orders").on("click", function(){
+    $(".transfer-orders").on("click", function () {
         var datas = $(".order-select:checked");
         var idArray = [];
-        
-        for (var i =0; i < datas.length; i++){
+
+        for (var i = 0; i < datas.length; i++) {
             idArray.push($(datas[i]).val());
         }
 
@@ -230,10 +239,10 @@
             type: "POST",
             url: "/Orders?Handler=Transfer",
             headers: { "RequestVerificationToken": $('input[name="__RequestVerificationToken"]').val() },
-            data:{"orderIds":idArray},
+            data: { "orderIds": idArray },
             success: function (result) {
                 let url = window.location.href;
-                if (url.indexOf('?') > -1){
+                if (url.indexOf('?') > -1) {
                     url += '&param=1'
                 } else {
                     url += '?param=1'
@@ -243,22 +252,36 @@
             failure: function (response) {
 
             }
-        });    
-            
+        });
+
     });
 
-    $(".export").on("click", function(){
+    $(".export").on("click", function () {
         window.location = "/Orders?Handler=ExportCsv";
     });
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+    $(".exportForAdmin").on("click", function () {
+
+        var datas = $(".order-select:checked");
+        var idArray = ""
+
+
+        for (var i = 0; i < datas.length; i++) {
+            idArray += "orderIds=" + $(datas[i]).val() + "&";
+        }
+        idArray = idArray.substring(0, idArray.length - 1);
+
+        window.location = "/Orders?Handler=ExportExcel&" + idArray;
+
+    });
+
+
+
+
+
+
+
+
 
 </script>

@@ -1,38 +1,183 @@
 @page
+@using Locker.Enums
 @model OrderCompletedModel
-@{ Layout = "_MainLayout"; }
+@{
+    Layout = "_MainLayout";
+}
 
-<main class="main">
-<section id="about-3" class="about-3 section">
-    <div class="container">
-        <div class="row gy-4 justify-content-between align-items-center">
-        
-            <h2 style="text-align: center">Siparişiniz Alındı</h2>
-        
-            <table class="table table-striped">
-                <th>Siparişiniz Numarası</th>
-                <th>Boyut</th>
-                 <th>Bırakma Kodu</th>
-                 <th>Alım Kodu</th>
-                @foreach(var item in Model.Order.OrderItems){
-                    <tr>
-                        <td>
-                            @item.Id
-                        </td>
-                        <td>
-                            @item.BoxSize
-                        </td>
-                        <td>
-                             @item.TLSaveCode @item.SLSaveCde
-                        </td>
-                        <td>
-                            @item.SLPickCode   @item.TLPickCode
-                        </td>
-                        
-                    </tr>
-                }
-            </table>
-        </div>
-    </div>
+<section class="section-basic">
+    <div class="shell">
+        <div class="section__content">
+            <div class="popup popup--alt">
+                <h2>teşekkürler!</h2>
+
+                <div class="popup__entry">
+                    <p>Rezervasyon bilgileriniz SMS ve E-posta olarak size gönderildi. <br>
+                        Lütfen <a href="#">takip numarasını paket üzerine yazmayı</a> UNUTMAYIN!</p>
+                </div><!-- /.popup__entry -->
+
+                <div class="popup__holder">
+                    <ul class="list-info popup__list-info">
+                        @if (Model.Order.OrderItems.Count == 1)
+                        {
+                            <li>
+                                <a href="#">
+                                    <span>Bırakma Kodunuz:</span>
+
+                                    <strong>@Model.Order.OrderItems.FirstOrDefault().SLSaveCde
+                                        @Model.Order.OrderItems.FirstOrDefault().TLSaveCode
+                                    </strong>
+                                </a>
+                            </li>
+                        }
+
+                        <li>
+                            <a href="#">
+                                <span>Takip No:</span>
+
+                                <strong>@Model.Order.Id</strong>
+                            </a>
+                        </li>
+                    </ul><!-- /.list-info -->
+
+                    <p>Şifrenizi üçüncü kişilerle paylaşırsanız, işlem sizin adınıza yapılmış sayılır.</p>
+                </div><!-- /.popup__holder -->
+            </div><!-- /.popup -->
+        </div><!-- /.section__content -->
+    </div><!-- /.shell -->
+</section><!-- /.section-basic -->
+
+<section class="section-table">
+    <div class="shell shell--fluid">
+        <div class="section__bar">
+            <h3>Rezervasyon Özetiniz</h3>
+        </div><!-- /.section__bar -->
+
+        <div class="section__content">
+            <div class="table">
+                <table>
+                    <colgroup>
+                        <col class="table__col-size1">
+
+                        <col class="table__col-size2">
+
+                        <col class="table__col-size3">
+
+                        <col class="table__col-size4">
+
+                        <col class="table__col-size5">
+
+                        <col class="table__col-size2">
+
+                        <col class="table__col-size2">
+
+                        <col class="table__col-size6">
+
+                        <col class="table__col-size6">
+
+                        <col class="table__col-size6">
+
+                        <col class="table__col-size7">
+
+                        <col class="table__col-size2">
+
+                        <col class="table__col-size2">
+                    </colgroup>
+
+                    <thead>
+                        <tr>
+                            <th>Gönerici Adı</th>
+
+                            <th>Gönerici Telefon</th>
+
+                            <th>Gönderici Mehtobu</th>
+
+                            <th>İşlem Zamanı</th>
+
+                            <th>Alıcı Adı</th>
+
+                            <th>Alıcı Telefon</th>
+
+                            <th>Alıcı Metobu</th>
+
+                            <th>Ebat</th>
+
+                            <th>Ücret</th>
+
+                            <th>Toplam</th>
+
+                            <th>Bırakma Kodu</th>
+
+                            <th>Takip No</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @foreach (var item in Model.Order.OrderItems)
+                        {
+                            <tr>
+                                <td>
+                                    @item.Order.SenderName
+                                </td>
+                                <td>
+                                    @item.Order.SenderPhone
+                                </td>
+                                <td>
+                                    @if (item.Order.DeliveryType == (int)DeliveryType.AddressToAddress ||
+                                   item.Order.DeliveryType == (int)DeliveryType.AddressToLocker)
+                                    {
+                                        @:Adres
+                                    }
+                                    else
+                                    {
+                                        @:Kargomat
+                                    }
+                                </td>
+                                <td>
+                                    @item.CreatedOn
+                                </td>
+                                <td>
+                                    @item.Order.ReceiverName
+                                </td>
+                                <td>
+                                    @item.Order.ReceiverPhone
+                                </td>
+                                <td>
+                                    @if (item.Order.DeliveryType == (int)DeliveryType.AddressToAddress ||
+                                   item.Order.DeliveryType == (int)DeliveryType.AddressToLocker)
+                                    {
+                                        @:Adres
+                                    }
+                                    else
+                                    {
+                                        @:Kargomat
+                                    }
+                                </td>
+                                <td>
+                                    @item.BoxSize
+                                </td>
+                                <td>@item.Amount</td>
+                                <td>@item.Amount</td>
+
+                                <td>
+                                    @item.TLSaveCode @item.SLSaveCde
+                                </td>
+                                <td>
+                                    @item.Id
+                                </td>
+
+                            </tr>
+                        }
+
+
+
+                    </tbody>
+                </table>
+            </div><!-- /.table -->
+        </div><!-- /.section__content -->
+    </div><!-- /.shell shell--fluid -->
+</section><!-- /.section-table -->
+</div>
+</div>
 </section>
 </main>

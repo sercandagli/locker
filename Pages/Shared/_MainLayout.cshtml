@@ -2,6 +2,7 @@
 @inject IHttpContextAccessor _httpContext
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,25 +13,28 @@
 	<title>Adada Cargo</title>
 
 	<link rel="icon" type="image/png" sizes="any" href="assets/design/images/favicon32x32.png">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-     crossorigin=""/>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+		integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-  <script type="module" crossorigin src="assets/design/app.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-     crossorigin=""></script>
-  <link rel="stylesheet" href="assets/design/style.css">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+		rel="stylesheet">
+	<script type="module" crossorigin src="assets/design/app.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+		integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+	<link rel="stylesheet" href="assets/design/style.css">
 </head>
+
 <body>
-	<div class="js-loading-wrapper loading-wrapper" style="background-color: #fff; position: fixed; top: 0; left: 0; width: 100vw; height: 101svh; display: flex; justify-content: center; align-items: center;">
+	<div class="js-loading-wrapper loading-wrapper"
+		style="background-color: #fff; position: fixed; top: 0; left: 0; width: 100vw; height: 101svh; display: flex; justify-content: center; align-items: center;">
 		<div class="loading__content">
 			<figure class="loading__image" style="margin-bottom: 2rem;">
 				<picture>
-					<source media="(min-width:768px)" width="400" height="180" srcset="assets/design/images/logo-alt.svg">
+					<source media="(min-width:768px)" width="400" height="180"
+						srcset="assets/design/images/logo-alt.svg">
 				</picture>
 
 				<img src="assets/design/images/logo-alt.svg" alt="logo" width="240" height="110">
@@ -49,56 +53,63 @@
 							<li>
 								<a href="#">kurumsal hesap</a>
 							</li>
-		
+
 							<li>
 								<a href="#">partner hesap</a>
 							</li>
-		
+
 							<li>
 								<a href="#">kargo taki̇p</a>
 							</li>
 						</ul>
 					</nav><!-- /.nav-accounts -->
 				</div><!-- /.header__bar -->
-		
+
 				<div class="header__intro">
-					<img src="assets/design/images/svg/logo-decoration.svg" alt="" class="header__decoration header__decoration--adjust">
-		
+					<img src="assets/design/images/svg/logo-decoration.svg" alt=""
+						class="header__decoration header__decoration--adjust">
+
 					<img src="assets/design/images/svg/logo-decoration.svg" alt="" class="header__decoration">
-		
+
 					<div class="socials header__socials">
-						<img src="assets/design/images/svg/socials-decoration.svg" alt="decoration" class="socials__decoration">
-		
+						<img src="assets/design/images/svg/socials-decoration.svg" alt="decoration"
+							class="socials__decoration">
+
 						<ul>
 							<li>
 								<a href="#">
-									<img src="assets/design/images/svg/facebook.svg" alt="facebook" width="31" height="31">
+									<img src="assets/design/images/svg/facebook.svg" alt="facebook" width="31"
+										height="31">
 								</a>
 							</li>
-		
+
 							<li>
 								<a href="#">
-									<img src="assets/design/images/svg/instagram.svg" alt="instagram" width="31" height="31">
+									<img src="assets/design/images/svg/instagram.svg" alt="instagram" width="31"
+										height="31">
 								</a>
 							</li>
-		
+
 							<li class="full-width">
 								<a href="#">
-									<img src="assets/design/images/svg/whatsapp.svg" alt="whatsapp" width="85" height="83">
+									<img src="assets/design/images/svg/whatsapp.svg" alt="whatsapp" width="85"
+										height="83">
 								</a>
 							</li>
 						</ul>
 					</div><!-- /.socials -->
-		
+
 					<a href="#" class="logo header__logo">
 						<img src="assets/design/images/logo-alt.svg" alt="logo-alt" width="260" height="110">
 					</a><!-- /.logo -->
-		
+
 					<nav class="nav-accounts header__nav-accounts">
-						<img src="assets/design/images/svg/nav-decoration-alt.svg" alt="decoration" class="nav__decoration">
-		
+						<img src="assets/design/images/svg/nav-decoration-alt.svg" alt="decoration"
+							class="nav__decoration">
+
 						<ul>
-							@if (Context.Session.GetInt32("IsLoggedIn") != 1  || string.IsNullOrEmpty(Context.Session.GetString("Name")))
+							@if (Context.Session.GetInt32("IsLoggedIn") != 1 ||
+												string.IsNullOrEmpty(Context.Session.GetString("Name")))
 							{
 								<li>
 									<a href="register">kurumsal hesap</a>
@@ -111,7 +122,8 @@
 							else
 							{
 								<li>
-									Hoşgeldiniz <a href="userOrders">@Context.Session.GetString("Name")</a> <a href="logout">,Çıkış Yap</a>
+									Hoşgeldiniz <a href="userOrders">@Context.Session.GetString("Name")</a> <a
+										href="logout">,Çıkış Yap</a>
 								</li>
 							}
 
@@ -120,34 +132,37 @@
 							</li>
 						</ul>
 					</nav><!-- /.nav-accounts -->
-		
+
 					<div class="socials header__socials-mobile">
-						<img src="assets/design/images/svg/socials-decoration.svg" alt="decoration" class="socials__decoration">
-		
+						<img src="assets/design/images/svg/socials-decoration.svg" alt="decoration"
+							class="socials__decoration">
+
 						<ul>
 							<li>
 								<a href="#">
-									<img src="assets/design/images/svg/whatsapp.svg" alt="whatsapp" width="119" height="116">
+									<img src="assets/design/images/svg/whatsapp.svg" alt="whatsapp" width="119"
+										height="116">
 								</a>
 							</li>
 						</ul>
 					</div><!-- /.socials -->
 				</div><!-- /.header__intro -->
-		
+
 				<div class="header__holder">
 					<img src="assets/design/images/svg/logo-decoration.svg" alt="" class="header__decoration-mobile">
-		
-					<img src="assets/design/images/svg/logo-decoration.svg" alt="" class="header__decoration-mobile header__decoration-mobile--adjust">
-		
+
+					<img src="assets/design/images/svg/logo-decoration.svg" alt=""
+						class="header__decoration-mobile header__decoration-mobile--adjust">
+
 					<a href="#" class="js-nav-trigger nav-trigger header__nav-trigger">
 						<span></span>
-		
+
 						<span></span>
-		
+
 						<span></span>
 					</a><!-- /.js-nav-trigger nav__trigger header__nav-trigger -->
 				</div><!-- /.header__holder -->
-		
+
 				<div class="header__wrapper">
 					<div class="header__wrapper-content">
 						<nav class="nav">
@@ -155,33 +170,33 @@
 								<li class="is-current">
 									<a href="#">Ana Sayfa</a>
 								</li>
-		
+
 								<li>
 									<a href="#">Nedir? <br> Nasıl?</a>
 								</li>
-		
+
 								<li>
 									<a href="cabinePoints">Cargo Point Lokasyonları</a>
 								</li>
-		
+
 								<li>
 									<a href="lockerToLocker">Cargo Point’ten Cargo Point’e</a>
 								</li>
-		
+
 								<li>
 									<a href="lockerToAddress">Cargo Point’ten Adres’e</a>
 								</li>
-		
+
 								<li>
-									<a href="addressToLocker">Adres’ten Cargo Point’e  </a>
+									<a href="addressToLocker">Adres’ten Cargo Point’e </a>
 								</li>
-		
+
 								<li>
 									<a href="#">S.S.S.</a>
 								</li>
-		
+
 								<li>
-									<a href="#">Hakkımızda İletişim</a>
+									<a href="aboutUs">Hakkımızda İletişim</a>
 								</li>
 							</ul>
 						</nav><!-- /.nav -->
@@ -190,10 +205,10 @@
 			</div><!-- /.shell -->
 		</header><!-- /.header -->
 
-    @RenderBody();
+		@RenderBody();
 
 
-    <footer class="footer">
+		<footer class="footer">
 			<div class="shell">
 				<div class="footer__inner">
 					<div class="footer__wrapper">
@@ -201,32 +216,33 @@
 							<li>
 								<a href="#">Gizlilik Politikası</a>
 							</li>
-		
+
 							<li>
 								<a href="#">Çerez Politikası</a>
 							</li>
-		
+
 							<li class="full-width">
 								<a href="#">Kullanıcı ile Bireysel Sözleşme</a>
 							</li>
 						</ul><!-- /.list-links -->
 					</div><!-- /.footer__wrapper -->
-		
+
 					<a href="#" class="footer__logo">
 						<img src="assets/design/images/logo.svg" alt="logo" width="156" height="93">
 					</a><!-- /.footer__logo -->
-		
+
 					<ul class="list-links-alt footer__list-links-alt">
 						<li>
 							<a href="#">
-								<img src="assets/design/images/svg/whatsapp-2.svg" alt="whatsapp" width="155" height="50">
+								<img src="assets/design/images/svg/whatsapp-2.svg" alt="whatsapp" width="155"
+									height="50">
 							</a>
 						</li>
-		
+
 						<li>
 							<a href="#">S.S.S.</a>
 						</li>
-		
+
 						<li>
 							<a href="#">İletişim</a>
 						</li>
@@ -237,6 +253,7 @@
 	</div><!-- /.wrapper -->
 
 	<script type="text/javascript" src="assets/design/vendor/jquery-3.7.1.min.js"></script>
-	
+
 </body>
+
 </html>

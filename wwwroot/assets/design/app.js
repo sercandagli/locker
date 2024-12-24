@@ -57,7 +57,22 @@ $(".js-form form").on("submit", function(event) {
     }
     if (type === "text") {
       const $parent = $this.closest(".form__controls");
-      console.log($this[0].value);
+      if ($this[0].value === "") {
+        $parent.addClass("is-error");
+        return;
+      }
+      $parent.removeClass("is-error");
+    }
+    if (type === "password") {
+      const $parent = $this.closest(".form__controls");
+      if ($this[0].value === "") {
+        $parent.addClass("is-error");
+        return;
+      }
+      $parent.removeClass("is-error");
+    }
+    if ($this[0].tagName.toLowerCase() === "textarea") {
+      const $parent = $this.closest(".form__controls");
       if ($this[0].value === "") {
         $parent.addClass("is-error");
         return;
@@ -126,13 +141,16 @@ $(window).on("load", () => {
 });
 $(".js-quantity").on("click", ".btn-increase", function(event) {
   event.preventDefault();
+  const $input = $(this).closest(".checkbox").find("input");
   const $countSpan = $(this).closest(".js-quantity").find(".checkbox__count");
   let count = parseInt($countSpan.text());
   count += 1;
   $countSpan.text(count);
+  $input.attr("checked", true);
 });
 $(".js-quantity").on("click", ".btn-decrease", function(event) {
   event.preventDefault();
+  const $input = $(this).closest(".checkbox").find("input");
   const $countSpan = $(this).closest(".js-quantity").find(".checkbox__count");
   let count = parseInt($countSpan.text());
   if (count === 0) {
@@ -140,6 +158,16 @@ $(".js-quantity").on("click", ".btn-decrease", function(event) {
   }
   count -= 1;
   $countSpan.text(count);
+  if (count === 0) {
+    $input.attr("checked", false);
+    return;
+  }
+});
+$(".checkbox").on("click", "label", function(event) {
+  event.preventDefault();
+  let inputElement = $(this).siblings("input");
+  let isChecked = inputElement.attr("checked");
+  inputElement.attr("checked", !isChecked);
 });
 const $header = $(".js-header");
 const handleNavTriggerClick = (event) => {

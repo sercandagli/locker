@@ -38,15 +38,15 @@ public class OrderService : IOrderService
         {
             var newUser = new User()
             {
-                Name = model.SenderName,
-                Phone = model.SenderPhone.FormatPhone(),
-                Email = model.SenderEmail,
+                Name = model.Name,
+                Phone = model.Phone.FormatPhone(),
+                Email = model.Email,
                 Type = (int)UserType.Normal,
                 Credit = 0,
                 IsActive = true,
-                AddressLat = model.SenderAddressLat,
-                AddressLong = model.SenderAddressLong,
-                Address = model.SenderAddress,
+                AddressLat = model.AddressLat,
+                AddressLong = model.AddressLong,
+                Address = model.Address,
                 CreatedOn = DateTime.Now,
                 Password = DateTime.Now.ToString().HashPassword()
             };
@@ -221,17 +221,19 @@ public class OrderService : IOrderService
                 if (!string.IsNullOrEmpty(otpResult))
                     order.ReceiverOtpCode = otpResult;
             }
-            if(model.DeliveryType is DeliveryType.AddressToAddress){
-                 var otpResult = await _notificationService.SendOtp(model.ReceiverPhone);
+            if (model.DeliveryType is DeliveryType.AddressToAddress)
+            {
+                var otpResult = await _notificationService.SendOtp(model.ReceiverPhone);
                 if (!string.IsNullOrEmpty(otpResult))
                     order.ReceiverOtpCode = otpResult;
-               otpResult = await _notificationService.SendOtp(model.SenderPhone);
-               if (!string.IsNullOrEmpty(otpResult))
-                   order.SenderOtpCode = otpResult;
+                otpResult = await _notificationService.SendOtp(model.Phone);
+                if (!string.IsNullOrEmpty(otpResult))
+                    order.SenderOtpCode = otpResult;
             }
 
-            if(model.DeliveryType is DeliveryType.AddressToLocker){
-                var otpResult = await _notificationService.SendOtp(model.SenderPhone);
+            if (model.DeliveryType is DeliveryType.AddressToLocker)
+            {
+                var otpResult = await _notificationService.SendOtp(model.Phone);
                 if (!string.IsNullOrEmpty(otpResult))
                     order.SenderOtpCode = otpResult;
             }
@@ -240,7 +242,7 @@ public class OrderService : IOrderService
 
         await _context.SaveChangesAsync();
 
-        await _notificationService.SendOrderCreatedNotification(model.SenderPhone);
+        await _notificationService.SendOrderCreatedNotification(model.Phone);
     }
     public async Task<OrderViewModel> PrepareOrderPage(int deliveryType, int userType)
     {

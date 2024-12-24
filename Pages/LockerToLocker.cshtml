@@ -3,65 +3,64 @@
 @using Locker.Pages
 @model LockerToLockerModel
 @{ Layout = "_MainLayout"; }
+		<section class="section-cargo">
+			<div class="shell">
+				<ul class="list-steps section__list-steps">
+					<li class="is-active">
+						<span><span class="steps__number">1</span>. LOKASYONLAR ve bİLGİLER</span>
+					</li>
 
-<style>
-    #locker1-map{
-        { height: 100% }
-    }
-     #locker2-map{
-        { height: 100% }
-    }
-</style>
+					<li>
+						<img src="assets/design/images/svg/arrow.svg" alt="arrow" class="steps__image">
+					</li>
 
-<section class="section-cargo">
-    <div class="shell">
-        <ul class="list-steps section__list-steps">
-            <li class="is-active">
-                <span>1. LOKASYONLAR ve BİLGİLER</span>
-            </li>
+					<li>
+						<span><span class="steps__number">2</span>. öDEme</span>
+					</li>
 
-            <li>
-                <span>2. ÖDEME</span>
-            </li>
+					<li>
+						<img src="assets/design/images/svg/arrow.svg" alt="arrow" class="steps__image">
+					</li>
 
-            <li>
-                <span>3. REZERVASYON BİLGİLERİ</span>
-            </li>
-        </ul><!-- /.list-steps -->
+					<li>
+						<span><span class="steps__number">3</span>. Rezervasyon bİLGİLERİ</span>
+					</li>
+				</ul><!-- /.list-steps -->
 
-        <div class="section__intro">
-            <figure class="js-animate section__image-left">
-                <img src="/assets/design/images/svg/section-cargo-img1.svg" alt="box" width="260" height="310">
-            </figure><!-- /.section__image-left -->
+				<div class="section__intro">
+					<figure class="js-animate section__image-left">
+						<img src="assets/design/images/svg/section-cargo-img1.svg" alt="box" width="260" height="310">
+					</figure><!-- /.section__image-left -->
 
-            <figure class="section__image-right">
-                <img src="/assets/design/images/svg/section-cargo-img2.svg" alt="table" width="400" height="250">
-            </figure><!-- /.section__image-right -->
-        </div><!-- /.section__intro -->
+					<figure class="section__image-right">
+						<img src="assets/design/images/svg/section-cargo-img2.svg" alt="table" width="400" height="250">
+					</figure><!-- /.section__image-right -->
+				</div><!-- /.section__intro -->
 
-        <div class="section__content">
-            <h1>Boyut Seçiniz</h1>
+				<div class="section__content">
+					<h1>Boyut Seçiniz</h1>
+				
 
-            <div class="checkboxes section__checkboxes">
-                @foreach (var box in Model.Model.Boxes)
+					<div class="checkboxes section__checkboxes">
+							  @foreach (var box in Model.Model.Boxes)
                 {
-                    <div class="checkbox have-discount" data="@box.Id">
-                        <div class="checkbox__head">
-                            <input type="checkbox" name="checkbox-1" id="checkbox-1">
+						<div class="checkbox have-discount" data="@box.Id">
+							<div class="checkbox__head">
+								<input type="checkbox" name="checkbox-1" id="checkbox-1">
 
-                            <label for="checkbox-1"></label>
-                            @if (box.IsPromotionActive)
+								<label for="checkbox-1"></label>
+ 							@if (box.IsPromotionActive)
                             {
                                 <img src="assets/design/images/svg/discount.svg" width="29" height="65" alt="discount" class="checkbox__discount">
                             }
-                            <figure class="checkbox__image">
+								<figure class="checkbox__image">
                                 <img src="@box.IconLink" alt="book" width="100" height="128">
-                            </figure><!-- /.checkbox__image -->
-                        </div><!-- /.checkbox__head -->
+								</figure><!-- /.checkbox__image -->
+							</div><!-- /.checkbox__head -->
 
-                        <div class="checkbox__body">
-                            <div class="checkbox__price">
-                                @if (box.IsPromotionActive)
+							<div class="checkbox__body">
+								<div class="checkbox__price">
+									 @if (box.IsPromotionActive)
                                 {
                                     <span class="checkbox__price-old">@box.Amount₺</span>
                                     <!-- /.checkbox__price-old -->
@@ -71,12 +70,11 @@
                                 {
                                     <span>@{box.Amount.ToString("##");}₺</span>
                                 }
+								</div><!-- /.checkbox__price -->
 
-                            </div><!-- /.checkbox__price -->
-
-                            <div class="js-quantity checkbox__quantity">
-                                <div class="checkbox__quantity-entry">
-                                    @if (HttpContext.Session.GetInt32("IsLoggedIn") == 1 && HttpContext.Session.GetInt32("Role") == (int)UserType.Partner)
+								<div class="js-quantity checkbox__quantity">
+									<div class="checkbox__quantity-entry">
+										 @if (HttpContext.Session.GetInt32("IsLoggedIn") == 1 && HttpContext.Session.GetInt32("Role") == (int)UserType.Partner)
                                     {
                                         <a href="#" class="btn-decrease">-</a>
                                         <!-- /.btn-decrease -->
@@ -91,83 +89,77 @@
                                         <span>@box.Name</span>
 
                                     }
-                                </div><!-- /.checkbox__quantity-entry -->
-                                @if (HttpContext.Session.GetInt32("IsLoggedIn") == 1 && HttpContext.Session.GetInt32("Role") == (int)UserType.Partner)
+									</div><!-- /.checkbox__quantity-entry -->
+
+									  @if (HttpContext.Session.GetInt32("IsLoggedIn") == 1 && HttpContext.Session.GetInt32("Role") == (int)UserType.Partner)
                                 {
                                     <span class="checkbox__count" data="@box.Id">0</span>
                                     <!-- /.checkbox__count -->
                                 }
-                            </div><!-- /.checkbox__quantity -->
-                        </div><!-- /.checkbox__body -->
-                    </div>
-                    <!-- /.checkbox -->
-                }
-            </div><!-- /.checkboxes -->
+								</div><!-- /.checkbox__quantity -->
+							</div><!-- /.checkbox__body -->
+						</div><!-- /.checkbox -->
+						}
+					</div><!-- /.checkboxes -->
+					
 
-            <div class="section__entry">
-                <p>* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+					<div class="section__entry">
+						<p>* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
 
-                <p>** Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-            </div><!-- /.section__entry -->
-        </div><!-- /.section__content -->
-    </div><!-- /.shell -->
-</section><!-- /.section-cargo -->
-<section class="section-simple section-simple--adjust">
-    <div class="shell">
-        <div class="js-accordion accordion accordion--adjust section__accordion">
-            <div class="accordion__section is-open">
-                <div class="accordion__head">
-                    <h3 class="accordion__title">LOKASYONLARI SEÇMEK İÇİN TIKLAYINIZ</h3><!-- /.accordion__title -->
-                </div><!-- /.accordion__head -->
+						<p>** Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+					</div><!-- /.section__entry -->
+				</div><!-- /.section__content -->
+			</div><!-- /.shell -->
+		</section><!-- /.section-cargo -->
 
-                <div class="accordion__body">
-                    <div class="accordion__content">
-                        <div class="accordion__inner">
-                            <div class="accordion__col">
-                                <div class="map">
-                                    <h4 class="level-2">Gönderici Otomatını Seçin</h4><!-- /.level-2 -->
+		<section class="section-simple section-simple--adjust">
+			<div class="shell">
+				<div class="js-accordion accordion accordion--adjust section__accordion">
+					<div class="accordion__section is-open">
+						<div class="accordion__head">
+							<h3 class="accordion__title">LOKASYONLARI SEÇMEK İÇİN TIKLAYINIZ</h3><!-- /.accordion__title -->
+						</div><!-- /.accordion__head -->
 
-                                    <figure class="map__image">
-                                        <div class="img-fluid" id="locker1-map" style="height: 100%;"></div>
-                                    </figure><!-- /.map__image -->
+						<div class="accordion__body">
+							<div class="accordion__content">
+								<div class="accordion__inner">
+									<div class="accordion__col">
+										<div class="map">
+											<h4 class="level-2">Gönderici Otomatını Seçin</h4><!-- /.level-2 -->
 
-                                    <div class="map__meta locker1-map-info"><strong na>LEF-01 7/24 açık</strong> Xyz Shop - Abc Street Qwe Cty ...</div><!-- /.map__meta -->
-                                </div><!-- /.map -->
-                            </div><!-- /.accordion__col -->
+											<figure class="map__image">
+												
+												<div id="locker1-map"  alt="map" width="650" height="420" style="height: 100%;"></div>
+											</figure><!-- /.map__image -->
 
-                            <img src="assets/design/images/svg/arrow-dark.svg" alt="arrow" width="60" height="30">
+											<div class="map__meta locker1-map-info"><strong>LEF-01 7/24 açık</strong> Xyz Shop - Abc Street Qwe Cty ...</div><!-- /.map__meta -->
+										</div><!-- /.map -->
+									</div><!-- /.accordion__col -->
 
-                            <div class="accordion__col">
-                                <div class="map">
-                                    <h4 class="level-2">Alıcı Otomatını Seçin</h4><!-- /.level-2 -->
+									<img src="assets/design/images/svg/arrow-dark.svg" alt="arrow" width="60" height="30">
 
-                                    <figure class="map__image">
-                                        <div class="img-fluid" id="locker2-map" style="height: 100%;"></div>
-                                    </figure><!-- /.map__image -->
+									<div class="accordion__col">
+										<div class="map">
+											<h4 class="level-2">Alıcı Otomatını Seçin</h4><!-- /.level-2 -->
 
-                                    <div class="map__meta map__meta--red locker2-map-info"><strong>LEF-01 7/24 açık</strong> Xyz Shop - Abc Street Qwe Cty ...</div><!-- /.map__meta -->
-                                </div><!-- /.map -->
-                            </div><!-- /.accordion__col -->
-                        </div><!-- /.accordion__inner -->
-                    </div><!-- /.accordion__content -->
-                </div><!-- /.accordion__body -->
-            </div><!-- /.accordion__section -->
-        </div><!-- /.accordion -->
-        <div class="section__content">
-            <div class="section__cols">
+											<figure class="map__image">
+												<div id="locker2-map" alt="map" width="650" height="420" style="height: 100%;"></div>
+											</figure><!-- /.map__image -->
+
+											<div class="map__meta map__meta--red locker2-map-info"><strong>LEF-01 7/24 açık</strong> Xyz Shop - Abc Street Qwe Cty ...</div><!-- /.map__meta -->
+										</div><!-- /.map -->
+									</div><!-- /.accordion__col -->
+								</div><!-- /.accordion__inner -->
+							</div><!-- /.accordion__content -->
+						</div><!-- /.accordion__body -->
+					</div><!-- /.accordion__section -->
+				</div><!-- /.accordion -->
+
+				<div class="section__content">
+					<div class="js-form form section__form">
                 @using(Html.BeginForm(FormMethod.Post)){
-                <div class="section__col">
-                    <div class="js-form form section__form">
-                            <div class="form__head">
-                                <h4 class="level-2">Gönderici Bilgileri</h4><!-- /.level-2 -->
-
-                                <p>*alanların doldurulması zorunludur</p>
-
-                            </div><!-- /.form__head -->
-
-                            <div class="form__body">
-
-                                @{
+							<div class="form__cols">
+                                  @{
                                     var name = "";
                                     var email = "";
                                     var phone = "";
@@ -181,180 +173,184 @@
                                         email = Model.User.Email;
                                         phone = Model.User.Phone;
                                     }
+								<div class="form__col">
+									<div class="form__content">
+										<div class="form__head">
+											<h4 class="level-2">Gönderici Bilgileri</h4><!-- /.level-2 -->
 
-                                    <div class="form__row">
-                                        <label for="name" class="form__label">İsim Soyisim <span>*</span></label><!-- /.form__label -->
+											<p>*alanların doldurulması zorunludur</p>
+										</div><!-- /.form__head -->
 
-                                        <div class="form__controls">
-                                            <input data-validate="true" type="text" class="field" id="name" name="senderName" placeholder="Ad Soyad veya Şirket">
+										<div class="form__body">
+											<div class="form__row">
+												<label for="name" class="form__label">İsim Soyisim <span>*</span></label><!-- /.form__label -->
 
-                                            <img src="assets/design/images/svg/member.svg" alt="member" width="40" height="40">
-                                        </div><!-- /.form__controls -->
-                                    </div>
-                                    <!-- /.form__row -->
+												<div class="form__controls">
+													<input data-validate="true" type="text" class="field" id="name" name="name" placeholder="Ad Soyad veya Şirket">
 
-                                    <div class="form__row">
-                                        <label for="phone" class="form__label">Cep Telefonu <span>*</span></label><!-- /.form__label -->
+													<img src="assets/design/images/svg/member.svg" alt="member" width="40" height="40">
+												</div><!-- /.form__controls -->
+											</div><!-- /.form__row -->
 
-                                        <div class="form__controls">
-                                            <input data-validate="true" type="text" class="js-phone-field field field--number" id="phone" name="senderPhone" placeholder="Telefon numarasını giriniz">
+											<div class="form__row">
+												<label for="phone" class="form__label">Cep Telefonu <span>*</span></label><!-- /.form__label -->
 
-                                            <img src="assets/design/images/svg/phone.svg" alt="member" width="40" height="40">
-                                        </div><!-- /.form__controls -->
-                                    </div>
-                                    <!-- /.form__row -->
+												<div class="form__controls">
+													<input data-validate="true" type="text" class="js-phone-field field field--number" id="phone" name="phone" placeholder="Telefon numarasını giriniz">
 
-                                    <div class="form__row">
-                                        <label for="mail" class="form__label">E-posta <span>*</span></label><!-- /.form__label -->
+													<img src="assets/design/images/svg/phone.svg" alt="member" width="40" height="40">
+												</div><!-- /.form__controls -->
+											</div><!-- /.form__row -->
 
-                                        <div class="form__controls">
-                                            <input data-validate="true" type="email" class="field" id="mail" name="senderEmail" placeholder="E-posta adresini giriniz">
+											<div class="form__row">
+												<label for="email" class="form__label">E-posta <span>*</span></label><!-- /.form__label -->
 
-                                            <img src="assets/design/images/svg/mail.svg" alt="member" width="40" height="40">
-                                        </div><!-- /.form__controls -->
-                                    </div>
-                                    <!-- /.form__row -->
+												<div class="form__controls">
+													<input data-validate="true" type="email" class="field" id="mail" name="email" placeholder="E-posta adresini giriniz">
 
-                                    <div class="form__row">
-                                        <label for="message" class="form__label">Not </label><!-- /.form__label -->
+													<img src="assets/design/images/svg/mail.svg" alt="member" width="40" height="40">
+												</div><!-- /.form__controls -->
+											</div><!-- /.form__row -->
 
-                                        <div class="form__controls">
-                                            <input type="text" class="field" id="message" name="note" placeholder="Gönderi notu varsa yazınız">
+											<div class="form__row">
+												<label for="note" class="form__label">Not</label><!-- /.form__label -->
 
-                                            <img src="assets/design/images/svg/message.svg" alt="member" width="40" height="40">
-                                        </div><!-- /.form__controls -->
-                                    </div>
-                                    <!-- /.form__row -->
+												<div class="form__controls">
+													<input type="text" class="field" id="message" name="message" placeholder="Gönder notu varsa yazınız">
+
+													<img src="assets/design/images/svg/message.svg" alt="member" width="40" height="40">
+												</div><!-- /.form__controls -->
+											</div><!-- /.form__row -->
+
+											<div class="form__row">
+												<strong>Zaman Aralığı Seçin</strong>
+
+												<div class="radios">
+													<div class="radio">
+														<input type="radio" name="radio" id="radio-1" checked>
+
+														<label for="radio-1">
+															Fark <br> etmez
+														</label>
+													</div><!-- /.radio -->
+
+													<div class="radio">
+														<input type="radio" name="radio" id="radio-2">
+
+														<label for="radio-2">
+															<span>08:00</span>
+
+															<span>-</span>
+
+															<span>12:00</span>
+														</label>
+													</div><!-- /.radio -->
+
+													<div class="radio">
+														<input type="radio" name="radio" id="radio-3">
+
+														<label for="radio-3">
+															<span>13:00</span>
+
+															<span>-</span>
+
+															<span>18:00</span>
+														</label>
+													</div><!-- /.radio -->
+												</div><!-- /.radios -->
+											</div><!-- /.form__row -->
+										</div><!-- /.form__body -->
+									</div><!-- /.form__content -->
+								</div><!-- /.form__col -->
                                 }
 
-                                <div class="form__row">
-                                    <strong>Zaman Aralığı Seçin</strong>
+								<div class="form__col-alt">
+									<img src="assets/design/images/svg/arrow-dark.svg" alt="arrow" width="60" height="30">
+								</div><!-- /.form__col-alt -->
 
-                                    <div class="radios">
-                                        <div class="radio">
-                                            <input type="radio" name="radio" id="radio-1" checked>
+								<div class="form__col">
+									<div class="form__content">
+										<div class="form__head">
+											<h4 class="level-2">Alıcı Biligleri</h4><!-- /.level-2 -->
 
-                                            <label for="radio-1">
-                                                Fark <br> etmez
-                                            </label>
-                                        </div><!-- /.radio -->
+											<p>*alanların doldurulması zorunludur</p>
+										</div><!-- /.form__head -->
 
-                                        <div class="radio">
-                                            <input type="radio" name="radio" id="radio-2">
+										<div class="form__body">
+											<div class="form__row">
+												<label for="name-2" class="form__label">İsim Soyisim <span>*</span></label><!-- /.form__label -->
 
-                                            <label for="radio-2">
-                                                <span>08:00</span>
+												<div class="form__controls">
+													<input data-validate="true" type="text" class="field" id="name-2" name="receiverName" placeholder="Ad Soyad veya Şirket">
 
-                                                <span>-</span>
+													<img src="assets/design/images/svg/member.svg" alt="member" width="40" height="40">
+												</div><!-- /.form__controls -->
+											</div><!-- /.form__row -->
 
-                                                <span>12:00</span>
-                                            </label>
-                                        </div><!-- /.radio -->
+											<div class="form__row">
+												<label for="phone-2" class="form__label">Cep Telefonu <span>*</span></label><!-- /.form__label -->
 
-                                        <div class="radio">
-                                            <input type="radio" name="radio" id="radio-3">
+												<div class="form__controls">
+													<input data-validate="true" type="text" class="js-phone-field field" id="phone-2" name="receiverPhone" placeholder="Telefon numarasını giriniz">
 
-                                            <label for="radio-3">
-                                                <span>13:00</span>
+													<img src="assets/design/images/svg/phone.svg" alt="member" width="40" height="40">
+												</div><!-- /.form__controls -->
+											</div><!-- /.form__row -->
 
-                                                <span>-</span>
+											<div class="form__row">
+												<ul class="list-checkboxes">
+													<li>
+														<div class="checkbox-alt">
+															<input data-validate="true" type="checkbox" name="checkbox-alt" id="checkbox-alt-1" checked>
 
-                                                <span>18:00</span>
-                                            </label>
-                                        </div><!-- /.radio -->
-                                    </div><!-- /.radios -->
-                                </div><!-- /.form__row -->
-                            </div><!-- /.form__body -->
-                    </div><!-- /.form section__form -->
-                </div><!-- /.section__col -->
+															<label for="checkbox-alt-1">
+																<a href="#">Gizlilik Politikası</a>
+															</label>
+														</div><!-- /.checkbox-alt -->
+													</li>
 
-                <div class="section__col-alt">
-                    <img src="assets/design/images/svg/arrow-dark.svg" alt="arrow" width="60" height="30">
-                </div><!-- /.section__col-alt -->
+													<li>
+														<div class="checkbox-alt">
+															<input data-validate="true" type="checkbox" name="checkbox-alt" id="checkbox-alt-2" checked>
 
-                <div class="section__col">
-                    <div class="js-form form section__form">
-                            <div class="form__head">
-                                <h4 class="level-2">Alıcı Biligleri</h4><!-- /.level-2 -->
+															<label for="checkbox-alt-2">
+																<a href="#">Kullanıcı ile Breysel Sözleşme</a>
+															</label>
+														</div><!-- /.checkbox-alt -->
+													</li>
 
-                                <p>*alanların doldurulması zorunludur</p>
-                            </div><!-- /.form__head -->
+													<li>
+														<div class="checkbox-alt checkbox-alt--yellow-background">
+															<input data-validate="true" type="checkbox" name="checkbox-alt" id="checkbox-alt-3">
 
-                            <div class="form__body">
-                                <div class="form__row">
-                                    <label for="name-2" class="form__label">İsim Soyisim <span>*</span></label><!-- /.form__label -->
+															<label for="checkbox-alt-3">
+																<a href="#">LOKASYONLARI ONAYLA</a>
+															</label>
+														</div><!-- /.checkbox-alt -->
+													</li>
+												</ul><!-- /.list-checkboxes -->
+											</div><!-- /.form__row -->
+										</div><!-- /.form__body -->
 
-                                    <div class="form__controls">
-                                        <input data-validate="true" type="text" class="field" id="name-2" name="receiverName" placeholder="Ad Soyad veya Şirket">
-
-                                        <img src="assets/design/images/svg/member.svg" alt="member" width="40" height="40">
-                                    </div><!-- /.form__controls -->
-                                </div><!-- /.form__row -->
-
-                                <div class="form__row">
-                                    <label for="phone-2" class="form__label">Cep Telefonu <span>*</span></label><!-- /.form__label -->
-
-                                    <div class="form__controls">
-                                        <input data-validate="true" type="text" class="js-phone-field field" id="phone-2" name="receiverPhone" placeholder="Telefon numarasını giriniz">
-
-                                        <img src="assets/design/images/svg/phone.svg" alt="member" width="40" height="40">
-                                    </div><!-- /.form__controls -->
-                                </div><!-- /.form__row -->
-
-                                <div class="form__row">
-                                    <ul class="list-checkboxes">
-                                        <li>
-                                            <div class="checkbox-alt">
-                                                <input data-validate="true" type="checkbox" name="checkbox-alt" id="checkbox-alt-1" checked>
-
-                                                <label for="checkbox-alt-1">
-                                                    <a href="#">Gizlilik Politikası</a>
-                                                </label>
-                                            </div><!-- /.checkbox-alt -->
-                                        </li>
-
-                                        <li>
-                                            <div class="checkbox-alt">
-                                                <input data-validate="true" type="checkbox" name="checkbox-alt" id="checkbox-alt-2" checked>
-
-                                                <label for="checkbox-alt-2">
-                                                    <a href="#">Kullanıcı ile Breysel Sözleşme</a>
-                                                </label>
-                                            </div><!-- /.checkbox-alt -->
-                                        </li>
-
-                                        <li>
-                                            <div class="checkbox-alt checkbox-alt--yellow-background">
-                                                <input data-validate="true" type="checkbox" name="checkbox-alt" id="checkbox-alt-3">
-
-                                                <label for="checkbox-alt-3">
-                                                    <a href="#">LOKASYONLARI ONAYLA</a>
-                                                </label>
-                                            </div><!-- /.checkbox-alt -->
-                                        </li>
-                                    </ul><!-- /.list-checkboxes -->
-                                </div><!-- /.form__row -->
-                                <!-- hidden fields -->
-                                <input type="hidden" class="box-input" name="boxId" value="" required>
+										<div class="form__actions">
+											<button type="submit" class="form__btn">
+												<img src="assets/design/images/svg/card.svg" alt="card" width="280" height="155">
+											</button>
+										</div><!-- /.form__actions -->
+									</div><!-- /.form__content -->
+								</div><!-- /.form__col -->
+							</div><!-- /.form__cols -->
+                                  <input type="hidden" class="box-input" name="boxId" value="" required>
                                 <input type="hidden" class="selected-locker-1" name="sourceLockerName" value="" required>
                                 <input type="hidden" class="selected-locker-2" name="targetLockerName" value="" required>
                                 <input type="hidden" name="items"/>
+						}
+					</div><!-- /.js-form form section__form -->
+				</div><!-- /.section__content -->
+			</div><!-- /.shell -->
+		</section><!-- /.section-simple -->
+	</div><!-- /.wrapper -->
 
-                            </div><!-- /.form__body -->
-
-                        <div class="form__actions">
-                            <button type="submit" class="form__btn">
-                                <img src="assets/design/images/svg/card.svg" alt="card" width="280" height="155">
-                            </button>
-                        </div>
-                    </div><!-- /.form section__form -->
-                </div><!-- /.section__col -->
-                }
-            </div><!-- /.section__cols -->
-        </div><!-- /.section__content -->
-    </div>
-    
-</section>
 
 
 
@@ -479,17 +475,17 @@ $(".receiverCountryCodeDD").on("click",function(){
 
 
 $(".senderCountryCodeDD").on("click",function(){
-  $("input[name='senderPhone']").val($(this).attr("data"));
+  $("input[name='phone']").val($(this).attr("data"));
 });
 
 function senderControl(){
-    var senderName = $("input[name='senderName']").val();
+    var senderName = $("input[name='name']").val();
     if(senderName.trim() == ""){
         $("#senderNameWarning").text(" Lütfen bu alanı doldurun");
         return;
     }
 
-    var senderPhone = $("input[name='senderPhone']").val();
+    var senderPhone = $("input[name='phone']").val();
     if(senderPhone.trim() == ""){
         $("#senderPhoneWarning").text(" Lütfen bu alanı doldurun");
         return;
@@ -498,7 +494,7 @@ function senderControl(){
         return;
     }
 
-    var senderEmail = $("input[name='senderEmail']").val();
+    var senderEmail = $("input[name='email']").val();
     if(senderEmail.trim() == ""){
         $("#senderEmailWarning").text(" Lütfen bu alanı doldurun");
         return;
@@ -559,3 +555,4 @@ function isEmail(email) {
       }
     
 </script>
+

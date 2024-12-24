@@ -1,4 +1,12 @@
-﻿OrderId,Address,Latitude,Longitude,GroupRegion,StopColor,CustomerNameOrCode,TimeAtStop,Phone,Notes
+﻿Id,UserId,DeliveryType,OrderType,TotalAmount,Discount,PayType,ReceiverOtpCode,SenderOtpCode,SourceRegionId,TargetRegionId,IsPaid,PaidDate,SenderName,SenderAddress,SenderAddressLat,SenderAddressLong,SenderPhone,SenderEmail,ReceiverName,ReceiverAddress,ReceiverPhone,ReceiverEmail,CourierId,OldCourierId,IsTransferred,IsTransferCompleted,Status,ReceiverAddressLat,ReceiverAddressLong,Note,CreatedOn,ModifiedOn,ProblemId,ProblemDescription,Id,Type,Name,Address,AddressLat,AddressLong,Credit,ForgotPasswordProcess,IsActive,PromotionCredit,Phone,Email,Password,CreatedOn,ModifiedOn,Id,Name,Phone,Email,RegionId,Password,IsAvailable,Id,Name
 
-0,,35.17425402794626,33.42790138426975,1,8,,3,,
+13,23,1,1,"1,0000","0,0000",1,,,13,13,True,23.12.2024 11:59:52,Sercan Dağlı,,,," 5073001543",sdagli7@gmail.com,Erkan Dağlı,," 5073001543",,0,,False,False,1,,,not,23.12.2024 11:59:43,23.12.2024 11:59:43,0,,0,0,,,,,0,False,False,0,,,,,,0,,,,0,,False,0,
+
+14,24,3,1,"1,0000","0,0000",1,,6522,14,0,True,23.12.2024 12:01:00,Sercan Dağlı,adres detayı,,," 5073001543",sdagli8@gmail.com,Erkan Dağlı,," 5073001543",,0,,False,False,1,,,,23.12.2024 12:00:55,23.12.2024 12:00:55,0,,0,0,,,,,0,False,False,0,,,,,,0,,,,0,,False,0,
+
+16,26,1,1,"1,0000","0,0000",1,,,13,13,True,24.12.2024 12:54:57,Sercan Dağlı,,,," 5073001543",sdagli7@gmail.com,Erkan Dağlı,," 5073001543",,0,,False,False,1,,,,24.12.2024 12:54:50,24.12.2024 12:54:50,0,,0,0,,,,,0,False,False,0,,,,,,0,,,,0,,False,0,
+
+17,27,2,1,"1,0000","0,0000",1,8609,,13,0,True,24.12.2024 13:40:41,Sercan Dağlı,,,," 5073001543",sdagli7@gmail.com,Erkan Dağlı,Adres Detayı," 5073001543",,0,,False,False,1,35.14761842874744,33.21254605605437,,24.12.2024 13:40:32,24.12.2024 13:40:32,0,,0,0,,,,,0,False,False,0,,,,,,0,,,,0,,False,0,
+
+18,28,3,1,"1,0000","0,0000",1,,5723,14,0,True,24.12.2024 13:41:25,Sercan Dağlı,adres detayı,35.127409194010106,33.256794248265486," 5073001543",sdagli7@gmail.com,Erkan Dağlı,," 5073001543",,0,,False,False,1,,,,24.12.2024 13:41:21,24.12.2024 13:41:21,0,,0,0,,,,,0,False,False,0,,,,,,0,,,,0,,False,0,
 

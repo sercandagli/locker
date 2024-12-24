@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/macbookpro/Desktop/locker/locker.csproj": {}
+    "/Users/sercandagli/Desktop/Projects/locker/locker.csproj": {}
   },
   "projects": {
-    "/Users/macbookpro/Desktop/locker/locker.csproj": {
+    "/Users/sercandagli/Desktop/Projects/locker/locker.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/macbookpro/Desktop/locker/locker.csproj",
+        "projectUniqueName": "/Users/sercandagli/Desktop/Projects/locker/locker.csproj",
         "projectName": "locker",
-        "projectPath": "/Users/macbookpro/Desktop/locker/locker.csproj",
-        "packagesPath": "/Users/macbookpro/.nuget/packages/",
-        "outputPath": "/Users/macbookpro/Desktop/locker/obj/",
+        "projectPath": "/Users/sercandagli/Desktop/Projects/locker/locker.csproj",
+        "packagesPath": "/Users/sercandagli/.nuget/packages/",
+        "outputPath": "/Users/sercandagli/Desktop/Projects/locker/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/macbookpro/.nuget/NuGet/NuGet.Config"
+          "/Users/sercandagli/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -87,7 +87,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.302/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.404/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

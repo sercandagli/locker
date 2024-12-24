@@ -122,7 +122,7 @@
 
             </div>
         </div>
-
+<input type="hidden" class="oid-hidden" value="0" />
     <div class="table-responsive text-nowrap">
         <table class="table table-striped">
             <thead>
@@ -153,11 +153,11 @@
                         {
                             if (item.Status.GetCourierOrderStatus(order.DeliveryType) == "Teslim Al")
                             {
-                                <button type="button" class="btn btn-outline-primary courierTakeButton">@Html.Raw(item.Status.GetCourierOrderStatus(order.DeliveryType))</button>
+                                <button type="button" class="btn btn-outline-primary courierTakeButton" data="@order.Id">@Html.Raw(item.Status.GetCourierOrderStatus(order.DeliveryType))</button>
                             }
                             else if (item.Status.GetCourierOrderStatus(order.DeliveryType) == "Teslim Et")
                             {
-                                <button type="button" class="btn btn-outline-primary courierDeliveryButton">@Html.Raw(item.Status.GetCourierOrderStatus(order.DeliveryType))</button>
+                                <button type="button" class="btn btn-outline-primary courierDeliveryButton" data="@order.Id">@Html.Raw(item.Status.GetCourierOrderStatus(order.DeliveryType))</button>
                             }
                         }
                     </td>
@@ -314,7 +314,7 @@
 
 
     $(".courierTakeButton").on('click',function(){
-        var orderId = $(this).attr("data-oid");
+        var orderId = $(this).attr("data");
         var orderType = $(this).attr("data-otype");
         $(".oid-hidden").text(orderId);
 
@@ -327,7 +327,7 @@
             type: "POST",
             url: "/CourierOrderDetail?Handler=TakeDelivery",
             headers: { "RequestVerificationToken": $('input[name="__RequestVerificationToken"]').val() },
-            data:{"OrderItemId":$(".oid-hidden").text(), "OtpCode":$("#takeOtpCode").val()},
+            data:{"OrderId":$(".oid-hidden").text(), "OtpCode":$("#takeOtpCode").val()},
             success: function (result) {
                 $(".courierAlert").show();
                 if(result.isSuccess){
@@ -361,13 +361,15 @@
             type: "POST",
             url: "/CourierOrderDetail?Handler=SetDelivery",
             headers: { "RequestVerificationToken": $('input[name="__RequestVerificationToken"]').val() },
-            data:{"OrderItemId":$(".oid-hidden").text(), "OtpCode":$("#otpCode").val()},
+            data:{"OrderId":$(".oid-hidden").text(), "OtpCode":$("#otpCode").val()},
             success: function (result) {
                 $(".courierAlert").show();
                 if(result.isSuccess){
                     $(".courierAlert").removeClass("alert-danger").addClass("alert-success").text("İşlem Başarılı")
                     $("#deliveryModalWithOtp").modal("hide");
                     $("#deliveryModal").modal("hide");
+                                    location.reload();
+
                 }else{
                     $(".courierAlert").removeClass("alert-success").addClass("alert-danger").text(result.message);
                     $("#deliveryModalWithOtp").modal("hide");
@@ -406,19 +408,7 @@
         if (queryString == "")
             return;
         window.open("/barcode?" + queryString,'_blank');
-        /*
-        $.ajax({
-            type: "POST",
-            url: "/CourierOrders?Handler=CompleteTransfers",
-            headers: { "RequestVerificationToken": $('input[name="__RequestVerificationToken"]').val() },
-            data:{"orderIds":idArray},
-            success: function (result) {
-                location.reload();
-            },
-            failure: function (response) {
-
-            }
-        });*/
+    
     });
 
 

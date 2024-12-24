@@ -7,8 +7,9 @@ namespace locker.Pages;
 
 public class OrderCompletedModel : BasePageModel
 {
-    public Order Order{get;set;}
-    public async Task<IActionResult> OnGet(){
+    public Order Order { get; set; }
+    public async Task<IActionResult> OnGet()
+    {
         var orderId = HttpContext.Session.GetInt32("orderId");
         if (orderId is null or 0)
             return RedirectToPage("lockerToLocker");

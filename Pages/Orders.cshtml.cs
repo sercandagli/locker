@@ -23,29 +23,32 @@ public class OrdersModel : BasePageModel
         _workContext = workContext;
     }
 
-    public List<Order> Orders{get;set;}
+    public List<Order> Orders { get; set; }
     public List<Courier> Couriers { get; set; }
 
-    public async Task<IActionResult> OnGet(bool? hasReport,bool? isTransfer,int? orderType,int? deliveryType, int? courierId,int? orderId){
+    public async Task<IActionResult> OnGet(bool? hasReport, bool? isTransfer, int? orderType, int? deliveryType, int? courierId, int? orderId)
+    {
 
         if (_workContext.Admin == null)
             return RedirectToPage("managementLogin");
         using var _context = new LockerDbContext();
 
-        var ordersQuery =  _context.Orders.Include(x => x.OrderItems)
+        var ordersQuery = _context.Orders.Include(x => x.OrderItems)
             .Where(x => x.Status == (int)OrderStatus.Continue && x.IsPaid).AsQueryable();
 
 
-            if(orderId.HasValue && orderId > 0){
-              Orders =await _context.Orders.Include(x => x.OrderItems)
-                    .Where(x => x.Id == orderId.Value).ToListAsync();
-                Couriers = await _context.Couriers.ToListAsync();
+        if (orderId.HasValue && orderId > 0)
+        {
+            Orders = await _context.Orders.Include(x => x.OrderItems)
+                  .Where(x => x.Id == orderId.Value).ToListAsync();
+            Couriers = await _context.Couriers.ToListAsync();
 
-                return Page();
-            }
+            return Page();
+        }
 
-        if(hasReport.HasValue){
-           ordersQuery = ordersQuery.Where(x => x.ProblemId > 0);
+        if (hasReport.HasValue)
+        {
+            ordersQuery = ordersQuery.Where(x => x.ProblemId > 0);
         }
 
         if (isTransfer.HasValue)
@@ -68,33 +71,37 @@ public class OrdersModel : BasePageModel
             ordersQuery = ordersQuery.Where(x => x.OrderType == orderType.Value);
 
         }
-         Orders =await   ordersQuery.OrderByDescending(x => x.ModifiedOn)
-            .ToListAsync();
-         Couriers = await _context.Couriers.ToListAsync();
+        Orders = await ordersQuery.OrderByDescending(x => x.ModifiedOn)
+           .ToListAsync();
+        Couriers = await _context.Couriers.ToListAsync();
 
-         return Page();
+        return Page();
     }
 
-    public async Task<IActionResult> OnPostResolveReport(CreateReportModel model){
+    public async Task<IActionResult> OnPostResolveReport(CreateReportModel model)
+    {
         if (_workContext.Admin == null)
             return RedirectToPage("managementLogin");
-         using var _context = new LockerDbContext();
+        using var _context = new LockerDbContext();
 
         var order = await _context.Orders.FirstOrDefaultAsync(x => x.Id == model.OrderId);
-        if(order == null){
-            return new JsonResult(new {
+        if (order == null)
+        {
+            return new JsonResult(new
+            {
                 message = "Sipariş Bulunamadı"
             });
         }
 
-            order.ProblemId  = 0;
-            order.ProblemDescription = string.Empty;
-            order.ModifiedOn = DateTime.Now;
-            await _context.SaveChangesAsync();
-            return new JsonResult(new {
-                isSuccess = true
-            });
-        
+        order.ProblemId = 0;
+        order.ProblemDescription = string.Empty;
+        order.ModifiedOn = DateTime.Now;
+        await _context.SaveChangesAsync();
+        return new JsonResult(new
+        {
+            isSuccess = true
+        });
+
     }
 
     public async Task<IActionResult> OnPostTransfer(TransferOrderModel model)
@@ -122,7 +129,7 @@ public class OrdersModel : BasePageModel
 
         return RedirectToPage("orders");
     }
-    
+
     public async Task<IActionResult> OnGetExportCsv()
     {
 
@@ -158,9 +165,9 @@ public class OrdersModel : BasePageModel
                 StopColor = 8
             });
         }
-        
+
         //otomata bırakılacaklar -> adresten otomata, otomattan otomata
-        
+
         var targetLockerBasedGroupQuery = orderModel.Where(x =>
                 x.DeliveryType is (int)DeliveryType.AddressToLocker or (int)DeliveryType.LockerToLocker
                 && x.OrderItems.Any(x => x.Status == (int)OrderItemStatus.AtCourier) && (!x.IsTransferred || x.IsTransferCompleted)).SelectMany(x => x.OrderItems)
@@ -180,8 +187,8 @@ public class OrdersModel : BasePageModel
                 StopColor = 8
             });
         }
-        
-        
+
+
 
 
 
@@ -211,12 +218,12 @@ public class OrdersModel : BasePageModel
                 Phone = order.SenderPhone,
             });
         }
-        
-        
-        
+
+
+
         var toAddressBasedGroupsQuery = orderModel.Where(x =>
                 x.DeliveryType is (int)DeliveryType.LockerToAddress or (int)DeliveryType.AddressToAddress
-                && x.OrderItems.Any(x => x.Status == (int)OrderItemStatus.AtCourier)&& (!x.IsTransferred || x.IsTransferCompleted)).SelectMany(x => x.OrderItems)
+                && x.OrderItems.Any(x => x.Status == (int)OrderItemStatus.AtCourier) && (!x.IsTransferred || x.IsTransferCompleted)).SelectMany(x => x.OrderItems)
             .ToList();
 
 
@@ -239,39 +246,72 @@ public class OrdersModel : BasePageModel
             });
         }
 
-         var transferOrderQuery = orderModel.Where(x => x.IsTransferred && !x.IsTransferCompleted).SelectMany(x => x.OrderItems)
-            .ToList();
+        var transferOrderQuery = orderModel.Where(x => x.IsTransferred && !x.IsTransferCompleted).SelectMany(x => x.OrderItems)
+           .ToList();
 
-         if (transferOrderQuery.Any())
-         {
-             var transferPoint = await _context.TransferPoints.FirstOrDefaultAsync();
-             orderCsvModel.Add(new OrderCsvModel()
-             {
-                 Latitude = transferPoint.Lat,
-                 Longitude = transferPoint.Long,
-                 TimeAtStop = 3,
-                 GroupRegion = transferOrderQuery.Count(),
-                 StopColor = 20
-           
-             });
-         }
-       
-        
-        
-        
-        var path = Environment.CurrentDirectory + "/orders.csv";
-        using(var sw = new StreamWriter(path, false, new UTF8Encoding(true)))  
-        using(var cw = new CsvWriter(sw)) {  
-            cw.WriteHeader <OrderCsvModel> ();  
-            cw.NextRecord();  
-            foreach(var order in orderCsvModel) {  
-                cw.WriteRecord(order);  
-                cw.NextRecord();  
-            }  
+        if (transferOrderQuery.Any())
+        {
+            var transferPoint = await _context.TransferPoints.FirstOrDefaultAsync();
+            orderCsvModel.Add(new OrderCsvModel()
+            {
+                Latitude = transferPoint.Lat,
+                Longitude = transferPoint.Long,
+                TimeAtStop = 3,
+                GroupRegion = transferOrderQuery.Count(),
+                StopColor = 20
+
+            });
         }
 
-        return File(System.IO.File.OpenRead(path), "application/octet-stream", 
-            $"orders-{DateTime.Now.Ticks}.csv");    }
-    
-    
+
+
+
+        var path = Environment.CurrentDirectory + "/orders.csv";
+        using (var sw = new StreamWriter(path, false, new UTF8Encoding(true)))
+        using (var cw = new CsvWriter(sw))
+        {
+            cw.WriteHeader<OrderCsvModel>();
+            cw.NextRecord();
+            foreach (var order in orderCsvModel)
+            {
+                cw.WriteRecord(order);
+                cw.NextRecord();
+            }
+        }
+
+        return File(System.IO.File.OpenRead(path), "application/octet-stream",
+            $"orders-{DateTime.Now.Ticks}.csv");
+    }
+
+    public async Task<IActionResult> OnGetExportExcel(List<int> orderIds)
+    {
+
+        if (_workContext.Admin == null)
+            return RedirectToPage("home");
+        using var _context = new LockerDbContext();
+        var lockers = await _context.Cabines.ToListAsync();
+        var orderModel = await _context.Orders.Include(x => x.OrderItems).Where(x => orderIds.Contains(x.Id)).ToListAsync();
+
+
+
+        var path = Environment.CurrentDirectory + "/orders.csv";
+        using (var sw = new StreamWriter(path, false, new UTF8Encoding(true)))
+        using (var cw = new CsvWriter(sw))
+        {
+            cw.WriteHeader<Order>();
+            cw.NextRecord();
+            foreach (var order in orderModel)
+            {
+                cw.WriteRecord(order);
+                cw.NextRecord();
+            }
+        }
+
+        return File(System.IO.File.OpenRead(path), "application/octet-stream",
+            $"orders-{DateTime.Now.Ticks}.csv");
+    }
+
+
+
+
 }

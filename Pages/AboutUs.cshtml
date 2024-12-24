@@ -1,0 +1,156 @@
+@page
+@using Locker.Enums
+@using Locker.Pages
+@model AboutUsModel
+@{
+    Layout = "_MainLayout";
+}
+
+<section class="section-form">
+    <div class="shell">
+        <div class="section__cols">
+            <div class="section__col">
+                <div class="section__content">
+                    <div class="js-form form-simple section__form-simple">
+                        <form action="?" method="POST">
+                            <div class="form__row">
+                                <div class="form__controls">
+                                    <label for="name" class="sr-only">Name</label>
+
+                                    <input class="field-alt" type="text" id="name" name="name" data-validate="true"
+                                        placeholder="* İsim Soyisim:">
+                                </div><!-- /.form__controls -->
+                            </div><!-- /.form__row -->
+
+                            <div class="form__row">
+                                <div class="form__controls">
+                                    <label for="email" class="sr-only">Email</label>
+
+                                    <input class="field-alt" type="email" id="email" name="email" data-validate="true"
+                                        placeholder="* E-posta adresi:">
+                                </div><!-- /.form__controls -->
+                            </div><!-- /.form__row -->
+
+                            <div class="form__row">
+                                <div class="form__controls">
+                                    <label for="subject" class="sr-only">Subject</label>
+
+                                    <input class="field-alt" type="text" id="subject" name="subject"
+                                        data-validate="true" placeholder="* Konu:">
+                                </div><!-- /.form__controls -->
+                            </div><!-- /.form__row -->
+
+                            <div class="form__row">
+                                <div class="form__controls">
+                                    <label for="message" class="sr-only">Message</label>
+
+                                    <textarea name="message" id="message" data-validate="true"
+                                        class="field-alt field-alt--textarea"
+                                        placeholder="* Mesajınız"></textarea><!-- /# -->
+                                </div><!-- /.form__controls -->
+                            </div><!-- /.form__row -->
+
+                            <div class="form__actions">
+                                <button type="submit" class="form__btn">mesaji gönder</button>
+                            </div><!-- /.form__actions -->
+                        </form>
+                    </div><!-- /.form-simple -->
+                </div><!-- /.section__content -->
+
+                <div class="section__holder">
+                    <img src="assets/design/images/svg/decoration.svg" alt="decoration" width="370" height="39">
+
+                    <div class="section__holder-aside">
+                        <h5>taki̇p edi̇n <br> haberdar olun</h5>
+
+                        <div class="socials socials--alt">
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <img src="assets/design/images/svg/facebook.svg" alt="facebook" width="31"
+                                            height="31">
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#">
+                                        <img src="assets/design/images/svg/instagram.svg" alt="instagram" width="31"
+                                            height="31">
+                                    </a>
+                                </li>
+
+                                <li class="full-width">
+                                    <a href="#">
+                                        <img src="assets/design/images/svg/whatsapp-3.svg" alt="whatsapp" width="120"
+                                            height="38">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div><!-- /.socials -->
+                    </div><!-- /.section__holder-aside -->
+                </div><!-- /.section__holder -->
+            </div><!-- /.section__col -->
+
+            <div class="section__col-fixed">
+                <div class="section__aside">
+                    <span class="label section__label">
+                        <span class="label__inner">
+                            ki̇mi̇z?
+                        </span><!-- /.label__inner -->
+
+                        <span class="label__decoration"></span><!-- /.label__decoration -->
+                    </span><!-- /.label -->
+
+                    <div class="section__aside-content">
+                        <div class="panel section__panel">
+                            <p>Yeniyiz Yerliyiz ve Yenilikçiyiz.</p>
+
+                            <p>Adada Cargo, 2024 yılında %100 yerli yatırım ile hizmete girerek Adadaki kargo, kurye ve
+                                bileşenlerini entegre bir sistem haline getirmeyi hedefliyor</p>
+
+                            <p>Görüşleriniz ve önerileriniz ile daha iyi hizmet sağlamamıza yardımcı olabilirsiniz</p>
+
+                            <p>Pansel Ticaret ve Nakliyat LTD.</p>
+
+                            <strong>bi̇ze ulaşin</strong>
+
+                            <ul class="list-contacts">
+                                <li>
+                                    <a href="tel:+905469959697">
+                                        <img src="assets/design/images/svg/phone-2.svg" alt="phone" width="16"
+                                            height="16">
+
+                                        +90 546 995-9697
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="mailto:info@adadacargo.com">
+                                        <img src="assets/design/images/svg/email.svg" alt="mail" width="22" height="16">
+
+                                        info@adadacargo.com
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#">
+                                        <img src="assets/design/images/svg/marker.svg" alt="marker" width="18"
+                                            height="26">
+
+                                        Abc street no 21 Asd town Xxyz city Qwe country
+                                    </a>
+                                </li>
+                            </ul><!-- /.list-contacts -->
+                        </div><!-- /.panel -->
+
+                        <img src="assets/design/images/svg/decoration-vertical.svg" alt="decoration"
+                            class="section__decoration-desktop">
+
+                        <img src="assets/design/images/svg/decoration.svg" alt="decoration" width="370" height="39"
+                            class="section__decoration-mobile">
+                    </div><!-- /.section__aside-content -->
+                </div><!-- /.section__aside -->
+            </div><!-- /.section__col-fixed -->
+        </div><!-- /.section__cols -->
+    </div><!-- /.shell -->
+</section><!-- /.section-form -->

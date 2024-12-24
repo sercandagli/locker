@@ -1,1495 +1,1559 @@
 {
   "Files": [
     {
-      "Id": "/Users/macbookpro/Desktop/locker/obj/Debug/net8.0/scopedcss/projectbundle/locker.bundle.scp.css",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/obj/Debug/net8.0/scopedcss/projectbundle/locker.bundle.scp.css",
       "PackagePath": "staticwebassets/locker.bundle.scp.css"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/css/demo.css",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/css/demo.css",
       "PackagePath": "staticwebassets/assets/css/demo.css"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/app.js",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/app.js",
       "PackagePath": "staticwebassets/assets/design/app.js"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/fonts/.gitkeep",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/fonts/.gitkeep",
       "PackagePath": "staticwebassets/assets/design/fonts/.gitkeep"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/fonts/JumboSaleTrial.woff",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/fonts/JumboSaleTrial.woff",
       "PackagePath": "staticwebassets/assets/design/fonts/JumboSaleTrial.woff"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/fonts/JumboSaleTrial.woff2",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/fonts/JumboSaleTrial.woff2",
       "PackagePath": "staticwebassets/assets/design/fonts/JumboSaleTrial.woff2"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/fonts/Montserrat-Bold.woff",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/fonts/Montserrat-Bold.woff",
       "PackagePath": "staticwebassets/assets/design/fonts/Montserrat-Bold.woff"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/fonts/Montserrat-Bold.woff2",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/fonts/Montserrat-Bold.woff2",
       "PackagePath": "staticwebassets/assets/design/fonts/Montserrat-Bold.woff2"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/fonts/Montserrat-Medium.woff",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/fonts/Montserrat-Medium.woff",
       "PackagePath": "staticwebassets/assets/design/fonts/Montserrat-Medium.woff"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/fonts/Montserrat-Medium.woff2",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/fonts/Montserrat-Medium.woff2",
       "PackagePath": "staticwebassets/assets/design/fonts/Montserrat-Medium.woff2"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/fonts/Montserrat-Regular.woff",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/fonts/Montserrat-Regular.woff",
       "PackagePath": "staticwebassets/assets/design/fonts/Montserrat-Regular.woff"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/fonts/Montserrat-Regular.woff2",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/fonts/Montserrat-Regular.woff2",
       "PackagePath": "staticwebassets/assets/design/fonts/Montserrat-Regular.woff2"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/fonts/Now-Bold.woff",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/fonts/Now-Bold.woff",
       "PackagePath": "staticwebassets/assets/design/fonts/Now-Bold.woff"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/fonts/Now-Bold.woff2",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/fonts/Now-Bold.woff2",
       "PackagePath": "staticwebassets/assets/design/fonts/Now-Bold.woff2"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/fonts/Now-Medium.woff",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/fonts/Now-Medium.woff",
       "PackagePath": "staticwebassets/assets/design/fonts/Now-Medium.woff"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/fonts/Now-Medium.woff2",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/fonts/Now-Medium.woff2",
       "PackagePath": "staticwebassets/assets/design/fonts/Now-Medium.woff2"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/fonts/Now-Regular.woff",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/fonts/Now-Regular.woff",
       "PackagePath": "staticwebassets/assets/design/fonts/Now-Regular.woff"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/fonts/Now-Regular.woff2",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/fonts/Now-Regular.woff2",
       "PackagePath": "staticwebassets/assets/design/fonts/Now-Regular.woff2"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/fonts/NowAlt-Bold.woff",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/fonts/NowAlt-Bold.woff",
       "PackagePath": "staticwebassets/assets/design/fonts/NowAlt-Bold.woff"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/fonts/NowAlt-Bold.woff2",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/fonts/NowAlt-Bold.woff2",
       "PackagePath": "staticwebassets/assets/design/fonts/NowAlt-Bold.woff2"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/fonts/NowAlt-Medium.woff",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/fonts/NowAlt-Medium.woff",
       "PackagePath": "staticwebassets/assets/design/fonts/NowAlt-Medium.woff"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/fonts/NowAlt-Medium.woff2",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/fonts/NowAlt-Medium.woff2",
       "PackagePath": "staticwebassets/assets/design/fonts/NowAlt-Medium.woff2"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/fonts/NowAlt-Regular.woff",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/fonts/NowAlt-Regular.woff",
       "PackagePath": "staticwebassets/assets/design/fonts/NowAlt-Regular.woff"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/fonts/NowAlt-Regular.woff2",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/fonts/NowAlt-Regular.woff2",
       "PackagePath": "staticwebassets/assets/design/fonts/NowAlt-Regular.woff2"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/favicon32x32.png",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/fonts/ObelixPro.woff",
+      "PackagePath": "staticwebassets/assets/design/fonts/ObelixPro.woff"
+    },
+    {
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/fonts/ObelixPro.woff2",
+      "PackagePath": "staticwebassets/assets/design/fonts/ObelixPro.woff2"
+    },
+    {
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/images/favicon32x32.png",
       "PackagePath": "staticwebassets/assets/design/images/favicon32x32.png"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/logo-alt.svg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/images/logo-alt.svg",
       "PackagePath": "staticwebassets/assets/design/images/logo-alt.svg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/logo.svg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/images/logo.svg",
       "PackagePath": "staticwebassets/assets/design/images/logo.svg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/.gitkeep",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/images/svg/.gitkeep",
       "PackagePath": "staticwebassets/assets/design/images/svg/.gitkeep"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/arrow-dark.svg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/images/svg/arrow-dark.svg",
       "PackagePath": "staticwebassets/assets/design/images/svg/arrow-dark.svg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/arrow.svg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/images/svg/arrow.svg",
       "PackagePath": "staticwebassets/assets/design/images/svg/arrow.svg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/btn-decoration.svg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/images/svg/btn-decoration.svg",
       "PackagePath": "staticwebassets/assets/design/images/svg/btn-decoration.svg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/card.svg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/images/svg/card.svg",
       "PackagePath": "staticwebassets/assets/design/images/svg/card.svg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/check-white.svg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/images/svg/check-white.svg",
       "PackagePath": "staticwebassets/assets/design/images/svg/check-white.svg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/check.svg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/images/svg/check.svg",
       "PackagePath": "staticwebassets/assets/design/images/svg/check.svg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/checkbox-decoration.svg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/images/svg/checkbox-decoration.svg",
       "PackagePath": "staticwebassets/assets/design/images/svg/checkbox-decoration.svg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/discount.svg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/images/svg/decoration-vertical.svg",
+      "PackagePath": "staticwebassets/assets/design/images/svg/decoration-vertical.svg"
+    },
+    {
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/images/svg/decoration.svg",
+      "PackagePath": "staticwebassets/assets/design/images/svg/decoration.svg"
+    },
+    {
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/images/svg/discount.svg",
       "PackagePath": "staticwebassets/assets/design/images/svg/discount.svg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/facebook.svg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/images/svg/email.svg",
+      "PackagePath": "staticwebassets/assets/design/images/svg/email.svg"
+    },
+    {
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/images/svg/facebook.svg",
       "PackagePath": "staticwebassets/assets/design/images/svg/facebook.svg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/instagram.svg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/images/svg/form-decoration.svg",
+      "PackagePath": "staticwebassets/assets/design/images/svg/form-decoration.svg"
+    },
+    {
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/images/svg/instagram.svg",
       "PackagePath": "staticwebassets/assets/design/images/svg/instagram.svg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/location.svg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/images/svg/location.svg",
       "PackagePath": "staticwebassets/assets/design/images/svg/location.svg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/logo-decoration.svg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/images/svg/locker.svg",
+      "PackagePath": "staticwebassets/assets/design/images/svg/locker.svg"
+    },
+    {
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/images/svg/logo-decoration.svg",
       "PackagePath": "staticwebassets/assets/design/images/svg/logo-decoration.svg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/mail.svg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/images/svg/mail.svg",
       "PackagePath": "staticwebassets/assets/design/images/svg/mail.svg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/member.svg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/images/svg/marker.svg",
+      "PackagePath": "staticwebassets/assets/design/images/svg/marker.svg"
+    },
+    {
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/images/svg/member-2.svg",
+      "PackagePath": "staticwebassets/assets/design/images/svg/member-2.svg"
+    },
+    {
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/images/svg/member-3.svg",
+      "PackagePath": "staticwebassets/assets/design/images/svg/member-3.svg"
+    },
+    {
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/images/svg/member.svg",
       "PackagePath": "staticwebassets/assets/design/images/svg/member.svg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/message.svg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/images/svg/message.svg",
       "PackagePath": "staticwebassets/assets/design/images/svg/message.svg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/nav-decoration-alt.svg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/images/svg/nav-decoration-alt.svg",
       "PackagePath": "staticwebassets/assets/design/images/svg/nav-decoration-alt.svg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/nav-decoration-blue.svg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/images/svg/nav-decoration-blue.svg",
       "PackagePath": "staticwebassets/assets/design/images/svg/nav-decoration-blue.svg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/nav-decoration-blue2.svg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/images/svg/nav-decoration-blue2.svg",
       "PackagePath": "staticwebassets/assets/design/images/svg/nav-decoration-blue2.svg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/nav-decoration-red.svg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/images/svg/nav-decoration-red.svg",
       "PackagePath": "staticwebassets/assets/design/images/svg/nav-decoration-red.svg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/nav-decoration-red2.svg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/images/svg/nav-decoration-red2.svg",
       "PackagePath": "staticwebassets/assets/design/images/svg/nav-decoration-red2.svg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/nav-decoration-red3.svg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/images/svg/nav-decoration-red3.svg",
       "PackagePath": "staticwebassets/assets/design/images/svg/nav-decoration-red3.svg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/nav-decoration-yellow.svg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/images/svg/nav-decoration-yellow.svg",
       "PackagePath": "staticwebassets/assets/design/images/svg/nav-decoration-yellow.svg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/nav-decoration-yellow2.svg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/images/svg/nav-decoration-yellow2.svg",
       "PackagePath": "staticwebassets/assets/design/images/svg/nav-decoration-yellow2.svg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/nav-decoration-yellow3.svg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/images/svg/nav-decoration-yellow3.svg",
       "PackagePath": "staticwebassets/assets/design/images/svg/nav-decoration-yellow3.svg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/nav-decoration.svg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/images/svg/nav-decoration.svg",
       "PackagePath": "staticwebassets/assets/design/images/svg/nav-decoration.svg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/phone.svg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/images/svg/phone-2.svg",
+      "PackagePath": "staticwebassets/assets/design/images/svg/phone-2.svg"
+    },
+    {
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/images/svg/phone-3.svg",
+      "PackagePath": "staticwebassets/assets/design/images/svg/phone-3.svg"
+    },
+    {
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/images/svg/phone.svg",
       "PackagePath": "staticwebassets/assets/design/images/svg/phone.svg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/scroll-down.svg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/images/svg/scroll-down.svg",
       "PackagePath": "staticwebassets/assets/design/images/svg/scroll-down.svg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/section-cargo-img1.svg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/images/svg/section-cargo-img1.svg",
       "PackagePath": "staticwebassets/assets/design/images/svg/section-cargo-img1.svg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/section-cargo-img2.svg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/images/svg/section-cargo-img2.svg",
       "PackagePath": "staticwebassets/assets/design/images/svg/section-cargo-img2.svg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/socials-decoration.svg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/images/svg/sign.svg",
+      "PackagePath": "staticwebassets/assets/design/images/svg/sign.svg"
+    },
+    {
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/images/svg/socials-decoration.svg",
       "PackagePath": "staticwebassets/assets/design/images/svg/socials-decoration.svg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/whatsapp-2.svg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/images/svg/whatsapp-2.svg",
       "PackagePath": "staticwebassets/assets/design/images/svg/whatsapp-2.svg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/svg/whatsapp.svg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/images/svg/whatsapp-3.svg",
+      "PackagePath": "staticwebassets/assets/design/images/svg/whatsapp-3.svg"
+    },
+    {
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/images/svg/whatsapp.svg",
       "PackagePath": "staticwebassets/assets/design/images/svg/whatsapp.svg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/temp/.gitkeep",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/images/temp/.gitkeep",
       "PackagePath": "staticwebassets/assets/design/images/temp/.gitkeep"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/temp/banner-img1.png",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/images/temp/banner-img1.png",
       "PackagePath": "staticwebassets/assets/design/images/temp/banner-img1.png"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/temp/banner-img2.png",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/images/temp/banner-img2.png",
       "PackagePath": "staticwebassets/assets/design/images/temp/banner-img2.png"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/temp/banner-img3.png",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/images/temp/banner-img3.png",
       "PackagePath": "staticwebassets/assets/design/images/temp/banner-img3.png"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/temp/banner-img4.png",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/images/temp/banner-img4.png",
       "PackagePath": "staticwebassets/assets/design/images/temp/banner-img4.png"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/temp/banner-img5.png",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/images/temp/banner-img5.png",
       "PackagePath": "staticwebassets/assets/design/images/temp/banner-img5.png"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/temp/checkbox-img1.png",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/images/temp/checkbox-img1.png",
       "PackagePath": "staticwebassets/assets/design/images/temp/checkbox-img1.png"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/temp/checkbox-img2.png",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/images/temp/checkbox-img2.png",
       "PackagePath": "staticwebassets/assets/design/images/temp/checkbox-img2.png"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/temp/checkbox-img3.png",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/images/temp/checkbox-img3.png",
       "PackagePath": "staticwebassets/assets/design/images/temp/checkbox-img3.png"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/temp/checkbox-img4.png",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/images/temp/checkbox-img4.png",
       "PackagePath": "staticwebassets/assets/design/images/temp/checkbox-img4.png"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/temp/checkbox-img5.png",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/images/temp/checkbox-img5.png",
       "PackagePath": "staticwebassets/assets/design/images/temp/checkbox-img5.png"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/images/temp/map-img1.jpg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/images/temp/map-img1.jpg",
       "PackagePath": "staticwebassets/assets/design/images/temp/map-img1.jpg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/style.css",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/images/temp/meta-image.jpg",
+      "PackagePath": "staticwebassets/assets/design/images/temp/meta-image.jpg"
+    },
+    {
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/images/temp/panel-img.png",
+      "PackagePath": "staticwebassets/assets/design/images/temp/panel-img.png"
+    },
+    {
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/style.css",
       "PackagePath": "staticwebassets/assets/design/style.css"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/design/vendor/jquery-3.7.1.min.js",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/design/vendor/jquery-3.7.1.min.js",
       "PackagePath": "staticwebassets/assets/design/vendor/jquery-3.7.1.min.js"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/img/avatars/1.png",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/img/avatars/1.png",
       "PackagePath": "staticwebassets/assets/img/avatars/1.png"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/img/avatars/5.png",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/img/avatars/5.png",
       "PackagePath": "staticwebassets/assets/img/avatars/5.png"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/img/avatars/6.png",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/img/avatars/6.png",
       "PackagePath": "staticwebassets/assets/img/avatars/6.png"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/img/avatars/7.png",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/img/avatars/7.png",
       "PackagePath": "staticwebassets/assets/img/avatars/7.png"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/img/backgrounds/18.jpg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/img/backgrounds/18.jpg",
       "PackagePath": "staticwebassets/assets/img/backgrounds/18.jpg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/img/elements/1.jpg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/img/elements/1.jpg",
       "PackagePath": "staticwebassets/assets/img/elements/1.jpg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/img/elements/11.jpg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/img/elements/11.jpg",
       "PackagePath": "staticwebassets/assets/img/elements/11.jpg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/img/elements/12.jpg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/img/elements/12.jpg",
       "PackagePath": "staticwebassets/assets/img/elements/12.jpg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/img/elements/13.jpg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/img/elements/13.jpg",
       "PackagePath": "staticwebassets/assets/img/elements/13.jpg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/img/elements/17.jpg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/img/elements/17.jpg",
       "PackagePath": "staticwebassets/assets/img/elements/17.jpg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/img/elements/18.jpg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/img/elements/18.jpg",
       "PackagePath": "staticwebassets/assets/img/elements/18.jpg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/img/elements/19.jpg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/img/elements/19.jpg",
       "PackagePath": "staticwebassets/assets/img/elements/19.jpg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/img/elements/2.jpg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/img/elements/2.jpg",
       "PackagePath": "staticwebassets/assets/img/elements/2.jpg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/img/elements/20.jpg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/img/elements/20.jpg",
       "PackagePath": "staticwebassets/assets/img/elements/20.jpg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/img/elements/3.jpg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/img/elements/3.jpg",
       "PackagePath": "staticwebassets/assets/img/elements/3.jpg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/img/elements/4.jpg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/img/elements/4.jpg",
       "PackagePath": "staticwebassets/assets/img/elements/4.jpg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/img/elements/5.jpg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/img/elements/5.jpg",
       "PackagePath": "staticwebassets/assets/img/elements/5.jpg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/img/elements/7.jpg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/img/elements/7.jpg",
       "PackagePath": "staticwebassets/assets/img/elements/7.jpg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/img/favicon/favicon.ico",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/img/favicon/favicon.ico",
       "PackagePath": "staticwebassets/assets/img/favicon/favicon.ico"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/img/icons/brands/asana.png",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/img/icons/brands/asana.png",
       "PackagePath": "staticwebassets/assets/img/icons/brands/asana.png"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/img/icons/brands/behance.png",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/img/icons/brands/behance.png",
       "PackagePath": "staticwebassets/assets/img/icons/brands/behance.png"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/img/icons/brands/dribbble.png",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/img/icons/brands/dribbble.png",
       "PackagePath": "staticwebassets/assets/img/icons/brands/dribbble.png"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/img/icons/brands/facebook.png",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/img/icons/brands/facebook.png",
       "PackagePath": "staticwebassets/assets/img/icons/brands/facebook.png"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/img/icons/brands/github.png",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/img/icons/brands/github.png",
       "PackagePath": "staticwebassets/assets/img/icons/brands/github.png"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/img/icons/brands/google.png",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/img/icons/brands/google.png",
       "PackagePath": "staticwebassets/assets/img/icons/brands/google.png"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/img/icons/brands/instagram.png",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/img/icons/brands/instagram.png",
       "PackagePath": "staticwebassets/assets/img/icons/brands/instagram.png"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/img/icons/brands/mailchimp.png",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/img/icons/brands/mailchimp.png",
       "PackagePath": "staticwebassets/assets/img/icons/brands/mailchimp.png"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/img/icons/brands/slack.png",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/img/icons/brands/slack.png",
       "PackagePath": "staticwebassets/assets/img/icons/brands/slack.png"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/img/icons/brands/twitter.png",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/img/icons/brands/twitter.png",
       "PackagePath": "staticwebassets/assets/img/icons/brands/twitter.png"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/img/icons/unicons/cc-primary.png",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/img/icons/unicons/cc-primary.png",
       "PackagePath": "staticwebassets/assets/img/icons/unicons/cc-primary.png"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/img/icons/unicons/cc-success.png",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/img/icons/unicons/cc-success.png",
       "PackagePath": "staticwebassets/assets/img/icons/unicons/cc-success.png"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/img/icons/unicons/cc-warning.png",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/img/icons/unicons/cc-warning.png",
       "PackagePath": "staticwebassets/assets/img/icons/unicons/cc-warning.png"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/img/icons/unicons/chart-success.png",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/img/icons/unicons/chart-success.png",
       "PackagePath": "staticwebassets/assets/img/icons/unicons/chart-success.png"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/img/icons/unicons/chart.png",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/img/icons/unicons/chart.png",
       "PackagePath": "staticwebassets/assets/img/icons/unicons/chart.png"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/img/icons/unicons/paypal.png",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/img/icons/unicons/paypal.png",
       "PackagePath": "staticwebassets/assets/img/icons/unicons/paypal.png"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/img/icons/unicons/wallet-info.png",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/img/icons/unicons/wallet-info.png",
       "PackagePath": "staticwebassets/assets/img/icons/unicons/wallet-info.png"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/img/icons/unicons/wallet.png",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/img/icons/unicons/wallet.png",
       "PackagePath": "staticwebassets/assets/img/icons/unicons/wallet.png"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/img/illustrations/girl-doing-yoga-light.png",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/img/illustrations/girl-doing-yoga-light.png",
       "PackagePath": "staticwebassets/assets/img/illustrations/girl-doing-yoga-light.png"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/img/illustrations/man-with-laptop-light.png",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/img/illustrations/man-with-laptop-light.png",
       "PackagePath": "staticwebassets/assets/img/illustrations/man-with-laptop-light.png"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/img/illustrations/page-misc-error-light.png",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/img/illustrations/page-misc-error-light.png",
       "PackagePath": "staticwebassets/assets/img/illustrations/page-misc-error-light.png"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/img/layouts/layout-container-light.png",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/img/layouts/layout-container-light.png",
       "PackagePath": "staticwebassets/assets/img/layouts/layout-container-light.png"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/img/layouts/layout-fluid-light.png",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/img/layouts/layout-fluid-light.png",
       "PackagePath": "staticwebassets/assets/img/layouts/layout-fluid-light.png"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/img/layouts/layout-without-menu-light.png",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/img/layouts/layout-without-menu-light.png",
       "PackagePath": "staticwebassets/assets/img/layouts/layout-without-menu-light.png"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/img/layouts/layout-without-navbar-light.png",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/img/layouts/layout-without-navbar-light.png",
       "PackagePath": "staticwebassets/assets/img/layouts/layout-without-navbar-light.png"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/js/config.js",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/js/config.js",
       "PackagePath": "staticwebassets/assets/js/config.js"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/js/dashboards-analytics.js",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/js/dashboards-analytics.js",
       "PackagePath": "staticwebassets/assets/js/dashboards-analytics.js"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/js/extended-ui-perfect-scrollbar.js",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/js/extended-ui-perfect-scrollbar.js",
       "PackagePath": "staticwebassets/assets/js/extended-ui-perfect-scrollbar.js"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/js/form-basic-inputs.js",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/js/form-basic-inputs.js",
       "PackagePath": "staticwebassets/assets/js/form-basic-inputs.js"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/js/main.js",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/js/main.js",
       "PackagePath": "staticwebassets/assets/js/main.js"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/js/pages-account-settings-account.js",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/js/pages-account-settings-account.js",
       "PackagePath": "staticwebassets/assets/js/pages-account-settings-account.js"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/js/ui-modals.js",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/js/ui-modals.js",
       "PackagePath": "staticwebassets/assets/js/ui-modals.js"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/js/ui-popover.js",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/js/ui-popover.js",
       "PackagePath": "staticwebassets/assets/js/ui-popover.js"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/js/ui-toasts.js",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/js/ui-toasts.js",
       "PackagePath": "staticwebassets/assets/js/ui-toasts.js"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/vendor/css/core.css",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/vendor/css/core.css",
       "PackagePath": "staticwebassets/assets/vendor/css/core.css"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/vendor/css/pages/page-account-settings.css",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/vendor/css/pages/page-account-settings.css",
       "PackagePath": "staticwebassets/assets/vendor/css/pages/page-account-settings.css"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/vendor/css/pages/page-auth.css",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/vendor/css/pages/page-auth.css",
       "PackagePath": "staticwebassets/assets/vendor/css/pages/page-auth.css"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/vendor/css/pages/page-icons.css",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/vendor/css/pages/page-icons.css",
       "PackagePath": "staticwebassets/assets/vendor/css/pages/page-icons.css"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/vendor/css/pages/page-misc.css",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/vendor/css/pages/page-misc.css",
       "PackagePath": "staticwebassets/assets/vendor/css/pages/page-misc.css"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/vendor/css/theme-default.css",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/vendor/css/theme-default.css",
       "PackagePath": "staticwebassets/assets/vendor/css/theme-default.css"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/vendor/fonts/boxicons.css",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/vendor/fonts/boxicons.css",
       "PackagePath": "staticwebassets/assets/vendor/fonts/boxicons.css"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/vendor/fonts/boxicons/boxicons.eot",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/vendor/fonts/boxicons/boxicons.eot",
       "PackagePath": "staticwebassets/assets/vendor/fonts/boxicons/boxicons.eot"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/vendor/fonts/boxicons/boxicons.svg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/vendor/fonts/boxicons/boxicons.svg",
       "PackagePath": "staticwebassets/assets/vendor/fonts/boxicons/boxicons.svg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/vendor/fonts/boxicons/boxicons.ttf",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/vendor/fonts/boxicons/boxicons.ttf",
       "PackagePath": "staticwebassets/assets/vendor/fonts/boxicons/boxicons.ttf"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/vendor/fonts/boxicons/boxicons.woff",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/vendor/fonts/boxicons/boxicons.woff",
       "PackagePath": "staticwebassets/assets/vendor/fonts/boxicons/boxicons.woff"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/vendor/fonts/boxicons/boxicons.woff2",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/vendor/fonts/boxicons/boxicons.woff2",
       "PackagePath": "staticwebassets/assets/vendor/fonts/boxicons/boxicons.woff2"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/vendor/js/bootstrap.js",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/vendor/js/bootstrap.js",
       "PackagePath": "staticwebassets/assets/vendor/js/bootstrap.js"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/vendor/js/helpers.js",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/vendor/js/helpers.js",
       "PackagePath": "staticwebassets/assets/vendor/js/helpers.js"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/vendor/js/menu.js",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/vendor/js/menu.js",
       "PackagePath": "staticwebassets/assets/vendor/js/menu.js"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/vendor/libs/apex-charts/apex-charts.css",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/vendor/libs/apex-charts/apex-charts.css",
       "PackagePath": "staticwebassets/assets/vendor/libs/apex-charts/apex-charts.css"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/vendor/libs/apex-charts/apexcharts.js",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/vendor/libs/apex-charts/apexcharts.js",
       "PackagePath": "staticwebassets/assets/vendor/libs/apex-charts/apexcharts.js"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/vendor/libs/highlight/highlight-github.css",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/vendor/libs/highlight/highlight-github.css",
       "PackagePath": "staticwebassets/assets/vendor/libs/highlight/highlight-github.css"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/vendor/libs/highlight/highlight.css",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/vendor/libs/highlight/highlight.css",
       "PackagePath": "staticwebassets/assets/vendor/libs/highlight/highlight.css"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/vendor/libs/highlight/highlight.js",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/vendor/libs/highlight/highlight.js",
       "PackagePath": "staticwebassets/assets/vendor/libs/highlight/highlight.js"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/vendor/libs/jquery/jquery.js",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/vendor/libs/jquery/jquery.js",
       "PackagePath": "staticwebassets/assets/vendor/libs/jquery/jquery.js"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/vendor/libs/masonry/masonry.js",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/vendor/libs/masonry/masonry.js",
       "PackagePath": "staticwebassets/assets/vendor/libs/masonry/masonry.js"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css",
       "PackagePath": "staticwebassets/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js",
       "PackagePath": "staticwebassets/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/assets/vendor/libs/popper/popper.js",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/vendor/libs/popper/popper.js",
       "PackagePath": "staticwebassets/assets/vendor/libs/popper/popper.js"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/build-config.js",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/build-config.js",
       "PackagePath": "staticwebassets/build-config.js"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/favicon copy.ico",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/favicon copy.ico",
       "PackagePath": "staticwebassets/favicon copy.ico"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/favicon.ico",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/favicon.ico",
       "PackagePath": "staticwebassets/favicon.ico"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/fonts/boxicons.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/fonts/boxicons.scss",
       "PackagePath": "staticwebassets/fonts/boxicons.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/gulpfile.js",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/gulpfile.js",
       "PackagePath": "staticwebassets/gulpfile.js"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/js/bootstrap.js",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/js/bootstrap.js",
       "PackagePath": "staticwebassets/js/bootstrap.js"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/js/helpers.js",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/js/helpers.js",
       "PackagePath": "staticwebassets/js/helpers.js"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/js/menu.js",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/js/menu.js",
       "PackagePath": "staticwebassets/js/menu.js"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/libs/apex-charts/apex-charts.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/libs/apex-charts/apex-charts.scss",
       "PackagePath": "staticwebassets/libs/apex-charts/apex-charts.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/libs/apex-charts/apexcharts.js",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/libs/apex-charts/apexcharts.js",
       "PackagePath": "staticwebassets/libs/apex-charts/apexcharts.js"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/libs/highlight/highlight-github.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/libs/highlight/highlight-github.scss",
       "PackagePath": "staticwebassets/libs/highlight/highlight-github.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/libs/highlight/highlight.js",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/libs/highlight/highlight.js",
       "PackagePath": "staticwebassets/libs/highlight/highlight.js"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/libs/highlight/highlight.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/libs/highlight/highlight.scss",
       "PackagePath": "staticwebassets/libs/highlight/highlight.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/libs/jquery/jquery.js",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/libs/jquery/jquery.js",
       "PackagePath": "staticwebassets/libs/jquery/jquery.js"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/libs/masonry/masonry.js",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/libs/masonry/masonry.js",
       "PackagePath": "staticwebassets/libs/masonry/masonry.js"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/libs/perfect-scrollbar/perfect-scrollbar.js",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/libs/perfect-scrollbar/perfect-scrollbar.js",
       "PackagePath": "staticwebassets/libs/perfect-scrollbar/perfect-scrollbar.js"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/libs/perfect-scrollbar/perfect-scrollbar.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/libs/perfect-scrollbar/perfect-scrollbar.scss",
       "PackagePath": "staticwebassets/libs/perfect-scrollbar/perfect-scrollbar.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/libs/popper/popper.js",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/libs/popper/popper.js",
       "PackagePath": "staticwebassets/libs/popper/popper.js"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/css/main.css",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/css/main.css",
       "PackagePath": "staticwebassets/main/assets/css/main.css"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/img/apple-touch-icon.png",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/img/apple-touch-icon.png",
       "PackagePath": "staticwebassets/main/assets/img/apple-touch-icon.png"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/img/blog/blog-1.jpg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/img/blog/blog-1.jpg",
       "PackagePath": "staticwebassets/main/assets/img/blog/blog-1.jpg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/img/blog/blog-2.jpg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/img/blog/blog-2.jpg",
       "PackagePath": "staticwebassets/main/assets/img/blog/blog-2.jpg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/img/blog/blog-3.jpg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/img/blog/blog-3.jpg",
       "PackagePath": "staticwebassets/main/assets/img/blog/blog-3.jpg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/img/blog/blog-4.jpg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/img/blog/blog-4.jpg",
       "PackagePath": "staticwebassets/main/assets/img/blog/blog-4.jpg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/img/blog/blog-5.jpg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/img/blog/blog-5.jpg",
       "PackagePath": "staticwebassets/main/assets/img/blog/blog-5.jpg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/img/blog/blog-6.jpg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/img/blog/blog-6.jpg",
       "PackagePath": "staticwebassets/main/assets/img/blog/blog-6.jpg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/img/blog/blog-author.jpg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/img/blog/blog-author.jpg",
       "PackagePath": "staticwebassets/main/assets/img/blog/blog-author.jpg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/img/blog/blog-inside-post.jpg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/img/blog/blog-inside-post.jpg",
       "PackagePath": "staticwebassets/main/assets/img/blog/blog-inside-post.jpg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/img/blog/blog-recent-1.jpg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/img/blog/blog-recent-1.jpg",
       "PackagePath": "staticwebassets/main/assets/img/blog/blog-recent-1.jpg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/img/blog/blog-recent-2.jpg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/img/blog/blog-recent-2.jpg",
       "PackagePath": "staticwebassets/main/assets/img/blog/blog-recent-2.jpg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/img/blog/blog-recent-3.jpg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/img/blog/blog-recent-3.jpg",
       "PackagePath": "staticwebassets/main/assets/img/blog/blog-recent-3.jpg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/img/blog/blog-recent-4.jpg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/img/blog/blog-recent-4.jpg",
       "PackagePath": "staticwebassets/main/assets/img/blog/blog-recent-4.jpg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/img/blog/blog-recent-5.jpg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/img/blog/blog-recent-5.jpg",
       "PackagePath": "staticwebassets/main/assets/img/blog/blog-recent-5.jpg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/img/blog/comments-1.jpg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/img/blog/comments-1.jpg",
       "PackagePath": "staticwebassets/main/assets/img/blog/comments-1.jpg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/img/blog/comments-2.jpg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/img/blog/comments-2.jpg",
       "PackagePath": "staticwebassets/main/assets/img/blog/comments-2.jpg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/img/blog/comments-3.jpg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/img/blog/comments-3.jpg",
       "PackagePath": "staticwebassets/main/assets/img/blog/comments-3.jpg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/img/blog/comments-4.jpg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/img/blog/comments-4.jpg",
       "PackagePath": "staticwebassets/main/assets/img/blog/comments-4.jpg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/img/blog/comments-5.jpg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/img/blog/comments-5.jpg",
       "PackagePath": "staticwebassets/main/assets/img/blog/comments-5.jpg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/img/blog/comments-6.jpg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/img/blog/comments-6.jpg",
       "PackagePath": "staticwebassets/main/assets/img/blog/comments-6.jpg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/img/favicon.png",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/img/favicon.png",
       "PackagePath": "staticwebassets/main/assets/img/favicon.png"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/img/hero_1.jpg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/img/hero_1.jpg",
       "PackagePath": "staticwebassets/main/assets/img/hero_1.jpg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/img/hero_2.jpg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/img/hero_2.jpg",
       "PackagePath": "staticwebassets/main/assets/img/hero_2.jpg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/img/hero_3.jpg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/img/hero_3.jpg",
       "PackagePath": "staticwebassets/main/assets/img/hero_3.jpg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/img/hero_4.jpg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/img/hero_4.jpg",
       "PackagePath": "staticwebassets/main/assets/img/hero_4.jpg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/img/hero_5.jpg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/img/hero_5.jpg",
       "PackagePath": "staticwebassets/main/assets/img/hero_5.jpg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/img/img_long_5.jpg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/img/img_long_5.jpg",
       "PackagePath": "staticwebassets/main/assets/img/img_long_5.jpg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/img/img_sq_1.jpg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/img/img_sq_1.jpg",
       "PackagePath": "staticwebassets/main/assets/img/img_sq_1.jpg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/img/img_sq_3.jpg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/img/img_sq_3.jpg",
       "PackagePath": "staticwebassets/main/assets/img/img_sq_3.jpg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/img/img_sq_4.jpg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/img/img_sq_4.jpg",
       "PackagePath": "staticwebassets/main/assets/img/img_sq_4.jpg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/img/img_sq_5.jpg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/img/img_sq_5.jpg",
       "PackagePath": "staticwebassets/main/assets/img/img_sq_5.jpg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/img/img_sq_6.jpg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/img/img_sq_6.jpg",
       "PackagePath": "staticwebassets/main/assets/img/img_sq_6.jpg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/img/img_sq_8.jpg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/img/img_sq_8.jpg",
       "PackagePath": "staticwebassets/main/assets/img/img_sq_8.jpg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/img/logo.png",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/img/logo.png",
       "PackagePath": "staticwebassets/main/assets/img/logo.png"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/img/page-title-bg.webp",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/img/page-title-bg.webp",
       "PackagePath": "staticwebassets/main/assets/img/page-title-bg.webp"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/img/team/team-1.jpg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/img/team/team-1.jpg",
       "PackagePath": "staticwebassets/main/assets/img/team/team-1.jpg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/img/team/team-2.jpg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/img/team/team-2.jpg",
       "PackagePath": "staticwebassets/main/assets/img/team/team-2.jpg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/img/team/team-3.jpg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/img/team/team-3.jpg",
       "PackagePath": "staticwebassets/main/assets/img/team/team-3.jpg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/img/team/team-4.jpg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/img/team/team-4.jpg",
       "PackagePath": "staticwebassets/main/assets/img/team/team-4.jpg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/img/testimonials/testimonials-1.jpg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/img/testimonials/testimonials-1.jpg",
       "PackagePath": "staticwebassets/main/assets/img/testimonials/testimonials-1.jpg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/img/testimonials/testimonials-2.jpg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/img/testimonials/testimonials-2.jpg",
       "PackagePath": "staticwebassets/main/assets/img/testimonials/testimonials-2.jpg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/img/testimonials/testimonials-3.jpg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/img/testimonials/testimonials-3.jpg",
       "PackagePath": "staticwebassets/main/assets/img/testimonials/testimonials-3.jpg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/img/testimonials/testimonials-4.jpg",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/img/testimonials/testimonials-4.jpg",
       "PackagePath": "staticwebassets/main/assets/img/testimonials/testimonials-4.jpg"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/js/main.js",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/js/main.js",
       "PackagePath": "staticwebassets/main/assets/js/main.js"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/scss/Readme.txt",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/scss/Readme.txt",
       "PackagePath": "staticwebassets/main/assets/scss/Readme.txt"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/vendor/aos/aos.cjs.js",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/vendor/aos/aos.cjs.js",
       "PackagePath": "staticwebassets/main/assets/vendor/aos/aos.cjs.js"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/vendor/aos/aos.css",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/vendor/aos/aos.css",
       "PackagePath": "staticwebassets/main/assets/vendor/aos/aos.css"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/vendor/aos/aos.esm.js",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/vendor/aos/aos.esm.js",
       "PackagePath": "staticwebassets/main/assets/vendor/aos/aos.esm.js"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/vendor/aos/aos.js",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/vendor/aos/aos.js",
       "PackagePath": "staticwebassets/main/assets/vendor/aos/aos.js"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/vendor/aos/aos.js.map",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/vendor/aos/aos.js.map",
       "PackagePath": "staticwebassets/main/assets/vendor/aos/aos.js.map"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/vendor/bootstrap-icons/bootstrap-icons.css",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/vendor/bootstrap-icons/bootstrap-icons.css",
       "PackagePath": "staticwebassets/main/assets/vendor/bootstrap-icons/bootstrap-icons.css"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/vendor/bootstrap-icons/bootstrap-icons.json",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/vendor/bootstrap-icons/bootstrap-icons.json",
       "PackagePath": "staticwebassets/main/assets/vendor/bootstrap-icons/bootstrap-icons.json"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/vendor/bootstrap-icons/bootstrap-icons.min.css",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/vendor/bootstrap-icons/bootstrap-icons.min.css",
       "PackagePath": "staticwebassets/main/assets/vendor/bootstrap-icons/bootstrap-icons.min.css"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/vendor/bootstrap-icons/bootstrap-icons.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/vendor/bootstrap-icons/bootstrap-icons.scss",
       "PackagePath": "staticwebassets/main/assets/vendor/bootstrap-icons/bootstrap-icons.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/vendor/bootstrap-icons/fonts/bootstrap-icons.woff",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/vendor/bootstrap-icons/fonts/bootstrap-icons.woff",
       "PackagePath": "staticwebassets/main/assets/vendor/bootstrap-icons/fonts/bootstrap-icons.woff"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/vendor/bootstrap-icons/fonts/bootstrap-icons.woff2",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/vendor/bootstrap-icons/fonts/bootstrap-icons.woff2",
       "PackagePath": "staticwebassets/main/assets/vendor/bootstrap-icons/fonts/bootstrap-icons.woff2"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/vendor/bootstrap/css/bootstrap-grid.css",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/vendor/bootstrap/css/bootstrap-grid.css",
       "PackagePath": "staticwebassets/main/assets/vendor/bootstrap/css/bootstrap-grid.css"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/vendor/bootstrap/css/bootstrap-grid.css.map",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/vendor/bootstrap/css/bootstrap-grid.css.map",
       "PackagePath": "staticwebassets/main/assets/vendor/bootstrap/css/bootstrap-grid.css.map"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/vendor/bootstrap/css/bootstrap-grid.min.css",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/vendor/bootstrap/css/bootstrap-grid.min.css",
       "PackagePath": "staticwebassets/main/assets/vendor/bootstrap/css/bootstrap-grid.min.css"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/vendor/bootstrap/css/bootstrap-grid.min.css.map",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/vendor/bootstrap/css/bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets/main/assets/vendor/bootstrap/css/bootstrap-grid.min.css.map"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/vendor/bootstrap/css/bootstrap-grid.rtl.css",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/vendor/bootstrap/css/bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets/main/assets/vendor/bootstrap/css/bootstrap-grid.rtl.css"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/vendor/bootstrap/css/bootstrap-grid.rtl.css.map",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/vendor/bootstrap/css/bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets/main/assets/vendor/bootstrap/css/bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/vendor/bootstrap/css/bootstrap-grid.rtl.min.css",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/vendor/bootstrap/css/bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets/main/assets/vendor/bootstrap/css/bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/vendor/bootstrap/css/bootstrap-grid.rtl.min.css.map",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/vendor/bootstrap/css/bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets/main/assets/vendor/bootstrap/css/bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/vendor/bootstrap/css/bootstrap-reboot.css",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/vendor/bootstrap/css/bootstrap-reboot.css",
       "PackagePath": "staticwebassets/main/assets/vendor/bootstrap/css/bootstrap-reboot.css"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/vendor/bootstrap/css/bootstrap-reboot.css.map",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/vendor/bootstrap/css/bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets/main/assets/vendor/bootstrap/css/bootstrap-reboot.css.map"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/vendor/bootstrap/css/bootstrap-reboot.min.css",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/vendor/bootstrap/css/bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets/main/assets/vendor/bootstrap/css/bootstrap-reboot.min.css"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/vendor/bootstrap/css/bootstrap-reboot.min.css.map",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/vendor/bootstrap/css/bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets/main/assets/vendor/bootstrap/css/bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/vendor/bootstrap/css/bootstrap-reboot.rtl.css",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/vendor/bootstrap/css/bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets/main/assets/vendor/bootstrap/css/bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/vendor/bootstrap/css/bootstrap-reboot.rtl.css.map",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/vendor/bootstrap/css/bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets/main/assets/vendor/bootstrap/css/bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/vendor/bootstrap/css/bootstrap-reboot.rtl.min.css",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/vendor/bootstrap/css/bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets/main/assets/vendor/bootstrap/css/bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/vendor/bootstrap/css/bootstrap-reboot.rtl.min.css.map",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/vendor/bootstrap/css/bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets/main/assets/vendor/bootstrap/css/bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/vendor/bootstrap/css/bootstrap-utilities.css",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/vendor/bootstrap/css/bootstrap-utilities.css",
       "PackagePath": "staticwebassets/main/assets/vendor/bootstrap/css/bootstrap-utilities.css"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/vendor/bootstrap/css/bootstrap-utilities.css.map",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/vendor/bootstrap/css/bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets/main/assets/vendor/bootstrap/css/bootstrap-utilities.css.map"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/vendor/bootstrap/css/bootstrap-utilities.min.css",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/vendor/bootstrap/css/bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets/main/assets/vendor/bootstrap/css/bootstrap-utilities.min.css"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/vendor/bootstrap/css/bootstrap-utilities.min.css.map",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/vendor/bootstrap/css/bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets/main/assets/vendor/bootstrap/css/bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/vendor/bootstrap/css/bootstrap-utilities.rtl.css",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/vendor/bootstrap/css/bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets/main/assets/vendor/bootstrap/css/bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/vendor/bootstrap/css/bootstrap-utilities.rtl.css.map",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/vendor/bootstrap/css/bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets/main/assets/vendor/bootstrap/css/bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/vendor/bootstrap/css/bootstrap-utilities.rtl.min.css",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/vendor/bootstrap/css/bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets/main/assets/vendor/bootstrap/css/bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/vendor/bootstrap/css/bootstrap-utilities.rtl.min.css.map",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/vendor/bootstrap/css/bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets/main/assets/vendor/bootstrap/css/bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/vendor/bootstrap/css/bootstrap.css",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/vendor/bootstrap/css/bootstrap.css",
       "PackagePath": "staticwebassets/main/assets/vendor/bootstrap/css/bootstrap.css"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/vendor/bootstrap/css/bootstrap.css.map",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/vendor/bootstrap/css/bootstrap.css.map",
       "PackagePath": "staticwebassets/main/assets/vendor/bootstrap/css/bootstrap.css.map"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/vendor/bootstrap/css/bootstrap.min.css",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/vendor/bootstrap/css/bootstrap.min.css",
       "PackagePath": "staticwebassets/main/assets/vendor/bootstrap/css/bootstrap.min.css"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/vendor/bootstrap/css/bootstrap.min.css.map",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/vendor/bootstrap/css/bootstrap.min.css.map",
       "PackagePath": "staticwebassets/main/assets/vendor/bootstrap/css/bootstrap.min.css.map"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/vendor/bootstrap/css/bootstrap.rtl.css",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/vendor/bootstrap/css/bootstrap.rtl.css",
       "PackagePath": "staticwebassets/main/assets/vendor/bootstrap/css/bootstrap.rtl.css"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/vendor/bootstrap/css/bootstrap.rtl.css.map",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/vendor/bootstrap/css/bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets/main/assets/vendor/bootstrap/css/bootstrap.rtl.css.map"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/vendor/bootstrap/css/bootstrap.rtl.min.css",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/vendor/bootstrap/css/bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets/main/assets/vendor/bootstrap/css/bootstrap.rtl.min.css"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/vendor/bootstrap/css/bootstrap.rtl.min.css.map",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/vendor/bootstrap/css/bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets/main/assets/vendor/bootstrap/css/bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/vendor/bootstrap/css/prb.txt",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/vendor/bootstrap/css/prb.txt",
       "PackagePath": "staticwebassets/main/assets/vendor/bootstrap/css/prb.txt"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/vendor/bootstrap/js/bootstrap.bundle.js",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/vendor/bootstrap/js/bootstrap.bundle.js",
       "PackagePath": "staticwebassets/main/assets/vendor/bootstrap/js/bootstrap.bundle.js"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/vendor/bootstrap/js/bootstrap.bundle.js.map",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/vendor/bootstrap/js/bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets/main/assets/vendor/bootstrap/js/bootstrap.bundle.js.map"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/vendor/bootstrap/js/bootstrap.bundle.min.js",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/vendor/bootstrap/js/bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets/main/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/vendor/bootstrap/js/bootstrap.bundle.min.js.map",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/vendor/bootstrap/js/bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets/main/assets/vendor/bootstrap/js/bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/vendor/bootstrap/js/bootstrap.esm.js",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/vendor/bootstrap/js/bootstrap.esm.js",
       "PackagePath": "staticwebassets/main/assets/vendor/bootstrap/js/bootstrap.esm.js"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/vendor/bootstrap/js/bootstrap.esm.js.map",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/vendor/bootstrap/js/bootstrap.esm.js.map",
       "PackagePath": "staticwebassets/main/assets/vendor/bootstrap/js/bootstrap.esm.js.map"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/vendor/bootstrap/js/bootstrap.esm.min.js",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/vendor/bootstrap/js/bootstrap.esm.min.js",
       "PackagePath": "staticwebassets/main/assets/vendor/bootstrap/js/bootstrap.esm.min.js"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/vendor/bootstrap/js/bootstrap.esm.min.js.map",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/vendor/bootstrap/js/bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets/main/assets/vendor/bootstrap/js/bootstrap.esm.min.js.map"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/vendor/bootstrap/js/bootstrap.js",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/vendor/bootstrap/js/bootstrap.js",
       "PackagePath": "staticwebassets/main/assets/vendor/bootstrap/js/bootstrap.js"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/vendor/bootstrap/js/bootstrap.js.map",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/vendor/bootstrap/js/bootstrap.js.map",
       "PackagePath": "staticwebassets/main/assets/vendor/bootstrap/js/bootstrap.js.map"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/vendor/bootstrap/js/bootstrap.min.js",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/vendor/bootstrap/js/bootstrap.min.js",
       "PackagePath": "staticwebassets/main/assets/vendor/bootstrap/js/bootstrap.min.js"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/vendor/bootstrap/js/bootstrap.min.js.map",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/vendor/bootstrap/js/bootstrap.min.js.map",
       "PackagePath": "staticwebassets/main/assets/vendor/bootstrap/js/bootstrap.min.js.map"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/vendor/glightbox/css/glightbox.css",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/vendor/glightbox/css/glightbox.css",
       "PackagePath": "staticwebassets/main/assets/vendor/glightbox/css/glightbox.css"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/vendor/glightbox/css/glightbox.min.css",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/vendor/glightbox/css/glightbox.min.css",
       "PackagePath": "staticwebassets/main/assets/vendor/glightbox/css/glightbox.min.css"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/vendor/glightbox/js/glightbox.js",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/vendor/glightbox/js/glightbox.js",
       "PackagePath": "staticwebassets/main/assets/vendor/glightbox/js/glightbox.js"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/vendor/glightbox/js/glightbox.min.js",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/vendor/glightbox/js/glightbox.min.js",
       "PackagePath": "staticwebassets/main/assets/vendor/glightbox/js/glightbox.min.js"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/vendor/php-email-form/validate.js",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/vendor/php-email-form/validate.js",
       "PackagePath": "staticwebassets/main/assets/vendor/php-email-form/validate.js"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/vendor/swiper/swiper-bundle.min.css",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/vendor/swiper/swiper-bundle.min.css",
       "PackagePath": "staticwebassets/main/assets/vendor/swiper/swiper-bundle.min.css"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/vendor/swiper/swiper-bundle.min.js",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/vendor/swiper/swiper-bundle.min.js",
       "PackagePath": "staticwebassets/main/assets/vendor/swiper/swiper-bundle.min.js"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/main/assets/vendor/swiper/swiper-bundle.min.js.map",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/main/assets/vendor/swiper/swiper-bundle.min.js.map",
       "PackagePath": "staticwebassets/main/assets/vendor/swiper/swiper-bundle.min.js.map"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/package-lock.json",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/package-lock.json",
       "PackagePath": "staticwebassets/package-lock.json"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/package.json",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/package.json",
       "PackagePath": "staticwebassets/package.json"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_bootstrap-extended.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_bootstrap-extended.scss",
       "PackagePath": "staticwebassets/scss/_bootstrap-extended.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_bootstrap-extended/_accordion.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_bootstrap-extended/_accordion.scss",
       "PackagePath": "staticwebassets/scss/_bootstrap-extended/_accordion.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_bootstrap-extended/_alert.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_bootstrap-extended/_alert.scss",
       "PackagePath": "staticwebassets/scss/_bootstrap-extended/_alert.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_bootstrap-extended/_badge.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_bootstrap-extended/_badge.scss",
       "PackagePath": "staticwebassets/scss/_bootstrap-extended/_badge.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_bootstrap-extended/_breadcrumb.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_bootstrap-extended/_breadcrumb.scss",
       "PackagePath": "staticwebassets/scss/_bootstrap-extended/_breadcrumb.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_bootstrap-extended/_button-group.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_bootstrap-extended/_button-group.scss",
       "PackagePath": "staticwebassets/scss/_bootstrap-extended/_button-group.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_bootstrap-extended/_buttons.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_bootstrap-extended/_buttons.scss",
       "PackagePath": "staticwebassets/scss/_bootstrap-extended/_buttons.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_bootstrap-extended/_card.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_bootstrap-extended/_card.scss",
       "PackagePath": "staticwebassets/scss/_bootstrap-extended/_card.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_bootstrap-extended/_carousel.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_bootstrap-extended/_carousel.scss",
       "PackagePath": "staticwebassets/scss/_bootstrap-extended/_carousel.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_bootstrap-extended/_close.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_bootstrap-extended/_close.scss",
       "PackagePath": "staticwebassets/scss/_bootstrap-extended/_close.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_bootstrap-extended/_dropdown.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_bootstrap-extended/_dropdown.scss",
       "PackagePath": "staticwebassets/scss/_bootstrap-extended/_dropdown.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_bootstrap-extended/_forms.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_bootstrap-extended/_forms.scss",
       "PackagePath": "staticwebassets/scss/_bootstrap-extended/_forms.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_bootstrap-extended/_functions.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_bootstrap-extended/_functions.scss",
       "PackagePath": "staticwebassets/scss/_bootstrap-extended/_functions.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_bootstrap-extended/_include.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_bootstrap-extended/_include.scss",
       "PackagePath": "staticwebassets/scss/_bootstrap-extended/_include.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_bootstrap-extended/_list-group.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_bootstrap-extended/_list-group.scss",
       "PackagePath": "staticwebassets/scss/_bootstrap-extended/_list-group.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_bootstrap-extended/_mixins.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_bootstrap-extended/_mixins.scss",
       "PackagePath": "staticwebassets/scss/_bootstrap-extended/_mixins.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_bootstrap-extended/_modal.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_bootstrap-extended/_modal.scss",
       "PackagePath": "staticwebassets/scss/_bootstrap-extended/_modal.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_bootstrap-extended/_nav.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_bootstrap-extended/_nav.scss",
       "PackagePath": "staticwebassets/scss/_bootstrap-extended/_nav.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_bootstrap-extended/_navbar.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_bootstrap-extended/_navbar.scss",
       "PackagePath": "staticwebassets/scss/_bootstrap-extended/_navbar.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_bootstrap-extended/_offcanvas.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_bootstrap-extended/_offcanvas.scss",
       "PackagePath": "staticwebassets/scss/_bootstrap-extended/_offcanvas.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_bootstrap-extended/_pagination.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_bootstrap-extended/_pagination.scss",
       "PackagePath": "staticwebassets/scss/_bootstrap-extended/_pagination.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_bootstrap-extended/_popover.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_bootstrap-extended/_popover.scss",
       "PackagePath": "staticwebassets/scss/_bootstrap-extended/_popover.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_bootstrap-extended/_progress.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_bootstrap-extended/_progress.scss",
       "PackagePath": "staticwebassets/scss/_bootstrap-extended/_progress.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_bootstrap-extended/_reboot.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_bootstrap-extended/_reboot.scss",
       "PackagePath": "staticwebassets/scss/_bootstrap-extended/_reboot.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_bootstrap-extended/_root.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_bootstrap-extended/_root.scss",
       "PackagePath": "staticwebassets/scss/_bootstrap-extended/_root.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_bootstrap-extended/_spinners.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_bootstrap-extended/_spinners.scss",
       "PackagePath": "staticwebassets/scss/_bootstrap-extended/_spinners.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_bootstrap-extended/_tables.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_bootstrap-extended/_tables.scss",
       "PackagePath": "staticwebassets/scss/_bootstrap-extended/_tables.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_bootstrap-extended/_toasts.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_bootstrap-extended/_toasts.scss",
       "PackagePath": "staticwebassets/scss/_bootstrap-extended/_toasts.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_bootstrap-extended/_tooltip.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_bootstrap-extended/_tooltip.scss",
       "PackagePath": "staticwebassets/scss/_bootstrap-extended/_tooltip.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_bootstrap-extended/_type.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_bootstrap-extended/_type.scss",
       "PackagePath": "staticwebassets/scss/_bootstrap-extended/_type.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_bootstrap-extended/_utilities-ltr.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_bootstrap-extended/_utilities-ltr.scss",
       "PackagePath": "staticwebassets/scss/_bootstrap-extended/_utilities-ltr.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_bootstrap-extended/_utilities.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_bootstrap-extended/_utilities.scss",
       "PackagePath": "staticwebassets/scss/_bootstrap-extended/_utilities.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_bootstrap-extended/_variables.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_bootstrap-extended/_variables.scss",
       "PackagePath": "staticwebassets/scss/_bootstrap-extended/_variables.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_bootstrap-extended/forms/_floating-labels.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_bootstrap-extended/forms/_floating-labels.scss",
       "PackagePath": "staticwebassets/scss/_bootstrap-extended/forms/_floating-labels.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_bootstrap-extended/forms/_form-control.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_bootstrap-extended/forms/_form-control.scss",
       "PackagePath": "staticwebassets/scss/_bootstrap-extended/forms/_form-control.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_bootstrap-extended/forms/_form-range.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_bootstrap-extended/forms/_form-range.scss",
       "PackagePath": "staticwebassets/scss/_bootstrap-extended/forms/_form-range.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_bootstrap-extended/forms/_form-select.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_bootstrap-extended/forms/_form-select.scss",
       "PackagePath": "staticwebassets/scss/_bootstrap-extended/forms/_form-select.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_bootstrap-extended/forms/_input-group.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_bootstrap-extended/forms/_input-group.scss",
       "PackagePath": "staticwebassets/scss/_bootstrap-extended/forms/_input-group.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_bootstrap-extended/forms/_labels.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_bootstrap-extended/forms/_labels.scss",
       "PackagePath": "staticwebassets/scss/_bootstrap-extended/forms/_labels.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_bootstrap-extended/forms/_validation.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_bootstrap-extended/forms/_validation.scss",
       "PackagePath": "staticwebassets/scss/_bootstrap-extended/forms/_validation.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_bootstrap-extended/mixins/_alert.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_bootstrap-extended/mixins/_alert.scss",
       "PackagePath": "staticwebassets/scss/_bootstrap-extended/mixins/_alert.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_bootstrap-extended/mixins/_badge.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_bootstrap-extended/mixins/_badge.scss",
       "PackagePath": "staticwebassets/scss/_bootstrap-extended/mixins/_badge.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_bootstrap-extended/mixins/_buttons.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_bootstrap-extended/mixins/_buttons.scss",
       "PackagePath": "staticwebassets/scss/_bootstrap-extended/mixins/_buttons.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_bootstrap-extended/mixins/_caret.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_bootstrap-extended/mixins/_caret.scss",
       "PackagePath": "staticwebassets/scss/_bootstrap-extended/mixins/_caret.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_bootstrap-extended/mixins/_dropdown.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_bootstrap-extended/mixins/_dropdown.scss",
       "PackagePath": "staticwebassets/scss/_bootstrap-extended/mixins/_dropdown.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_bootstrap-extended/mixins/_forms.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_bootstrap-extended/mixins/_forms.scss",
       "PackagePath": "staticwebassets/scss/_bootstrap-extended/mixins/_forms.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_bootstrap-extended/mixins/_list-group.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_bootstrap-extended/mixins/_list-group.scss",
       "PackagePath": "staticwebassets/scss/_bootstrap-extended/mixins/_list-group.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_bootstrap-extended/mixins/_misc.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_bootstrap-extended/mixins/_misc.scss",
       "PackagePath": "staticwebassets/scss/_bootstrap-extended/mixins/_misc.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_bootstrap-extended/mixins/_navs.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_bootstrap-extended/mixins/_navs.scss",
       "PackagePath": "staticwebassets/scss/_bootstrap-extended/mixins/_navs.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_bootstrap-extended/mixins/_pagination.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_bootstrap-extended/mixins/_pagination.scss",
       "PackagePath": "staticwebassets/scss/_bootstrap-extended/mixins/_pagination.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_bootstrap-extended/mixins/_progress.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_bootstrap-extended/mixins/_progress.scss",
       "PackagePath": "staticwebassets/scss/_bootstrap-extended/mixins/_progress.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_bootstrap-extended/mixins/_table-variants.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_bootstrap-extended/mixins/_table-variants.scss",
       "PackagePath": "staticwebassets/scss/_bootstrap-extended/mixins/_table-variants.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_bootstrap-extended/mixins/_toasts.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_bootstrap-extended/mixins/_toasts.scss",
       "PackagePath": "staticwebassets/scss/_bootstrap-extended/mixins/_toasts.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_bootstrap.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_bootstrap.scss",
       "PackagePath": "staticwebassets/scss/_bootstrap.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_colors.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_colors.scss",
       "PackagePath": "staticwebassets/scss/_colors.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_components.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_components.scss",
       "PackagePath": "staticwebassets/scss/_components.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_components/_app-brand.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_components/_app-brand.scss",
       "PackagePath": "staticwebassets/scss/_components/_app-brand.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_components/_avatar.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_components/_avatar.scss",
       "PackagePath": "staticwebassets/scss/_components/_avatar.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_components/_base.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_components/_base.scss",
       "PackagePath": "staticwebassets/scss/_components/_base.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_components/_common.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_components/_common.scss",
       "PackagePath": "staticwebassets/scss/_components/_common.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_components/_footer.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_components/_footer.scss",
       "PackagePath": "staticwebassets/scss/_components/_footer.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_components/_include.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_components/_include.scss",
       "PackagePath": "staticwebassets/scss/_components/_include.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_components/_layout.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_components/_layout.scss",
       "PackagePath": "staticwebassets/scss/_components/_layout.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_components/_menu.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_components/_menu.scss",
       "PackagePath": "staticwebassets/scss/_components/_menu.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_components/_mixins.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_components/_mixins.scss",
       "PackagePath": "staticwebassets/scss/_components/_mixins.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_components/_text-divider.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_components/_text-divider.scss",
       "PackagePath": "staticwebassets/scss/_components/_text-divider.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_components/_variables.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_components/_variables.scss",
       "PackagePath": "staticwebassets/scss/_components/_variables.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_components/mixins/_app-brand.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_components/mixins/_app-brand.scss",
       "PackagePath": "staticwebassets/scss/_components/mixins/_app-brand.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_components/mixins/_avatar.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_components/mixins/_avatar.scss",
       "PackagePath": "staticwebassets/scss/_components/mixins/_avatar.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_components/mixins/_footer.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_components/mixins/_footer.scss",
       "PackagePath": "staticwebassets/scss/_components/mixins/_footer.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_components/mixins/_menu.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_components/mixins/_menu.scss",
       "PackagePath": "staticwebassets/scss/_components/mixins/_menu.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_components/mixins/_misc.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_components/mixins/_misc.scss",
       "PackagePath": "staticwebassets/scss/_components/mixins/_misc.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_components/mixins/_navbar.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_components/mixins/_navbar.scss",
       "PackagePath": "staticwebassets/scss/_components/mixins/_navbar.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_components/mixins/_text-divider.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_components/mixins/_text-divider.scss",
       "PackagePath": "staticwebassets/scss/_components/mixins/_text-divider.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_custom-variables/_bootstrap-extended.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_custom-variables/_bootstrap-extended.scss",
       "PackagePath": "staticwebassets/scss/_custom-variables/_bootstrap-extended.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_custom-variables/_components.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_custom-variables/_components.scss",
       "PackagePath": "staticwebassets/scss/_custom-variables/_components.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_custom-variables/_libs.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_custom-variables/_libs.scss",
       "PackagePath": "staticwebassets/scss/_custom-variables/_libs.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_custom-variables/_pages.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_custom-variables/_pages.scss",
       "PackagePath": "staticwebassets/scss/_custom-variables/_pages.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_custom-variables/_support.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_custom-variables/_support.scss",
       "PackagePath": "staticwebassets/scss/_custom-variables/_support.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_theme/_common.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_theme/_common.scss",
       "PackagePath": "staticwebassets/scss/_theme/_common.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/_theme/_theme.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/_theme/_theme.scss",
       "PackagePath": "staticwebassets/scss/_theme/_theme.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/core.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/core.scss",
       "PackagePath": "staticwebassets/scss/core.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/pages/page-account-settings.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/pages/page-account-settings.scss",
       "PackagePath": "staticwebassets/scss/pages/page-account-settings.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/pages/page-auth.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/pages/page-auth.scss",
       "PackagePath": "staticwebassets/scss/pages/page-auth.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/pages/page-icons.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/pages/page-icons.scss",
       "PackagePath": "staticwebassets/scss/pages/page-icons.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/pages/page-misc.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/pages/page-misc.scss",
       "PackagePath": "staticwebassets/scss/pages/page-misc.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/scss/theme-default.scss",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/scss/theme-default.scss",
       "PackagePath": "staticwebassets/scss/theme-default.scss"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/tasks/build.js",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/tasks/build.js",
       "PackagePath": "staticwebassets/tasks/build.js"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/tasks/prod.js",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/tasks/prod.js",
       "PackagePath": "staticwebassets/tasks/prod.js"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/webpack.config.js",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/webpack.config.js",
       "PackagePath": "staticwebassets/webpack.config.js"
     },
     {
-      "Id": "/Users/macbookpro/Desktop/locker/wwwroot/yarn.lock",
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/yarn.lock",
       "PackagePath": "staticwebassets/yarn.lock"
     },
     {

@@ -1,0 +1,561 @@
+@page 
+@using Locker.Enums
+@using Locker.Pages
+@model LockerToLockerModel
+@{ Layout = "_MainLayout"; }
+
+<style>
+    #locker1-map{
+        { height: 100% }
+    }
+     #locker2-map{
+        { height: 100% }
+    }
+</style>
+
+<section class="section-cargo">
+    <div class="shell">
+        <ul class="list-steps section__list-steps">
+            <li class="is-active">
+                <span>1. LOKASYONLAR ve BİLGİLER</span>
+            </li>
+
+            <li>
+                <span>2. ÖDEME</span>
+            </li>
+
+            <li>
+                <span>3. REZERVASYON BİLGİLERİ</span>
+            </li>
+        </ul><!-- /.list-steps -->
+
+        <div class="section__intro">
+            <figure class="js-animate section__image-left">
+                <img src="/assets/design/images/svg/section-cargo-img1.svg" alt="box" width="260" height="310">
+            </figure><!-- /.section__image-left -->
+
+            <figure class="section__image-right">
+                <img src="/assets/design/images/svg/section-cargo-img2.svg" alt="table" width="400" height="250">
+            </figure><!-- /.section__image-right -->
+        </div><!-- /.section__intro -->
+
+        <div class="section__content">
+            <h1>Boyut Seçiniz</h1>
+
+            <div class="checkboxes section__checkboxes">
+                @foreach (var box in Model.Model.Boxes)
+                {
+                    <div class="checkbox have-discount" data="@box.Id">
+                        <div class="checkbox__head">
+                            <input type="checkbox" name="checkbox-1" id="checkbox-1">
+
+                            <label for="checkbox-1"></label>
+                            @if (box.IsPromotionActive)
+                            {
+                                <img src="assets/design/images/svg/discount.svg" width="29" height="65" alt="discount" class="checkbox__discount">
+                            }
+                            <figure class="checkbox__image">
+                                <img src="@box.IconLink" alt="book" width="100" height="128">
+                            </figure><!-- /.checkbox__image -->
+                        </div><!-- /.checkbox__head -->
+
+                        <div class="checkbox__body">
+                            <div class="checkbox__price">
+                                @if (box.IsPromotionActive)
+                                {
+                                    <span class="checkbox__price-old">@box.Amount₺</span>
+                                    <!-- /.checkbox__price-old -->
+                                    <span>@box.PromotionAmount₺</span>
+                                }
+                                else
+                                {
+                                    <span>@{box.Amount.ToString("##");}₺</span>
+                                }
+
+                            </div><!-- /.checkbox__price -->
+
+                            <div class="js-quantity checkbox__quantity">
+                                <div class="checkbox__quantity-entry">
+                                    @if (HttpContext.Session.GetInt32("IsLoggedIn") == 1 && HttpContext.Session.GetInt32("Role") == (int)UserType.Partner)
+                                    {
+                                        <a href="#" class="btn-decrease">-</a>
+                                        <!-- /.btn-decrease -->
+
+                                        <span>@box.Name</span>
+
+                                        <a href="#" class="btn-increase">+</a>
+                                        <!-- /.btn-increase -->
+                                    }
+                                    else
+                                    {
+                                        <span>@box.Name</span>
+
+                                    }
+                                </div><!-- /.checkbox__quantity-entry -->
+                                @if (HttpContext.Session.GetInt32("IsLoggedIn") == 1 && HttpContext.Session.GetInt32("Role") == (int)UserType.Partner)
+                                {
+                                    <span class="checkbox__count" data="@box.Id">0</span>
+                                    <!-- /.checkbox__count -->
+                                }
+                            </div><!-- /.checkbox__quantity -->
+                        </div><!-- /.checkbox__body -->
+                    </div>
+                    <!-- /.checkbox -->
+                }
+            </div><!-- /.checkboxes -->
+
+            <div class="section__entry">
+                <p>* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+
+                <p>** Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+            </div><!-- /.section__entry -->
+        </div><!-- /.section__content -->
+    </div><!-- /.shell -->
+</section><!-- /.section-cargo -->
+<section class="section-simple section-simple--adjust">
+    <div class="shell">
+        <div class="js-accordion accordion accordion--adjust section__accordion">
+            <div class="accordion__section is-open">
+                <div class="accordion__head">
+                    <h3 class="accordion__title">LOKASYONLARI SEÇMEK İÇİN TIKLAYINIZ</h3><!-- /.accordion__title -->
+                </div><!-- /.accordion__head -->
+
+                <div class="accordion__body">
+                    <div class="accordion__content">
+                        <div class="accordion__inner">
+                            <div class="accordion__col">
+                                <div class="map">
+                                    <h4 class="level-2">Gönderici Otomatını Seçin</h4><!-- /.level-2 -->
+
+                                    <figure class="map__image">
+                                        <div class="img-fluid" id="locker1-map" style="height: 100%;"></div>
+                                    </figure><!-- /.map__image -->
+
+                                    <div class="map__meta locker1-map-info"><strong na>LEF-01 7/24 açık</strong> Xyz Shop - Abc Street Qwe Cty ...</div><!-- /.map__meta -->
+                                </div><!-- /.map -->
+                            </div><!-- /.accordion__col -->
+
+                            <img src="assets/design/images/svg/arrow-dark.svg" alt="arrow" width="60" height="30">
+
+                            <div class="accordion__col">
+                                <div class="map">
+                                    <h4 class="level-2">Alıcı Otomatını Seçin</h4><!-- /.level-2 -->
+
+                                    <figure class="map__image">
+                                        <div class="img-fluid" id="locker2-map" style="height: 100%;"></div>
+                                    </figure><!-- /.map__image -->
+
+                                    <div class="map__meta map__meta--red locker2-map-info"><strong>LEF-01 7/24 açık</strong> Xyz Shop - Abc Street Qwe Cty ...</div><!-- /.map__meta -->
+                                </div><!-- /.map -->
+                            </div><!-- /.accordion__col -->
+                        </div><!-- /.accordion__inner -->
+                    </div><!-- /.accordion__content -->
+                </div><!-- /.accordion__body -->
+            </div><!-- /.accordion__section -->
+        </div><!-- /.accordion -->
+        <div class="section__content">
+            <div class="section__cols">
+                @using(Html.BeginForm(FormMethod.Post)){
+                <div class="section__col">
+                    <div class="js-form form section__form">
+                            <div class="form__head">
+                                <h4 class="level-2">Gönderici Bilgileri</h4><!-- /.level-2 -->
+
+                                <p>*alanların doldurulması zorunludur</p>
+
+                            </div><!-- /.form__head -->
+
+                            <div class="form__body">
+
+                                @{
+                                    var name = "";
+                                    var email = "";
+                                    var phone = "";
+                                }
+                                @if (HttpContext.Session.GetInt32("IsLoggedIn") != 1 || HttpContext.Session.GetInt32("Role") != (int)UserType.Partner)
+                                {
+                                    var setValue = HttpContext.Session.GetInt32("Role") == (int)UserType.Commercial;
+                                    @if (setValue)
+                                    {
+                                        name = Model.User.Name;
+                                        email = Model.User.Email;
+                                        phone = Model.User.Phone;
+                                    }
+
+                                    <div class="form__row">
+                                        <label for="name" class="form__label">İsim Soyisim <span>*</span></label><!-- /.form__label -->
+
+                                        <div class="form__controls">
+                                            <input data-validate="true" type="text" class="field" id="name" name="senderName" placeholder="Ad Soyad veya Şirket">
+
+                                            <img src="assets/design/images/svg/member.svg" alt="member" width="40" height="40">
+                                        </div><!-- /.form__controls -->
+                                    </div>
+                                    <!-- /.form__row -->
+
+                                    <div class="form__row">
+                                        <label for="phone" class="form__label">Cep Telefonu <span>*</span></label><!-- /.form__label -->
+
+                                        <div class="form__controls">
+                                            <input data-validate="true" type="text" class="js-phone-field field field--number" id="phone" name="senderPhone" placeholder="Telefon numarasını giriniz">
+
+                                            <img src="assets/design/images/svg/phone.svg" alt="member" width="40" height="40">
+                                        </div><!-- /.form__controls -->
+                                    </div>
+                                    <!-- /.form__row -->
+
+                                    <div class="form__row">
+                                        <label for="mail" class="form__label">E-posta <span>*</span></label><!-- /.form__label -->
+
+                                        <div class="form__controls">
+                                            <input data-validate="true" type="email" class="field" id="mail" name="senderEmail" placeholder="E-posta adresini giriniz">
+
+                                            <img src="assets/design/images/svg/mail.svg" alt="member" width="40" height="40">
+                                        </div><!-- /.form__controls -->
+                                    </div>
+                                    <!-- /.form__row -->
+
+                                    <div class="form__row">
+                                        <label for="message" class="form__label">Not </label><!-- /.form__label -->
+
+                                        <div class="form__controls">
+                                            <input type="text" class="field" id="message" name="note" placeholder="Gönderi notu varsa yazınız">
+
+                                            <img src="assets/design/images/svg/message.svg" alt="member" width="40" height="40">
+                                        </div><!-- /.form__controls -->
+                                    </div>
+                                    <!-- /.form__row -->
+                                }
+
+                                <div class="form__row">
+                                    <strong>Zaman Aralığı Seçin</strong>
+
+                                    <div class="radios">
+                                        <div class="radio">
+                                            <input type="radio" name="radio" id="radio-1" checked>
+
+                                            <label for="radio-1">
+                                                Fark <br> etmez
+                                            </label>
+                                        </div><!-- /.radio -->
+
+                                        <div class="radio">
+                                            <input type="radio" name="radio" id="radio-2">
+
+                                            <label for="radio-2">
+                                                <span>08:00</span>
+
+                                                <span>-</span>
+
+                                                <span>12:00</span>
+                                            </label>
+                                        </div><!-- /.radio -->
+
+                                        <div class="radio">
+                                            <input type="radio" name="radio" id="radio-3">
+
+                                            <label for="radio-3">
+                                                <span>13:00</span>
+
+                                                <span>-</span>
+
+                                                <span>18:00</span>
+                                            </label>
+                                        </div><!-- /.radio -->
+                                    </div><!-- /.radios -->
+                                </div><!-- /.form__row -->
+                            </div><!-- /.form__body -->
+                    </div><!-- /.form section__form -->
+                </div><!-- /.section__col -->
+
+                <div class="section__col-alt">
+                    <img src="assets/design/images/svg/arrow-dark.svg" alt="arrow" width="60" height="30">
+                </div><!-- /.section__col-alt -->
+
+                <div class="section__col">
+                    <div class="js-form form section__form">
+                            <div class="form__head">
+                                <h4 class="level-2">Alıcı Biligleri</h4><!-- /.level-2 -->
+
+                                <p>*alanların doldurulması zorunludur</p>
+                            </div><!-- /.form__head -->
+
+                            <div class="form__body">
+                                <div class="form__row">
+                                    <label for="name-2" class="form__label">İsim Soyisim <span>*</span></label><!-- /.form__label -->
+
+                                    <div class="form__controls">
+                                        <input data-validate="true" type="text" class="field" id="name-2" name="receiverName" placeholder="Ad Soyad veya Şirket">
+
+                                        <img src="assets/design/images/svg/member.svg" alt="member" width="40" height="40">
+                                    </div><!-- /.form__controls -->
+                                </div><!-- /.form__row -->
+
+                                <div class="form__row">
+                                    <label for="phone-2" class="form__label">Cep Telefonu <span>*</span></label><!-- /.form__label -->
+
+                                    <div class="form__controls">
+                                        <input data-validate="true" type="text" class="js-phone-field field" id="phone-2" name="receiverPhone" placeholder="Telefon numarasını giriniz">
+
+                                        <img src="assets/design/images/svg/phone.svg" alt="member" width="40" height="40">
+                                    </div><!-- /.form__controls -->
+                                </div><!-- /.form__row -->
+
+                                <div class="form__row">
+                                    <ul class="list-checkboxes">
+                                        <li>
+                                            <div class="checkbox-alt">
+                                                <input data-validate="true" type="checkbox" name="checkbox-alt" id="checkbox-alt-1" checked>
+
+                                                <label for="checkbox-alt-1">
+                                                    <a href="#">Gizlilik Politikası</a>
+                                                </label>
+                                            </div><!-- /.checkbox-alt -->
+                                        </li>
+
+                                        <li>
+                                            <div class="checkbox-alt">
+                                                <input data-validate="true" type="checkbox" name="checkbox-alt" id="checkbox-alt-2" checked>
+
+                                                <label for="checkbox-alt-2">
+                                                    <a href="#">Kullanıcı ile Breysel Sözleşme</a>
+                                                </label>
+                                            </div><!-- /.checkbox-alt -->
+                                        </li>
+
+                                        <li>
+                                            <div class="checkbox-alt checkbox-alt--yellow-background">
+                                                <input data-validate="true" type="checkbox" name="checkbox-alt" id="checkbox-alt-3">
+
+                                                <label for="checkbox-alt-3">
+                                                    <a href="#">LOKASYONLARI ONAYLA</a>
+                                                </label>
+                                            </div><!-- /.checkbox-alt -->
+                                        </li>
+                                    </ul><!-- /.list-checkboxes -->
+                                </div><!-- /.form__row -->
+                                <!-- hidden fields -->
+                                <input type="hidden" class="box-input" name="boxId" value="" required>
+                                <input type="hidden" class="selected-locker-1" name="sourceLockerName" value="" required>
+                                <input type="hidden" class="selected-locker-2" name="targetLockerName" value="" required>
+                                <input type="hidden" name="items"/>
+
+                            </div><!-- /.form__body -->
+
+                        <div class="form__actions">
+                            <button type="submit" class="form__btn">
+                                <img src="assets/design/images/svg/card.svg" alt="card" width="280" height="155">
+                            </button>
+                        </div>
+                    </div><!-- /.form section__form -->
+                </div><!-- /.section__col -->
+                }
+            </div><!-- /.section__cols -->
+        </div><!-- /.section__content -->
+    </div>
+    
+</section>
+
+
+
+@if (HttpContext.Session.GetInt32("IsLoggedIn") == 1 && HttpContext.Session.GetInt32("Role") == (int)UserType.Partner)
+{
+    <script>
+    function setItems(){
+        var jsonString = "[";
+        for (var i = 0; i < $(".checkbox__count").length; i++){
+            var item = $(".checkbox__count").eq(i);
+            var id = $(item).attr("data");
+            var val = $(item).text();
+            jsonString += "{\"Id\":" + id + ",\"Count\":" + val + "},";
+        }
+        jsonString = jsonString.slice(0,-1);
+        jsonString += "]";
+
+        $("input[name='items']").val(jsonString);
+    }
+
+</script>
+}
+
+<script>
+    function selectBox(){
+        $(".checkbox").on("click", function() {
+            $(".box-input").val($(this).attr("data"));
+        });
+
+    }
+      var lockermap1 = L.map('locker1-map').setView([35.095192, 33.203430], 11);
+      L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',{
+        maxZoom: 20,
+        subdomains:['mt0','mt1','mt2','mt3']
+       
+      }).addTo(lockermap1);
+      var lockermap2 = L.map('locker2-map').setView([35.095192, 33.203430], 11);
+      L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',{
+        maxZoom: 20,
+        subdomains:['mt0','mt1','mt2','mt3']
+      }).addTo(lockermap2);
+      var points = [];
+
+    @if (HttpContext.Session.GetInt32("IsLoggedIn") != 1 || HttpContext.Session.GetInt32("Role") != 3)
+    {
+        @:selectBox();
+    }
+$(".form__btn").on("click",function(e){
+  e.preventDefault();
+    @if (HttpContext.Session.GetInt32("IsLoggedIn") != 1 || HttpContext.Session.GetInt32("Role") != (int)UserType.Partner)
+    {
+        @:var box = $(".box-input").val();
+        @:if (box == "" || box < 1)
+        @:{
+        @:alert("Lütfen kutu seçimi yapın");
+        @:return;
+        @:}
+    }
+    var locker1 = $(".selected-locker-1").val();
+    if(locker1 == "" || locker1 < 1)
+      {
+        alert("Lütfen teslim noktası seçimi yapın");
+        return;
+      }
+    var locker2 = $(".selected-locker-2").val();
+    if(locker2 == "" || locker2 < 1)
+      {
+        alert("Lütfen teslim noktası seçimi yapın");
+        return;
+      }
+      if(locker1 == locker2){
+        alert("Teslim noktaları aynı olamaz");
+        return;
+      }
+
+      $("[class*=warning]").text("");
+
+    @if (HttpContext.Session.GetInt32("IsLoggedIn") != 1 || HttpContext.Session.GetInt32("Role") != 3)
+    {
+        @:senderControl();
+    }
+
+    @if (HttpContext.Session.GetInt32("IsLoggedIn") == 1 && HttpContext.Session.GetInt32("Role") == (int)UserType.Partner)
+    {
+        @:setItems();
+    }
+
+        var receiverName = $("input[name='receiverName']").val();
+      if(receiverName.trim() == ""){
+        $("#receiverNameWarning").text(" Lütfen bu alanı doldurun");
+        return;
+      }
+
+         var receiverPhone = $("input[name='receiverPhone']").val();
+      if(receiverPhone.trim() == ""){
+        $("#receiverPhoneWarning").text(" Lütfen bu alanı doldurun");
+        return;
+      }else if(receiverPhone.length < 11){
+        $("#receiverPhoneWarning").text(" Lütfen telefon numarasını doğru formatta girin");
+        return;
+      }
+
+
+      if($("input[name='pp']").prop('checked')==false){
+        $("#gdprWarning").text(" Lütfen sözleşmeyi kabul edin");
+        return;
+      }
+     
+
+      if($("input[name='ia']").prop('checked')==false){
+        $("#iaWarning").text(" Lütfen sözleşmeyi kabul edin");
+        return;
+      }
+
+      $("form").submit();
+});
+
+
+$(".receiverCountryCodeDD").on("click",function(){
+  $("input[name='receiverPhone']").val($(this).attr("data"));
+});
+
+
+$(".senderCountryCodeDD").on("click",function(){
+  $("input[name='senderPhone']").val($(this).attr("data"));
+});
+
+function senderControl(){
+    var senderName = $("input[name='senderName']").val();
+    if(senderName.trim() == ""){
+        $("#senderNameWarning").text(" Lütfen bu alanı doldurun");
+        return;
+    }
+
+    var senderPhone = $("input[name='senderPhone']").val();
+    if(senderPhone.trim() == ""){
+        $("#senderPhoneWarning").text(" Lütfen bu alanı doldurun");
+        return;
+    }else if(senderPhone.length < 11 || isOnlyDigit(senderPhone) == false){
+        $("#senderPhoneWarning").text(" Lütfen telefon numarasını doğru formatta girin");
+        return;
+    }
+
+    var senderEmail = $("input[name='senderEmail']").val();
+    if(senderEmail.trim() == ""){
+        $("#senderEmailWarning").text(" Lütfen bu alanı doldurun");
+        return;
+    }else if(isEmail(senderEmail)==false){
+        $("#senderEmailWarning").text(" Lütfen geçerli bir mail adresi girin");
+        return;
+    }
+}
+
+function isOnlyDigit(number){
+  var regex = /^\d+$/;
+  return regex.test(number);
+}
+
+function isEmail(email) {
+    var regex =   /^([a-zA-Z0-9_.+-])+\@@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+  return regex.test(email);
+}
+      function locker1labelOnClick() {
+        var lat = this._latlng.lat;
+        var lng = this._latlng.lng;
+        for (var i = 0; i < points.length; i++) {
+          var actual = points[i];
+          if (actual.lat == lat && actual.lng == lng) {
+            $(".locker1-map-info").html("<strong>" + actual.name + "</strong>" + actual.address);
+            $(".selected-locker-1").val(actual.id);
+          }
+        }
+      }
+
+      function locker2labelOnClick() {
+        var lat = this._latlng.lat;
+        var lng = this._latlng.lng;
+        for (var i = 0; i < points.length; i++) {
+          var actual = points[i];
+          if (actual.lat == lat && actual.lng == lng) {
+            $(".locker2-map-info").html("<strong>" + actual.name + "</strong>" + actual.address);
+            $(".selected-locker-2").val(actual.id);
+          }
+        }
+      }
+      
+      @if (Model.Model.Cabines != null)
+      {
+          foreach (var cabine in Model.Model.Cabines)
+          {
+              @:points.push({
+              @:lat: '@cabine.Lat',
+              @:lng: '@cabine.Long',
+              @:name: '@cabine.Name',
+              @:address: '@cabine.Description',
+              @:id : '@cabine.Id',
+              @:description: '@cabine.Description'
+              @:});
+              @:L.marker([@cabine.Lat, @cabine.Long]).on('click', locker1labelOnClick).addTo(lockermap1);
+              @:L.marker([@cabine.Lat, @cabine.Long]).on('click', locker2labelOnClick).addTo(lockermap2);
+          }
+      }
+    
+</script>
