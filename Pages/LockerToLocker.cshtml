@@ -324,7 +324,7 @@
 															<input data-validate="true" type="checkbox" name="checkbox-alt" id="checkbox-alt-3">
 
 															<label for="checkbox-alt-3">
-																<a href="#">LOKASYONLARI ONAYLA</a>
+																	 <a href="#a" class="acceptLink">LOKASYONLARI ONAYLA</a>
 															</label>
 														</div><!-- /.checkbox-alt -->
 													</li>
@@ -375,6 +375,9 @@
 }
 
 <script>
+	$(".acceptLink").on("click", function () {
+  $("#checkbox-alt-3").trigger("click");
+});
     function selectBox(){
         $(".checkbox").on("click", function() {
             $(".box-input").val($(this).attr("data"));

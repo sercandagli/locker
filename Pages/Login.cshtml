@@ -1,52 +1,102 @@
-@page 
+@page
 @using Locker.Pages
-@model LoginModel
-@{ Layout = "_MainLayout"; }
-<section class="section-cargo">
+@model RegisterModel
+@{
+    Layout = "_MainLayout";
+}
+
+<section class="section-form-alt">
     <div class="shell">
+        <div class="section__cols">
+            <div class="section__col">
+                <div class="section__bar">
+                    <h2>kurumsal hesap</h2>
 
-        <div class="section__col">
-            <div class="js-form form section__form">
-                @using (Html.BeginForm(FormMethod.Post))
-                {
-                <div class="form__head">
-                    <h4 class="level-2">Kullanıcı Girişi</h4><!-- /.level-2 -->
+                    <div class="section__actions">
+                        <a href="#" class="section__btn">gi̇ri̇ş</a><!-- /.section__btn -->
 
-                    <p>*alanların doldurulması zorunludur</p>
-                </div>
-                <!-- /.form__head -->
+                        <a href="register" class="section__btn section__btn--yellow">üye ol</a><!-- /.section__btn -->
+                    </div><!-- /.section__actions -->
 
-                <div class="form__body">
-                    <div class="form__row">
-                        <label for="phone" class="form__label">Cep Telefonu <span>*</span></label><!-- /.form__label -->
+                    <figure class="section__image">
+                        <img src="assets/design/images/svg/member-2.svg" alt="member" width="70" height="70">
+                    </figure><!-- /.section__image -->
+                </div><!-- /.section__bar -->
 
-                        <div class="form__controls">
-                            <input data-validate="true" type="text" class="js-phone-field field" id="phone" name="phone" placeholder="Telefon numarasını giriniz">
+                <div class="js-form form-alt">
+                    @using (Html.BeginForm(FormMethod.Post))
+                    {
+                        <div class="form__row">
+                            <div class="form__controls">
+                                <label for="number" class="sr-only">Telefon</label>
 
-                            <img src="assets/design/images/svg/phone.svg" alt="member" width="40" height="40">
-                        </div><!-- /.form__controls -->
-                    </div><!-- /.form__row -->
-        
-                    <div class="form__row">
-                        <label for="password" class="form__label">Şifre <span>*</span></label><!-- /.form__label -->
+                                <input class="field-alter" data-validate="true" type="text" name="phone" id="number"
+                                    placeholder="Telefon numarasını">
 
-                        <div class="form__controls">
-                            <input data-validate="true" type="password" class="field" id="name" name="password" placeholder="Şifre giriniz">
+                                <img src="assets/design/images/svg/phone-3.svg" alt="phone" width="16" height="16">
+                            </div><!-- /.form__controls -->
+                        </div>
 
-                            <img src="assets/design/images/svg/member.svg" alt="member" width="40" height="40">
-                        </div><!-- /.form__controls -->
-                    </div><!-- /.form__row -->
-                </div>
-                <!-- /.form__body -->
+                        <!-- /.form__row -->
 
-                <div class="form__actions">
-                    <button type="submit" class="btn btn-success">
-                        Giriş Yap
-                    </button>
-                </div>
-                <!-- /.form__actions -->
-                }
-            </div><!-- /.form section__form -->
-        </div><!-- /.section__col -->
-    </div>
-</section>
+
+
+                        <!-- /.form__row -->
+
+                        <div class="form__row">
+                            <div class="form__controls">
+                                <label for="password" class="sr-only">Şifre</label>
+
+                                <input class="field-alter" data-validate="true" type="password" name="password"
+                                    id="password" placeholder="Şifre">
+
+                                <img src="assets/design/images/svg/locker.svg" alt="locker" width="14" height="19">
+                            </div><!-- /.form__controls -->
+                        </div>
+
+                        <!-- /.form__row -->
+
+                        <div class="form__actions">
+
+                            <a href="forgotPassword" class="form__btn">Şifremi Unuttum</a>
+
+                            <a href="href=" javascript:;" onclick="parentNode.submit();" class="form__btn">Giriş Yap</a>
+                        </div>
+
+                        <!-- /.form__actions -->
+                    }
+                </div><!-- /.form-alt -->
+            </div><!-- /.section__col -->
+
+            <div class="section__col-alt">
+                <div class="section__aside">
+                    <h5>Neden kurumsal hesap?</h5>
+
+                    <p>Kurumsal Hesap ile sürekli kargo işlemlerinizde kolaylık sağlayın, kredi kartı kullanmadan ve
+                        vadeli ödeme seçeneğiyle işlemlerinizi yapın!</p>
+
+                    <h5>üye olmadan ayni i̇şlemleri̇ yapamiyor muyum?</h5>
+
+                    <p>İşlemlerinizi bireysel (üye olmadan) da yapabilirsiniz</p>
+
+                    <h5>farki ve avantaji nedi̇r?</h5>
+
+                    <p>Yönetim paneli ile işlemlerinizi kolayca yapabilir, takip edebilirsiniz.Ön ödeme yaparak bonus
+                        avantajlarından yararlanabilirsiniz</p>
+
+                    <h5>ki̇mler kurumsal hesaba sahi̇p olabi̇li̇r?</h5>
+
+                    <div class="section__entry">
+                        <p>Kısaca herkes! Haftada birden fazla kargonuz var,kredi kartı ile uğraşmak istemeyen,Hizmet
+                            hatttında öncelik istiyorsanız</p>
+                    </div><!-- /.section__entry -->
+
+                    <div class="section__intro">
+                        <strong>Kolaylıktan faydalanın. <br>Üye ol butonuna tıklayarak ücretsiz hesabınızı
+                            oluşturun.</strong>
+                    </div><!-- /.section__intro -->
+                </div><!-- /.section__aside -->
+            </div><!-- /.section__col-alt -->
+        </div><!-- /.section__cols -->
+    </div><!-- /.shell -->
+</section><!-- /.section-form-alt -->

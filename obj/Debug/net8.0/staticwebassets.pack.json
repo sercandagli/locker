@@ -573,6 +573,18 @@
       "PackagePath": "staticwebassets/assets/js/ui-toasts.js"
     },
     {
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/localImages/6ac97e64-01ac-4d9b-b939-d5a0560f3edc.png",
+      "PackagePath": "staticwebassets/assets/localImages/6ac97e64-01ac-4d9b-b939-d5a0560f3edc.png"
+    },
+    {
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/localImages/6bfaa233-9f0f-474a-bd80-b7f1af8bdbe9.png",
+      "PackagePath": "staticwebassets/assets/localImages/6bfaa233-9f0f-474a-bd80-b7f1af8bdbe9.png"
+    },
+    {
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/localImages/aeae16c5-9735-454d-bac2-a34189ae2d88.png",
+      "PackagePath": "staticwebassets/assets/localImages/aeae16c5-9735-454d-bac2-a34189ae2d88.png"
+    },
+    {
       "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/assets/vendor/css/core.css",
       "PackagePath": "staticwebassets/assets/vendor/css/core.css"
     },
@@ -691,6 +703,10 @@
     {
       "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/gulpfile.js",
       "PackagePath": "staticwebassets/gulpfile.js"
+    },
+    {
+      "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/img/e5205b1f-e312-456c-83de-63fe2a91a217.png",
+      "PackagePath": "staticwebassets/img/e5205b1f-e312-456c-83de-63fe2a91a217.png"
     },
     {
       "Id": "/Users/sercandagli/Desktop/Projects/locker/wwwroot/js/bootstrap.js",

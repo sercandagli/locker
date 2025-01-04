@@ -9,11 +9,11 @@
     <div class="shell">
         <div class="section__content">
             <div class="popup popup--alt">
-                <h2>teşekkürler!</h2>
+                <h2>Teşekkürler!</h2>
 
                 <div class="popup__entry">
                     <p>Rezervasyon bilgileriniz SMS ve E-posta olarak size gönderildi. <br>
-                        Lütfen <a href="#">takip numarasını paket üzerine yazmayı</a> UNUTMAYIN!</p>
+                        Lütfen takip numarasını paket üzerine yazmayı UNUTMAYIN!</p>
                 </div><!-- /.popup__entry -->
 
                 <div class="popup__holder">
@@ -21,22 +21,22 @@
                         @if (Model.Order.OrderItems.Count == 1)
                         {
                             <li>
-                                <a href="#">
-                                    <span>Bırakma Kodunuz:</span>
 
-                                    <strong>@Model.Order.OrderItems.FirstOrDefault().SLSaveCde
-                                        @Model.Order.OrderItems.FirstOrDefault().TLSaveCode
-                                    </strong>
-                                </a>
+                                <span>Bırakma Kodunuz:</span>
+
+                                <strong>@Model.Order.OrderItems.FirstOrDefault().SLSaveCde
+                                    @Model.Order.OrderItems.FirstOrDefault().TLSaveCode
+                                </strong>
+
                             </li>
                         }
 
                         <li>
-                            <a href="#">
-                                <span>Takip No:</span>
 
-                                <strong>@Model.Order.Id</strong>
-                            </a>
+                            <span>Takip No:</span>
+
+                            <strong>@Model.Order.Id</strong>
+
                         </li>
                     </ul><!-- /.list-info -->
 
@@ -86,11 +86,11 @@
 
                     <thead>
                         <tr>
-                            <th>Gönerici Adı</th>
+                            <th>Gönderici Adı</th>
 
-                            <th>Gönerici Telefon</th>
+                            <th>Gönderici Telefon</th>
 
-                            <th>Gönderici Mehtobu</th>
+                            <th>Gönderici Methodu</th>
 
                             <th>İşlem Zamanı</th>
 
@@ -98,7 +98,7 @@
 
                             <th>Alıcı Telefon</th>
 
-                            <th>Alıcı Metobu</th>
+                            <th>Alıcı Metodu</th>
 
                             <th>Ebat</th>
 
@@ -130,8 +130,9 @@
                                     }
                                     else
                                     {
-                                        @:Kargomat
-                                    }
+                                        @:Kargomat <a href="cabinePoints?cabineId=@item.SourceLockerId" style="color:red;"> @Model.Cabines.FirstOrDefault(x => x.Id
+                                        == item.TargetLockerId)?.Name </a>
+                                                    }
                                 </td>
                                 <td>
                                     @item.CreatedOn
@@ -144,14 +145,15 @@
                                 </td>
                                 <td>
                                     @if (item.Order.DeliveryType == (int)DeliveryType.AddressToAddress ||
-                                   item.Order.DeliveryType == (int)DeliveryType.AddressToLocker)
+                                   item.Order.DeliveryType == (int)DeliveryType.LockerToAddress)
                                     {
                                         @:Adres
                                     }
                                     else
                                     {
-                                        @:Kargomat
-                                    }
+                                        @:Kargomat <a href="cabinePoints?cabineId=@item.TargetLockerId" style="color:red;"> @Model.Cabines.FirstOrDefault(x => x.Id
+                                        == item.TargetLockerId)?.Name </a>
+                                                    }
                                 </td>
                                 <td>
                                     @item.BoxSize

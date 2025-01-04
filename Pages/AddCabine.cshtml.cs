@@ -1,6 +1,7 @@
 using Locker;
 using Locker.Data;
 using Locker.Entities;
+using Locker.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -25,27 +26,44 @@ public class AddCabineModel : BasePageModel
         if (Regions.Count == 0)
         {
             this.Message = "Lütfen önce ana bölge ekleyin";
-            
+
         }
         return Page();
     }
 
-    public async Task<IActionResult> OnPost(Cabine cabine)
+    public async Task<IActionResult> OnPost(AddCabineViewModel cabine)
     {
         if (_workContext.Admin == null)
             return RedirectToPage("managementLogin");
-            using var _context = new LockerDbContext();
-            cabine.IsActive = true;
-            if(!ModelState.IsValid){
-                this.Message = "Lütfen tüm alanları doldurun";
-                Regions = await _context.Regions.ToListAsync();
+        using var _context = new LockerDbContext();
 
-            return Page();
+        var newCabine = new Cabine()
+        {
+            RegionId = cabine.RegionId,
+            Name = cabine.Name,
+            Description = cabine.Description,
+            Lat = cabine.Lat,
+            Long = cabine.Long,
+            Identifier = cabine.Identifier,
+            IsActive = true,
+            ModifiedOn = DateTime.Now
+        };
 
+        if (cabine.File != null)
+        {
+            var extent = Path.GetExtension(cabine.File.FileName);
+            var randomName = ($"{Guid.NewGuid()}{extent}");
+            var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/assets/localImages", randomName);
+
+            using (var stream = new FileStream(path, FileMode.Create))
+            {
+                await cabine.File.CopyToAsync(stream);
             }
-        cabine.ModifiedOn = DateTime.Now;
-        cabine.IsActive = true;
-        _context.Cabines.Add(cabine);
+            newCabine.ImagePath = "~/assets/localImages/" + randomName;
+
+        }
+
+        _context.Cabines.Add(newCabine);
         await _context.SaveChangesAsync();
         return RedirectToPage("cabineList");
     }

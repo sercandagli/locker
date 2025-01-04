@@ -46,65 +46,65 @@
             <div class="checkboxes section__checkboxes">
                 @foreach (var box in Model.Model.Boxes)
                 {
-                    <div class="checkbox have-discount" data="@box.Id">
-                        <div class="checkbox__head">
-                            <input type="checkbox" name="checkbox-1" id="checkbox-1">
+                        <div class="checkbox have-discount" data="@box.Id">
+                            <div class="checkbox__head">
+                                <input type="checkbox" name="checkbox-1" id="checkbox-1">
 
-                            <label for="checkbox-1"></label>
+                                <label for="checkbox-1"></label>
                             @if (box.IsPromotionActive)
                             {
-                                <img src="assets/design/images/svg/discount.svg" width="29" height="65" alt="discount"
-                                    class="checkbox__discount">
+                                        <img src="assets/design/images/svg/discount.svg" width="29" height="65" alt="discount"
+                                            class="checkbox__discount">
                             }
-                            <figure class="checkbox__image">
-                                <img src="@box.IconLink" alt="book" width="100" height="128">
-                            </figure><!-- /.checkbox__image -->
-                        </div><!-- /.checkbox__head -->
+                                <figure class="checkbox__image">
+                                    <img src="@box.IconLink" alt="book" width="100" height="128">
+                                </figure><!-- /.checkbox__image -->
+                            </div><!-- /.checkbox__head -->
 
-                        <div class="checkbox__body">
-                            <div class="checkbox__price">
+                            <div class="checkbox__body">
+                                <div class="checkbox__price">
                                 @if (box.IsPromotionActive)
                                 {
-                                    <span class="checkbox__price-old">@box.Amount₺</span>
-                                    <!-- /.checkbox__price-old -->
-                                    <span>@box.PromotionAmount₺</span>
+                                            <span class="checkbox__price-old">@box.Amount₺</span>
+                                            <!-- /.checkbox__price-old -->
+                                            <span>@box.PromotionAmount₺</span>
                                 }
                                 else
                                 {
-                                    <span>@box.Amount₺</span>
+                                            <span>@box.Amount₺</span>
                                 }
 
-                            </div><!-- /.checkbox__price -->
+                                </div><!-- /.checkbox__price -->
 
-                            <div class="js-quantity checkbox__quantity">
-                                <div class="checkbox__quantity-entry">
+                                <div class="js-quantity checkbox__quantity">
+                                    <div class="checkbox__quantity-entry">
                                     @if (HttpContext.Session.GetInt32("IsLoggedIn") == 1 &&
-                                   HttpContext.Session.GetInt32("Role") == (int)UserType.Partner)
+                                  HttpContext.Session.GetInt32("Role") == (int)UserType.Partner)
                                     {
-                                        <a href="#" class="btn-decrease">-</a>
-                                        <!-- /.btn-decrease -->
+                                                <a href="#" class="btn-decrease">-</a>
+                                                <!-- /.btn-decrease -->
 
-                                        <span>@box.Name</span>
+                                                <span>@box.Name</span>
 
-                                        <a href="#" class="btn-increase">+</a>
-                                        <!-- /.btn-increase -->
+                                                <a href="#" class="btn-increase">+</a>
+                                                <!-- /.btn-increase -->
                                     }
                                     else
                                     {
-                                        <span>@box.Name</span>
+                                                <span>@box.Name</span>
 
                                     }
-                                </div><!-- /.checkbox__quantity-entry -->
+                                    </div><!-- /.checkbox__quantity-entry -->
                                 @if (HttpContext.Session.GetInt32("IsLoggedIn") == 1 && HttpContext.Session.GetInt32("Role")
-                               == (int)UserType.Partner)
+                              == (int)UserType.Partner)
                                 {
-                                    <span class="checkbox__count" data="@box.Id">0</span>
-                                    <!-- /.checkbox__count -->
+                                            <span class="checkbox__count" data="@box.Id">0</span>
+                                            <!-- /.checkbox__count -->
                                 }
-                            </div><!-- /.checkbox__quantity -->
-                        </div><!-- /.checkbox__body -->
-                    </div>
-                    <!-- /.checkbox -->
+                                </div><!-- /.checkbox__quantity -->
+                            </div><!-- /.checkbox__body -->
+                        </div>
+                        <!-- /.checkbox -->
                 }
             </div><!-- /.checkboxes -->
 
@@ -134,7 +134,7 @@
                                     <h4 class="level-2">Gönderici Otomatını Seçin</h4><!-- /.level-2 -->
 
                                     <figure class="map__image">
-												<div id="locker1-map"  alt="map" width="650" height="420" style="height: 100%;"></div>
+                                                <div id="locker1-map"  alt="map" width="650" height="420" style="height: 100%;"></div>
                                     </figure><!-- /.map__image -->
 
                                     <div class="map__meta locker1-map-info"><strong>LEF-01 7/24 açık</strong> Xyz Shop - Abc Street Qwe
@@ -149,7 +149,7 @@
                                     <h4 class="level-2">Alıcı Otomatını Seçin</h4><!-- /.level-2 -->
 
                                     <figure class="map__image">
-												<div id="locker2-map"  alt="map" width="650" height="420" style="height: 100%;"></div>
+                                                <div id="locker2-map"  alt="map" width="650" height="420" style="height: 100%;"></div>
                                     </figure><!-- /.map__image -->
 
                                     <div class="map__meta map__meta--red locker2-map-info"><strong>LEF-01 7/24 açık</strong> Xyz Shop -
@@ -162,218 +162,225 @@
             </div><!-- /.accordion__section -->
         </div><!-- /.accordion -->
         <div class="section__content">
-					<div class="js-form form section__form">
-                @using(Html.BeginForm(FormMethod.Post)){
-							<div class="form__cols">
-                                  @{
-                                    var name = "";
-                                    var email = "";
-                                    var phone = "";
-                                }
-                                @if (HttpContext.Session.GetInt32("IsLoggedIn") != 1 || HttpContext.Session.GetInt32("Role") != (int)UserType.Partner)
-                                {
-                                    var setValue = HttpContext.Session.GetInt32("Role") == (int)UserType.Commercial;
-                                    @if (setValue)
-                                    {
-                                        name = Model.User.Name;
-                                        email = Model.User.Email;
-                                        phone = Model.User.Phone;
-                                    }
-								<div class="form__col">
-									<div class="form__content">
-										<div class="form__head">
-											<h4 class="level-2">Gönderici Bilgileri</h4><!-- /.level-2 -->
+                    <div class="js-form form section__form">
+                @using (Html.BeginForm(FormMethod.Post))
+                {
+                                <div class="form__cols">
+                        @{
+                            var name = "";
+                            var email = "";
+                            var phone = "";
+                        }
+                        @if (HttpContext.Session.GetInt32("IsLoggedIn") != 1 || HttpContext.Session.GetInt32("Role") != (int)UserType.Partner)
+                        {
+                            var setValue = HttpContext.Session.GetInt32("Role") == (int)UserType.Commercial;
+                            @if (setValue)
+                            {
+                                name = Model.User.Name;
+                                email = Model.User.Email;
+                                phone = Model.User.Phone;
+                            }
+                                        <div class="form__col">
+                                            <div class="form__content">
+                                                <div class="form__head">
+                                                    <h4 class="level-2">Gönderici Bilgileri</h4><!-- /.level-2 -->
 
-											<p>*alanların doldurulması zorunludur</p>
-										</div><!-- /.form__head -->
+                                                    <p>*alanların doldurulması zorunludur</p>
+                                                </div><!-- /.form__head -->
 
-										<div class="form__body">
-											<div class="form__row">
-												<label for="name" class="form__label">İsim Soyisim <span>*</span></label><!-- /.form__label -->
+                                                <div class="form__body">
+                                                    <div class="form__row">
+                                                        <label for="name" class="form__label">İsim Soyisim <span>*</span></label><!-- /.form__label -->
 
-												<div class="form__controls">
-													<input data-validate="true" type="text" class="field" id="name" name="name" placeholder="Ad Soyad veya Şirket">
+                                                        <div class="form__controls">
+                                                            <input data-validate="true" type="text" class="field" id="name" name="name" placeholder="Ad Soyad veya Şirket">
 
-													<img src="assets/design/images/svg/member.svg" alt="member" width="40" height="40">
-												</div><!-- /.form__controls -->
-											</div><!-- /.form__row -->
+                                                            <img src="assets/design/images/svg/member.svg" alt="member" width="40" height="40">
+                                                        </div><!-- /.form__controls -->
+                                                    </div><!-- /.form__row -->
 
-											<div class="form__row">
-												<label for="phone" class="form__label">Cep Telefonu <span>*</span></label><!-- /.form__label -->
+                                                    <div class="form__row">
+                                                        <label for="phone" class="form__label">Cep Telefonu <span>*</span></label><!-- /.form__label -->
 
-												<div class="form__controls">
-													<input data-validate="true" type="text" class="js-phone-field field field--number" id="phone" name="phone" placeholder="Telefon numarasını giriniz">
+                                                        <div class="form__controls">
+                                                            <input data-validate="true" type="text" class="js-phone-field field field--number" id="phone" name="phone" placeholder="Telefon numarasını giriniz">
 
-													<img src="assets/design/images/svg/phone.svg" alt="member" width="40" height="40">
-												</div><!-- /.form__controls -->
-											</div><!-- /.form__row -->
+                                                            <img src="assets/design/images/svg/phone.svg" alt="member" width="40" height="40">
+                                                        </div><!-- /.form__controls -->
+                                                    </div><!-- /.form__row -->
 
-											<div class="form__row">
-												<label for="email" class="form__label">E-posta <span>*</span></label><!-- /.form__label -->
+                                                    <div class="form__row">
+                                                        <label for="email" class="form__label">E-posta <span>*</span></label><!-- /.form__label -->
 
-												<div class="form__controls">
-													<input data-validate="true" type="email" class="field" id="mail" name="email" placeholder="E-posta adresini giriniz">
+                                                        <div class="form__controls">
+                                                            <input data-validate="true" type="email" class="field" id="mail" name="email" placeholder="E-posta adresini giriniz">
 
-													<img src="assets/design/images/svg/mail.svg" alt="member" width="40" height="40">
-												</div><!-- /.form__controls -->
-											</div><!-- /.form__row -->
+                                                            <img src="assets/design/images/svg/mail.svg" alt="member" width="40" height="40">
+                                                        </div><!-- /.form__controls -->
+                                                    </div><!-- /.form__row -->
 
-											<div class="form__row">
-												<label for="note" class="form__label">Not</label><!-- /.form__label -->
+                                                    <div class="form__row">
+                                                        <label for="note" class="form__label">Not</label><!-- /.form__label -->
 
-												<div class="form__controls">
-													<input type="text" class="field" id="message" name="message" placeholder="Gönder notu varsa yazınız">
+                                                        <div class="form__controls">
+                                                            <input type="text" class="field" id="message" name="message" placeholder="Gönder notu varsa yazınız">
 
-													<img src="assets/design/images/svg/message.svg" alt="member" width="40" height="40">
-												</div><!-- /.form__controls -->
-											</div><!-- /.form__row -->
+                                                            <img src="assets/design/images/svg/message.svg" alt="member" width="40" height="40">
+                                                        </div><!-- /.form__controls -->
+                                                    </div><!-- /.form__row -->
 
-											<div class="form__row">
-												<strong>Zaman Aralığı Seçin</strong>
+                                                    <div class="form__row">
+                                                        <strong>Zaman Aralığı Seçin</strong>
 
-												<div class="radios">
-													<div class="radio">
-														<input type="radio" name="radio" id="radio-1" checked>
+                                                        <div class="radios">
+                                                            <div class="radio">
+                                                                <input type="radio" name="radio" id="radio-1" checked>
 
-														<label for="radio-1">
-															Fark <br> etmez
-														</label>
-													</div><!-- /.radio -->
+                                                                <label for="radio-1">
+                                                                    Fark <br> etmez
+                                                                </label>
+                                                            </div><!-- /.radio -->
 
-													<div class="radio">
-														<input type="radio" name="radio" id="radio-2">
+                                                            <div class="radio">
+                                                                <input type="radio" name="radio" id="radio-2">
 
-														<label for="radio-2">
-															<span>08:00</span>
+                                                                <label for="radio-2">
+                                                                    <span>08:00</span>
 
-															<span>-</span>
+                                                                    <span>-</span>
 
-															<span>12:00</span>
-														</label>
-													</div><!-- /.radio -->
+                                                                    <span>12:00</span>
+                                                                </label>
+                                                            </div><!-- /.radio -->
 
-													<div class="radio">
-														<input type="radio" name="radio" id="radio-3">
+                                                            <div class="radio">
+                                                                <input type="radio" name="radio" id="radio-3">
 
-														<label for="radio-3">
-															<span>13:00</span>
+                                                                <label for="radio-3">
+                                                                    <span>13:00</span>
 
-															<span>-</span>
+                                                                    <span>-</span>
 
-															<span>18:00</span>
-														</label>
-													</div><!-- /.radio -->
-												</div><!-- /.radios -->
-											</div><!-- /.form__row -->
-										</div><!-- /.form__body -->
-									</div><!-- /.form__content -->
-								</div><!-- /.form__col -->
-                                }
+                                                                    <span>18:00</span>
+                                                                </label>
+                                                            </div><!-- /.radio -->
+                                                        </div><!-- /.radios -->
+                                                    </div><!-- /.form__row -->
+                                                </div><!-- /.form__body -->
+                                            </div><!-- /.form__content -->
+                                        </div>
 
-								<div class="form__col-alt">
-									<img src="assets/design/images/svg/arrow-dark.svg" alt="arrow" width="60" height="30">
-								</div><!-- /.form__col-alt -->
+                            <!-- /.form__col -->
+                        }
 
-								<div class="form__col">
-									<div class="form__content">
-										<div class="form__head">
-											<h4 class="level-2">Alıcı Biligleri</h4><!-- /.level-2 -->
+                                    <div class="form__col-alt">
+                                        <img src="assets/design/images/svg/arrow-dark.svg" alt="arrow" width="60" height="30">
+                                    </div><!-- /.form__col-alt -->
 
-											<p>*alanların doldurulması zorunludur</p>
-										</div><!-- /.form__head -->
+                                    <div class="form__col">
+                                        <div class="form__content">
+                                            <div class="form__head">
+                                                <h4 class="level-2">Alıcı Biligleri</h4><!-- /.level-2 -->
 
-										<div class="form__body">
-											<div class="form__row">
-												<label for="name-2" class="form__label">İsim Soyisim <span>*</span></label><!-- /.form__label -->
+                                                <p>*alanların doldurulması zorunludur</p>
+                                            </div><!-- /.form__head -->
 
-												<div class="form__controls">
-													<input data-validate="true" type="text" class="field" id="name-2" name="receiverName" placeholder="Ad Soyad veya Şirket">
+                                            <div class="form__body">
+                                                <div class="form__row">
+                                                    <label for="name-2" class="form__label">İsim Soyisim <span>*</span></label><!-- /.form__label -->
 
-													<img src="assets/design/images/svg/member.svg" alt="member" width="40" height="40">
-												</div><!-- /.form__controls -->
-											</div><!-- /.form__row -->
+                                                    <div class="form__controls">
+                                                        <input data-validate="true" type="text" class="field" id="name-2" name="receiverName" placeholder="Ad Soyad veya Şirket">
 
-											<div class="form__row">
-												<label for="phone-2" class="form__label">Cep Telefonu <span>*</span></label><!-- /.form__label -->
+                                                        <img src="assets/design/images/svg/member.svg" alt="member" width="40" height="40">
+                                                    </div><!-- /.form__controls -->
+                                                </div><!-- /.form__row -->
 
-												<div class="form__controls">
-													<input data-validate="true" type="text" class="js-phone-field field" id="phone-2" name="receiverPhone" placeholder="Telefon numarasını giriniz">
+                                                <div class="form__row">
+                                                    <label for="phone-2" class="form__label">Cep Telefonu <span>*</span></label><!-- /.form__label -->
 
-													<img src="assets/design/images/svg/phone.svg" alt="member" width="40" height="40">
-												</div><!-- /.form__controls -->
-											</div><!-- /.form__row -->
-                                            <div class="form__row">
-												<label for="name-2" class="form__label">Adres Detayı <span>*</span></label><!-- /.form__label -->
+                                                    <div class="form__controls">
+                                                        <input data-validate="true" type="text" class="js-phone-field field" id="phone-2" name="receiverPhone" placeholder="Telefon numarasını giriniz">
 
-												<div class="form__controls">
-													<input data-validate="true" type="text" class="field" id="name-2" name="receiverAddress" placeholder="Adres Detayı">
+                                                        <img src="assets/design/images/svg/phone.svg" alt="member" width="40" height="40">
+                                                    </div><!-- /.form__controls -->
+                                                </div><!-- /.form__row -->
+                                                <div class="form__row">
+                                                    <label for="name-2" class="form__label">Adres Detayı <span>*</span></label><!-- /.form__label -->
 
-													<img src="assets/design/images/svg/member.svg" alt="member" width="40" height="40">
-												</div><!-- /.form__controls -->
-											</div><!-- /.form__row -->
+                                                    <div class="form__controls">
+                                                        <input data-validate="true" type="text" class="field" id="name-2" name="receiverAddress" placeholder="Adres Detayı">
 
-											<div class="form__row">
-												<ul class="list-checkboxes">
-													<li>
-														<div class="checkbox-alt">
-															<input data-validate="true" type="checkbox" name="checkbox-alt" id="checkbox-alt-1" checked>
+                                                        <img src="assets/design/images/svg/member.svg" alt="member" width="40" height="40">
+                                                    </div><!-- /.form__controls -->
+                                                </div><!-- /.form__row -->
 
-															<label for="checkbox-alt-1">
-																<a href="#">Gizlilik Politikası</a>
-															</label>
-														</div><!-- /.checkbox-alt -->
-													</li>
+                                                <div class="form__row">
+                                                    <ul class="list-checkboxes">
+                                                        <li>
+                                                            <div class="checkbox-alt">
+                                                                <input data-validate="true" type="checkbox" name="checkbox-alt" id="checkbox-alt-1" checked>
 
-													<li>
-														<div class="checkbox-alt">
-															<input data-validate="true" type="checkbox" name="checkbox-alt" id="checkbox-alt-2" checked>
+                                                                <label for="checkbox-alt-1">
+                                                                    <a href="#">Gizlilik Politikası</a>
+                                                                </label>
+                                                            </div><!-- /.checkbox-alt -->
+                                                        </li>
 
-															<label for="checkbox-alt-2">
-																<a href="#">Kullanıcı ile Breysel Sözleşme</a>
-															</label>
-														</div><!-- /.checkbox-alt -->
-													</li>
+                                                        <li>
+                                                            <div class="checkbox-alt">
+                                                                <input data-validate="true" type="checkbox" name="checkbox-alt" id="checkbox-alt-2" checked>
 
-													<li>
-														<div class="checkbox-alt checkbox-alt--yellow-background">
-															<input data-validate="true" type="checkbox" name="checkbox-alt" id="checkbox-alt-3">
+                                                                <label for="checkbox-alt-2">
+                                                                    <a href="#">Kullanıcı ile Breysel Sözleşme</a>
+                                                                </label>
+                                                            </div><!-- /.checkbox-alt -->
+                                                        </li>
 
-															<label for="checkbox-alt-3">
-																<a href="#">LOKASYONLARI ONAYLA</a>
-															</label>
-														</div><!-- /.checkbox-alt -->
-													</li>
-												</ul><!-- /.list-checkboxes -->
-											</div><!-- /.form__row -->
-										</div><!-- /.form__body -->
+                                                        <li>
+                                                            <div class="checkbox-alt checkbox-alt--yellow-background">
+                                                                <input data-validate="true" type="checkbox" name="checkbox-alt" id="checkbox-alt-3">
 
-										<div class="form__actions">
-											<button type="submit" class="form__btn">
-												<img src="assets/design/images/svg/card.svg" alt="card" width="280" height="155">
-											</button>
-										</div><!-- /.form__actions -->
-									</div><!-- /.form__content -->
-								</div><!-- /.form__col -->
-							</div><!-- /.form__cols -->
-                                  <input type="hidden" class="box-input" name="boxId" value="" required>
-                                                                  <input type="hidden"  name="receiverAddressLat" value="" required>
-                                                                  <input type="hidden"  name="receiverAddressLong" value="" required>
-                                <input type="hidden"  name="selectedSourceRegionId" value="" required>
+                                                                <label for="checkbox-alt-3">
+                                                                     <a href="#a" class="acceptLink">LOKASYONLARI ONAYLA</a>
+                                                                </label>
+                                                            </div><!-- /.checkbox-alt -->
+                                                        </li>
+                                                    </ul><!-- /.list-checkboxes -->
+                                                </div><!-- /.form__row -->
+                                            </div><!-- /.form__body -->
 
-                                <input type="hidden" class="selected-locker-1" name="sourceLockerName" value="" required>
-                                <input type="hidden" class="selected-locker-2" name="targetLockerName" value="" required>
-                                <input type="hidden" name="items"/>
-						}
-					</div><!-- /.js-form form section__form -->
-				</div><!-- /.section__content -->
-			</div><!-- /.shell -->
-		</section><!-- /.section-simple -->
-	</div><!-- /.wrapper -->
+                                            <div class="form__actions">
+                                                <button type="submit" class="form__btn">
+                                                    <img src="assets/design/images/svg/card.svg" alt="card" width="280" height="155">
+                                                </button>
+                                            </div><!-- /.form__actions -->
+                                        </div><!-- /.form__content -->
+                                    </div><!-- /.form__col -->
+                                </div>
+
+                    <!-- /.form__cols -->
+                                      <input type="hidden" class="box-input" name="boxId" value="" required>
+                                                                      <input type="hidden"  name="receiverAddressLat" value="" required>
+                                                                      <input type="hidden"  name="receiverAddressLong" value="" required>
+                                    <input type="hidden"  name="selectedSourceRegionId" value="" required>
+
+                                    <input type="hidden" class="selected-locker-1" name="sourceLockerName" value="" required>
+                                    <input type="hidden" class="selected-locker-2" name="targetLockerName" value="" required>
+                                    <input type="hidden" name="items"/>
+                }
+                    </div><!-- /.js-form form section__form -->
+                </div><!-- /.section__content -->
+            </div><!-- /.shell -->
+        </section><!-- /.section-simple -->
+    </div><!-- /.wrapper -->
 
 
 
 <script>
-
+$(".acceptLink").on("click", function () {
+  $("#checkbox-alt-3").trigger("click");
+});
     var regionClicked = 0;
 
     function setItems() {
@@ -503,6 +510,7 @@
         var regex = /^([a-zA-Z0-9_.+-])+\@@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
         return regex.test(email);
     }
+    
 
 
 

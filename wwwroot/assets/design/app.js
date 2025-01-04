@@ -40,11 +40,11 @@
   }
 })();
 const style = "";
-$(".js-form form").on("submit", function(event) {
+$(".js-form form").on("submit", function (event) {
   let isValid = true;
   const $form = $(this).closest("form");
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  $form.find("[data-validate]").each(function(index, el) {
+  $form.find("[data-validate]").each(function (index, el) {
     const $this = $(el);
     const type = $this[0].type;
     if (type === "checkbox") {
@@ -94,7 +94,7 @@ $(".js-form form").on("submit", function(event) {
     event.preventDefault();
   }
 });
-$(".js-phone-field").on("input", function(e) {
+$(".js-phone-field").on("input", function (e) {
   const value = e.target.value;
   if (value.length < 4) {
     e.target.value = `+90 `;
@@ -104,7 +104,7 @@ $(".js-phone-field").on("input", function(e) {
   }
   e.target.value = `+90 ${value}`;
 });
-$(".js-accordion .accordion__head").on("click", function(e) {
+$(".js-accordion .accordion__head").on("click", function (e) {
   $(this).closest(".accordion__section").toggleClass("is-open").siblings().removeClass("is-open");
   e.preventDefault();
 });
@@ -119,7 +119,7 @@ const observerCallback = (entries) => {
 const observer = new IntersectionObserver(observerCallback, {
   rootMargin: "-30%"
 });
-$(".js-skip").on("click", function(event) {
+$(".js-skip").on("click", function (event) {
   event.preventDefault();
   const targetData = $(this).data("target");
   const $target = $(`[data-target-element=${targetData}]`);
@@ -139,7 +139,7 @@ $(window).on("load", () => {
     $loadingWrapper.addClass("hidden");
   }, 300);
 });
-$(".js-quantity").on("click", ".btn-increase", function(event) {
+$(".js-quantity").on("click", ".btn-increase", function (event) {
   event.preventDefault();
   const $input = $(this).closest(".checkbox").find("input");
   const $countSpan = $(this).closest(".js-quantity").find(".checkbox__count");
@@ -148,7 +148,7 @@ $(".js-quantity").on("click", ".btn-increase", function(event) {
   $countSpan.text(count);
   $input.attr("checked", true);
 });
-$(".js-quantity").on("click", ".btn-decrease", function(event) {
+$(".js-quantity").on("click", ".btn-decrease", function (event) {
   event.preventDefault();
   const $input = $(this).closest(".checkbox").find("input");
   const $countSpan = $(this).closest(".js-quantity").find(".checkbox__count");
@@ -163,7 +163,10 @@ $(".js-quantity").on("click", ".btn-decrease", function(event) {
     return;
   }
 });
-$(".checkbox").on("click", "label", function(event) {
+
+
+
+$(".checkbox").on("click", "label", function (event) {
   event.preventDefault();
   let inputElement = $(this).siblings("input");
   let isChecked = inputElement.attr("checked");
